@@ -15,10 +15,11 @@ namespace WebClinica
 
         }
 
-        protected void Click_IniciaSesion(object sender, EventArgs e)
+        public void Click_IniciaSesion(object sender, EventArgs e)
         {
-           /* string user = txtUsuario.Text;
-            string pass = txtPassword;
+            /*
+            string user = txtUsuario.Text;
+            string pass = txtPassword.Text;
             string userName = "Fer";
             string userPass = "1234";
             if (user.Equals(userName) && pass.Equals(userPass)
