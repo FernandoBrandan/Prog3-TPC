@@ -1,24 +1,23 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="PacientesAlta.aspx.cs" Inherits="WebClinica.Formulario_web11" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="PacientesModificacion.aspx.cs" Inherits="WebClinica.Formulario_web15" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+    
     <div style="margin-top: 50px;">
         <nav aria-label="...">
             <ul class="pagination pagination-lg">
+                <li class="page-item"><a class="page-link" href="PacientesAlta.aspx">Alta</a></li>
                 <li class="page-item active" aria-current="page">
-                    <span class="page-link">Alta
+                    <span class="page-link">Modificacion
                     <span class="sr-only">(current)</span>
                     </span>
                 </li>
-                <li class="page-item"><a class="page-link" href="PacientesModificacion.aspx">Modificacion</a></li>
                 <li class="page-item"><a class="page-link" href="#">Baja</a></li>
             </ul>
         </nav>
     </div>
 
-    <h1 style="margin-top: 20px;">Alta Paciente</h1>
+    <h1 style="margin-top: 20px;">Modificacion Paciente</h1>
     <div style="margin-top: 30px;">
         <div class="form-row">
             <div class="form-group col-md-3">
@@ -32,9 +31,6 @@
             <div class="form-group col-md-3">
                 <label>Apellido</label>
                 <asp:TextBox class="form-control" ID="TextApellido" runat="server" />
-            </div>
-            <div class="form-group col-md-3">
-                <asp:Label Text="Legajo" ID="IdLegajo" placeholder="Legajo" runat="server" />></asp:label>
             </div>
         </div>
         <div class="form-row">
@@ -60,5 +56,4 @@
         <button type="submit" class="btn btn-primary">Aceptar</button>
         <button type="submit" class="btn btn-primary">Cancelar</button>
     </div>
-
 </asp:Content>

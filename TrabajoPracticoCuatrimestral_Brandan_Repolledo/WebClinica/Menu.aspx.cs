@@ -14,18 +14,14 @@ namespace WebClinica
 
         }
 
-        protected void Click_btnMedicos(object sender, EventArgs e)
+        protected void Click_btnMedicosAlta(object sender, EventArgs e)
         {
-            Response.Redirect("Medicos.aspx");
+            Response.Redirect("MedicosAlta.aspx");
         }
-
-<<<<<<< HEAD
+   
         protected void Click_btnPacientesAlta(object sender, EventArgs e)
-=======
-        protected void Click_btnPacientes(object sender, EventArgs e)
->>>>>>> 509ee3ba8cced2c8ec465f11389975e25959644a
         {
-            Response.Redirect("Pacientes.aspx");
+            Response.Redirect("PacientesAlta.aspx");
         }
 
         protected void Click_btnUsuarios(object sender, EventArgs e)

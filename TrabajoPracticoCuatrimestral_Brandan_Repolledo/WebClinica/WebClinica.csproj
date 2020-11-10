@@ -69,14 +69,12 @@
   <ItemGroup>
     <Content Include="css\Login.css" />
     <Content Include="Especialidades.aspx" />
+    <Content Include="MedicosModificacion.aspx" />
+    <Content Include="PacientesModificacion.aspx" />
     <Content Include="Turnos.aspx" />
     <Content Include="Usuarios.aspx" />
-<<<<<<< HEAD
     <Content Include="PacientesAlta.aspx" />
-=======
-    <Content Include="Pacientes.aspx" />
->>>>>>> 509ee3ba8cced2c8ec465f11389975e25959644a
-    <Content Include="Medicos.aspx" />
+    <Content Include="MedicosAlta.aspx" />
     <Content Include="js\Login.js" />
     <Content Include="Login.aspx" />
     <Content Include="Menu.aspx" />
@@ -89,6 +87,20 @@
     </Compile>
     <Compile Include="Especialidades.aspx.designer.cs">
       <DependentUpon>Especialidades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MedicosModificacion.aspx.cs">
+      <DependentUpon>MedicosModificacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MedicosModificacion.aspx.designer.cs">
+      <DependentUpon>MedicosModificacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PacientesModificacion.aspx.cs">
+      <DependentUpon>PacientesModificacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PacientesModificacion.aspx.designer.cs">
+      <DependentUpon>PacientesModificacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Turnos.aspx.cs">
       <DependentUpon>Turnos.aspx</DependentUpon>
@@ -104,28 +116,19 @@
     <Compile Include="Usuarios.aspx.designer.cs">
       <DependentUpon>Usuarios.aspx</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="PacientesAlta.aspx.cs">
       <DependentUpon>PacientesAlta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PacientesAlta.aspx.designer.cs">
       <DependentUpon>PacientesAlta.aspx</DependentUpon>
-=======
-    <Compile Include="Pacientes.aspx.cs">
-      <DependentUpon>Pacientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MedicosAlta.aspx.cs">
+      <DependentUpon>MedicosAlta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pacientes.aspx.designer.cs">
-      <DependentUpon>Pacientes.aspx</DependentUpon>
->>>>>>> 509ee3ba8cced2c8ec465f11389975e25959644a
-    </Compile>
-    <Compile Include="Medicos.aspx.cs">
-      <DependentUpon>Medicos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Medicos.aspx.designer.cs">
-      <DependentUpon>Medicos.aspx</DependentUpon>
+    <Compile Include="MedicosAlta.aspx.designer.cs">
+      <DependentUpon>MedicosAlta.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

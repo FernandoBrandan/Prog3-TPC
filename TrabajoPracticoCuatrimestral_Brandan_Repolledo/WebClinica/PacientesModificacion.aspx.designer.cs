@@ -11,7 +11,7 @@ namespace WebClinica
 {
 
 
-    public partial class Formulario_web11
+    public partial class Formulario_web15
     {
 
         /// <summary>
@@ -40,15 +40,6 @@ namespace WebClinica
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextApellido;
-
-        /// <summary>
-        /// Control IdLegajo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label IdLegajo;
 
         /// <summary>
         /// Control TextDomicilio.

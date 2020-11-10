@@ -14,11 +14,7 @@
     <title>Clinica</title>
     <style>
         body {
-<<<<<<< HEAD
             background-color: #d9ecf2;
-=======
-	        background-image: url("../Imagenes/pared.jpg");
->>>>>>> 509ee3ba8cced2c8ec465f11389975e25959644a
             background-attachment: fixed;
             background-position:center center;              
             background-size: 70% 100%;

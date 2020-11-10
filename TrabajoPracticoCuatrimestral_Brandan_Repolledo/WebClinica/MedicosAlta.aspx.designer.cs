@@ -11,7 +11,7 @@ namespace WebClinica
 {
 
 
-    public partial class Formulario_web11
+    public partial class Formulario_web1
     {
 
         /// <summary>
