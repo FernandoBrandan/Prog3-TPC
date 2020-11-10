@@ -14,11 +14,10 @@
     <title>Clinica</title>
     <style>
         body {
-            background-image: url("../Imagenes/Menu-Doctora.jpg");
-            background-size: 70% 100%;
+	        background-image: url("../Imagenes/pared.jpg");
             background-attachment: fixed;
-            min-height: 600px;
-            background-position:center center;
+            background-position:center center;              
+            background-size: 70% 100%;
         }
     </style>
 
@@ -31,7 +30,7 @@
             <div class="navbar navbar-inverse navbar-fixed-top ">
                 <div class="container">
                     <div class="navbar-header">
-                        <a class="navbar-brand" runat="server" href="https://www.google.com">Menú</a>
+                        <a class="navbar-brand" runat="server" href="~/Menu.aspx">Menú</a>
                         <a class="navbar-brand" runat="server" href="https://www.google.com">Medicos</a>
                         <a class="navbar-brand" runat="server" href="https://www.google.com">Especialidades</a>
                         <a class="navbar-brand" runat="server" href="https://www.google.com">Pacientes</a>
@@ -45,7 +44,7 @@
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
-            <footer style="text-align: center">
+            <footer style="text-align: center; color: white;">
                 <p>&copy; <%: DateTime.Now.Year %> - Trabajo Practico Cuatrimestral - Programacion III - ASP.NET</p>
             </footer>
         </div>

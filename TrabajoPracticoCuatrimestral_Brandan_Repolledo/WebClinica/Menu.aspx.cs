@@ -13,5 +13,30 @@ namespace WebClinica
         {
 
         }
+
+        protected void Click_btnMedicos(object sender, EventArgs e)
+        {
+            Response.Redirect("Medicos.aspx");
+        }
+
+        protected void Click_btnPacientes(object sender, EventArgs e)
+        {
+            Response.Redirect("Pacientes.aspx");
+        }
+
+        protected void Click_btnUsuarios(object sender, EventArgs e)
+        {
+            Response.Redirect("Usuarios.aspx");
+        }
+
+        protected void Click_btnTurnos(object sender, EventArgs e)
+        {
+            Response.Redirect("Turnos.aspx");
+        }
+
+        protected void Click_btnEspecialidades(object sender, EventArgs e)
+        {
+            Response.Redirect("Especialidades.aspx");
+        }
     }
 }
