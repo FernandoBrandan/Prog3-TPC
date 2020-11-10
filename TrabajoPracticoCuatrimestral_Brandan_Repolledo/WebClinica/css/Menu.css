@@ -1,0 +1,97 @@
+body{
+	background-image: url("../Imagenes/Menu-Doctora.jpg");
+	background-attachment: fixed;
+	background-position:center center;              
+	background-size: 70% 100%;
+}
+
+.btnMenu {
+	background: #8bcdcd;
+	width: 140px;
+	height: 140px;
+	position: absolute;
+	color: #black;
+	
+}
+.btnMenu:hover {
+	background: #40CFCB;
+	width: 165px;	
+	box-shadow: 500px 500px 1px 0 green;
+	transition: 1s;
+	color : white;
+	font-size: 22px;
+}
+
+.btnMenu-Pacientes{
+	top: 75px;
+	left: 150px;
+	clip-path: polygon(25% 5%, 75% 5%, 97% 50%, 75% 95%, 25% 95%, 3% 50%);
+
+}
+
+.btnMenu-Medicos{
+	top: 210px;
+	left: 150px;
+	clip-path: polygon(25% 5%, 75% 5%, 97% 50%, 75% 95%, 25% 95%, 3% 50%);
+}
+
+.btnMenu-Usuarios{
+	top: 345px;
+	left: 150px;
+	clip-path: polygon(25% 5%, 75% 5%, 97% 50%, 75% 95%, 25% 95%, 3% 50%);
+}
+
+.btnMenu-Turnos{
+	top: 212px;
+	left: 390px;
+	clip-path: polygon(25% 5%, 75% 5%, 97% 50%, 75% 95%, 25% 95%, 3% 50%);
+}
+
+.btnMenu-Especialidades{
+	top: 350px;
+	left: 390px;
+	clip-path: polygon(25% 5%, 75% 5%, 97% 50%, 75% 95%, 25% 95%, 3% 50%);
+}
+.btnMenu-Contactos{
+	top: 350px;
+	left: 630px;
+	clip-path: polygon(25% 5%, 75% 5%, 97% 50%, 75% 95%, 25% 95%, 3% 50%);
+}
+.btnMenu-Info{
+	top: 415px;
+	left: 763px;
+	clip-path: polygon(25% 5%, 75% 5%, 97% 50%, 75% 95%, 25% 95%, 3% 50%);
+}
+.btnMenu-Blanco1{	
+	width: 140px;
+	height: 140px;
+	position: absolute;
+	background: white;
+	top: 142px;
+	left: 280px;
+	clip-path: polygon(25% 5%, 75% 5%, 97% 50%, 75% 95%, 25% 95%, 3% 50%);
+}
+.btnMenu-Blanco2{	
+	width: 140px;
+	height: 140px;
+	position: absolute;
+	background: white;
+	top: 280px;
+	left: 280px;
+	clip-path: polygon(25% 5%, 75% 5%, 97% 50%, 75% 95%, 25% 95%, 3% 50%);
+}
+
+.btnMenu-Blanco3{	
+	background-image: url("../Imagenes/micro.jpg");
+	width: 140px;
+	height: 140px;
+	position: absolute;
+	background: white;
+	top: 282px;
+	left: 520px;
+	clip-path: polygon(25% 5%, 75% 5%, 97% 50%, 75% 95%, 25% 95%, 3% 50%);
+}
+
+
+
+
