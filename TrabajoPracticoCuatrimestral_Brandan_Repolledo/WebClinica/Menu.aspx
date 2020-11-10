@@ -19,7 +19,11 @@
         <asp:Button Text="Medicos" class="btnMenu btnMenu-Medicos" OnClick="Click_btnMedicos" runat="server"/>
         <asp:Button Text="Especialidades" class="btnMenu btnMenu-Especialidades" OnClick="Click_btnEspecialidades" runat="server"/>
         <asp:Button Text="Turnos" class="btnMenu btnMenu-Turnos" OnClick="Click_btnTurnos" runat="server"/>
+<<<<<<< HEAD
         <asp:Button Text="Pacientes" class="btnMenu btnMenu-Pacientes" OnClick="Click_btnPacientesAlta" runat="server"/>
+=======
+        <asp:Button Text="Pacientes" class="btnMenu btnMenu-Pacientes" OnClick="Click_btnPacientes" runat="server"/>
+>>>>>>> 509ee3ba8cced2c8ec465f11389975e25959644a
         <asp:Button Text="Usuarios" class="btnMenu btnMenu-Usuarios" OnClick="Click_btnUsuarios" runat="server"/>
         <asp:Button Text="Contactos" class="btnMenu btnMenu-Contactos" runat="server"/>
         <asp:Button Text="Info" class="btnMenu btnMenu-Info" runat="server"/>    

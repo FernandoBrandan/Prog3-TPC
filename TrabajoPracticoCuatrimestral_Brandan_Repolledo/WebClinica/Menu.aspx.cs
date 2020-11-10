@@ -19,7 +19,11 @@ namespace WebClinica
             Response.Redirect("Medicos.aspx");
         }
 
+<<<<<<< HEAD
         protected void Click_btnPacientesAlta(object sender, EventArgs e)
+=======
+        protected void Click_btnPacientes(object sender, EventArgs e)
+>>>>>>> 509ee3ba8cced2c8ec465f11389975e25959644a
         {
             Response.Redirect("Pacientes.aspx");
         }
