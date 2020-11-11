@@ -24,19 +24,19 @@ namespace WebClinica
             Response.Redirect("PacientesAlta.aspx");
         }
 
-        protected void Click_btnUsuarios(object sender, EventArgs e)
+        protected void Click_btnUsuariosAlta(object sender, EventArgs e)
         {
-            Response.Redirect("Usuarios.aspx");
+            Response.Redirect("UsuariosAlta.aspx");
         }
 
-        protected void Click_btnTurnos(object sender, EventArgs e)
+        protected void Click_btnTurnosAlta(object sender, EventArgs e)
         {
-            Response.Redirect("Turnos.aspx");
+            Response.Redirect("TurnosAlta.aspx");
         }
 
-        protected void Click_btnEspecialidades(object sender, EventArgs e)
+        protected void Click_btnEspecialidadesAlta(object sender, EventArgs e)
         {
-            Response.Redirect("Especialidades.aspx");
+            Response.Redirect("EspecialidadesAlta.aspx");
         }
     }
 }

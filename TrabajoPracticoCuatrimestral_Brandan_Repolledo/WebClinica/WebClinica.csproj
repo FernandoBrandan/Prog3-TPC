@@ -68,11 +68,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\Login.css" />
-    <Content Include="Especialidades.aspx" />
+    <Content Include="EspecialidadesAlta.aspx" />
+    <Content Include="EspecialidadesModificacion.aspx" />
+    <Content Include="PacientesBaja.aspx" />
+    <Content Include="UsuariosModificacion.aspx" />
+    <Content Include="TurnosModificacion.aspx" />
     <Content Include="MedicosModificacion.aspx" />
     <Content Include="PacientesModificacion.aspx" />
-    <Content Include="Turnos.aspx" />
-    <Content Include="Usuarios.aspx" />
+    <Content Include="TurnosAlta.aspx" />
+    <Content Include="UsuariosAlta.aspx" />
     <Content Include="PacientesAlta.aspx" />
     <Content Include="MedicosAlta.aspx" />
     <Content Include="js\Login.js" />
@@ -81,12 +85,40 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Especialidades.aspx.cs">
-      <DependentUpon>Especialidades.aspx</DependentUpon>
+    <Compile Include="EspecialidadesAlta.aspx.cs">
+      <DependentUpon>EspecialidadesAlta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Especialidades.aspx.designer.cs">
-      <DependentUpon>Especialidades.aspx</DependentUpon>
+    <Compile Include="EspecialidadesAlta.aspx.designer.cs">
+      <DependentUpon>EspecialidadesAlta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EspecialidadesModificacion.aspx.cs">
+      <DependentUpon>EspecialidadesModificacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EspecialidadesModificacion.aspx.designer.cs">
+      <DependentUpon>EspecialidadesModificacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PacientesBaja.aspx.cs">
+      <DependentUpon>PacientesBaja.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PacientesBaja.aspx.designer.cs">
+      <DependentUpon>PacientesBaja.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UsuariosModificacion.aspx.cs">
+      <DependentUpon>UsuariosModificacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UsuariosModificacion.aspx.designer.cs">
+      <DependentUpon>UsuariosModificacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TurnosModificacion.aspx.cs">
+      <DependentUpon>TurnosModificacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TurnosModificacion.aspx.designer.cs">
+      <DependentUpon>TurnosModificacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="MedicosModificacion.aspx.cs">
       <DependentUpon>MedicosModificacion.aspx</DependentUpon>
@@ -102,19 +134,19 @@
     <Compile Include="PacientesModificacion.aspx.designer.cs">
       <DependentUpon>PacientesModificacion.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Turnos.aspx.cs">
-      <DependentUpon>Turnos.aspx</DependentUpon>
+    <Compile Include="TurnosAlta.aspx.cs">
+      <DependentUpon>TurnosAlta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Turnos.aspx.designer.cs">
-      <DependentUpon>Turnos.aspx</DependentUpon>
+    <Compile Include="TurnosAlta.aspx.designer.cs">
+      <DependentUpon>TurnosAlta.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Usuarios.aspx.cs">
-      <DependentUpon>Usuarios.aspx</DependentUpon>
+    <Compile Include="UsuariosAlta.aspx.cs">
+      <DependentUpon>UsuariosAlta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Usuarios.aspx.designer.cs">
-      <DependentUpon>Usuarios.aspx</DependentUpon>
+    <Compile Include="UsuariosAlta.aspx.designer.cs">
+      <DependentUpon>UsuariosAlta.aspx</DependentUpon>
     </Compile>
     <Compile Include="PacientesAlta.aspx.cs">
       <DependentUpon>PacientesAlta.aspx</DependentUpon>
