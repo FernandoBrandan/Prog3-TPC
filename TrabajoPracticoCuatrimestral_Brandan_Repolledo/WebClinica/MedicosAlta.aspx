@@ -14,7 +14,7 @@
                     </span>
                 </li>
                 <li class="page-item"><a class="page-link" href="MedicosModificacion.aspx">Modificacion</a></li>
-                <li class="page-item"><a class="page-link" href="#">Baja</a></li>
+                <li class="page-item"><a class="page-link" href="BajaModificacion.aspx">Baja</a></li>
             </ul>
         </nav>
     </div>

@@ -11,7 +11,7 @@
                     <span class="sr-only">(current)</span>
                     </span>
                 </li>
-                <li class="page-item"><a class="page-link" href="#">Baja</a></li>
+                <li class="page-item"><a class="page-link" href="MedicosBaja.aspx">Baja</a></li>
             </ul>
         </nav>
     </div>

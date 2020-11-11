@@ -21,7 +21,7 @@
         <asp:Button Text="Turnos" class="btnMenu btnMenu-Turnos" OnClick="Click_btnTurnosAlta" runat="server"/>
         <asp:Button Text="Pacientes" class="btnMenu btnMenu-Pacientes" OnClick="Click_btnPacientesAlta" runat="server"/>
         <asp:Button Text="Usuarios" class="btnMenu btnMenu-Usuarios" OnClick="Click_btnUsuariosAlta" runat="server"/>
-        <asp:Button Text="Contactos" class="btnMenu btnMenu-ContactosAlta" runat="server"/>
+        <asp:Button Text="Contactos" class="btnMenu btnMenu-Contactos" runat="server"/>
         <asp:Button Text="Info" class="btnMenu btnMenu-Info" runat="server"/>    
         <img class="btnMenu-Blanco1" runat="server"/> 
         <img class="btnMenu-Blanco2" runat="server"/> 
