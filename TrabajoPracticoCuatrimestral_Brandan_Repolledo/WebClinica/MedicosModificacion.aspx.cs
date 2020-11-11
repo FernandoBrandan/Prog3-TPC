@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace WebClinica
 {
-    public partial class Formulario_web16 : System.Web.UI.Page
+    public partial class MedicosModificacion : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

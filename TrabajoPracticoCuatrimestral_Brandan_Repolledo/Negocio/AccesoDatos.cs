@@ -17,13 +17,13 @@ namespace Negocio
 
         public AccesoDatos()
         {
-            Conexion = new SqlConnection("data source= DESKTOP-PRA4SKB\\SQLEXPRESS; initial catalog= CATALOGO_DB; integrated security=sspi"); 
-       //     Conexion = new SqlConnection("data source= LAPTOP-PUO76A7L\\MSSQLSERVERR; initial catalog= CATALOGO_DB; integrated security=sspi"); //Maite
+            Conexion = new SqlConnection("data source=(local) ;initial catalog=TPCClinica;integrated security=sspi");
+            //Conexion = new SqlConnection("data source= LAPTOP-PUO76A7L\\MSSQLSERVERR; initial catalog= TPCClinica; integrated security=sspi"); //Maite
             Comando = new SqlCommand();
             Comando.Connection = Conexion;
         }
 
-        public void SetearQuery(string Consulta) 
+        public void SetearQuery(string Consulta)
         {
             Comando.CommandType = System.Data.CommandType.Text;
             Comando.CommandText = Consulta;
@@ -43,7 +43,6 @@ namespace Negocio
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }

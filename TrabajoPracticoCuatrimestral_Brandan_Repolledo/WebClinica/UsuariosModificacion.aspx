@@ -60,7 +60,7 @@
         </div>
     </div>
     <div style="margin-top: 20px;">
-        <button type="submit" class="btn btn-primary">Aceptar</button>
-        <button type="submit" class="btn btn-primary">Cancelar</button>
+        <asp:Button type="submit" class="btn btn-primary" Text="Aceptar" runat="server" />
+        <asp:Button type="submit" class="btn btn-primary" Text="Cancelar" runat="server" />
     </div>
 </asp:Content>

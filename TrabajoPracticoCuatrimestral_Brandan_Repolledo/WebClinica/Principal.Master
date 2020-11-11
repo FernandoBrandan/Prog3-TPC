@@ -36,6 +36,7 @@
                         <a class="navbar-brand" runat="server" href="PacientesAlta.aspx">Pacientes</a>
                         <a class="navbar-brand" runat="server" href="TurnosAlta.aspx">Turnos</a>
                         <a class="navbar-brand" runat="server" href="UsuariosAlta.aspx">Usuarios</a>
+                        <a class="navbar-brand" runat="server" href="Reportes.aspx">Reportes</a>
                     </div>
                 </div>
             </div>

@@ -71,6 +71,7 @@
     <Content Include="EspecialidadesAlta.aspx" />
     <Content Include="EspecialidadesModificacion.aspx" />
     <Content Include="EspecialidadesBaja.aspx" />
+    <Content Include="Reportes.aspx" />
     <Content Include="UsuariosBaja.aspx" />
     <Content Include="TurnosBaja.aspx" />
     <Content Include="MedicosBaja.aspx" />
@@ -109,6 +110,13 @@
     </Compile>
     <Compile Include="EspecialidadesBaja.aspx.designer.cs">
       <DependentUpon>EspecialidadesBaja.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes.aspx.cs">
+      <DependentUpon>Reportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes.aspx.designer.cs">
+      <DependentUpon>Reportes.aspx</DependentUpon>
     </Compile>
     <Compile Include="UsuariosBaja.aspx.cs">
       <DependentUpon>UsuariosBaja.aspx</DependentUpon>
