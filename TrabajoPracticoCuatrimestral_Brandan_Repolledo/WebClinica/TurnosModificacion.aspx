@@ -15,7 +15,7 @@
             </ul>
         </nav>
     </div>
-     <h1 style="margin-top: 20px;">Modificación de turno</h1>
+     <h1 style="margin-top: 20px;">Modificar turno</h1>
     <div style="margin-top: 30px;">
         <div class="form-row">
             <div class="form-group col-md-6">

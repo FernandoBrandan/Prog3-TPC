@@ -16,7 +16,7 @@
         </nav>
     </div>
 
-    <h1 style="margin-top: 20px;">Modificacion Medico</h1>
+    <h1 style="margin-top: 20px;">Modificar Medico</h1>
     <div style="margin-top: 30px;">
         <div class="form-group col-md-3">
                 <label>Buscar</label>

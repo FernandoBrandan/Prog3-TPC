@@ -5,62 +5,62 @@
    <div style="margin-top: 50px;">
         <nav aria-label="...">
             <ul class="pagination pagination-lg">
+                <li class="page-item"><a class="page-link" href="UsuariosAlta.aspx">Alta</a></li>
                 <li class="page-item active" aria-current="page">
                     <span class="page-link">Modificacion
                     <span class="sr-only">(current)</span>
                     </span>
                 </li>
-                <li class="page-item"><a class="page-link" href="UsuariosAlta.aspx">Alta</a></li>
                 <li class="page-item"><a class="page-link" href="UsuariosBaja.aspx">Baja</a></li>
 
 
             </ul>
         </nav>
      </div>
-    <h1 style="margin-top: 20px;">Modificación Usuarios</h1>
-     <div style="margin-top: 30px;">
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control" id="inputEmail4">
+   <h1 style="margin-top: 20px;">Modificar Usuario</h1>
+    <div style="margin-top: 30px;">
+          <div class="form-group col-md-3">
+                <label>Buscar</label>
+                <asp:TextBox class="form-control" placeholder="IdMedico" ID="TextBox2" runat="server" />
             </div>
-            <div class="form-group col-md-6">
-                <label for="inputPassword4">Password</label>
-                <input type="password" class="form-control" id="inputPassword4">
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label>DNI</label>
+                <asp:TextBox class="form-control" ID="txtDNI" runat="server" />
+            </div>
+            <div class="form-group col-md-3">
+                <label>Nombre</label>
+                <asp:TextBox class="form-control" ID="TextBox1" runat="server" />
+            </div>
+            <div class="form-group col-md-3">
+                <label>Apellido</label>
+                <asp:TextBox class="form-control" ID="TextApellido" runat="server" />
+            </div>
+            <div class="form-group col-md-3">
+                <asp:Label Text="Legajo" ID="IdLegajo" placeholder="Legajo" runat="server" />></asp:label>
             </div>
         </div>
-        <div class="form-group">
-            <label for="inputAddress">Address</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-        </div>
-        <div class="form-group">
-            <label for="inputAddress2">Address 2</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-        </div>
         <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputCity">City</label>
-                <input type="text" class="form-control" id="inputCity">
+            <div class="form-group col-md-3">
+                <label>Domicilio</label>
+                <asp:TextBox class="form-control" ID="TextDomicilio" runat="server" />
+            </div>
+            <div class="form-group col-md-3">
+                <label>Genero</label>
+                <asp:TextBox class="form-control" ID="TextGenero" runat="server" />
+            </div>
+            <div class="form-group col-md-3">
+                <label>Fecha Nacimiento</label>
+                <asp:TextBox class="form-control" ID="TextFechaNac" runat="server" />
             </div>
             <div class="form-group col-md-4">
-                <label for="inputState">State</label>
-                <select id="inputState" class="form-control">
-                    <option selected>Choose...</option>
-                    <option>...</option>
-                </select>
-            </div>
-            <div class="form-group col-md-2">
-                <label for="inputZip">Zip</label>
-                <input type="text" class="form-control" id="inputZip">
+                <label>Correo Electronico</label>
+                <asp:TextBox class="form-control" ID="TextEmail" runat="server" />
             </div>
         </div>
-        <div class="form-group">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck">
-                    Check me out
-                </label>
-            </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Sign in</button>
+    </div>
+    <div style="margin-top: 20px;">
+        <button type="submit" class="btn btn-primary">Aceptar</button>
+        <button type="submit" class="btn btn-primary">Cancelar</button>
+    </div>
 </asp:Content>

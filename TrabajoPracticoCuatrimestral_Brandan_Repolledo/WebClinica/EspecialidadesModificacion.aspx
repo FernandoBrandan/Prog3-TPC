@@ -5,20 +5,25 @@
      <div style="margin-top: 50px;">
         <nav aria-label="...">
             <ul class="pagination pagination-lg">
+                <li class="page-item"><a class="page-link" href="EspecialidadesAlta.aspx">Alta</a></li>
                 <li class="page-item active" aria-current="page">
                     <span class="page-link">Modificacion
                     <span class="sr-only">(current)</span>
                     </span>
                 </li>
                 <li class="page-item"><a class="page-link" href="EspecialidadesBaja.aspx">Baja</a></li>
-                <li class="page-item"><a class="page-link" href="EspecialidadesAlta.aspx">Alta</a></li>
             </ul>
         </nav>
     </div>
 
-    <h1 style="margin-top: 20px;">Modificación de Especialidades</h1>
+    <h1 style="margin-top: 20px;">Modificar Especialidad</h1>
     <div style="margin-top: 30px;">
+          <div class="form-group col-md-3">
+                <label>Buscar</label>
+                <asp:TextBox class="form-control" placeholder="IdMedico" ID="TextBox2" runat="server" />
+            </div>
         <div class="form-row">
+
             <div class="form-group col-md-6">
                 <label for="inputEspecialidad4">Id de la Especialidad:</label>
                 <input type="text" class="form-control" id="inputEspecialidad4">

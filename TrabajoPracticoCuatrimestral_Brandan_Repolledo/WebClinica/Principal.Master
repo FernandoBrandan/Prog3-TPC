@@ -31,11 +31,11 @@
                 <div class="container">
                     <div class="navbar-header">
                         <a class="navbar-brand" runat="server" href="~/Menu.aspx">Menú</a>
-                        <a class="navbar-brand" runat="server" href="https://www.google.com">Medicos</a>
-                        <a class="navbar-brand" runat="server" href="https://www.google.com">Especialidades</a>
-                        <a class="navbar-brand" runat="server" href="https://www.google.com">Pacientes</a>
-                        <a class="navbar-brand" runat="server" href="https://www.google.com">Turnos</a>
-                        <a class="navbar-brand" runat="server" href="https://www.google.com">Usuarios</a>
+                        <a class="navbar-brand" runat="server" href="MedicosAlta.aspx">Medicos</a>
+                        <a class="navbar-brand" runat="server" href="EspecialidadesAlta.aspx">Especialidades</a>
+                        <a class="navbar-brand" runat="server" href="PacientesAlta.aspx">Pacientes</a>
+                        <a class="navbar-brand" runat="server" href="TurnosAlta.aspx">Turnos</a>
+                        <a class="navbar-brand" runat="server" href="UsuariosAlta.aspx">Usuarios</a>
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
-            <footer style="text-align: center; color: white;">
+            <footer style="text-align: center; color: black;">
                 <p>&copy; <%: DateTime.Now.Year %> - Trabajo Practico Cuatrimestral - Programacion III - ASP.NET</p>
             </footer>
         </div>
