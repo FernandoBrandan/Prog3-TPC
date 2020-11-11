@@ -70,6 +70,10 @@
     <Content Include="css\Login.css" />
     <Content Include="EspecialidadesAlta.aspx" />
     <Content Include="EspecialidadesModificacion.aspx" />
+    <Content Include="EspecialidadesBaja.aspx" />
+    <Content Include="UsuariosBaja.aspx" />
+    <Content Include="TurnosBaja.aspx" />
+    <Content Include="MedicosBaja.aspx" />
     <Content Include="PacientesBaja.aspx" />
     <Content Include="UsuariosModificacion.aspx" />
     <Content Include="TurnosModificacion.aspx" />
@@ -98,6 +102,34 @@
     </Compile>
     <Compile Include="EspecialidadesModificacion.aspx.designer.cs">
       <DependentUpon>EspecialidadesModificacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EspecialidadesBaja.aspx.cs">
+      <DependentUpon>EspecialidadesBaja.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EspecialidadesBaja.aspx.designer.cs">
+      <DependentUpon>EspecialidadesBaja.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UsuariosBaja.aspx.cs">
+      <DependentUpon>UsuariosBaja.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UsuariosBaja.aspx.designer.cs">
+      <DependentUpon>UsuariosBaja.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TurnosBaja.aspx.cs">
+      <DependentUpon>TurnosBaja.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TurnosBaja.aspx.designer.cs">
+      <DependentUpon>TurnosBaja.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MedicosBaja.aspx.cs">
+      <DependentUpon>MedicosBaja.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MedicosBaja.aspx.designer.cs">
+      <DependentUpon>MedicosBaja.aspx</DependentUpon>
     </Compile>
     <Compile Include="PacientesBaja.aspx.cs">
       <DependentUpon>PacientesBaja.aspx</DependentUpon>
