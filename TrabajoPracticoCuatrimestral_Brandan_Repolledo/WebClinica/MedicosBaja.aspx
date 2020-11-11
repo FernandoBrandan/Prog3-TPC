@@ -16,8 +16,8 @@
         </nav>
     </div>
 
-    <h1 style="margin-top: 20px; margin-bottom: 20px">Baja Medico</h1>
-    <h4> Ingresar DNI o Codigo de Paciente</h4>
+    <h1 style="margin-top: 20px; margin-bottom: 20px">Baja de Médico</h1>
+    <h4> Ingresar DNI o Codigo del Médico</h4>
     <div style="margin-top: 40px;">
         <div class="form-row">
             <div class="form-group col-md-3">

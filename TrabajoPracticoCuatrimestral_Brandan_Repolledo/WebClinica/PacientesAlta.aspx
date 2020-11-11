@@ -13,7 +13,7 @@
                     </span>
                 </li>
                 <li class="page-item"><a class="page-link" href="PacientesModificacion.aspx">Modificacion</a></li>
-                <li class="page-item"><a class="page-link" href="#">Baja</a></li>
+                <li class="page-item"><a class="page-link" href="PacientesBaja.aspx">Baja</a></li>
             </ul>
         </nav>
     </div>
