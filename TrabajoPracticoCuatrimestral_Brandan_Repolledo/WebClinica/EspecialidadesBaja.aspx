@@ -18,16 +18,21 @@
 
     <h1 style="margin-top: 20px;">Baja de Especialidades</h1>
     <div style="margin-top: 30px;">
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputEspecialidad4">Id de la Especialidad:</label>
-                <input type="text" class="form-control" id="inputEspecialidad4">
-            </div>
-            <div class="form-group col-md-6">
-                <label for="inputNombre">Nombre:</label>
-                <input type="password" class="form-control" id="inputNombre">
-            </div>
-        </div>
+    <div class="form-group"> <!-- State Button -->
+        <label for="state_id" class="control-label">Nombre de la especialidad</label>
+        <select class="form-control" id="Ispecialidad_ID">
+            <option value="VA">Virginia</option>
+            <option value="WA">Washington</option>
+            <option value="WV">West Virginia</option>
+            <option value="WI">Wisconsin</option>
+            <option value="WY">Wyoming</option>
+        </select>                    
+    </div>
+        <div style="margin-top: 30px;">
+    <div class="form-group"> <!-- State Button -->
+        <label for="state_id" class="control-label">ID de la especialidad</label>
+        <select class="form-control" id="Ispecialidad_Nombre">
+        </select>                    
     </div>
     <button type="submit" class="btn btn-primary">Delete</button>
 </asp:Content>
