@@ -19,8 +19,16 @@
     <h1 style="margin-top: 20px;">Modificar Especialidad</h1>
     <div style="margin-top: 30px;">
           <div class="form-group col-md-3">
-                <label>Buscar</label>
-                <asp:TextBox class="form-control" placeholder="IdMedico" ID="TextBox2" runat="server" />
+              <div class="form-group"> <!-- State Button -->
+        <label for="especialidad_nombre" class="control-label">Nombre de la especialidad</label>
+        <select class="form-control" id="especialidad_N">
+            <option value="VA">Virginia</option>
+            <option value="WA">Washington</option>
+            <option value="WV">West Virginia</option>
+            <option value="WI">Wisconsin</option>
+            <option value="WY">Wyoming</option>
+        </select>                    
+    </div>
             </div>
         <div class="form-row">
 

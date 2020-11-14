@@ -62,7 +62,8 @@ body{
 	left: 763px;
 	clip-path: polygon(25% 5%, 75% 5%, 97% 50%, 75% 95%, 25% 95%, 3% 50%);
 }
-.btnMenu-Blanco1{	
+.btnMenu-Blanco1{
+	background-image: url("../Imagenes/Cruz.jpg");	
 	width: 140px;
 	height: 140px;
 	position: absolute;

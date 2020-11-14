@@ -15,8 +15,13 @@ namespace Negocio
 
         public AccesoDatos()
         {
+<<<<<<< HEAD:TPC_Brandan_Repolledo/Negocio/AccesoDatos.cs
             Conexion = new SqlConnection("data source= DESKTOP-PRA4SKB\\SQLEXPRESS; initial catalog= TPCClinica; integrated security=sspi");
             //     Conexion = new SqlConnection("data source= LAPTOP-PUO76A7L\\MSSQLSERVERR; initial catalog= CATALOGO_DB; integrated security=sspi"); //Maite
+=======
+            Conexion = new SqlConnection("data source=(local) ;initial catalog=TPCClinica;integrated security=sspi");
+            Conexion = new SqlConnection("data source= LAPTOP-PUO76A7L\\MSSQLSERVERR; initial catalog= TPCClinica; integrated security=sspi"); //Maite
+>>>>>>> e6cc36f64831e8429b630223c556f42d295ac707:TrabajoPracticoCuatrimestral_Brandan_Repolledo/Negocio/AccesoDatos.cs
             Comando = new SqlCommand();
             Comando.Connection = Conexion;
         }
