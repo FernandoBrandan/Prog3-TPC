@@ -1,6 +1,0 @@
-C:\Users\ferna\Desktop\GitHub\Prog3-TPC\TrabajoPracticoCuatrimestral_Brandan_Repolledo\Dominio\bin\Debug\Dominio.dll
-C:\Users\ferna\Desktop\GitHub\Prog3-TPC\TrabajoPracticoCuatrimestral_Brandan_Repolledo\Dominio\bin\Debug\Dominio.pdb
-C:\Users\ferna\Desktop\GitHub\Prog3-TPC\TrabajoPracticoCuatrimestral_Brandan_Repolledo\Dominio\obj\Debug\Dominio.csprojAssemblyReference.cache
-C:\Users\ferna\Desktop\GitHub\Prog3-TPC\TrabajoPracticoCuatrimestral_Brandan_Repolledo\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
-C:\Users\ferna\Desktop\GitHub\Prog3-TPC\TrabajoPracticoCuatrimestral_Brandan_Repolledo\Dominio\obj\Debug\Dominio.dll
-C:\Users\ferna\Desktop\GitHub\Prog3-TPC\TrabajoPracticoCuatrimestral_Brandan_Repolledo\Dominio\obj\Debug\Dominio.pdb
