@@ -22,26 +22,25 @@ body{
 	font-size: 22px;
 }
 
-.btnMenu-Pacientes{
+.btnMenu-Turnos {
 	top: 75px;
 	left: 150px;
 	clip-path: polygon(25% 5%, 75% 5%, 97% 50%, 75% 95%, 25% 95%, 3% 50%);
-
 }
 
-.btnMenu-Medicos{
+.btnMenu-Pacientes {
 	top: 210px;
 	left: 150px;
 	clip-path: polygon(25% 5%, 75% 5%, 97% 50%, 75% 95%, 25% 95%, 3% 50%);
 }
 
-.btnMenu-Usuarios{
+.btnMenu-Usuarios {
 	top: 345px;
 	left: 150px;
 	clip-path: polygon(25% 5%, 75% 5%, 97% 50%, 75% 95%, 25% 95%, 3% 50%);
 }
 
-.btnMenu-Turnos{
+.btnMenu-Medicos {
 	top: 212px;
 	left: 390px;
 	clip-path: polygon(25% 5%, 75% 5%, 97% 50%, 75% 95%, 25% 95%, 3% 50%);
