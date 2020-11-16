@@ -13,5 +13,10 @@ namespace WebClinica
         {
 
         }
+
+        protected void Click_AceptarAltaPaciente(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -9,3 +9,4 @@ C:\Users\ferna\Desktop\GitHub\Prog3-TPC\TPC_Brandan_Repolledo\Dominio\bin\Debug\
 C:\Users\ferna\Desktop\GitHub\Prog3-TPC\TPC_Brandan_Repolledo\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\ferna\Desktop\GitHub\Prog3-TPC\TPC_Brandan_Repolledo\Dominio\obj\Debug\Dominio.dll
 C:\Users\ferna\Desktop\GitHub\Prog3-TPC\TPC_Brandan_Repolledo\Dominio\obj\Debug\Dominio.pdb
+C:\Users\ferna\Desktop\GitHub\Prog3-TPC\TPC_Brandan_Repolledo\Dominio\obj\Debug\Dominio.csprojAssemblyReference.cache

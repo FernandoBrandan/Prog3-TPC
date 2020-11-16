@@ -57,8 +57,8 @@
         </div>
     </div>
     <div style="margin-top: 20px;">
-        <button type="submit" class="btn btn-primary">Aceptar</button>
-        <button type="submit" class="btn btn-primary">Cancelar</button>
+        <asp:Button Text="Aceptar" class="btn btn-primary" runat="server" OnClick="Click_AceptarAltaPaciente"/>
+        <asp:Button Text="Cancelar" class="btn btn-primary" runat="server"/>
     </div>
 
 </asp:Content>

@@ -36,5 +36,23 @@ namespace Negocio
             }
             return ListarPersonas;
         }
+
+        public void AgregarPersona(Persona nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            datos.SetearQuery("insert into Persona (DNI) values (@DNI);");
+            datos.AgregarParametro("@DNI", nuevo.DNI);
+            datos.EjecutarConsulta();
+
+        }
+
+        public void AgregarUsuario(Usuario nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            datos.SetearQuery("insert into Usuario (LegajoUsuario) values (@LegajoUsuario);");
+            datos.AgregarParametro("@LegajoUsuario", nuevo.LegajoUsuario);
+            datos.EjecutarConsulta();
+        }
+
     }
 }
