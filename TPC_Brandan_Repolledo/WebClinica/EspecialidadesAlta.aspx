@@ -11,7 +11,7 @@
                     <span class="sr-only">(current)</span>
                     </span>
                 </li>
-                <li class="page-item"><a class="page-link" href="EspecialidadesModificacion.aspx">Modificacion</a></li>
+                <li class="page-item"><a class="page-link" href="EspecialidadesModifica.aspx">Modificacion</a></li>
                 <li class="page-item"><a class="page-link" href="EspecialidadesBaja.aspx">Baja</a></li>
             </ul>
         </nav>
