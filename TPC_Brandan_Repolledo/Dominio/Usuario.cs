@@ -8,7 +8,7 @@ namespace Dominio
 {
     public class Usuario
     {
-        public int LegajoUsuario { get; set; }
+        public string LegajoUsuario { get; set; }
 
         public DateTime FechaIngreso { get; set; }
 

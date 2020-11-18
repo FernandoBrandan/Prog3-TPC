@@ -54,5 +54,28 @@ namespace Negocio
             datos.EjecutarConsulta();
         }
 
+        public List<Persona> CargarGenero()
+        {
+            List<Persona> ListaGenero = new List<Persona>();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.SetearQuery("select genero from persona");
+                datos.EjecutarConsulta();
+                while (datos.Lector.Read())
+                {
+                    Persona aux = new Persona();
+                  /*  aux.Genero = datos.Lector.GetString(0);*/
+
+                    ListaGenero.Add(aux);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return ListaGenero;
+        }
+
     }
 }
