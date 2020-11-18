@@ -60,15 +60,6 @@ namespace WebClinica
         protected global::System.Web.UI.WebControls.TextBox TextFechaNac;
 
         /// <summary>
-        /// Control DDLGenero.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDLGenero;
-
-        /// <summary>
         /// Control TextEmail.
         /// </summary>
         /// <remarks>
@@ -76,5 +67,14 @@ namespace WebClinica
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextEmail;
+
+        /// <summary>
+        /// Control RbGenero.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList RbGenero;
     }
 }

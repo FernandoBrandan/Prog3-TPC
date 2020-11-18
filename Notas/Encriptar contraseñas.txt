@@ -1,0 +1,67 @@
+Pwdencryp() y Pwdcompare()
+
+Encriptar palabra
+select pwdencrypt('palabra')
+
+usando Pwdcompare() puedes saber si la encriptacion que vas a comparar pertenece al string
+select pwdcompare ('omar',0x0100ED2B271183192B4BE)
+
+EJEMPLO
+
+
+create table passwords
+(
+login varchar(10),
+pwd varbinary(255)
+)
+
+---Le insertas datos---
+insert into passwords values('Omar',convert(varbinary(255), pwdencrypt ('omarpassword')))
+insert into passwords values('Marco',convert(varbinary(255), pwdencrypt ('marcopassword')))
+---Crear procedure---
+
+create procedure checkpass(@uid varchar(255),
+							@pwd varchar(255),
+							@error int = 0 output)	As
+if exists (select * from passwords where login=@uid and 1 = pwdcompare(@pwd,pwd,0))
+	{	
+		 @error = 1
+	}
+else
+	{
+		 @error = 0
+	}
+	
+print @error
+
+---EJECUTAR ---
+exec checkpass 'USUARIO','PASSWORD'
+
+
+
+OTRA OPCION ENCRYPTBYPASSPHRASE
+https://es.stackoverflow.com/questions/51184/c%c3%b3mo-encriptar-un-campo-de-sql-server
+
+INSERT INTO Usuario (
+    UserName
+    ,Llave
+    ,Nombres
+    ,DNI
+    )
+VALUES (
+    'PFLORES'
+    ,ENCRYPTBYPASSPHRASE('password', 'ContrasenaUsuario')
+    ,'Flores Espinoza Pierro Joshep'
+    ,'71697274'
+)
+
+SELECT 
+     LoginId
+    ,UserName
+    ,CONVERT(VARCHAR(MAX), DECRYPTBYPASSPHRASE('password', Llave))
+    ,Nombres
+    ,DNI
+FROM Usuario
+
+
+

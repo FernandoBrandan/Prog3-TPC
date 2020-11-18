@@ -24,7 +24,7 @@
         <div class="form-row">
             <div class="form-group col-md-3">
                 <label>DNI</label>
-                <asp:TextBox class="form-control" ID="TextDNI" runat="server" />
+                <asp:TextBox class="form-control" ID="TextDNI" runat="server" /> 
             </div>
             <div class="form-group col-md-3">
                 <label>Nombre</label>
@@ -43,20 +43,23 @@
 
             <div class="form-group col-md-3">
                 <label>Fecha Nacimiento</label>
-                <asp:TextBox class="form-control" ID="TextFechaNac" runat="server" />
-            </div>
-            <div class="form-group col-md-3">
-                <label>Genero</label>
-                <asp:DropDownList ID="DDLGenero" runat="server"></asp:DropDownList>
+                <asp:TextBox class="form-control" placeholder="yyyy-mm-dd" ID="TextFechaNac" runat="server" />
             </div>
             <div class="form-group col-md-4">
                 <label>Correo Electronico</label>
                 <asp:TextBox class="form-control" ID="TextEmail" runat="server" />
             </div>
         </div>
+            <h5>Genero</h5>
+        <div class="form-row">
+            <asp:RadioButtonList ID="RbGenero" RepeatDirection="Horizontal" runat="server" Width="226px">
+                <asp:ListItem Text="Masculino" Value="Male"></asp:ListItem>
+                <asp:ListItem Text="Femenino" Value="Female"></asp:ListItem>
+            </asp:RadioButtonList>
+        </div>
     </div>
     <div style="margin-top: 20px;">
-        <asp:Button Text="Aceptar" class="btn btn-primary" runat="server" OnClick="Click_AceptarAltaPaciente" />
+        <asp:Button Text="Aceptar" class="btn btn-primary" OnClick="Click_AceptarAltaPaciente" runat="server"/>
         <asp:Button Text="Cancelar" class="btn btn-primary" runat="server" />
     </div>
 

@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Genero.cs" />
     <Compile Include="Perfil.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

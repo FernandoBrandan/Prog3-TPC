@@ -18,7 +18,7 @@ namespace Dominio
 
         public DateTime FechaNacimiento { get; set; }
 
-        public Genero Genero { get; set; }
+        public string Genero { get; set; }
 
         public bool Estado { get; set; }
 

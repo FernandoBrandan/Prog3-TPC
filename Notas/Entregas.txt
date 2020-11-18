@@ -1,0 +1,10 @@
+Entrega TPC - Parte 1
+Para la primera etapa del TPC se solicita:
+- la arquitectura de clases (modelo de dominio),
+- armado de pantallas de la aplicación (SIN funcionalidad, sólo ventanas, algunos controles y navegación) y
+- lectura desde base de datos de al menos UNA entidad.
+
+Deberán dejar la URL de su repositorio GIT. El mismo deberá estar nombrado TPC_Apellido.
+Recuerden que el nombre de la solución tiene que ser el propuesto >> "TPC_Apellido".
+- No olviden agregar el script de creación de la DB, con algunos registros en cada tabla.
+El nombre de la DB debe ser: "APELLIDO_DB"

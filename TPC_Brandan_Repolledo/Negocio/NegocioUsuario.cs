@@ -25,7 +25,7 @@ namespace Negocio
                     //  aux.Domicilio = datos.Lector.GetString(3);
                     //  aux.FechaNacimiento = datos.Lector.GetDateTime(4);
                     //    aux.Genero = datos.Lector.GetString(4);
-                    //  aux.Estado = datos.Lector.GetBoolean(6);
+                    //  aux.Estado = datos.Lecto2r.GetBoolean(6);
 
                     ListarPersonas.Add(aux);
                 }
@@ -40,8 +40,14 @@ namespace Negocio
         public void AgregarPersona(Persona nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
-            datos.SetearQuery("insert into Persona (DNI) values (@DNI);");
+            datos.SetearQuery("insert into Persona (DNI,Nombre,Apellido,Domicilio,FechaNacimiento,Genero,Estado) values (@DNI,@Nombre,@Apellido,@Domicilio,@FechaNacimiento,@Genero,@Estado);");
             datos.AgregarParametro("@DNI", nuevo.DNI);
+            datos.AgregarParametro("@Nombre", nuevo.Nombre);
+            datos.AgregarParametro("@Apellido", nuevo.Apellido);
+            datos.AgregarParametro("@Domicilio", nuevo.Domicilio);
+            datos.AgregarParametro("@FechaNacimiento", nuevo.FechaNacimiento);
+            datos.AgregarParametro("@Genero", nuevo.Genero);
+            datos.AgregarParametro("@Estado", nuevo.Estado);
             datos.EjecutarConsulta();
 
         }
@@ -49,33 +55,10 @@ namespace Negocio
         public void AgregarUsuario(Usuario nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
-            datos.SetearQuery("insert into Usuario (LegajoUsuario) values (@LegajoUsuario);");
+            datos.SetearQuery("insert into Usuario (LegajoUsuario, FechaIngreso) values (@LegajoUsuario, @FechaIngreso);");
             datos.AgregarParametro("@LegajoUsuario", nuevo.LegajoUsuario);
+            datos.AgregarParametro("@FechaIngreso", nuevo.FechaIngreso);
             datos.EjecutarConsulta();
-        }
-
-        public List<Persona> CargarGenero()
-        {
-            List<Persona> ListaGenero = new List<Persona>();
-            AccesoDatos datos = new AccesoDatos();
-            try
-            {
-                datos.SetearQuery("select genero from persona");
-                datos.EjecutarConsulta();
-                while (datos.Lector.Read())
-                {
-                    Persona aux = new Persona();
-                  /*  aux.Genero = datos.Lector.GetString(0);*/
-
-                    ListaGenero.Add(aux);
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            return ListaGenero;
-        }
-
+        } 
     }
 }
