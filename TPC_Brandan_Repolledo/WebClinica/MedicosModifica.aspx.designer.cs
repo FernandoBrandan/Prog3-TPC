@@ -11,7 +11,7 @@ namespace WebClinica
 {
 
 
-    public partial class MedicosModificacion
+    public partial class MedicosAlta
     {
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace WebClinica
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDNI;
+      
 
         /// <summary>
         /// Control TextBox1.
@@ -39,7 +39,7 @@ namespace WebClinica
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+     
 
         /// <summary>
         /// Control TextApellido.
@@ -48,7 +48,7 @@ namespace WebClinica
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextApellido;
+        
 
         /// <summary>
         /// Control TextDomicilio.
@@ -57,7 +57,7 @@ namespace WebClinica
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextDomicilio;
+     
 
         /// <summary>
         /// Control TextGenero.
@@ -66,7 +66,7 @@ namespace WebClinica
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextGenero;
+  
 
         /// <summary>
         /// Control TextFechaNac.
@@ -75,7 +75,6 @@ namespace WebClinica
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextFechaNac;
 
         /// <summary>
         /// Control TextEmail.
@@ -84,6 +83,6 @@ namespace WebClinica
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextEmail;
+ 
     }
 }

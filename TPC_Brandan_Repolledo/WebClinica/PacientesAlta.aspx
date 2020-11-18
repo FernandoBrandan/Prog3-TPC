@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="PacientesAlta.aspx.cs" Inherits="WebClinica.PacientesAlta" %>
 
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -12,7 +13,7 @@
                     <span class="sr-only">(current)</span>
                     </span>
                 </li>
-                <li class="page-item"><a class="page-link" href="PacientesModificacion.aspx">Modificacion</a></li>
+                <li class="page-item"><a class="page-link" href="PacientesModifica.aspx">Modificacion</a></li>
                 <li class="page-item"><a class="page-link" href="PacientesBaja.aspx">Baja</a></li>
             </ul>
         </nav>

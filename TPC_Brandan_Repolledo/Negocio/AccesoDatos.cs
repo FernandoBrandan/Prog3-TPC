@@ -15,8 +15,8 @@ namespace Negocio
 
         public AccesoDatos()
         {
-            Conexion = new SqlConnection("data source= DESKTOP-PRA4SKB\\SQLEXPRESS; initial catalog= TPCClinica; integrated security=sspi");
-            //     Conexion = new SqlConnection("data source= LAPTOP-PUO76A7L\\MSSQLSERVERR; initial catalog= CATALOGO_DB; integrated security=sspi"); //Maite
+           // Conexion = new SqlConnection("data source= DESKTOP-PRA4SKB\\SQLEXPRESS; initial catalog= TPCClinica; integrated security=sspi");
+            Conexion = new SqlConnection("data source= LAPTOP-PUO76A7L\\MSSQLSERVERR; initial catalog= CATALOGO_DB; integrated security=sspi"); //Maite
             Comando = new SqlCommand();
             Comando.Connection = Conexion;
         }
