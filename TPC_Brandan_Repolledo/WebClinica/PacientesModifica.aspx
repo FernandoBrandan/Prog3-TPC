@@ -4,7 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
+
     <div style="margin-top: 50px;">
         <nav aria-label="...">
             <ul class="pagination pagination-lg">
@@ -20,44 +20,44 @@
     </div>
 
     <h1 style="margin-top: 20px;">Modificar Paciente</h1>
+
     <div style="margin-top: 30px;">
-          <div class="form-group col-md-3">
+        <div class="form-group col-md-3"> 
                 <label>Buscar</label>
-                <asp:TextBox class="form-control" placeholder="IdMedico" ID="TextBox2" runat="server" />
-            </div>
+                <asp:TextBox class="form-control" placeholder="IdMedico" ID="TextBox2" runat="server" Width="887px" /> 
+                <button type="submit" class="btn btn-primary">Aceptar</button> 
+        </div>
+
         <div class="form-row">
             <div class="form-group col-md-3">
                 <label>DNI</label>
-                <asp:TextBox class="form-control" ID="txtDNI" runat="server" />
+                <asp:TextBox class="form-control" ID="TextModDNI" runat="server" />
             </div>
             <div class="form-group col-md-3">
                 <label>Nombre</label>
-                <asp:TextBox class="form-control" ID="TextBox1" runat="server" />
+                <asp:TextBox class="form-control" ID="TextModNombre" runat="server" />
             </div>
             <div class="form-group col-md-3">
                 <label>Apellido</label>
-                <asp:TextBox class="form-control" ID="TextApellido" runat="server" />
+                <asp:TextBox class="form-control" ID="TextModApellido" runat="server" />
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-3">
                 <label>Domicilio</label>
-                <asp:TextBox class="form-control" ID="TextDomicilio" runat="server" />
-            </div>
-            <div class="form-group col-md-3">
-                <label>Genero</label>
-                <asp:TextBox class="form-control" ID="TextGenero" runat="server" />
+                <asp:TextBox class="form-control" ID="TextModDomicilio" runat="server" />
             </div>
             <div class="form-group col-md-3">
                 <label>Fecha Nacimiento</label>
-                <asp:TextBox class="form-control" ID="TextFechaNac" runat="server" />
+                <asp:TextBox class="form-control" ID="TextModFechaNacimiento" runat="server" />
             </div>
             <div class="form-group col-md-4">
                 <label>Correo Electronico</label>
-                <asp:TextBox class="form-control" ID="TextEmail" runat="server" />
+                <asp:TextBox class="form-control" ID="TextModEmail" runat="server" />
             </div>
         </div>
     </div>
+
     <div style="margin-top: 20px;">
         <button type="submit" class="btn btn-primary">Aceptar</button>
         <button type="submit" class="btn btn-primary">Cancelar</button>

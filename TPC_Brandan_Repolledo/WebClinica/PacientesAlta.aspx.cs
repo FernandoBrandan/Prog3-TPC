@@ -20,7 +20,7 @@ namespace WebClinica
         {
             string Legajo;
             // Legajo = "Combinacion entre nombre apellido y dni";
-            Legajo = "NOMAPE12324";
+            Legajo = "NOMAP1";
             return Legajo;
         }
                          
@@ -29,20 +29,14 @@ namespace WebClinica
             Persona nuevaPersona = new Persona();
             Usuario nuevoUsuario = new Usuario();
             NegocioUsuario CargaUsuarios = new NegocioUsuario();
-            Response.Write("<script LANGUAGE='JavaScript' >alert('PASO 1')</script>");
 
             try
             {
-                Response.Write("<script LANGUAGE='JavaScript' >alert('PASO 2')</script>");
-
-                
-                    Response.Write("<script LANGUAGE='JavaScript' >alert('PASO 3')</script>");
-
                     nuevaPersona.DNI =  Convert.ToInt32(TextDNI.Text);
                         nuevaPersona.Nombre = TextNombre.Text;
                         nuevaPersona.Apellido = TextApellido.Text;
                         nuevaPersona.Domicilio = TextDomicilio.Text;
-                        nuevaPersona.FechaNacimiento= Convert.ToDateTime(TextFechaNac);
+                        nuevaPersona.FechaNacimiento= DateTime.Parse(TextFechaNac.Text);
                         if (RbGenero.SelectedItem.Value == "Male")
                         {
                             nuevaPersona.Genero = RbGenero.SelectedItem.Text;
@@ -52,19 +46,19 @@ namespace WebClinica
                             nuevaPersona.Genero = RbGenero.SelectedItem.Text;
                         }
                         nuevaPersona.Estado = true;
-
+                         
                         nuevoUsuario.FechaIngreso = DateTime.Today.Date;
                         nuevoUsuario.LegajoUsuario = CrearLegajo();
 
                         CargaUsuarios.AgregarPersona(nuevaPersona);
-                        CargaUsuarios.AgregarUsuario(nuevoUsuario);
+                        CargaUsuarios.AgregarUsuario(nuevoUsuario, nuevaPersona);
 
-
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                } 
+                Response.Write("<script LANGUAGE='JavaScript' >alert('Se cargo correctamente el Usuario')</script>");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            } 
         }
     }
 }

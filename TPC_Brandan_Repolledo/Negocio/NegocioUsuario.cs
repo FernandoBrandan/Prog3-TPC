@@ -15,17 +15,18 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.SetearQuery("select Nombre from persona");
+                datos.SetearQuery("select DNI, Nombre, Apellido, Domicilio, FechaNacimiento, Genero, Estado from persona");
                 datos.EjecutarConsulta();
                 while (datos.Lector.Read())
                 {
                     Persona aux = new Persona();
-                    aux.Nombre = datos.Lector.GetString(0);
-                    //  aux.Apellido = datos.Lector.GetString(2);
-                    //  aux.Domicilio = datos.Lector.GetString(3);
-                    //  aux.FechaNacimiento = datos.Lector.GetDateTime(4);
-                    //    aux.Genero = datos.Lector.GetString(4);
-                    //  aux.Estado = datos.Lecto2r.GetBoolean(6);
+                    aux.DNI = datos.Lector.GetInt32(0);
+                    aux.Nombre = datos.Lector.GetString(1);
+                    aux.Apellido = datos.Lector.GetString(2);
+                    aux.Domicilio = datos.Lector.GetString(3);
+                    aux.FechaNacimiento = datos.Lector.GetDateTime(4);
+                    aux.Genero = datos.Lector.GetString(4);
+                    aux.Estado = datos.Lector.GetBoolean(6);
 
                     ListarPersonas.Add(aux);
                 }
@@ -52,12 +53,13 @@ namespace Negocio
 
         }
 
-        public void AgregarUsuario(Usuario nuevo)
+        public void AgregarUsuario(Usuario nuevo, Persona persona)
         {
             AccesoDatos datos = new AccesoDatos();
-            datos.SetearQuery("insert into Usuario (LegajoUsuario, FechaIngreso) values (@LegajoUsuario, @FechaIngreso);");
+            datos.SetearQuery("insert into Usuario (LegajoUsuario, DNI, FechaIngreso) values (@LegajoUsuario, @DNI, @FechaIngreso);");
             datos.AgregarParametro("@LegajoUsuario", nuevo.LegajoUsuario);
             datos.AgregarParametro("@FechaIngreso", nuevo.FechaIngreso);
+            datos.AgregarParametro("@DNI", persona.DNI);
             datos.EjecutarConsulta();
         } 
     }
