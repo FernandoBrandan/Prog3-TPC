@@ -8,12 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dominio;
+using Negocio;
 
 namespace Negocio
 {
     public partial class Principal : Form
     {
-        public List<Persona> Listado { get; set; }
+        public List<Usuario> Listado { get; set; }
 
         public Principal()
         {
@@ -23,7 +24,7 @@ namespace Negocio
         private void Form1_Load(object sender, EventArgs e)
         {
             NegocioUsuario Listar = new NegocioUsuario();
-            Listado = Listar.ListarPersonas();
+            Listado = Listar.ListarUsuarios();
             dataGridView1.DataSource = Listado;
             //dataGridView1.DataBind();
         }

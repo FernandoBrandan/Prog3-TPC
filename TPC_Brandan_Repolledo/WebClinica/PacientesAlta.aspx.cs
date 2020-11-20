@@ -20,7 +20,7 @@ namespace WebClinica
         {
             string Legajo;
             // Legajo = "Combinacion entre nombre apellido y dni";
-            Legajo = "NOMAP1";
+            Legajo = "NOMA223P1";
             return Legajo;
         }
                          
@@ -32,26 +32,26 @@ namespace WebClinica
 
             try
             {
-                    nuevaPersona.DNI =  Convert.ToInt32(TextDNI.Text);
-                        nuevaPersona.Nombre = TextNombre.Text;
-                        nuevaPersona.Apellido = TextApellido.Text;
-                        nuevaPersona.Domicilio = TextDomicilio.Text;
-                        nuevaPersona.FechaNacimiento= DateTime.Parse(TextFechaNac.Text);
-                        if (RbGenero.SelectedItem.Value == "Male")
-                        {
-                            nuevaPersona.Genero = RbGenero.SelectedItem.Text;
-                        }
-                        else if (RbGenero.SelectedItem.Value == "Female")
-                        {
-                            nuevaPersona.Genero = RbGenero.SelectedItem.Text;
-                        }
-                        nuevaPersona.Estado = true;
+                nuevaPersona.DNI =  Convert.ToInt32(TextDNI.Text);
+                nuevaPersona.Nombre = TextNombre.Text;
+                nuevaPersona.Apellido = TextApellido.Text;
+                nuevaPersona.Domicilio = TextDomicilio.Text;
+                nuevaPersona.FechaNacimiento= DateTime.Parse(TextFechaNac.Text);
+                if (RbGenero.SelectedItem.Value == "Male")
+                {
+                    nuevaPersona.Genero = RbGenero.SelectedItem.Text;
+                }
+                else if (RbGenero.SelectedItem.Value == "Female")
+                {
+                    nuevaPersona.Genero = RbGenero.SelectedItem.Text;
+                }
+                nuevaPersona.Estado = true;
                          
-                        nuevoUsuario.FechaIngreso = DateTime.Today.Date;
-                        nuevoUsuario.LegajoUsuario = CrearLegajo();
+                nuevoUsuario.FechaIngreso = DateTime.Today.Date;
+                nuevoUsuario.LegajoUsuario = CrearLegajo();
 
-                        CargaUsuarios.AgregarPersona(nuevaPersona);
-                        CargaUsuarios.AgregarUsuario(nuevoUsuario, nuevaPersona);
+                CargaUsuarios.AgregarPersona(nuevaPersona);
+                CargaUsuarios.AgregarUsuario(nuevoUsuario, nuevaPersona);
 
                 Response.Write("<script LANGUAGE='JavaScript' >alert('Se cargo correctamente el Usuario')</script>");
             }

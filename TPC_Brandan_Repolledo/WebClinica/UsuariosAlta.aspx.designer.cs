@@ -15,75 +15,66 @@ namespace WebClinica
     {
 
         /// <summary>
-        /// Control txtDNI.
+        /// Control TextUsuarioDNI.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDNI;
+        protected global::System.Web.UI.WebControls.TextBox TextUsuarioDNI;
 
         /// <summary>
-        /// Control TextBox1.
+        /// Control TextUsuarioNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox TextUsuarioNombre;
 
         /// <summary>
-        /// Control TextApellido.
+        /// Control TextUsuarioApellido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextApellido;
+        protected global::System.Web.UI.WebControls.TextBox TextUsuarioApellido;
 
         /// <summary>
-        /// Control IdLegajo.
+        /// Control TextUsuarioDomicilio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label IdLegajo;
+        protected global::System.Web.UI.WebControls.TextBox TextUsuarioDomicilio;
 
         /// <summary>
-        /// Control TextDomicilio.
+        /// Control TextUsuarioFechaNac.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextDomicilio;
+        protected global::System.Web.UI.WebControls.TextBox TextUsuarioFechaNac;
 
         /// <summary>
-        /// Control TextGenero.
+        /// Control TextUsuarioEmail.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextGenero;
+        protected global::System.Web.UI.WebControls.TextBox TextUsuarioEmail;
 
         /// <summary>
-        /// Control TextFechaNac.
+        /// Control RbGenero.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextFechaNac;
-
-        /// <summary>
-        /// Control TextEmail.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextEmail;
+        protected global::System.Web.UI.WebControls.RadioButtonList RbGenero;
     }
 }
