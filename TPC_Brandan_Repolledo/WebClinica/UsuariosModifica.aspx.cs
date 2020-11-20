@@ -28,22 +28,19 @@ namespace WebClinica
                 NegocioUsuario Buscar = new NegocioUsuario();
                 ListadoOriginal = Buscar.ListarUsuarios();
                  
-                gvBusqueda.DataSource = ListadoOriginal;
-                gvBusqueda.DataBind();
-
                 try
                 {
                     if (TextBuscar.Text == "")
                     {
-                        gvBusqueda.DataSource = ListadoOriginal;
-                        ListaFiltrada = ListadoOriginal;
+                        ListaFiltrada = ListadoOriginal; 
                     }
                     else
                     {
                         ListaFiltrada = ListadoOriginal.FindAll(Y => Convert.ToString(Y.DNI).Contains(TextBuscar.Text) || Y.LegajoUsuario.ToLower().Contains(TextBuscar.Text.ToLower()) || Y.Nombre.ToLower().Contains(TextBuscar.Text.ToLower()) || Y.Apellido.ToLower().Contains(TextBuscar.Text.ToLower()));
-                        gvBusqueda.DataSource = ListaFiltrada;
                     }
                     gvBusqueda.DataSource = ListaFiltrada;
+                    gvBusqueda.DataBind();      
+                    
                 }
                 catch (Exception ex)
                 {
@@ -55,6 +52,7 @@ namespace WebClinica
         protected void Click_BorrarListado(object sender, EventArgs e)
         {
             TextBuscar.Text = "";
+
             gvBusqueda.DataSource = ListaVacia;
             gvBusqueda.DataBind();
         }
