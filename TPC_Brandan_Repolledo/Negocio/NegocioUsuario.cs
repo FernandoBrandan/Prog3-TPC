@@ -62,6 +62,18 @@ namespace Negocio
             datos.AgregarParametro("@FechaIngreso", nuevo.FechaIngreso);
             datos.AgregarParametro("@DNI", persona.DNI);
             datos.EjecutarConsulta();
-        } 
+        }
+
+        public void ModificarUsuario(Usuario nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            datos.SetearQuery("update persona set DNI=@DNI, Nombre=@Nombre, Apellido=@Apellido, Domicilio=@Domicilio, FechaNacimiento=@FechaNacimiento where DNI = @DNI");
+            datos.AgregarParametro("@DNI", nuevo.DNI);
+            datos.AgregarParametro("@Nombre", nuevo.Nombre);
+            datos.AgregarParametro("@Apellido", nuevo.Apellido);
+            datos.AgregarParametro("@Domicilio", nuevo.Domicilio);
+            datos.AgregarParametro("@FechaNacimiento", nuevo.FechaNacimiento);
+            datos.EjecutarConsulta();
+        }
     }
 }

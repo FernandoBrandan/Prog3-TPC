@@ -2,6 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div style="margin-top: 50px;">
         <nav aria-label="...">
@@ -25,7 +26,24 @@
             <asp:TextBox class="form-control" placeholder="IdMedico" ID="TextBuscar" runat="server" Width="887px" />
             <asp:Button Text="Buscar" class="btn btn-primary" runat="server" OnClick="Click_BuscarUsuario" />
             <asp:Button Text="Borrar" class="btn btn-primary" runat="server" OnClick="Click_BorrarListado" />
-            <asp:GridView id="gvBusqueda" runat="server">   </asp:GridView>
+           
+            <style>
+                .oculto {
+                    display: none;
+                }
+            </style>
+
+            <asp:GridView ID="gvBusqueda" AutoGenerateColumns="false" runat="server" OnRowCommand="BusquedaUsuario_RowCommand">
+                <Columns>
+                    <asp:ButtonField HeaderText="Opcion" ButtonType="Link" Text="Seleccionar" CommandName="Select" />
+                    <asp:BoundField HeaderText="Legajo" DataField="LegajoUsuario" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto"/>
+                    <asp:BoundField HeaderText="DNI" DataField="DNI" />
+                    <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
+                    <asp:BoundField HeaderText="Apellido" DataField="Apellido" />
+                    <asp:BoundField HeaderText="Domicilio" DataField="Domicilio" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto"/>
+                    <asp:BoundField HeaderText="FechaNacimiento" DataField="FechaNacimiento" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto"/>
+                </Columns> 
+            </asp:GridView> 
         </div>
 
         <div class="form-row">
@@ -55,8 +73,8 @@
     </div>
 
     <div style="margin-top: 20px;">
-        <button type="submit" class="btn btn-primary">Aceptar</button>
-        <button type="submit" class="btn btn-primary">Cancelar</button>
+        <asp:Button Text="Aceptar" class="btn btn-primary" OnClick="Click_AceptarModiUsuario" runat="server"/>
+        <asp:Button Text="Cancelar" class="btn btn-primary" runat="server" />
     </div>
 
 </asp:Content>

@@ -51,10 +51,43 @@ namespace WebClinica
 
         protected void Click_BorrarListado(object sender, EventArgs e)
         {
-            TextBuscar.Text = "";
-
+            TextBuscar.Text = ""; 
             gvBusqueda.DataSource = ListaVacia;
             gvBusqueda.DataBind();
+        } 
+
+        protected void BusquedaUsuario_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            int index = Convert.ToInt32(e.CommandArgument);
+            string Legajo = gvBusqueda.Rows[index].Cells[1].Text; 
+            TextModDNI.Text = gvBusqueda.Rows[index].Cells[2].Text;
+            TextModNombre.Text = gvBusqueda.Rows[index].Cells[3].Text;
+            TextModApellido.Text = gvBusqueda.Rows[index].Cells[4].Text;
+            TextModDomicilio.Text = gvBusqueda.Rows[index].Cells[5].Text;
+            TextModFechaNacimiento.Text = gvBusqueda.Rows[index].Cells[6].Text;
+        }
+
+        protected void Click_AceptarModiUsuario(object sender, EventArgs e)
+        {
+            NegocioUsuario Modificar = new NegocioUsuario();
+            Usuario UsuarioMod = new Usuario();
+
+            try
+            {
+
+                UsuarioMod.DNI = Convert.ToInt64(TextModDNI.Text);
+                UsuarioMod.Nombre = TextModNombre.Text;
+                UsuarioMod.Apellido = TextModApellido.Text;
+                UsuarioMod.Domicilio = TextModDomicilio.Text;
+                UsuarioMod.FechaNacimiento = DateTime.Parse(TextModFechaNacimiento.Text);
+
+                Modificar.ModificarUsuario(UsuarioMod);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }
