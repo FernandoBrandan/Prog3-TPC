@@ -13,5 +13,23 @@ namespace WebClinica
 
     public partial class EspecialidadesAlta
     {
+
+        /// <summary>
+        /// Control TextEspecNombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextEspecNombre;
+
+        /// <summary>
+        /// Control TextEspecDescripcion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextEspecDescripcion;
     }
 }

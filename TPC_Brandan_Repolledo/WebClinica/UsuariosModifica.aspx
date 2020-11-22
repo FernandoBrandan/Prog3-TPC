@@ -2,15 +2,16 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div style="margin-top: 50px;">
+    <h1 style="margin-top: 20px;">Usuario</h1>
+
+    <div style="margin-top: 30px;">
         <nav aria-label="...">
             <ul class="pagination pagination-lg">
                 <li class="page-item"><a class="page-link" href="UsuariosAlta.aspx">Alta</a></li>
                 <li class="page-item active" aria-current="page">
                     <span class="page-link">Modificacion
-                    <span class="sr-only">(current)</span>
+                <span class="sr-only">(current)</span>
                     </span>
                 </li>
                 <li class="page-item"><a class="page-link" href="UsuariosBaja.aspx">Baja</a></li>
@@ -18,34 +19,34 @@
         </nav>
     </div>
 
-    <h1 style="margin-top: 20px; margin-bottom: 20px">Baja de Usuario</h1>
     <h4>Ingresar DNI o Codigo del Usuario</h4>
-    <div style="margin-top: 30px;">
-        <div class="form-group col-md-3">
-            <label>Buscar</label>
-            <asp:TextBox class="form-control" placeholder="IdMedico" ID="TextBuscar" runat="server" Width="887px" />
-            <asp:Button Text="Buscar" class="btn btn-primary" runat="server" OnClick="Click_BuscarUsuario" />
-            <asp:Button Text="Borrar" class="btn btn-primary" runat="server" OnClick="Click_BorrarListado" />
-           
-            <style>
-                .oculto {
-                    display: none;
-                }
-            </style>
+       <div style="margin-top: 30px;">
+        <div class="form-group">
+            <div class="form-group col-md-3">
+                <label>Buscar</label>
+                <asp:TextBox class="form-control" placeholder="IdMedico" ID="TextBuscar" runat="server" Width="887px" />
+                <asp:Button Text="Buscar" class="btn btn-primary" runat="server" OnClick="Click_BuscarUsuario" />
+                <asp:Button Text="Borrar" class="btn btn-primary" runat="server" OnClick="Click_BorrarListado" />
 
-            <asp:GridView ID="gvBusqueda" AutoGenerateColumns="false" runat="server" OnRowCommand="BusquedaUsuario_RowCommand">
-                <Columns>
-                    <asp:ButtonField HeaderText="Opcion" ButtonType="Link" Text="Seleccionar" CommandName="Select" />
-                    <asp:BoundField HeaderText="Legajo" DataField="LegajoUsuario" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto"/>
-                    <asp:BoundField HeaderText="DNI" DataField="DNI" />
-                    <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
-                    <asp:BoundField HeaderText="Apellido" DataField="Apellido" />
-                    <asp:BoundField HeaderText="Domicilio" DataField="Domicilio" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto"/>
-                    <asp:BoundField HeaderText="FechaNacimiento" DataField="FechaNacimiento" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto"/>
-                </Columns> 
-            </asp:GridView> 
+                <style>
+                    .oculto {
+                        display: none;
+                    }
+                </style>
+
+                <asp:GridView ID="gvBusqueda" AutoGenerateColumns="false" runat="server" OnRowCommand="BusquedaUsuario_RowCommand">
+                    <Columns>
+                        <asp:ButtonField HeaderText="Opcion" ButtonType="Link" Text="Seleccionar" CommandName="Select" />
+                        <asp:BoundField HeaderText="Legajo" DataField="LegajoUsuario" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
+                        <asp:BoundField HeaderText="DNI" DataField="DNI" />
+                        <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
+                        <asp:BoundField HeaderText="Apellido" DataField="Apellido" />
+                        <asp:BoundField HeaderText="Domicilio" DataField="Domicilio" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
+                        <asp:BoundField HeaderText="FechaNacimiento" DataField="FechaNacimiento" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
+                    </Columns>
+                </asp:GridView>
+            </div>
         </div>
-
         <div class="form-row">
             <div class="form-group col-md-3">
                 <label>DNI</label>
@@ -71,10 +72,8 @@
             </div>
         </div>
     </div>
-
     <div style="margin-top: 20px;">
-        <asp:Button Text="Aceptar" class="btn btn-primary" OnClick="Click_AceptarModiUsuario" runat="server"/>
-        <asp:Button Text="Cancelar" class="btn btn-primary" runat="server" />
+          <asp:Button Text="Aceptar" class="btn btn-primary" OnClick="Click_AceptarModiUsuario" runat="server" />
+          <asp:Button Text="Cancelar" class="btn btn-primary" runat="server" />
     </div>
-
 </asp:Content>
