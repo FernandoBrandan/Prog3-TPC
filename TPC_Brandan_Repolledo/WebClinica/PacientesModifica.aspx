@@ -24,7 +24,7 @@
     <div style="margin-top: 30px;">
         <div class="form-group col-md-3"> 
                 <label>Buscar</label>
-                <asp:TextBox class="form-control" placeholder="IdMedico" ID="TextBox2" runat="server" Width="887px" /> 
+                <asp:TextBox class="form-control" placeholder="IDUsuario" ID="TextBox2" runat="server" Width="887px" /> 
                 <button type="submit" class="btn btn-primary">Aceptar</button> 
         </div>
 

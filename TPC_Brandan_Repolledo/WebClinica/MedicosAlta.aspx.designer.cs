@@ -15,22 +15,22 @@ namespace WebClinica
     {
 
         /// <summary>
-        /// Control txtDNI.
+        /// Control TextDNI.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDNI;
+        protected global::System.Web.UI.WebControls.TextBox TextDNI;
 
         /// <summary>
-        /// Control TextBox1.
+        /// Control TextNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox TextNombre;
 
         /// <summary>
         /// Control TextApellido.
@@ -42,15 +42,6 @@ namespace WebClinica
         protected global::System.Web.UI.WebControls.TextBox TextApellido;
 
         /// <summary>
-        /// Control IdLegajo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label IdLegajo;
-
-        /// <summary>
         /// Control TextDomicilio.
         /// </summary>
         /// <remarks>
@@ -58,15 +49,6 @@ namespace WebClinica
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextDomicilio;
-
-        /// <summary>
-        /// Control TextGenero.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextGenero;
 
         /// <summary>
         /// Control TextFechaNac.
@@ -85,5 +67,14 @@ namespace WebClinica
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextEmail;
+
+        /// <summary>
+        /// Control RbGenero.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList RbGenero;
     }
 }
