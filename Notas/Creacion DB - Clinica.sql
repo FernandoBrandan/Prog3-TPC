@@ -20,7 +20,7 @@ go
 create table Seguridad
 (
 	IdSeguridad bigint not null primary key identity(1,1),
-	Contraseña varbinary(255), 
+	ContraseÃ±a varbinary(255), 
 	UltimaConexion date
 )
 go
@@ -30,7 +30,7 @@ create table Perfil
 	Rol varchar(100) not null
 )
 go
-/*create table Genero 			SE REEMPLAZA POR CHECKBOX LIST
+/*create table --Genero 			SE REEMPLAZA POR CHECKBOX LIST
 (
 	idGenero int not null primary key identity(1,1),
 	Descripcion varchar(100) not null check(Descripcion = 'Femenino' or Descripcion = 'Masculino')
@@ -52,7 +52,7 @@ create table Persona
 	Apellido varchar(100) not null,
 	Domicilio varchar(100) not null,
 	FechaNacimiento date not null,
-	Genero int not null foreign key references Genero(idGenero),
+	Genero char(10) not null,
 	Estado bit not null
 )
 go
