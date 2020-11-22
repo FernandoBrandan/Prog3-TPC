@@ -15,58 +15,58 @@ namespace WebClinica
     {
 
         /// <summary>
-        /// Control TextDNI.
+        /// Control TextMedicoDNI.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextDNI;
+        protected global::System.Web.UI.WebControls.TextBox TextMedicoDNI;
 
         /// <summary>
-        /// Control TextNombre.
+        /// Control TextMedicoNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextNombre;
+        protected global::System.Web.UI.WebControls.TextBox TextMedicoNombre;
 
         /// <summary>
-        /// Control TextApellido.
+        /// Control TextMedicoApellido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextApellido;
+        protected global::System.Web.UI.WebControls.TextBox TextMedicoApellido;
 
         /// <summary>
-        /// Control TextDomicilio.
+        /// Control TextMedicoDomicilio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextDomicilio;
+        protected global::System.Web.UI.WebControls.TextBox TextMedicoDomicilio;
 
         /// <summary>
-        /// Control TextFechaNac.
+        /// Control TextMedicoFechaNac.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextFechaNac;
+        protected global::System.Web.UI.WebControls.TextBox TextMedicoFechaNac;
 
         /// <summary>
-        /// Control TextEmail.
+        /// Control ddlEspecialidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextEmail;
+        protected global::System.Web.UI.WebControls.DropDownList ddlEspecialidad;
 
         /// <summary>
         /// Control RbGenero.

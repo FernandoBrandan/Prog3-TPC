@@ -11,8 +11,6 @@ namespace Dominio
         public string LegajoMedico { get; set; }
 
         public DateTime FechaIngreso { get; set; }
-        
-        public new  string DNI { get; set; }
 
         public Especialidad Especialidad { get; set; }
     }

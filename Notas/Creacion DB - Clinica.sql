@@ -70,7 +70,7 @@ create table Medico
 	LegajoMedico varchar(10) not null primary key,
 	DNI bigint not null unique foreign key references Persona(DNI),
 	FechaIngreso date not null, 
-	Especialidad bigint not null unique foreign key references Especialidad(IdEspecialidad)
+	Especialidad bigint not null foreign key references Especialidad(IdEspecialidad)
 )
 create table Paciente
 (
@@ -83,9 +83,9 @@ go
 create table Turno
 (
 	IdTurno bigint not null primary key identity(1,10),
-	Disponibilidad bigint not null unique foreign key references Disponibilidad(IdDisponibilidad),
-	Medico varchar(10) not null unique foreign key references Medico(LegajoMedico),
-	Paciente varchar(10) not null unique foreign key references Paciente(CodigoPaciente),
+	Disponibilidad bigint not null foreign key references Disponibilidad(IdDisponibilidad),
+	Medico varchar(10) not null foreign key references Medico(LegajoMedico),
+	Paciente varchar(10) not null foreign key references Paciente(CodigoPaciente),
 	Motivo varchar(500) not null,
 	Estado bit not null
 )

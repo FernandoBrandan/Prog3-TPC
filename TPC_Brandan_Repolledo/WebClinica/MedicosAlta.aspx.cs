@@ -11,39 +11,60 @@ namespace WebClinica
 {
     public partial class MedicosAlta : System.Web.UI.Page
     {
+        public List<Especialidad> LisdadoEspecialidades { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            NegocioMedico Carga = new NegocioMedico();
+            LisdadoEspecialidades = Carga.ListaEspecialidades();
+            ddlEspecialidad.DataSource = LisdadoEspecialidades;
+            ddlEspecialidad.DataTextField = "Nombre";
+            ddlEspecialidad.DataValueField = "IdEspecialidad";
+            ddlEspecialidad.DataBind();
+            
         }
-       
+        public string CrearLegajo()
+        {
+            string Legajo;
+            // Legajo = "Combinacion entre nombre apellido y dni";
+            Legajo = "medic123"; 
+             
+            return Legajo;
+        }
 
         protected void Click_AceptarAltaPaciente(object sender, EventArgs e)
         {
-            Persona nuevoMedico = new Medico()
-
+            Persona nuevaPersona = new Persona();
+            Medico nuevoMedico = new Medico();
+            Especialidad seleccionaEsp = new Especialidad();
+            NegocioMedico CargarMedico = new NegocioMedico();
 
             try
             {
-                nuevoMedico.DNI = Convert.ToInt32(TextDNI.Text);
-                nuevoMedico.Nombre = TextNombre.Text;
-                nuevoMedico.Apellido = TextApellido.Text;
-                nuevoMedico.Domicilio = TextDomicilio.Text;
-                nuevoMedico.FechaNacimiento = DateTime.Parse(TextFechaNac.Text);
+                nuevaPersona.DNI = Convert.ToInt32(TextMedicoDNI.Text);
+                nuevaPersona.Nombre = TextMedicoNombre.Text;
+                nuevaPersona.Apellido = TextMedicoApellido.Text;
+                nuevaPersona.Domicilio = TextMedicoDomicilio.Text;
+                nuevaPersona.FechaNacimiento = DateTime.Parse(TextMedicoFechaNac.Text);
                 if (RbGenero.SelectedItem.Value == "Male")
                 {
-                    nuevoMedico.Genero = RbGenero.SelectedItem.Text;
+                    nuevaPersona.Genero = RbGenero.SelectedItem.Text;
                 }
                 else if (RbGenero.SelectedItem.Value == "Female")
                 {
-                    nuevoMedico.Genero = RbGenero.SelectedItem.Text;
+                    nuevaPersona.Genero = RbGenero.SelectedItem.Text;
                 }
-                nuevoMedico.Estado = true;
+                nuevaPersona.Estado = true;
 
-                nuevoMedico.FechaIngreso = DateTime.Today.Date;
+                nuevoMedico.LegajoMedico = CrearLegajo();
+                nuevoMedico.FechaIngreso = DateTime.Today.Date; 
 
-                CargaUsuarios.AgregarPersona(nuevaPersona);
-                CargaUsuarios.AgregarUsuario(nuevoUsuario, nuevaPersona);
+                seleccionaEsp.IdEspecialidad = long.Parse(ddlEspecialidad.SelectedItem.Value);
 
-                Response.Write("<script LANGUAGE='JavaScript' >alert('Se cargo correctamente el Usuario')</script>");
+                CargarMedico.AgregarPersona(nuevaPersona);
+                CargarMedico.AgregarMedico(nuevoMedico, nuevaPersona, seleccionaEsp);
+
+                Response.Write("<script LANGUAGE='JavaScript' >alert('Se cargo correctamente el Medico')</script>");
             }
             catch (Exception ex)
             {
