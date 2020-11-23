@@ -24,7 +24,7 @@
         <div class="form-group">
             <div class="form-group col-md-3">
                 <label>Buscar</label>
-                <asp:TextBox class="form-control" placeholder="IdMedico" ID="TextBuscar" runat="server" Width="887px" />
+                <asp:TextBox class="form-control" placeholder="IdUsuario" ID="TextBuscar" runat="server" Width="887px" />
                 <asp:Button Text="Buscar" class="btn btn-primary" runat="server" OnClick="Click_BuscarUsuario" />
                 <asp:Button Text="Borrar" class="btn btn-primary" runat="server" OnClick="Click_BorrarListado" />
 
