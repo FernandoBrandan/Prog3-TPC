@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace WebClinica
 {
-    public partial class EspecialidadesAlta : System.Web.UI.Page
+    public partial class Informacion: System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

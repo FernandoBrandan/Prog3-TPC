@@ -73,6 +73,8 @@
     <Content Include="css\Medico.css" />
     <Content Include="css\Menu.css" />
     <Content Include="css\Turnos.css" />
+    <Content Include="Contactos.aspx" />
+    <Content Include="Informacion.aspx" />
     <Content Include="EspecialidadesAlta.aspx" />
     <Content Include="EspecialidadesBaja.aspx" />
     <Content Include="EspecialidadesModifica.aspx" />
@@ -92,6 +94,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contactos.aspx.cs">
+      <DependentUpon>Contactos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contactos.aspx.designer.cs">
+      <DependentUpon>Contactos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Informacion.aspx.cs">
+      <DependentUpon>Informacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Informacion.aspx.designer.cs">
+      <DependentUpon>Informacion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EspecialidadesAlta.aspx.cs">
       <DependentUpon>EspecialidadesAlta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
