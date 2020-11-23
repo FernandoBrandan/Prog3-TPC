@@ -40,12 +40,12 @@ namespace WebClinica
         }
         protected void Click_btnContactos(object sender, EventArgs e)
         {
-            //Response.Redirect("TurnosAlta.aspx");
+            Response.Redirect("Contactos.aspx");
         }
 
         protected void Click_btnInformacion(object sender, EventArgs e)
         {
-            //Response.Redirect("EspecialidadesAlta.aspx");
+            Response.Redirect("Informacion.aspx");
         }
 
     }
