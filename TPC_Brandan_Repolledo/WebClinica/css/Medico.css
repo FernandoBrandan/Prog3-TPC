@@ -1,2 +1,6 @@
 ﻿body {
+    background-image: url("../Imagenes/medicos.jpg");
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: 70% 100%;
 }

@@ -67,9 +67,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\Especialidades.css" />
     <Content Include="css\EstilosVarios.css" />
     <Content Include="css\Login.css" />
+    <Content Include="css\Medico.css" />
     <Content Include="css\Menu.css" />
+    <Content Include="css\Turnos.css" />
     <Content Include="EspecialidadesAlta.aspx" />
     <Content Include="EspecialidadesBaja.aspx" />
     <Content Include="EspecialidadesModifica.aspx" />

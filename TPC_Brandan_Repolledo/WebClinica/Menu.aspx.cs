@@ -38,5 +38,15 @@ namespace WebClinica
         {
             Response.Redirect("EspecialidadesAlta.aspx");
         }
+        protected void Click_btnContactos(object sender, EventArgs e)
+        {
+            //Response.Redirect("TurnosAlta.aspx");
+        }
+
+        protected void Click_btnInformacion(object sender, EventArgs e)
+        {
+            //Response.Redirect("EspecialidadesAlta.aspx");
+        }
+
     }
 }
