@@ -42,7 +42,7 @@ create table Disponibilidad
 	IdDisponibilidad bigint not null primary key identity(1,1),
 	Horario bigint not null foreign key references Horario(IdHorario),
 	FechaTurno date not null, 
-	Estado bit not null
+	Estado varchar(50) not null
 )
 go
 create table Persona
@@ -52,8 +52,8 @@ create table Persona
 	Apellido varchar(100) not null,
 	Domicilio varchar(100) not null,
 	FechaNacimiento date not null,
-	Genero char(10) not null,
-	Estado bit not null
+	Genero varchar(10) not null,
+	Estado varchar(50) not null
 )
 go
 create table Usuario
@@ -87,7 +87,7 @@ create table Turno
 	Medico varchar(10) not null foreign key references Medico(LegajoMedico),
 	Paciente varchar(10) not null foreign key references Paciente(CodigoPaciente),
 	Motivo varchar(500) not null,
-	Estado bit not null
+	Estado varchar (50) not null
 )
 go
 /** TABLAS REPORTE **/
