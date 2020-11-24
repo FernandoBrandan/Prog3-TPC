@@ -11,7 +11,7 @@ namespace WebClinica
 {
 
 
-    public partial class MedicosAlta
+    public partial class MedicosModifica
     {
 
         /// <summary>
@@ -33,57 +33,57 @@ namespace WebClinica
         protected global::System.Web.UI.WebControls.GridView gvBusqueda;
 
         /// <summary>
-        /// Control TextModDNI.
+        /// Control TextModMedicoDNI.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextModDNI;
+        protected global::System.Web.UI.WebControls.TextBox TextModMedicoDNI;
 
         /// <summary>
-        /// Control TextModNombre.
+        /// Control TextModMedicoNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextModNombre;
+        protected global::System.Web.UI.WebControls.TextBox TextModMedicoNombre;
 
         /// <summary>
-        /// Control TextModApellido.
+        /// Control TextModMedicoApellido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextModApellido;
+        protected global::System.Web.UI.WebControls.TextBox TextModMedicoApellido;
 
         /// <summary>
-        /// Control TextModDomicilio.
+        /// Control TextModMedicoDomicilio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextModDomicilio;
+        protected global::System.Web.UI.WebControls.TextBox TextModMedicoDomicilio;
 
         /// <summary>
-        /// Control TextModFechaNacimiento.
+        /// Control TextModMedicoFechaNacimiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextModFechaNacimiento;
+        protected global::System.Web.UI.WebControls.TextBox TextModMedicoFechaNacimiento;
 
         /// <summary>
-        /// Control DropDownList1111.
+        /// Control ddlModMedicoFechaNacimiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1111;
+        protected global::System.Web.UI.WebControls.DropDownList ddlModMedicoFechaNacimiento;
     }
 }

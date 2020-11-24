@@ -16,20 +16,24 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.SetearQuery("select LegajoMedico, DNI, FechaIngreso, Especialidad from Medico as M inner join Usuario as u on u.DNI=M.DNI");
+                datos.SetearQuery("select u.DNI, Nombre, Apellido, Domicilio, FechaNacimiento, Genero, Estado, LegajoMedico from persona as p inner join Medico as m on m.DNI=p.DNI");
                 datos.EjecutarConsulta();
                 while (datos.Lector.Read())
                 {
                     Medico aux = new Medico();
 
-                    aux.LegajoMedico = datos.Lector.GetString(0);
-                    aux.FechaIngreso = datos.Lector.GetDateTime(1);
-                    // aux.Especialidad = datos.Lector.GetString(3);
-                    // me parece que me falta un dato.
+                    aux.DNI = datos.Lector.GetInt64(0);
+                    aux.Nombre = datos.Lector.GetString(1);
+                    aux.Apellido = datos.Lector.GetString(2);
+                    aux.Domicilio = datos.Lector.GetString(3);
+                    aux.FechaNacimiento = datos.Lector.GetDateTime(4);
+                    aux.Genero = datos.Lector.GetString(5);
+                    aux.Estado = datos.Lector.GetBoolean(6);
+                    aux.LegajoMedico = datos.Lector.GetString(7);
                     ListaMedicos.Add(aux);
                 }
             }
-            catch (Exception ex)
+            catchl (Exception ex)
             {
                 throw ex;
             }

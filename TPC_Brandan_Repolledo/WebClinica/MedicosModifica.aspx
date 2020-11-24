@@ -1,7 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="MedicosModifica.aspx.cs" Inherits="WebClinica.MedicosAlta" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="MedicosModifica.aspx.cs" Inherits="WebClinica.MedicosModifica" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
       <div style="margin-top: 50px;">
         <nav aria-label="...">
             <ul class="pagination pagination-lg">
@@ -21,9 +22,9 @@
         <div class="form-group">
             <div class="form-group col-md-3">
                 <label>Buscar</label>
-                <asp:TextBox class="form-control" placeholder="IdUsuario" ID="TextBuscar" runat="server" Width="887px" />
-                <asp:Button Text="Buscar" class="btn btn-primary" runat="server"  />
-                <asp:Button Text="Borrar" class="btn btn-primary" runat="server"   />
+                <asp:TextBox class="form-control" placeholder="IdUsuario" ID="TextBuscar" runat="server" Width="887px"/> 
+                <asp:Button Text="Buscar" class="btn btn-primary" runat="server" OnClick="Click_BuscarMedico"/>
+                <asp:Button Text="Borrar" class="btn btn-primary" runat="server" OnClick="Click_BorrarListado"/>
 
                 <style>
                     .oculto {
@@ -31,7 +32,7 @@
                     }
                 </style>
 
-                <asp:GridView ID="gvBusqueda" AutoGenerateColumns="false" runat="server" >
+                <asp:GridView ID="gvBusqueda" AutoGenerateColumns="false" runat="server" OnRowCommand="BusquedaMedico_RowCommand" >
                     <Columns>
                         <asp:ButtonField HeaderText="Opcion" ButtonType="Link" Text="Seleccionar" CommandName="Select" />
                         <asp:BoundField HeaderText="Legajo" DataField="LegajoUsuario" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
@@ -47,35 +48,36 @@
         <div class="form-row">
             <div class="form-group col-md-3">
                 <label>DNI</label>
-                <asp:TextBox class="form-control" ID="TextModDNI" runat="server" />
+                <asp:TextBox class="form-control" ID="TextModMedicoDNI" runat="server" />
             </div>
             <div class="form-group col-md-3">
                 <label>Nombre</label>
-                <asp:TextBox class="form-control" ID="TextModNombre" runat="server" />
+                <asp:TextBox class="form-control" ID="TextModMedicoNombre" runat="server" />
             </div>
             <div class="form-group col-md-3">
                 <label>Apellido</label>
-                <asp:TextBox class="form-control" ID="TextModApellido" runat="server" />
+                <asp:TextBox class="form-control" ID="TextModMedicoApellido" runat="server" />
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-3">
                 <label>Domicilio</label>
-                <asp:TextBox class="form-control" ID="TextModDomicilio" runat="server" />
+                <asp:TextBox class="form-control" ID="TextModMedicoDomicilio" runat="server" />
             </div>
             <div class="form-group col-md-3">
                 <label>Fecha Nacimiento</label>
-                <asp:TextBox class="form-control" ID="TextModFechaNacimiento" runat="server" />
+                <asp:TextBox class="form-control" ID="TextModMedicoFechaNacimiento" runat="server" />
             </div>
                <div class="form-group col-md-3">
                 <asp:Label Text="Especialidad" runat="server" />
-                <asp:DropDownList ID="DropDownList1111" class="form-control" Style="margin-top: 7px" runat="server">
+                <asp:DropDownList ID="ddlModMedicoFechaNacimiento" class="form-control" Style="margin-top: 7px" runat="server">
                 </asp:DropDownList>
             </div>
         </div>
     </div>
     <div style="margin-top: 20px;">
-          <asp:Button Text="Aceptar" class="btn btn-primary" runat="server" />
+          <asp:Button Text="Aceptar" class="btn btn-primary" runat="server" OnClick="Click_AceptarModiMedico" />
           <asp:Button Text="Cancelar" class="btn btn-primary" runat="server" />
     </div>
+
 </asp:Content>
