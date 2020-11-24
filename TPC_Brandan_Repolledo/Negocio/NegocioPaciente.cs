@@ -8,32 +8,31 @@ using Dominio;
 
 namespace Negocio
 {
-    public class NegocioMedico
+    public class NegocioPaciente
     {
-        public List<Medico> ListaMedicos()
+        public List<Paciente> ListaPaciente()
         {
-            List<Medico> ListaMedicos = new List<Medico>();
+            List<Paciente> ListaPaciente = new List<Paciente>();
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.SetearQuery("select LegajoMedico, DNI, FechaIngreso, Especialidad from Medico as M inner join Usuario as u on u.DNI=M.DNI");
+                datos.SetearQuery("select ");
                 datos.EjecutarConsulta();
                 while (datos.Lector.Read())
                 {
-                    Medico aux = new Medico();
+                    Paciente aux = new Paciente();
 
-                    aux.LegajoMedico = datos.Lector.GetString(0);
-                    aux.FechaIngreso = datos.Lector.GetDateTime(1);
+                    aux.CodigoPaciente = datos.Lector.GetString(0); 
                     // aux.Especialidad = datos.Lector.GetString(3);
                     // me parece que me falta un dato.
-                    ListaMedicos.Add(aux);
+                    ListaPaciente.Add(aux);
                 }
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-            return ListaMedicos;
+            return ListaPaciente;
         }
 
         public void AgregarPersona(Persona nuevo)
@@ -48,24 +47,23 @@ namespace Negocio
             datos.AgregarParametro("@Genero", nuevo.Genero);
             datos.AgregarParametro("@Estado", nuevo.Estado);
             datos.EjecutarConsulta();
+
         }
 
-        public void AgregarMedico(Medico nuevo, Persona Persona, Especialidad idEsp)
+        public void AgregarPaciente(Paciente nuevo, Persona Persona, Especialidad idEsp)
         {
             AccesoDatos datos = new AccesoDatos();
             datos.SetearQuery("insert into Medico (LegajoMedico,DNI,FechaIngreso,Especialidad) values (@LegajoMedico, @DNI, @FechaIngreso, @Especialidad);");
-            datos.AgregarParametro("@LegajoMedico", nuevo.LegajoMedico);
-            datos.AgregarParametro("@DNI", Persona.DNI);
-            datos.AgregarParametro("@FechaIngreso", nuevo.FechaIngreso);
-            datos.AgregarParametro("@Especialidad", idEsp.IdEspecialidad);
+            datos.AgregarParametro("@LegajoMedico", nuevo.CodigoPaciente);
+
             datos.EjecutarConsulta();
         }
 
-        public void ModificarMedico(Medico nuevo)
+        public void ModificarPaciente(Paciente nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
             datos.SetearQuery("update Medico set DNI=@DNI, Especialidad=@Especialidad where DNI = @DNI");
-            datos.AgregarParametro("@Especialidad", nuevo.Especialidad);
+            datos.AgregarParametro("@Especialidad", nuevo.CodigoPaciente);
             datos.EjecutarConsulta();
         }
     }

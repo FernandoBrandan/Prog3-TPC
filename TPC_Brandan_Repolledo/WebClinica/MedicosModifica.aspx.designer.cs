@@ -15,74 +15,75 @@ namespace WebClinica
     {
 
         /// <summary>
-        /// Control TextBox2.
+        /// Control TextBuscar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox TextBuscar;
 
         /// <summary>
-        /// Control txtDNI.
+        /// Control gvBusqueda.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-      
+        protected global::System.Web.UI.WebControls.GridView gvBusqueda;
 
         /// <summary>
-        /// Control TextBox1.
+        /// Control TextModDNI.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-     
+        protected global::System.Web.UI.WebControls.TextBox TextModDNI;
 
         /// <summary>
-        /// Control TextApellido.
+        /// Control TextModNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        
+        protected global::System.Web.UI.WebControls.TextBox TextModNombre;
 
         /// <summary>
-        /// Control TextDomicilio.
+        /// Control TextModApellido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-     
+        protected global::System.Web.UI.WebControls.TextBox TextModApellido;
 
         /// <summary>
-        /// Control TextGenero.
+        /// Control TextModDomicilio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-  
+        protected global::System.Web.UI.WebControls.TextBox TextModDomicilio;
 
         /// <summary>
-        /// Control TextFechaNac.
+        /// Control TextModFechaNacimiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextModFechaNacimiento;
 
         /// <summary>
-        /// Control TextEmail.
+        /// Control DropDownList1111.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
- 
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1111;
     }
 }

@@ -47,9 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoDatos.cs" />
-    <Compile Include="Negocioturno.cs" />
     <Compile Include="NegocioEspecialidad.cs" />
     <Compile Include="NegocioMedico.cs" />
+    <Compile Include="NegocioPaciente.cs" />
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>

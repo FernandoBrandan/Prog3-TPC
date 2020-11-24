@@ -19,11 +19,11 @@
         </nav>
     </div>
 
-    <div style="margin-top: 30px;"> 
-        <h3>Desplegable desde DB</h3>
-                <div class="form-group">
-                    <asp:Label Text="Pokemons" runat="server" />
-                    <asp:DropDownList runat="server" ID="ddlPokemons" CssClass="form-control">
+    <div style="margin-top: 30px;">  
+                <div class="form-group col-md-4">
+                    <asp:Label Text="Especialidades" runat="server" />
+                    <asp:DropDownList runat="server" ID="ddlModEspecialidad" CssClass="form-control" OnSelectedIndexChanged="Click_SelecionaEspecialidad">
+                         
                     </asp:DropDownList>
                 </div>
     <div class="form-row">
@@ -31,7 +31,7 @@
             <label>Nombre</label>
             <asp:TextBox class="form-control" ID="TextEspecNombre" runat="server" />
         </div>
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
             <label>Descripcion</label>
             <asp:TextBox class="form-control" ID="TextEspecDescripcion" runat="server" />
         </div>

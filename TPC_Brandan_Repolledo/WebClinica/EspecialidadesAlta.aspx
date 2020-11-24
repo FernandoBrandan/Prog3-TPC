@@ -34,7 +34,7 @@
         </div> 
     </div>
     <div style="margin-top: 20px;">
-        <asp:Button Text="Aceptar" class="btn btn-primary" runat="server" />
+        <asp:Button Text="Aceptar" class="btn btn-primary" runat="server" OnClick="Click_AceptarAltaEspec" />
         <asp:Button Text="Cancelar" class="btn btn-primary" runat="server" />
     </div>
 

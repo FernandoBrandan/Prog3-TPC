@@ -11,24 +11,29 @@ namespace WebClinica
 {
     public partial class MedicosAlta : System.Web.UI.Page
     {
-        public List<Especialidad> LisdadoEspecialidades { get; set; }
+
+        public List<Especialidad> LisdadoEspecialidadess { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            NegocioMedico Carga = new NegocioMedico();
-            LisdadoEspecialidades = Carga.ListaEspecialidades();
-            ddlEspecialidad.DataSource = LisdadoEspecialidades;
-            ddlEspecialidad.DataTextField = "Nombre";
-            ddlEspecialidad.DataValueField = "IdEspecialidad";
-            ddlEspecialidad.DataBind();
-            
-        }
+            if(!IsPostBack)
+            {
+                NegocioEspecialidad Carga1 = new NegocioEspecialidad();
+                LisdadoEspecialidadess = Carga1.ListaEspecialidades();
+                DropDownList1 = new DropDownList();
+                DropDownList1.DataSource = LisdadoEspecialidadess;
+                DropDownList1.DataTextField = "Nombre";
+                DropDownList1.DataValueField = "IdEspecialidad";
+                DropDownList1.SelectedIndex = -1;
+                DropDownList1.DataBind();
+            }            
+        }            
+
         public string CrearLegajo()
         {
             string Legajo;
             // Legajo = "Combinacion entre nombre apellido y dni";
-            Legajo = "medic123"; 
-             
+            Legajo = "medic123";              
             return Legajo;
         }
 
@@ -59,7 +64,7 @@ namespace WebClinica
                 nuevoMedico.LegajoMedico = CrearLegajo();
                 nuevoMedico.FechaIngreso = DateTime.Today.Date; 
 
-                seleccionaEsp.IdEspecialidad = long.Parse(ddlEspecialidad.SelectedItem.Value);
+                seleccionaEsp.IdEspecialidad = long.Parse(DropDownList1.SelectedItem.Value);
 
                 CargarMedico.AgregarPersona(nuevaPersona);
                 CargarMedico.AgregarMedico(nuevoMedico, nuevaPersona, seleccionaEsp);

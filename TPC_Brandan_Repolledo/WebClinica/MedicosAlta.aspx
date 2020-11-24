@@ -44,12 +44,19 @@
             <div class="form-group col-md-3">
                 <label>Fecha Nacimiento</label>
                 <asp:TextBox class="form-control" placeholder="yyyy-mm-dd" ID="TextMedicoFechaNac" runat="server" />
-            </div> 
+            </div>
+
+            <div class="form-group col-md-3">
+                <asp:Label Text="Especialidad" runat="server" />
+                <asp:DropDownList ID="DropDownList1111" class="form-control" Style="margin-top: 7px" runat="server">
+                </asp:DropDownList>
+            </div>
             
             <div class="form-group col-md-3">
-                <asp:Label Text="Especialidad" runat="server" /> 
-                <asp:DropDownList id="ddlEspecialidad" class="form-control" style="margin-top: 7px" runat="server"> </asp:DropDownList>
-             </div> 
+                <asp:Label Text="Especialidad" runat="server" />
+                <asp:DropDownList ID="DropDownList1" class="form-control" Style="margin-top: 7px" runat="server">
+                </asp:DropDownList>
+            </div>
         </div>
         <h5>Genero</h5>
         <div class="form-row">

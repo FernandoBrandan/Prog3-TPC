@@ -53,7 +53,7 @@ create table Persona
 	Domicilio varchar(100) not null,
 	FechaNacimiento date not null,
 	Genero varchar(10) not null,
-	Estado varchar(50) not null
+	Estado bit not null
 )
 go
 create table Usuario

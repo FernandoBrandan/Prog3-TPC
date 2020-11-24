@@ -60,13 +60,22 @@ namespace WebClinica
         protected global::System.Web.UI.WebControls.TextBox TextMedicoFechaNac;
 
         /// <summary>
-        /// Control ddlEspecialidad.
+        /// Control DropDownList1111.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlEspecialidad;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1111;
+
+        /// <summary>
+        /// Control DropDownList1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
 
         /// <summary>
         /// Control RbGenero.
