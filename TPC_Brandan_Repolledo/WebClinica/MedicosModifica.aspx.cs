@@ -56,11 +56,11 @@ namespace WebClinica
         {
             int index = Convert.ToInt32(e.CommandArgument);
             string Legajo = gvBusqueda.Rows[index].Cells[1].Text;
-            TextModDNI.Text = gvBusqueda.Rows[index].Cells[2].Text;
-            TextModNombre.Text = gvBusqueda.Rows[index].Cells[3].Text;
-            TextModApellido.Text = gvBusqueda.Rows[index].Cells[4].Text;
-            TextModDomicilio.Text = gvBusqueda.Rows[index].Cells[5].Text;
-            TextModFechaNacimiento.Text = gvBusqueda.Rows[index].Cells[6].Text;
+            TextModMedicoDNI.Text = gvBusqueda.Rows[index].Cells[2].Text;
+            TextModMedicoNombre.Text = gvBusqueda.Rows[index].Cells[3].Text;
+            TextModMedicoApellido.Text = gvBusqueda.Rows[index].Cells[4].Text;
+            TextModMedicoDomicilio.Text = gvBusqueda.Rows[index].Cells[5].Text;
+            TextModMedicoFechaNacimiento.Text = gvBusqueda.Rows[index].Cells[6].Text;
         }
 
         protected void Click_AceptarModiMedico(object sender, EventArgs e)
@@ -71,7 +71,7 @@ namespace WebClinica
             try
             {
 
-                MedicoMod.DNI = Convert.ToInt64(TextModDNI.Text);
+                MedicoMod.DNI = Convert.ToInt64(TextModMedicoDNI.Text);
                 MedicoMod.Nombre = TextModMedicoNombre.Text;
                 MedicoMod.Apellido = TextModMedicoApellido.Text;
                 MedicoMod.Domicilio = TextModMedicoDomicilio.Text;

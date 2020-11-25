@@ -33,7 +33,7 @@ namespace Negocio
                     ListaMedicos.Add(aux);
                 }
             }
-            catchl (Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }

@@ -20,11 +20,12 @@
     </div>
 
     <div style="margin-top: 30px;">  
-                <div class="form-group col-md-4">
+                <div class="form-group ">
                     <asp:Label Text="Especialidades" runat="server" />
-                    <asp:DropDownList runat="server" ID="ddlModEspecialidad" CssClass="form-control" OnSelectedIndexChanged="Click_SelecionaEspecialidad">
-                         
+                    <asp:DropDownList runat="server" ID="ddlModEspecialidad" CssClass="form-control col-md-3">
+                      
                     </asp:DropDownList>
+                    <asp:Button Text="Elegir" class="btn btn-primary" runat="server" OnClick="Click_ElegirEspecialidad" />
                 </div>
     <div class="form-row">
         <div class="form-group col-md-4">
