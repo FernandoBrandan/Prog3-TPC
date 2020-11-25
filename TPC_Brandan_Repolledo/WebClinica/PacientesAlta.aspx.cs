@@ -16,12 +16,14 @@ namespace WebClinica
            
         }
 
-        public string crearLegajoPaciente(string Nombre, string Apellido)
+        public string crearLegajoPaciente(long DNI,string Nombre, string Apellido)
         {
-            string Legajo, dni, apellido, nombre;
+            string Legajo, dniString, apellido, nombre,dniActual;
+            dniString= Convert.ToString(DNI);
+            dniActual =dniString.Substring(0, 3);
             nombre = Nombre.Substring(0, 3);
             apellido = Apellido.Substring(0, 3);
-            Legajo = nombre + apellido;
+            Legajo = nombre + apellido + dniActual;
             return Legajo;
         }
                          
@@ -33,12 +35,12 @@ namespace WebClinica
 
             try
             {
-                nuevaPersona.DNI =  Convert.ToInt32(TextDNI.Text);
-                nuevaPersona.Nombre = TextNombre.Text;
-                nuevaPersona.Apellido = TextApellido.Text;
-                nuevaPersona.Domicilio = TextDomicilio.Text;
+                nuevaPersona.DNI =  Convert.ToInt32(TextAltaPacienteDNI.Text);
+                nuevaPersona.Nombre = TextAltaPacienteNombre.Text;
+                nuevaPersona.Apellido = TextAltaPacienteApellido.Text;
+                nuevaPersona.Domicilio = TextAltaPacienteDomicilio.Text;
                 
-                nuevaPersona.FechaNacimiento= DateTime.Parse(TextFechaNac.Text);
+                nuevaPersona.FechaNacimiento= DateTime.Parse(TextAltaPacienteFechaNac.Text);
 
                 if (RbGenero.SelectedItem.Value == "Male")
                 {
@@ -51,8 +53,8 @@ namespace WebClinica
                 nuevaPersona.Estado = true;
                          
                 nuevoPaciente.FechaInscripcion  = DateTime.Today.Date;
-                nuevoPaciente.Email =TextEmail.Text;
-                nuevoPaciente.CodigoPaciente = crearLegajoPaciente( nuevaPersona.Nombre, nuevaPersona.Apellido);
+                nuevoPaciente.Email = TextAltaPacienteEmail.Text;
+                nuevoPaciente.CodigoPaciente = crearLegajoPaciente( nuevaPersona.DNI, nuevaPersona.Nombre, nuevaPersona.Apellido);
 
                 CargaPacientes.AgregarPersona(nuevaPersona);
                 CargaPacientes.AgregarPaciente(nuevoPaciente, nuevaPersona);

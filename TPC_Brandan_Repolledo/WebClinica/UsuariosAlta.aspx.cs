@@ -16,10 +16,14 @@ namespace WebClinica
 
         }
 
-        public string CrearLegajo()
+        public string crearLegajoUsuario(long DNI, string Nombre, string Apellido)
         {
-            string Legajo;
-            Legajo = TextUsuarioNombre.Text + TextUsuarioApellido.Text;
+            string Legajo, dniString, apellido, nombre, dniActual;
+            dniString = Convert.ToString(DNI);
+            dniActual = dniString.Substring(0, 3);
+            nombre = Nombre.Substring(0, 3);
+            apellido = Apellido.Substring(0, 3);
+            Legajo = nombre + apellido + dniActual;
             return Legajo;
         }
 
@@ -47,7 +51,7 @@ namespace WebClinica
                 nuevaPersona.Estado = true;
 
                 nuevoUsuario.FechaIngreso = DateTime.Today.Date;
-                nuevoUsuario.LegajoUsuario = CrearLegajo();
+                nuevoUsuario.LegajoUsuario = crearLegajoUsuario(nuevaPersona.DNI, nuevaPersona.Nombre, nuevaPersona.Apellido);
 
                 CargaUsuarios.AgregarPersona(nuevaPersona);
                 CargaUsuarios.AgregarUsuario(nuevoUsuario, nuevaPersona);

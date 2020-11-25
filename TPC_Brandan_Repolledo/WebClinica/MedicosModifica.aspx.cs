@@ -92,11 +92,7 @@ namespace WebClinica
 
                 Modificar.ModificarMedicoPersona(MedicoMod);
                 Modificar.ModificarMedico(MedicoMod);
-                int numero;
-                int agl;
-
-                numero = 1;
-                agl = 2;
+              
             }
             catch (Exception ex)
             {

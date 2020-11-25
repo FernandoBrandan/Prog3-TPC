@@ -25,13 +25,16 @@ namespace WebClinica
                 ddlAltaEspecialidad.DataValueField = "IdEspecialidad";
                 ddlAltaEspecialidad.DataBind();
             }            
-        }            
+        }
 
-        public string CrearLegajo()
+        public string crearLegajoMedico(long DNI, string Nombre, string Apellido)
         {
-            string Legajo;
-            // Legajo = "Combinacion entre nombre apellido y dni";
-            Legajo = "medic1ds23";              
+            string Legajo, dniString, apellido, nombre, dniActual;
+            dniString = Convert.ToString(DNI);
+            dniActual = dniString.Substring(0, 3);
+            nombre = Nombre.Substring(0, 3);
+            apellido = Apellido.Substring(0, 3);
+            Legajo = nombre + apellido + dniActual;
             return Legajo;
         }
 
@@ -59,7 +62,7 @@ namespace WebClinica
                 }
                 nuevaPersona.Estado = true;
 
-                nuevoMedico.LegajoMedico = CrearLegajo();
+                nuevoMedico.LegajoMedico = crearLegajoMedico(nuevaPersona.DNI, nuevaPersona.Nombre, nuevaPersona.Apellido);
                 nuevoMedico.FechaIngreso = DateTime.Today.Date; 
 
                 seleccionaEsp.IdEspecialidad = long.Parse(ddlAltaEspecialidad.SelectedItem.Value);

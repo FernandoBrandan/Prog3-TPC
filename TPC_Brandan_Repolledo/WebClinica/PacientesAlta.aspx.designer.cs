@@ -15,58 +15,58 @@ namespace WebClinica
     {
 
         /// <summary>
-        /// Control TextDNI.
+        /// Control TextAltaPacienteDNI.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextDNI;
+        protected global::System.Web.UI.WebControls.TextBox TextAltaPacienteDNI;
 
         /// <summary>
-        /// Control TextNombre.
+        /// Control TextAltaPacienteNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextNombre;
+        protected global::System.Web.UI.WebControls.TextBox TextAltaPacienteNombre;
 
         /// <summary>
-        /// Control TextApellido.
+        /// Control TextAltaPacienteApellido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextApellido;
+        protected global::System.Web.UI.WebControls.TextBox TextAltaPacienteApellido;
 
         /// <summary>
-        /// Control TextDomicilio.
+        /// Control TextAltaPacienteDomicilio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextDomicilio;
+        protected global::System.Web.UI.WebControls.TextBox TextAltaPacienteDomicilio;
 
         /// <summary>
-        /// Control TextFechaNac.
+        /// Control TextAltaPacienteFechaNac.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextFechaNac;
+        protected global::System.Web.UI.WebControls.TextBox TextAltaPacienteFechaNac;
 
         /// <summary>
-        /// Control TextEmail.
+        /// Control TextAltaPacienteEmail.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextEmail;
+        protected global::System.Web.UI.WebControls.TextBox TextAltaPacienteEmail;
 
         /// <summary>
         /// Control RbGenero.

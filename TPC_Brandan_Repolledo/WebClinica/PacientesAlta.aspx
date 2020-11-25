@@ -24,30 +24,31 @@
         <div class="form-row">
             <div class="form-group col-md-3">
                 <label>DNI</label>
-                <asp:TextBox class="form-control" ID="TextDNI" runat="server" /> 
+                <asp:TextBox class="form-control" ID="TextAltaPacienteDNI" runat="server" /> 
             </div>
             <div class="form-group col-md-3">
                 <label>Nombre</label>
-                <asp:TextBox class="form-control" ID="TextNombre" runat="server" />
+                <asp:TextBox class="form-control" ID="TextAltaPacienteNombre" runat="server" />
             </div>
             <div class="form-group col-md-3">
                 <label>Apellido</label>
-                <asp:TextBox class="form-control" ID="TextApellido" runat="server" />
+                <asp:TextBox class="form-control" ID="TextAltaPacienteApellido" runat="server" />
             </div>
+
         </div>
         <div class="form-row">
             <div class="form-group col-md-3">
                 <label>Domicilio</label>
-                <asp:TextBox class="form-control" ID="TextDomicilio" runat="server" />
+                <asp:TextBox class="form-control" ID="TextAltaPacienteDomicilio" runat="server" />
             </div>
 
             <div class="form-group col-md-3">
                 <label>Fecha Nacimiento</label>
-                <asp:TextBox class="form-control" placeholder="yyyy-mm-dd" ID="TextFechaNac" runat="server" />
+                <asp:TextBox class="form-control" placeholder="yyyy-mm-dd" ID="TextAltaPacienteFechaNac" runat="server" />
             </div>
             <div class="form-group col-md-4">
                 <label>Correo Electronico</label>
-                <asp:TextBox class="form-control" ID="TextEmail" runat="server" />
+                <asp:TextBox class="form-control" ID="TextAltaPacienteEmail" runat="server" />
             </div>
         </div>
             <h5>Genero</h5>
