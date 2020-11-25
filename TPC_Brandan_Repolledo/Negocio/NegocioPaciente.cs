@@ -50,12 +50,14 @@ namespace Negocio
 
         }
 
-        public void AgregarPaciente(Paciente nuevo, Persona Persona, Especialidad idEsp)
+        public void AgregarPaciente(Paciente nuevo, Persona persona)
         {
             AccesoDatos datos = new AccesoDatos();
-            datos.SetearQuery("insert into Medico (LegajoMedico,DNI,FechaIngreso,Especialidad) values (@LegajoMedico, @DNI, @FechaIngreso, @Especialidad);");
-            datos.AgregarParametro("@LegajoMedico", nuevo.CodigoPaciente);
-
+            datos.SetearQuery("insert into Paciente(CodigoPaciente ,DNI ,FechaInscripcion , Email) values (@CodigoPaciente, @DNI, @FechaInscripcion, @Email );");
+            datos.AgregarParametro("@CodigoPaciente", nuevo.CodigoPaciente);
+            datos.AgregarParametro("@FechaInscripcion", nuevo.FechaInscripcion);
+            datos.AgregarParametro("@Email", nuevo.Email);
+            datos.AgregarParametro("@DNI", persona.DNI);
             datos.EjecutarConsulta();
         }
 
