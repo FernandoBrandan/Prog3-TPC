@@ -16,19 +16,20 @@ namespace WebClinica
            
         }
 
-        public string CrearLegajo()
+        public string crearLegajoPaciente(string Nombre, string Apellido)
         {
-            string Legajo;
-            // Legajo = "Combinacion entre nombre apellido y dni";
-            Legajo = "NOMA223P1";
+            string Legajo, dni, apellido, nombre;
+            nombre = Nombre.Substring(0, 3);
+            apellido = Apellido.Substring(0, 3);
+            Legajo = nombre + apellido;
             return Legajo;
         }
                          
         protected void Click_AceptarAltaPaciente(object sender, EventArgs e)
         {
             Persona nuevaPersona = new Persona();
-            Usuario nuevoUsuario = new Usuario();
-            NegocioUsuario CargaUsuarios = new NegocioUsuario();
+            Paciente nuevoPaciente = new Paciente();
+            NegocioPaciente CargaPacientes = new NegocioPaciente();
 
             try
             {
@@ -36,7 +37,9 @@ namespace WebClinica
                 nuevaPersona.Nombre = TextNombre.Text;
                 nuevaPersona.Apellido = TextApellido.Text;
                 nuevaPersona.Domicilio = TextDomicilio.Text;
+                
                 nuevaPersona.FechaNacimiento= DateTime.Parse(TextFechaNac.Text);
+
                 if (RbGenero.SelectedItem.Value == "Male")
                 {
                     nuevaPersona.Genero = RbGenero.SelectedItem.Text;
@@ -47,11 +50,12 @@ namespace WebClinica
                 }
                 nuevaPersona.Estado = true;
                          
-                nuevoUsuario.FechaIngreso = DateTime.Today.Date;
-                nuevoUsuario.LegajoUsuario = CrearLegajo();
+                nuevoPaciente.FechaInscripcion  = DateTime.Today.Date;
+                nuevoPaciente.Email =TextEmail.Text;
+                nuevoPaciente.CodigoPaciente = crearLegajoPaciente( nuevaPersona.Nombre, nuevaPersona.Apellido);
 
-                CargaUsuarios.AgregarPersona(nuevaPersona);
-                CargaUsuarios.AgregarUsuario(nuevoUsuario, nuevaPersona);
+                CargaPacientes.AgregarPersona(nuevaPersona);
+                CargaPacientes.AgregarPaciente(nuevoPaciente, nuevaPersona);
 
                 Response.Write("<script LANGUAGE='JavaScript' >alert('Se cargo correctamente el Usuario')</script>");
             }
