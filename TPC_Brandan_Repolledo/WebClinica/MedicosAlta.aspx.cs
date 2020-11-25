@@ -17,15 +17,13 @@ namespace WebClinica
         protected void Page_Load(object sender, EventArgs e)
         {
             if(!IsPostBack)
-            {
+            { 
                 NegocioEspecialidad Carga1 = new NegocioEspecialidad();
                 LisdadoEspecialidadess = Carga1.ListaEspecialidades();
-                DropDownList1 = new DropDownList();
-                DropDownList1.DataSource = LisdadoEspecialidadess;
-                DropDownList1.DataTextField = "Nombre";
-                DropDownList1.DataValueField = "IdEspecialidad";
-                DropDownList1.SelectedIndex = -1;
-                DropDownList1.DataBind();
+                ddlAltaEspecialidad.DataSource = LisdadoEspecialidadess;
+                ddlAltaEspecialidad.DataTextField = "Nombre";
+                ddlAltaEspecialidad.DataValueField = "IdEspecialidad";
+                ddlAltaEspecialidad.DataBind();
             }            
         }            
 
@@ -33,7 +31,7 @@ namespace WebClinica
         {
             string Legajo;
             // Legajo = "Combinacion entre nombre apellido y dni";
-            Legajo = "medic123";              
+            Legajo = "medic1ds23";              
             return Legajo;
         }
 
@@ -64,7 +62,7 @@ namespace WebClinica
                 nuevoMedico.LegajoMedico = CrearLegajo();
                 nuevoMedico.FechaIngreso = DateTime.Today.Date; 
 
-                seleccionaEsp.IdEspecialidad = long.Parse(DropDownList1.SelectedItem.Value);
+                seleccionaEsp.IdEspecialidad = long.Parse(ddlAltaEspecialidad.SelectedItem.Value);
 
                 CargarMedico.AgregarPersona(nuevaPersona);
                 CargarMedico.AgregarMedico(nuevoMedico, nuevaPersona, seleccionaEsp);

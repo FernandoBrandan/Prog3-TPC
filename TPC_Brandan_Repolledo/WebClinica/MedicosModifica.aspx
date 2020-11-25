@@ -22,7 +22,7 @@
         <div class="form-group">
             <div class="form-group col-md-3">
                 <label>Buscar</label>
-                <asp:TextBox class="form-control" placeholder="IdUsuario" ID="TextBuscar" runat="server" Width="887px"/> 
+                <asp:TextBox class="form-control" placeholder="IdUsuario" ID="TextMedicoBuscar" runat="server" Width="887px"/> 
                 <asp:Button Text="Buscar" class="btn btn-primary" runat="server" OnClick="Click_BuscarMedico"/>
                 <asp:Button Text="Borrar" class="btn btn-primary" runat="server" OnClick="Click_BorrarListado"/>
 
@@ -35,12 +35,13 @@
                 <asp:GridView ID="gvBusqueda" AutoGenerateColumns="false" runat="server" OnRowCommand="BusquedaMedico_RowCommand" >
                     <Columns>
                         <asp:ButtonField HeaderText="Opcion" ButtonType="Link" Text="Seleccionar" CommandName="Select" />
-                        <asp:BoundField HeaderText="Legajo" DataField="LegajoUsuario" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
+                        <asp:BoundField HeaderText="Legajo" DataField="LegajoMedico" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
                         <asp:BoundField HeaderText="DNI" DataField="DNI" />
                         <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
                         <asp:BoundField HeaderText="Apellido" DataField="Apellido" />
                         <asp:BoundField HeaderText="Domicilio" DataField="Domicilio" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
                         <asp:BoundField HeaderText="FechaNacimiento" DataField="FechaNacimiento" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
+                        <asp:BoundField HeaderText="Especialidad" DataField="Especialidad" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
                     </Columns>
                 </asp:GridView>
             </div>
@@ -70,7 +71,7 @@
             </div>
                <div class="form-group col-md-3">
                 <asp:Label Text="Especialidad" runat="server" />
-                <asp:DropDownList ID="ddlModMedicoFechaNacimiento" class="form-control" Style="margin-top: 7px" runat="server">
+                <asp:DropDownList ID="ddlModMedico" class="form-control" Style="margin-top: 7px" runat="server">
                 </asp:DropDownList>
             </div>
         </div>

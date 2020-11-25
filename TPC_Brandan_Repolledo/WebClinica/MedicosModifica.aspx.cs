@@ -11,13 +11,23 @@ namespace WebClinica
 {
     public partial class MedicosModifica : System.Web.UI.Page
     {
+        public List<Especialidad> ListadoEspecialidades { get; set; }
         public List<Medico> ListadoOriginal { get; set; }
         public List<Medico> ListaFiltrada { get; set; }
         public List<Medico> ListaVacia { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                NegocioEspecialidad Carga = new NegocioEspecialidad();
+                ListadoEspecialidades = Carga.ListaEspecialidades();
+                ddlModMedico.DataSource = ListadoEspecialidades;
+                ddlModMedico.DataTextField = "Nombre";
+                ddlModMedico.DataValueField = "IdEspecialidad";
+                ddlModMedico.DataBind();
+                ddlModMedico.Items.Insert(0, "Seleccione");
+            }
         }
 
         protected void Click_BuscarMedico(object sender, EventArgs e)
@@ -27,13 +37,13 @@ namespace WebClinica
 
             try
             {
-                if (TextBuscar.Text == "")
+                if (TextMedicoBuscar.Text == "")
                 {
                     ListaFiltrada = ListadoOriginal;
                 }
                 else
                 {
-                    ListaFiltrada = ListadoOriginal.FindAll(Y => Convert.ToString(Y.DNI).Contains(TextBuscar.Text) || Y.LegajoMedico.ToLower().Contains(TextBuscar.Text.ToLower()) || Y.Nombre.ToLower().Contains(TextBuscar.Text.ToLower()) || Y.Apellido.ToLower().Contains(TextBuscar.Text.ToLower()));
+                    ListaFiltrada = ListadoOriginal.FindAll(Y => Convert.ToString(Y.DNI).Contains(TextMedicoBuscar.Text) || Y.LegajoMedico.ToLower().Contains(TextMedicoBuscar.Text.ToLower()) || Y.Nombre.ToLower().Contains(TextMedicoBuscar.Text.ToLower()) || Y.Apellido.ToLower().Contains(TextMedicoBuscar.Text.ToLower()));
                 }
                 gvBusqueda.DataSource = ListaFiltrada;
                 gvBusqueda.DataBind();
@@ -47,7 +57,7 @@ namespace WebClinica
 
         protected void Click_BorrarListado(object sender, EventArgs e)
         {
-            TextBuscar.Text = "";
+            TextMedicoBuscar.Text = "";
             gvBusqueda.DataSource = ListaVacia;
             gvBusqueda.DataBind();
         }
@@ -70,18 +80,26 @@ namespace WebClinica
 
             try
             {
-
                 MedicoMod.DNI = Convert.ToInt64(TextModMedicoDNI.Text);
                 MedicoMod.Nombre = TextModMedicoNombre.Text;
                 MedicoMod.Apellido = TextModMedicoApellido.Text;
                 MedicoMod.Domicilio = TextModMedicoDomicilio.Text;
                 MedicoMod.FechaNacimiento = DateTime.Parse(TextModMedicoFechaNacimiento.Text);
 
+                MedicoMod.Especialidad = new Especialidad();
+
+                MedicoMod.Especialidad.IdEspecialidad = long.Parse(ddlModMedico.SelectedItem.Value);
+
+                Modificar.ModificarMedicoPersona(MedicoMod);
                 Modificar.ModificarMedico(MedicoMod);
+                int numero;
+                int agl;
+
+                numero = 1;
+                agl = 2;
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }

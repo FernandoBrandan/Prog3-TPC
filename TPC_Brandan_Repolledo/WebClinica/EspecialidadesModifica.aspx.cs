@@ -17,7 +17,6 @@ namespace WebClinica
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (!IsPostBack)
             {
                 NegocioEspecialidad Carga = new NegocioEspecialidad();
@@ -28,7 +27,6 @@ namespace WebClinica
                 ddlModEspecialidad.DataBind();
                 ddlModEspecialidad.Items.Insert(0, "Seleccione");
             }
-
         }
         
         protected void Click_ElegirEspecialidad(object sender, EventArgs e)
@@ -43,27 +41,30 @@ namespace WebClinica
             foreach (var item in Comparacion)
             {
                  if (item.IdEspecialidad == Filtro.IdEspecialidad)
-                 {
-
+                 { 
                      IdSeleccionado = item.IdEspecialidad;
                      TextEspecNombre.Text = item.Nombre;
                      TextEspecDescripcion.Text = item.Descripcion;
                  }
-            }
-
-            CargaModificaciones();
+            } 
         }
-
-        private void CargaModificaciones()
+        
+        protected void Click_AceptaModifEspecialidad(object sender, EventArgs e)
         {
             Especialidad nuevaEspecilidad = new Especialidad();
             NegocioEspecialidad Carga = new NegocioEspecialidad();
-
-            nuevaEspecilidad.IdEspecialidad = IdSeleccionado;
+            nuevaEspecilidad.IdEspecialidad = long.Parse(ddlModEspecialidad.SelectedItem.Value);
             nuevaEspecilidad.Nombre = TextEspecNombre.Text;
             nuevaEspecilidad.Descripcion = TextEspecDescripcion.Text;
+            if(Carga.ModificarEspecialidad(nuevaEspecilidad))
+            {
+                Response.Write("<script LANGUAGE='JavaScript' >alert('Se modifico correctamente la especialidad')</script>");
 
-            Carga.ModificarEspecialidad(nuevaEspecilidad);
+            }
+            else
+            {
+                Response.Write("<script LANGUAGE='JavaScript' >alert('Error al modificar')</script>");
+            }
         }
     }
 }

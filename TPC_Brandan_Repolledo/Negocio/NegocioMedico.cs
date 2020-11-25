@@ -16,12 +16,11 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.SetearQuery("select u.DNI, Nombre, Apellido, Domicilio, FechaNacimiento, Genero, Estado, LegajoMedico from persona as p inner join Medico as m on m.DNI=p.DNI");
+                datos.SetearQuery("select m.DNI, Nombre, Apellido, Domicilio, FechaNacimiento, Genero, Estado, LegajoMedico from persona as p inner join Medico as m on m.DNI=p.DNI");
                 datos.EjecutarConsulta();
                 while (datos.Lector.Read())
                 {
-                    Medico aux = new Medico();
-
+                    Medico aux = new Medico(); 
                     aux.DNI = datos.Lector.GetInt64(0);
                     aux.Nombre = datos.Lector.GetString(1);
                     aux.Apellido = datos.Lector.GetString(2);
@@ -65,11 +64,23 @@ namespace Negocio
             datos.EjecutarConsulta();
         }
 
+        public void ModificarMedicoPersona(Medico nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            datos.SetearQuery("update persona set DNI=@DNI, Nombre=@Nombre, Apellido=@Apellido, Domicilio=@Domicilio where DNI = @DNI");
+            datos.AgregarParametro("@DNI", nuevo.DNI);
+            datos.AgregarParametro("@Nombre", nuevo.Nombre);
+            datos.AgregarParametro("@Apellido", nuevo.Apellido);
+            datos.AgregarParametro("@Domicilio", nuevo.Domicilio);
+            datos.EjecutarConsulta();
+        }
+
         public void ModificarMedico(Medico nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
-            datos.SetearQuery("update Medico set DNI=@DNI, Especialidad=@Especialidad where DNI = @DNI");
-            datos.AgregarParametro("@Especialidad", nuevo.Especialidad);
+            datos.SetearQuery("update Medico set Especialidad=@Especialidad where DNI = @DNI");
+            datos.AgregarParametro("@DNI", nuevo.DNI);
+            datos.AgregarParametro("@Especialidad", nuevo.Especialidad.IdEspecialidad);
             datos.EjecutarConsulta();
         }
     }

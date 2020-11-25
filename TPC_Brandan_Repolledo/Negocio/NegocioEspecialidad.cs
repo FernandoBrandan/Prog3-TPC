@@ -45,7 +45,7 @@ namespace Negocio
         }
 
 
-        public void ModificarEspecialidad(Especialidad nuevo)
+        public bool ModificarEspecialidad(Especialidad nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
             datos.SetearQuery("update Especialidad set Nombre=@Nombre, Descripcion=@Descripcion where IdEspecialidad = @IdEspecialidad");
@@ -53,6 +53,7 @@ namespace Negocio
             datos.AgregarParametro("@Nombre", nuevo.Nombre);
             datos.AgregarParametro("@Descripcion", nuevo.Descripcion);
             datos.EjecutarConsulta();
+            return true;
         }
     }
 }

@@ -48,15 +48,10 @@
 
             <div class="form-group col-md-3">
                 <asp:Label Text="Especialidad" runat="server" />
-                <asp:DropDownList ID="DropDownList1111" class="form-control" Style="margin-top: 7px" runat="server">
+                <asp:DropDownList ID="ddlAltaEspecialidad" class="form-control" Style="margin-top: 7px" runat="server">
                 </asp:DropDownList>
             </div>
             
-            <div class="form-group col-md-3">
-                <asp:Label Text="Especialidad" runat="server" />
-                <asp:DropDownList ID="DropDownList1" class="form-control" Style="margin-top: 7px" runat="server">
-                </asp:DropDownList>
-            </div>
         </div>
         <h5>Genero</h5>
         <div class="form-row">

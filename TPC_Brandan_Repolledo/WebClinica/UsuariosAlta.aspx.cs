@@ -19,8 +19,7 @@ namespace WebClinica
         public string CrearLegajo()
         {
             string Legajo;
-            // Legajo = "Combinacion entre nombre apellido y dni";
-            Legajo = "1NOM12P1";
+            Legajo = TextUsuarioNombre.Text + TextUsuarioApellido.Text;
             return Legajo;
         }
 

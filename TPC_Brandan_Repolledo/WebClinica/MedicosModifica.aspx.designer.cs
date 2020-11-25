@@ -15,13 +15,13 @@ namespace WebClinica
     {
 
         /// <summary>
-        /// Control TextBuscar.
+        /// Control TextMedicoBuscar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBuscar;
+        protected global::System.Web.UI.WebControls.TextBox TextMedicoBuscar;
 
         /// <summary>
         /// Control gvBusqueda.
@@ -78,12 +78,12 @@ namespace WebClinica
         protected global::System.Web.UI.WebControls.TextBox TextModMedicoFechaNacimiento;
 
         /// <summary>
-        /// Control ddlModMedicoFechaNacimiento.
+        /// Control ddlModMedico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlModMedicoFechaNacimiento;
+        protected global::System.Web.UI.WebControls.DropDownList ddlModMedico;
     }
 }
