@@ -60,12 +60,24 @@ namespace Negocio
             datos.AgregarParametro("@DNI", persona.DNI);
             datos.EjecutarConsulta();
         }
+         public void ModificarMedicoPersona(Medico nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            datos.SetearQuery("update persona set DNI=@DNI, Nombre=@Nombre, Apellido=@Apellido, Domicilio=@Domicilio where DNI = @DNI");
+            datos.AgregarParametro("@DNI", nuevo.DNI);
+            datos.AgregarParametro("@Nombre", nuevo.Nombre);
+            datos.AgregarParametro("@Apellido", nuevo.Apellido);
+            datos.AgregarParametro("@Domicilio", nuevo.Domicilio);
+            datos.EjecutarConsulta();
+        }
+
 
         public void ModificarPaciente(Paciente nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
-            datos.SetearQuery("update Medico set DNI=@DNI, Especialidad=@Especialidad where DNI = @DNI");
-            datos.AgregarParametro("@Especialidad", nuevo.CodigoPaciente);
+            datos.SetearQuery("update Paciente set DNI=@DNI, Email=@Email where DNI = @DNI");
+             datos.AgregarParametro("@Email", nuevo.Email);
+            datos.AgregarParametro("@DNI", nuevo.DNI);
             datos.EjecutarConsulta();
         }
     }

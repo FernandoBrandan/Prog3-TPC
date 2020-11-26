@@ -98,3 +98,6 @@ create table FichaMedica
 	Diagnostico varchar(1000) not null
 )
 
+Select *from Paciente
+Select *from Usuario
+Select *from Persona

@@ -18,16 +18,34 @@
             </ul>
         </nav>
     </div>
-
-    <h1 style="margin-top: 20px;">Modificar Paciente</h1>
-
-    <div style="margin-top: 30px;">
-        <div class="form-group col-md-3"> 
+    <h4>Ingresar DNI o Codigo del Usuario</h4>
+       <div style="margin-top: 30px;">
+        <div class="form-group">
+            <div class="form-group col-md-3">
                 <label>Buscar</label>
-                <asp:TextBox class="form-control" placeholder="IDUsuario" ID="TextBox2" runat="server" Width="887px" /> 
-                <button type="submit" class="btn btn-primary">Aceptar</button> 
-        </div>
+                <asp:TextBox class="form-control" placeholder="IdPaciente" ID="TextBuscarPaciente" runat="server" Width="887px" />
+                <asp:Button Text="Buscar" class="btn btn-primary" runat="server" OnClick="Click_BuscarPaciente" />
+                <asp:Button Text="Borrar" class="btn btn-primary" runat="server" OnClick="Click_BorrarListado" />
 
+                <style>
+                    .oculto {
+                        display: none;
+                    }
+                </style>
+
+                <asp:GridView ID="gvBusquedaPaciente" AutoGenerateColumns="false" runat="server" OnRowCommand="BusquedaPaciente_RowCommand">
+                    <Columns>
+                        <asp:ButtonField HeaderText="Opcion" ButtonType="Link" Text="Seleccionar" CommandName="Select" />
+                        <asp:BoundField HeaderText="Legajo" DataField="LegajoPaciente" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
+                        <asp:BoundField HeaderText="DNI" DataField="DNI" />
+                        <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
+                        <asp:BoundField HeaderText="Apellido" DataField="Apellido" />
+                        <asp:BoundField HeaderText="Domicilio" DataField="Domicilio" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
+                        <asp:BoundField HeaderText="FechaNacimiento" DataField="FechaNacimiento" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
+                    </Columns>
+                </asp:GridView>
+            </div>
+        </div>
         <div class="form-row">
             <div class="form-group col-md-3">
                 <label>DNI</label>
@@ -51,15 +69,10 @@
                 <label>Fecha Nacimiento</label>
                 <asp:TextBox class="form-control" ID="TextModFechaNacimiento" runat="server" />
             </div>
-            <div class="form-group col-md-4">
-                <label>Correo Electronico</label>
-                <asp:TextBox class="form-control" ID="TextModEmail" runat="server" />
-            </div>
         </div>
     </div>
-
     <div style="margin-top: 20px;">
-        <button type="submit" class="btn btn-primary">Aceptar</button>
-        <button type="submit" class="btn btn-primary">Cancelar</button>
+          <asp:Button Text="Aceptar" class="btn btn-primary" OnClick="Click_AceptarModiPaciente" runat="server" />
+          <asp:Button Text="Cancelar" class="btn btn-primary" runat="server" />
     </div>
 </asp:Content>
