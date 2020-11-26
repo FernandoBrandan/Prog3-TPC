@@ -17,15 +17,13 @@ namespace WebClinica
         protected void Page_Load(object sender, EventArgs e)
         {
 
-
         }
         protected void Click_BuscarPaciente(object sender, EventArgs e)
         {
-
             if (IsPostBack)
             {
                 NegocioPaciente Buscar = new NegocioPaciente();
-                ListadoOriginal = Buscar.ListaPaciente();
+                ListadoOriginal = Buscar.ListaPaciente();  
                 try
                 {
                     if (TextBuscarPaciente.Text == "")
@@ -41,13 +39,8 @@ namespace WebClinica
                     gvBusquedaPaciente.DataBind();
 
                 }
-
-
-
                 catch (Exception ex)
                 {
-
-                    
                     throw ex;
                 }
             }

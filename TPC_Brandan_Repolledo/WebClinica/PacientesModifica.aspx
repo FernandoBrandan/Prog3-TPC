@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="PacientesModifica.aspx.cs" Inherits="WebClinica.PacientesAlta" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="PacientesModifica.aspx.cs" Inherits="WebClinica.PacientesModifica" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -23,6 +23,7 @@
         <div class="form-group">
             <div class="form-group col-md-3">
                 <label>Buscar</label>
+                <asp:TextBox id="textid" runat="server" />  
                 <asp:TextBox class="form-control" placeholder="IdPaciente" ID="TextBuscarPaciente" runat="server" Width="887px" />
                 <asp:Button Text="Buscar" class="btn btn-primary" runat="server" OnClick="Click_BuscarPaciente" />
                 <asp:Button Text="Borrar" class="btn btn-primary" runat="server" OnClick="Click_BorrarListado" />
