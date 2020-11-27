@@ -18,12 +18,13 @@ namespace WebClinica
         {
 
         }
+
         protected void Click_BuscarPaciente(object sender, EventArgs e)
         {
             if (IsPostBack)
             {
                 NegocioPaciente Buscar = new NegocioPaciente();
-                ListadoOriginal = Buscar.ListaPaciente();   
+                ListadoOriginal = Buscar.ListaPaciente();
                 try
                 {
                     if (TextBuscarPaciente.Text == "")
@@ -32,7 +33,7 @@ namespace WebClinica
                     }
                     else
                     {
-                        ListaFiltrada = ListadoOriginal.FindAll(Y => Convert.ToString(Y.DNI).Contains(TextBuscarPaciente.Text) || TextBuscarPaciente.Text.ToLower().Contains(TextBuscarPaciente.Text.ToLower()) || Y.Nombre.ToLower().Contains(TextBuscarPaciente.Text.ToLower()) || Y.Apellido.ToLower().Contains(TextBuscarPaciente.Text.ToLower()));
+                        ListaFiltrada = ListadoOriginal.FindAll(Y => Convert.ToString(Y.DNI).Contains(TextBuscarPaciente.Text) || Y.CodigoPaciente.ToLower().Contains(TextBuscarPaciente.Text.ToLower()) || Y.Nombre.ToLower().Contains(TextBuscarPaciente.Text.ToLower()) || Y.Apellido.ToLower().Contains(TextBuscarPaciente.Text.ToLower()));
                     }
                     gvBusquedaPaciente.DataSource = ListaFiltrada;
                     gvBusquedaPaciente.DataSource = ListaFiltrada;
@@ -45,6 +46,47 @@ namespace WebClinica
                 }
             }
         }
+    
 
+            protected void Click_BorrarListadoPaciente(object sender, EventArgs e)
+            {
+                TextBuscarPaciente.Text = "";
+                gvBusquedaPaciente.DataSource = ListaVacia;
+                gvBusquedaPaciente.DataBind();
+            }
+        protected void BusquedaUsuario_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            int index = Convert.ToInt32(e.CommandArgument);
+            string Legajo = gvBusquedaPaciente.Rows[index].Cells[1].Text;
+            TextModDNI.Text = gvBusquedaPaciente.Rows[index].Cells[2].Text;
+            TextModNombre.Text = gvBusquedaPaciente.Rows[index].Cells[3].Text;
+            TextModApellido.Text = gvBusquedaPaciente.Rows[index].Cells[4].Text;
+            TextModDomicilio.Text = gvBusquedaPaciente.Rows[index].Cells[5].Text;
+            TextModFechaNacimiento.Text = gvBusquedaPaciente.Rows[index].Cells[6].Text;
+        }
+
+        protected void Click_AceptarModiUsuario(object sender, EventArgs e)
+        {
+            NegocioPaciente Modificar = new NegocioPaciente();
+            Paciente PacienteMod = new Paciente();
+
+            try
+            {
+
+                PacienteMod.DNI = Convert.ToInt64(TextModDNI.Text);
+                PacienteMod.Nombre = TextModNombre.Text;
+                PacienteMod.Apellido = TextModApellido.Text;
+                PacienteMod.Domicilio = TextModDomicilio.Text;
+                PacienteMod.FechaNacimiento = DateTime.Parse(TextModFechaNacimiento.Text);
+
+                Modificar.ModificarPaciente(PacienteMod);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
+
 }
