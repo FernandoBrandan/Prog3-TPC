@@ -31,7 +31,7 @@
                 <div class="container">
                     <div class="navbar-header">
                         <a class="navbar-brand" runat="server" href="~/Menu.aspx">Menú</a>
-                        <a class="navbar-brand" runat="server" href="TurnosAlta.aspx">Turnos</a>
+                        <a class="navbar-brand" runat="server" href="TurnosLista.aspx">Turnos</a>
                         <a class="navbar-brand" runat="server" href="PacientesAlta.aspx">Pacientes</a>
                         <a class="navbar-brand" runat="server" href="MedicosAlta.aspx">Medicos</a>
                         <a class="navbar-brand" runat="server" href="EspecialidadesAlta.aspx">Especialidades</a>

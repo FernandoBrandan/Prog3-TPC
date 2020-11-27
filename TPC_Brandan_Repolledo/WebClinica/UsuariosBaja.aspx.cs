@@ -52,21 +52,15 @@ namespace WebClinica
 
         protected void BusquedaBajaUsuario_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+
             int index = Convert.ToInt32(e.CommandArgument);
             string Legajo = gvBusqueda.Rows[index].Cells[1].Text;
-            int DNI;
-            DNI = 1;
-
-            Response.Write("< script LANGUAGE = 'JavaScript' >  $('#confirm').click(function(){var bool= confirm('Seguro de eliminar el dato?'); if (bool) {alert('se elimino correctamente');}else{alert('cancelo la solicitud');}});</ script > ");
-
-            BajaUsuario(DNI);
-
+       
         }
 
-        public void BajaUsuario(int DNI)
+        public void GuardarBaja()
         {
-
-
+             
         }
     }
 }

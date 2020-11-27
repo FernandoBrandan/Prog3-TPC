@@ -29,9 +29,9 @@ namespace WebClinica
             Response.Redirect("UsuariosAlta.aspx");
         }
 
-        protected void Click_btnTurnosAlta(object sender, EventArgs e)
+        protected void Click_btnTurnosLista(object sender, EventArgs e)
         {
-            Response.Redirect("TurnosAlta.aspx");
+            Response.Redirect("TurnosLista.aspx");
         }
 
         protected void Click_btnEspecialidadesAlta(object sender, EventArgs e)

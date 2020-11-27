@@ -13,6 +13,7 @@
                     <span class="sr-only">(current)</span>
                     </span>
                 </li>
+                <li class="page-item"><a class="page-link" href="TurnosAlta.aspx">Gestion Medicos</a></li>
             </ul>
         </nav>
     </div>

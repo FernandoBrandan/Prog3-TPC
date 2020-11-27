@@ -16,7 +16,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:Button Text="Turnos" class="btnMenu btnMenu-Turnos" OnClick="Click_btnTurnosAlta" runat="server"/>
+        <asp:Button Text="Turnos" class="btnMenu btnMenu-Turnos" OnClick="Click_btnTurnosLista" runat="server"/>
         <asp:Button Text="Pacientes" class="btnMenu btnMenu-Pacientes" OnClick="Click_btnPacientesAlta" runat="server"/>
         <asp:Button Text="Medicos" class="btnMenu btnMenu-Medicos" OnClick="Click_btnMedicosAlta" runat="server"/>
         <asp:Button Text="Especialidades" class="btnMenu btnMenu-Especialidades" OnClick="Click_btnEspecialidadesAlta" runat="server"/>
