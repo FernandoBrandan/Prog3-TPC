@@ -65,7 +65,7 @@ namespace WebClinica
             TextModFechaNacimiento.Text = gvBusquedaPaciente.Rows[index].Cells[6].Text;
         }
 
-        protected void Click_AceptarModiUsuario(object sender, EventArgs e)
+        protected void Click_AceptarModiPaciente(object sender, EventArgs e)
         {
             NegocioPaciente Modificar = new NegocioPaciente();
             Paciente PacienteMod = new Paciente();
