@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -40,6 +40,7 @@ namespace WebClinica
                     gvBusquedaPaciente.DataSource = ListaFiltrada;
                     gvBusquedaPaciente.DataBind();
 
+
                 }
                 catch (Exception ex)
                 {
@@ -55,7 +56,7 @@ namespace WebClinica
                 gvBusquedaPaciente.DataSource = ListaVacia;
                 gvBusquedaPaciente.DataBind();
             }
-        protected void BusquedaUsuario_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void BusquedaMedico_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             int index = Convert.ToInt32(e.CommandArgument);
             string Legajo = gvBusquedaPaciente.Rows[index].Cells[1].Text;
