@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="PacientesModifica.aspx.cs" Inherits="WebClinica.PacientesModifica" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="PacientesModifica.aspx.cs" Inherits="WebClinica.PacientesModifica" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -33,7 +33,16 @@
                         display: none;
                     }
                 </style>
-                <asp:GridView ID="gvBusquedaPaciente" runat="server"></asp:GridView>
+                <asp:GridView ID="gvBusquedaPaciente"  AutoGenerateColumns="false" runat="server" OnRowCommand="BusquedaPaciente_RowCommand">
+                    <Columns>
+                        <asp:ButtonField HeaderText="Opcion" ButtonType="Link" Text="Seleccionar" CommandName="Select" />
+                        <asp:BoundField HeaderText="DNI" DataField="DNI" />
+                        <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
+                        <asp:BoundField HeaderText="Apellido" DataField="Apellido" />
+                        <asp:BoundField HeaderText="Domicilio" DataField="Domicilio" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
+                        <asp:BoundField HeaderText="FechaNacimiento" DataField="FechaNacimiento" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
+                    </Columns>
+                </asp:GridView>
   
             </div>
         </div>
@@ -64,6 +73,8 @@
     </div>
     <div style="margin-top: 20px;"> 
           <asp:Button Text="Aceptar" class="btn btn-primary" OnClick="Click_AceptarModiPaciente" runat="server" />
+
           <asp:Button Text="Cancelar" class="btn btn-primary" runat="server" />
+        <asp:Button Text="Cancelar" class="btn btn-primary" runat="server" />
     </div>
 </asp:Content>
