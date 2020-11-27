@@ -22,8 +22,7 @@
        <div style="margin-top: 30px;">
         <div class="form-group">
             <div class="form-group col-md-3">
-                <label>Buscar</label>
-                <asp:TextBox id="textid" runat="server" />  
+                <label>Buscar</label> 
                 <asp:TextBox class="form-control" placeholder="IdPaciente" ID="TextBuscarPaciente" runat="server" Width="887px" />
                 <asp:Button Text="Buscar" class="btn btn-primary" runat="server" OnClick="Click_BuscarPaciente" />
                 <asp:Button Text="Borrar" class="btn btn-primary" runat="server" OnClick="Click_BorrarListado" />

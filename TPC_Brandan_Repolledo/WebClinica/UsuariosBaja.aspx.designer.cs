@@ -15,12 +15,21 @@ namespace WebClinica
     {
 
         /// <summary>
-        /// Control TextBajaUsuarioLegajo.
+        /// Control TextBuscar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBajaUsuarioLegajo;
+        protected global::System.Web.UI.WebControls.TextBox TextBuscar;
+
+        /// <summary>
+        /// Control gvBusqueda.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvBusqueda;
     }
 }
