@@ -23,7 +23,7 @@ namespace WebClinica
             if (IsPostBack)
             {
                 NegocioPaciente Buscar = new NegocioPaciente();
-                ListadoOriginal = Buscar.ListaPaciente();  
+                ListadoOriginal = Buscar.ListaPaciente();   
                 try
                 {
                     if (TextBuscarPaciente.Text == "")
@@ -32,7 +32,7 @@ namespace WebClinica
                     }
                     else
                     {
-                        ListaFiltrada = ListadoOriginal.FindAll(Y => Convert.ToString(Y.DNI).Contains(TextBuscarPaciente.Text) || TextBuscarPaciente.LegajoUsuario.ToLower().Contains(TextBuscarPaciente.Text.ToLower()) || Y.Nombre.ToLower().Contains(TextBuscarPaciente.Text.ToLower()) || Y.Apellido.ToLower().Contains(TextBuscarPaciente.Text.ToLower()));
+                        ListaFiltrada = ListadoOriginal.FindAll(Y => Convert.ToString(Y.DNI).Contains(TextBuscarPaciente.Text) || TextBuscarPaciente.Text.ToLower().Contains(TextBuscarPaciente.Text.ToLower()) || Y.Nombre.ToLower().Contains(TextBuscarPaciente.Text.ToLower()) || Y.Apellido.ToLower().Contains(TextBuscarPaciente.Text.ToLower()));
                     }
                     gvBusquedaPaciente.DataSource = ListaFiltrada;
                     gvBusquedaPaciente.DataSource = ListaFiltrada;

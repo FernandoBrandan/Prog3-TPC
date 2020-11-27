@@ -23,12 +23,12 @@
     <div style="margin-top: 30px;">
         <div class="form-row">
             <div class="form-group col-md-3">
-                <label>DNI</label>
-                <asp:TextBox class="form-control" ID="txtDNI" runat="server" />
+                <label>DNI</label> 
+                <asp:TextBox class="form-control" ID="TextBajaUsuarioDNI"runat="server" />  
             </div>
             <div class="form-group col-md-3">
-                <label>Legajo</label>
-                <asp:TextBox class="form-control" ID="txtLegajo" runat="server" />
+                <label>Legajo</label> 
+                <asp:TextBox class="form-control" ID="TextBajaUsuarioLegajo" runat="server" />  
             </div>
         </div>
     </div>

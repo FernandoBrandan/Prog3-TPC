@@ -37,7 +37,7 @@
                 <asp:GridView ID="gvBusquedaPaciente" AutoGenerateColumns="false" runat="server" OnRowCommand="BusquedaPaciente_RowCommand">
                     <Columns>
                         <asp:ButtonField HeaderText="Opcion" ButtonType="Link" Text="Seleccionar" CommandName="Select" />
-                        <asp:BoundField HeaderText="Legajo" DataField="LegajoPaciente" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
+                        <asp:BoundField HeaderText="Codigo" DataField="CodigoPaciente" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
                         <asp:BoundField HeaderText="DNI" DataField="DNI" />
                         <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
                         <asp:BoundField HeaderText="Apellido" DataField="Apellido" />
