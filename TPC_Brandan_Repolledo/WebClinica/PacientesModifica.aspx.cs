@@ -33,7 +33,8 @@ namespace WebClinica
                     }
                     else
                     {
-                        ListaFiltrada = ListadoOriginal.FindAll(Y => Convert.ToString(Y.DNI).Contains(TextBuscarPaciente.Text) || Y.CodigoPaciente.ToLower().Contains(TextBuscarPaciente.Text.ToLower()) || Y.Nombre.ToLower().Contains(TextBuscarPaciente.Text.ToLower()) || Y.Apellido.ToLower().Contains(TextBuscarPaciente.Text.ToLower()));
+                        
+                        ListaFiltrada = ListadoOriginal.FindAll(Y => Convert.ToString(Y.DNI).Contains(TextBuscarPaciente.Text) || Y.Nombre.ToLower().Contains(TextBuscarPaciente.Text.ToLower()) || Y.Apellido.ToLower().Contains(TextBuscarPaciente.Text.ToLower()));
                     }
                     gvBusquedaPaciente.DataSource = ListaFiltrada;
                     gvBusquedaPaciente.DataSource = ListaFiltrada;

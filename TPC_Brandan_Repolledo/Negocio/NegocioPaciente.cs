@@ -16,12 +16,11 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.SetearQuery("select u.DNI, Nombre, Apellido, Domicilio, FechaNacimiento, Genero, Estado, CodigoPaciente from persona as p inner join Paciente as u on u.DNI=p.DNI");
+                datos.SetearQuery("select u.DNI, Nombre, Apellido, Domicilio, FechaNacimiento, Genero, Estado from persona as p inner join Paciente as u on u.DNI=p.DNI");
                 datos.EjecutarConsulta();
                 while (datos.Lector.Read())
                 {
                     Paciente aux = new Paciente();
-                    aux.CodigoPaciente = datos.Lector.GetString(0);
                     aux.DNI = datos.Lector.GetInt64(0);
                     aux.Nombre = datos.Lector.GetString(1);
                     aux.Apellido = datos.Lector.GetString(2);
@@ -29,7 +28,7 @@ namespace Negocio
                     aux.FechaNacimiento = datos.Lector.GetDateTime(4);
                     aux.Genero = datos.Lector.GetString(5);
                     aux.Estado = datos.Lector.GetBoolean(6);
-                    aux.CodigoPaciente= datos.Lector.GetString(7);
+                    //aux.CodigoPaciente= datos.Lector.GetString(7);
 
                     ListaPaciente.Add(aux);
                 }
