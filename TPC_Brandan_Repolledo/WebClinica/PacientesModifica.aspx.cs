@@ -65,6 +65,7 @@ namespace WebClinica
             TextModApellido.Text = gvBusquedaPaciente.Rows[index].Cells[4].Text;
             TextModDomicilio.Text = gvBusquedaPaciente.Rows[index].Cells[5].Text;
             TextModFechaNacimiento.Text = gvBusquedaPaciente.Rows[index].Cells[6].Text;
+
         }
 
         protected void Click_AceptarModiPaciente(object sender, EventArgs e)

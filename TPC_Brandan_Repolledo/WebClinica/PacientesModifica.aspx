@@ -36,11 +36,12 @@
                 <asp:GridView ID="gvBusquedaPaciente"  AutoGenerateColumns="false" runat="server" cellpadding="15" OnRowCommand="BusquedaPaciente_RowCommand">
                     <Columns>
                         <asp:ButtonField HeaderText="Opcion" ButtonType="Link" Text="Seleccionar" ControlStyle-ForeColor="SlateBlue"  CommandName ="Select" />
-                        <asp:BoundField HeaderText="DNI       "  DataField ="DNI" />
-                        <asp:BoundField HeaderText="Nombre    " DataField="Nombre" />
-                        <asp:BoundField HeaderText="Apellido  " DataField="Apellido" />
-                        <asp:BoundField HeaderText="Domicilio " DataField="Domicilio" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
-                        <asp:BoundField HeaderText="FechaNacimiento" DataField="FechaNacimiento" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
+                        <asp:BoundField HeaderText="Legajo" DataField="CodigoPaciente" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
+                        <asp:BoundField HeaderText="DNI       "  DataField  = "DNI" />
+                        <asp:BoundField HeaderText="Nombre    " DataField = "Nombre" />
+                        <asp:BoundField HeaderText="Apellido  " DataField ="Apellido" />       
+                        <asp:BoundField HeaderText="Domicilio " DataField = "Domicilio" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
+                        <asp:BoundField HeaderText="FechaNacimiento" DataField = "FechaNacimiento" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
                     </Columns>
                 </asp:GridView>
   
