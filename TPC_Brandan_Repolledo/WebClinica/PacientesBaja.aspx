@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <script>
-        function Validar() {
+        function  Validar() {
             var result = confirm("Seguro que desea realizar los cambios?");
             if (result){
                 return true;
@@ -13,8 +13,6 @@
             else{
                 return false;
             }
-        }
-
     </script>
 
     <h1  style="margin-top: 20px;color: cadetblue">Paciente</h1>
@@ -60,7 +58,7 @@
                 </asp:GridView>
                   <div>
             <asp:TextBox id="TextBorrarPaciente" runat="server" />
-            <asp:Button Text="Borrar Usuario" runat="server" OnClick="Click_AceptarBorrarPaciente" Height="33px" Width="263px" />
+            <asp:Button Text="Borrar Usuario"   runat="server" OnClick="Click_AceptarBorrarPaciente" Height="33px" Width="263px" />
         </div>
         </div>
 

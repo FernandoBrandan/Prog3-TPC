@@ -83,5 +83,12 @@ namespace Negocio
             datos.AgregarParametro("@Especialidad", nuevo.Especialidad.IdEspecialidad);
             datos.EjecutarConsulta();
         }
+        public void BajaMedico(Medico nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            datos.SetearQuery("update persona set estado = 0 where DNI = @DNI");
+            datos.AgregarParametro("@DNI", nuevo.DNI);
+            datos.EjecutarConsulta();
+        }
     }
 }

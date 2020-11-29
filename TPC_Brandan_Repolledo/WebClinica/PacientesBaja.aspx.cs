@@ -24,7 +24,6 @@ namespace WebClinica
         }
 
 
-
         protected void Click_BuscarBajaPaciente(object sender, EventArgs e)
         {
             if (IsPostBack)

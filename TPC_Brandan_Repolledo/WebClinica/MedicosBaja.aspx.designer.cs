@@ -15,21 +15,30 @@ namespace WebClinica
     {
 
         /// <summary>
-        /// Control txtDNI.
+        /// Control TextBuscarMedico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDNI;
+        protected global::System.Web.UI.WebControls.TextBox TextBuscarMedico;
 
         /// <summary>
-        /// Control txtLegajo.
+        /// Control gvBusquedaMedico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLegajo;
+        protected global::System.Web.UI.WebControls.GridView gvBusquedaMedico;
+
+        /// <summary>
+        /// Control TextBorrarMedico.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBorrarMedico;
     }
 }
