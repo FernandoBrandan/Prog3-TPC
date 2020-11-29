@@ -63,6 +63,7 @@ namespace WebClinica
             }
             catch (Exception ex)
             {
+                Response.Write("<script LANGUAGE='JavaScript' >alert('Le falta cargar algún dato ')</script>");
                 throw ex;
             } 
         }

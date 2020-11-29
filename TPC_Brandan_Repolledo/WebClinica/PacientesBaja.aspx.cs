@@ -18,17 +18,7 @@ namespace WebClinica
         {
 
         }
-
-        protected void BusquedaBajaPaciente_RowCommand(object sender, GridViewCommandEventArgs e)
-          {
-            int index = Convert.ToInt32(e.CommandArgument);
-            string Legajo = gvBusquedaPaciente.Rows[index].Cells[1].Text;
-            TextBorrarUsuario.Text = gvBusquedaPaciente.Rows[index].Cells[2].Text;
-
-        }
-
-
-        protected void Click_BuscarPacienteB(object sender, EventArgs e)
+        protected void Click_BuscarBajaPaciente(object sender, EventArgs e)
         {
             if (IsPostBack)
             {
@@ -42,7 +32,6 @@ namespace WebClinica
                     }
                     else
                     {
-
                         ListaFiltrada = ListadoOriginal.FindAll(Y => Convert.ToString(Y.DNI).Contains(TextBuscarPaciente.Text) || Y.Nombre.ToLower().Contains(TextBuscarPaciente.Text.ToLower()) || Y.Apellido.ToLower().Contains(TextBuscarPaciente.Text.ToLower()));
                     }
                     gvBusquedaPaciente.DataSource = ListaFiltrada;
@@ -58,60 +47,23 @@ namespace WebClinica
             }
         }
 
-
-        protected void Click_BorrarPacienteB(object sender, EventArgs e)
+        protected void BusquedaBajaPaciente_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            NegocioPaciente Eliminar = new NegocioPaciente();
-            Paciente pacienteElim = new Paciente();
-            try
-            {
+            int index = Convert.ToInt32(e.CommandArgument);
+            string Legajo = gvBusquedaPaciente.Rows[index].Cells[1].Text;
+            TextBorrarPaciente.Text = gvBusquedaPaciente.Rows[index].Cells[2].Text;
 
-                pacienteElim.DNI = Convert.ToInt64(TextBuscarPaciente.Text);
-                Eliminar.EliminarPaciente(pacienteElim);
-                Response.Write("<script LANGUAGE='JavaScript' >alert('Se ha borrado al paciente')</script>");
-
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-
-            /* TextBuscarPaciente.Text = "";
-             gvBusquedaPaciente.DataSource = ListaVacia;
-             gvBusquedaPaciente.DataBind();*/
         }
-
-
-
-        protected void Click_BorrarListadoPaciente(object sender, EventArgs e)
+        protected void Click_AceptarBorrarPaciente(object sender, EventArgs e)
         {
-            NegocioPaciente Eliminar = new NegocioPaciente();
-            Paciente pacienteElim = new Paciente();
-            try
-            {
-                Eliminar.EliminarPaciente(pacienteElim);
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-
-            /* TextBuscarPaciente.Text = "";
-             gvBusquedaPaciente.DataSource = ListaVacia;
-             gvBusquedaPaciente.DataBind();*/
-        }
-        protected void Click_AceptarBorrarUsusario(object sender, EventArgs e)
-        {
-            Usuario bajaUsuario = new Usuario();
-            bajaUsuario.DNI = long.Parse(TextBorrarUsuario.Text);
-            NegocioUsuario Borrar = new NegocioUsuario();
-            Borrar.BajaUsuario(bajaUsuario);
-            Response.Write("<script LANGUAGE='JavaScript' >alert('Se dio de baja el usuario" + bajaUsuario.DNI + "')</script>");
-            TextBorrarUsuario.Text = "";
+            Paciente bajaPaciente = new Paciente();
+            bajaPaciente.DNI = long.Parse(TextBorrarPaciente.Text);
+            NegocioPaciente Borrar = new NegocioPaciente();
+            Borrar.EliminarPaciente(bajaPaciente);
+            Response.Write("<script LANGUAGE='JavaScript' >alert('Se dio de baja el usuario" + bajaPaciente.DNI + "')</script>");
+           /*/ TextBorrarPaciente.Text = "";
             gvBusquedaPaciente.DataSource = ListaVacia;
-            gvBusquedaPaciente.DataBind(); 
+            gvBusquedaPaciente.DataBind(); */
         }
 
 

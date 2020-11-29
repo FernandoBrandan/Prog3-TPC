@@ -3,7 +3,21 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1 style="margin-top: 20px;">BAJA DEL PACIENTE</h1>
+
+    <script>
+        function Validar() {
+            var result = confirm("Seguro que desea realizar los cambios?");
+            if (result){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+
+    </script>
+
+    <h1 style="margin-top: 20px;">Baja del paciente</h1>
     <div style="margin-top: 50px;">
         <nav aria-label="...">
             <ul class="pagination pagination-lg">
@@ -17,36 +31,23 @@
             </ul>
         </nav>
     </div>
-     <script>
-        function Validar() {
-
-            var result = confirm("Seguro que desea realizar los cambios?");
-
-            if (result) {
-                return true;
-            }
-            else {
-                return false;
-            }
-        }
-
-     </script>
+     
     
     <h4>Ingresar DNI o Codigo de Paciente</h4>
    <div style="margin-top: 30px;">
         <div class="form-group">
             <div class="form-group col-md-3"> 
-                <label>Buscar</label>   
-                <asp:TextBox class="form-control" placeholder="IdPaciente" ID="TextBuscarPaciente" runat="server" Width="500" />
-                <asp:Button Text="Buscar" class="btn btn-primary" runat="server" OnClick="Click_BuscarPacienteB" />
-                <asp:Button Text="Borrar" class="btn btn-primary" runat="server" OnClick="Click_BorrarPacienteB" />
+                <label>Buscar</label>     
+                <asp:TextBox class="form-control" placeholder="IdPaciente" ID="TextBuscarPaciente" runat="server" Width="500" OnTextChanged="Click_BuscarBajaPaciente" />
+                <asp:Button Text="Buscar" class="btn btn-primary" runat="server" />
+                <asp:Button Text="Borrar" class="btn btn-primary" runat="server" />
 
                 <style>
                     .oculto {
                         display: none;
                     }
                 </style> 
-                <asp:GridView ID="gvBusquedaPaciente"  AutoGenerateColumns="false" runat="server" OnRowCommand= "BusquedaBajaPaciente"  cellpadding="15" >
+                <asp:GridView ID="gvBusquedaPaciente"  AutoGenerateColumns="false" runat="server" OnRowCommand="BusquedaBajaPaciente_RowCommand"  cellpadding="15" >
                     <Columns>
                         <asp:ButtonField HeaderText="Opcion" ButtonType="Link" Text="Borrar" ControlStyle-ForeColor="SlateBlue"  CommandName ="Select" />
                         <asp:BoundField HeaderText="Legajo" DataField="CodigoPaciente" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
@@ -58,8 +59,8 @@
                     </Columns>
                 </asp:GridView>
                   <div>
-            <asp:TextBox id="TextBorrarUsuario" runat="server" />
-            <asp:Button Text="Borrar Usuario" runat="server" OnClick="Click_AceptarBorrarUsusario" />
+            <asp:TextBox id="TextBorrarPaciente" runat="server" />
+            <asp:Button Text="Borrar Usuario" runat="server" OnClick="Click_AceptarBorrarPaciente" />
         </div>
         </div>
 
