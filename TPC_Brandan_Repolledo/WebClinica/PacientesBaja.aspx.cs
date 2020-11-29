@@ -19,15 +19,15 @@ namespace WebClinica
 
         }
 
-        /* protected void BusquedaPaciente_RowCommand(object sender, GridViewCommandEventArgs e)
+       /* protected void BusquedaPaciente_RowCommand(object sender, GridViewCommandEventArgs e)
          {
              int index = Convert.ToInt32(e.CommandArgument);
              string Legajo = gvBusquedaPaciente.Rows[index].Cells[1].Text;
-             TextModDNI.Text = gvBusquedaPaciente.Rows[index].Cells[2].Text;
-             TextModNombre.Text = gvBusquedaPaciente.Rows[index].Cells[3].Text;
-             TextModApellido.Text = gvBusquedaPaciente.Rows[index].Cells[4].Text;
-             TextModDomicilio.Text = gvBusquedaPaciente.Rows[index].Cells[5].Text;
-             TextModFechaNacimiento.Text = gvBusquedaPaciente.Rows[index].Cells[6].Text;
+             TextElimDNI.Text = gvBusquedaPaciente.Rows[index].Cells[2].Text;
+             TextElimNombre.Text = gvBusquedaPaciente.Rows[index].Cells[3].Text;
+             TextElimApellido.Text = gvBusquedaPaciente.Rows[index].Cells[4].Text;
+             TextElimDomicilio.Text = gvBusquedaPaciente.Rows[index].Cells[5].Text;
+             TextElimFechaNacimiento.Text = gvBusquedaPaciente.Rows[index].Cells[6].Text;
 
          }*/
 
@@ -64,9 +64,23 @@ namespace WebClinica
 
         protected void Click_BorrarListadoPacienteB(object sender, EventArgs e)
         {
-            TextBuscarPaciente.Text = "";
-            gvBusquedaPaciente.DataSource = ListaVacia;
-            gvBusquedaPaciente.DataBind();
+            NegocioPaciente Eliminar = new NegocioPaciente();
+            Paciente pacienteElim = new Paciente();
+            try
+            {
+
+                pacienteElim.DNI = Convert.ToInt64(TextBuscarPaciente.Text);
+                Eliminar.EliminarPaciente(pacienteElim);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            /* TextBuscarPaciente.Text = "";
+             gvBusquedaPaciente.DataSource = ListaVacia;
+             gvBusquedaPaciente.DataBind();*/
         }
 
 

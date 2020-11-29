@@ -35,7 +35,7 @@
                 </style> 
                 <asp:GridView ID="gvBusquedaPaciente"  AutoGenerateColumns="false" runat="server" cellpadding="15" >
                     <Columns>
-                        <asp:ButtonField HeaderText="Opcion" ButtonType="Link" Text="Borrar" ControlStyle-ForeColor="SlateBlue"  CommandName ="Select" />
+
                         <asp:BoundField HeaderText="Legajo" DataField="CodigoPaciente" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
                         <asp:BoundField HeaderText="DNI       "  DataField  = "DNI" />
                         <asp:BoundField HeaderText="Nombre    " DataField = "Nombre" />
@@ -44,22 +44,9 @@
                         <asp:BoundField HeaderText="FechaNacimiento" DataField = "FechaNacimiento" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
                     </Columns>
                 </asp:GridView>
-           
-            <div class="form-group col-md-3">
-                <label>DNI</label>
-                <asp:TextBox class="form-control" ID="txtDNI" runat="server" Width="500px" />
-            </div>
-            <div class="form-group col-md-3">
-                <label>Legajo</label>
-                <asp:TextBox class="form-control" ID="txtLegajo" runat="server" Width="500px"/>
-            </div>
         </div>
+
     </div>
    </div>
 
-  
-    <div style="margin-top: 20px;">
-        <button type="submit" class="btn btn-primary">Aceptar</button>
-        <button type="submit" class="btn btn-primary">Cancelar</button>
-    </div>
 </asp:Content>
