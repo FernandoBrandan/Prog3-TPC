@@ -39,7 +39,7 @@
             <div class="form-group col-md-3"> 
                 <label>Buscar</label>     
                 <asp:TextBox class="form-control" placeholder="IdPaciente" ID="TextBuscarPaciente" runat="server" Width="500" OnTextChanged="Click_BuscarBajaPaciente" />
-                <asp:Button Text="Buscar" class="btn btn-primary" runat="server" />
+                <asp:Button Text="Buscar" class="btn btn-primary" runat="server" OnClick="Click_BuscarBajaPaciente" />
                 <asp:Button Text="Borrar" class="btn btn-primary" runat="server" />
 
                 <style>

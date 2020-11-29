@@ -16,14 +16,20 @@ namespace WebClinica
         public List<Paciente> ListaVacia { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+            gvBusquedaPaciente.DataSource = ListadoOriginal;
+            gvBusquedaPaciente.DataBind();
 
         }
+
+
+
         protected void Click_BuscarBajaPaciente(object sender, EventArgs e)
         {
             if (IsPostBack)
             {
                 NegocioPaciente Buscar = new NegocioPaciente();
                 ListadoOriginal = Buscar.ListaPaciente();
+                
                 try
                 {
                     if (TextBuscarPaciente.Text == "")
@@ -35,10 +41,7 @@ namespace WebClinica
                         ListaFiltrada = ListadoOriginal.FindAll(Y => Convert.ToString(Y.DNI).Contains(TextBuscarPaciente.Text) || Y.Nombre.ToLower().Contains(TextBuscarPaciente.Text.ToLower()) || Y.Apellido.ToLower().Contains(TextBuscarPaciente.Text.ToLower()));
                     }
                     gvBusquedaPaciente.DataSource = ListaFiltrada;
-                    gvBusquedaPaciente.DataSource = ListaFiltrada;
                     gvBusquedaPaciente.DataBind();
-
-
                 }
                 catch (Exception ex)
                 {
