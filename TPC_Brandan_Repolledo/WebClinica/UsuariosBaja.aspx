@@ -40,9 +40,9 @@
         <div class="form-group col-md-3">
 
             <label>Buscar</label>
-            <asp:TextBox class="form-control" placeholder="IdUsuario" ID="TextBuscar" runat="server" Width="887px" OnTextChanged="Click_BuscarBajaUsuario" />
+            <asp:TextBox class="form-control" placeholder="IdUsuario" ID="TextBuscar" runat="server" Width="882px" OnTextChanged="Click_BuscarBajaUsuario" />
 
-            <asp:Button Text="Buscar" class="btn btn-primary" runat="server" />
+            <asp:Button Text="Buscar" class="btn btn-primary" runat="server" OnClick="Click_BuscarBajaUsuario" />
             <asp:Button Text="Borrar" class="btn btn-primary" runat="server" />
 
             <style>
@@ -66,7 +66,7 @@
 
 
         <div>
-            <asp:TextBox id="TextBorrarUsuario" runat="server" />
+            <asp:TextBox id="TextBorrarUsuario" runat="server" Width="210px" />
             <asp:Button Text="Borrar Usuario" runat="server" OnClick="Click_AceptarBorrarUsusario" />
         </div>
 

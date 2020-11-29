@@ -16,6 +16,8 @@ namespace WebClinica
         public List<Paciente> ListaVacia { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+            NegocioPaciente CargarBuscar = new NegocioPaciente();
+            ListadoOriginal = CargarBuscar.ListaPaciente();
             gvBusquedaPaciente.DataSource = ListadoOriginal;
             gvBusquedaPaciente.DataBind();
 
@@ -62,8 +64,8 @@ namespace WebClinica
             Paciente bajaPaciente = new Paciente();
             bajaPaciente.DNI = long.Parse(TextBorrarPaciente.Text);
             NegocioPaciente Borrar = new NegocioPaciente();
-            Borrar.EliminarPaciente(bajaPaciente);
-            Response.Write("<script LANGUAGE='JavaScript' >alert('Se dio de baja el usuario" + bajaPaciente.DNI + "')</script>");
+            Borrar.BajaPaciente(bajaPaciente);
+            Response.Write("<script LANGUAGE='JavaScript' >alert('Se dio de baja al paciente: " + bajaPaciente.DNI + "')</script>");
            /*/ TextBorrarPaciente.Text = "";
             gvBusquedaPaciente.DataSource = ListaVacia;
             gvBusquedaPaciente.DataBind(); */

@@ -17,7 +17,7 @@
 
     </script>
 
-    <h1 style="margin-top: 20px;">Baja del paciente</h1>
+    <h1  style="margin-top: 20px;color: cadetblue">Paciente</h1>
     <div style="margin-top: 50px;">
         <nav aria-label="...">
             <ul class="pagination pagination-lg">
@@ -38,9 +38,9 @@
         <div class="form-group">
             <div class="form-group col-md-3"> 
                 <label>Buscar</label>     
-                <asp:TextBox class="form-control" placeholder="IdPaciente" ID="TextBuscarPaciente" runat="server" Width="500" OnTextChanged="Click_BuscarBajaPaciente" />
-                <asp:Button Text="Buscar" class="btn btn-primary" runat="server" OnClick="Click_BuscarBajaPaciente" />
-                <asp:Button Text="Borrar" class="btn btn-primary" runat="server" />
+                <asp:TextBox class="form-control" placeholder="IdPaciente" ID="TextBuscarPaciente" runat="server" Width="500"  />
+
+                <asp:Button Text="Buscar" class="btn btn-primary" runat="server"  OnClick="Click_BuscarBajaPaciente"/>
 
                 <style>
                     .oculto {
@@ -60,7 +60,7 @@
                 </asp:GridView>
                   <div>
             <asp:TextBox id="TextBorrarPaciente" runat="server" />
-            <asp:Button Text="Borrar Usuario" runat="server" OnClick="Click_AceptarBorrarPaciente" />
+            <asp:Button Text="Borrar Usuario" runat="server" OnClick="Click_AceptarBorrarPaciente" Height="33px" Width="263px" />
         </div>
         </div>
 

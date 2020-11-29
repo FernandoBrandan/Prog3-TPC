@@ -94,7 +94,7 @@ namespace Negocio
             datos.EjecutarConsulta();
         }
 
-        public void EliminarPaciente(Paciente nuevo)
+        public void BajaPaciente(Paciente nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
             datos.SetearQuery("update persona set estado = 0 where DNI = @DNI");

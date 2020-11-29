@@ -69,7 +69,7 @@ namespace WebClinica
             bajaUsuario.DNI = long.Parse(TextBorrarUsuario.Text);
             NegocioUsuario Borrar = new NegocioUsuario();
             Borrar.BajaUsuario(bajaUsuario);
-            Response.Write("<script LANGUAGE='JavaScript' >alert('Se dio de baja el usuario" + bajaUsuario.DNI + "')</script>");
+            Response.Write("<script LANGUAGE='JavaScript' >alert('Se dio de baja el usuario: " + bajaUsuario.DNI + "')</script>");
 
         }
     }
