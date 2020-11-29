@@ -3,6 +3,22 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <script>
+        function Validar() {
+
+            var result = confirm("Seguro que desea realizar los cambios?");
+
+            if (result) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+    </script>
+
     <h1 style="margin-top: 20px;">Usuario</h1>
 
     <div style="margin-top: 30px;">
@@ -19,15 +35,15 @@
         </nav>
     </div>
 
-    <h4>Ingresar DNI o Codigo del Usuario</h4>
     <div style="margin-top: 30px;">
 
-
         <div class="form-group col-md-3">
+
             <label>Buscar</label>
             <asp:TextBox class="form-control" placeholder="IdUsuario" ID="TextBuscar" runat="server" Width="887px" OnTextChanged="Click_BuscarBajaUsuario" />
-            <asp:Button Text="Buscar" class="btn btn-primary" runat="server"/>
-            <asp:Button Text="Borrar" class="btn btn-primary" runat="server"/>
+
+            <asp:Button Text="Buscar" class="btn btn-primary" runat="server" />
+            <asp:Button Text="Borrar" class="btn btn-primary" runat="server" />
 
             <style>
                 .oculto {
@@ -37,7 +53,7 @@
 
             <asp:GridView ID="gvBusqueda" AutoGenerateColumns="false" runat="server" OnRowCommand="BusquedaBajaUsuario_RowCommand">
                 <Columns>
-                    <asp:ButtonField HeaderText="Opcion" ButtonType="Link" Text="Baja" CommandName="Select"/>
+                    <asp:ButtonField HeaderText="Opcion" ButtonType="Link" Text="Baja" CommandName="Select" />
                     <asp:BoundField HeaderText="Legajo" DataField="LegajoUsuario" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
                     <asp:BoundField HeaderText="DNI" DataField="DNI" />
                     <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
@@ -48,10 +64,6 @@
             </asp:GridView>
         </div>
 
+    </div>
 
-    </div>
-    <div style="margin-top: 20px;">
-        <button type="submit" class="btn btn-primary">Aceptar</button>
-        <button type="submit" class="btn btn-primary">Cancelar</button>
-    </div>
 </asp:Content>
