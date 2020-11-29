@@ -51,7 +51,7 @@
                 }
             </style>
 
-            <asp:GridView ID="gvBusqueda" AutoGenerateColumns="false" runat="server" OnRowCommand="BusquedaBajaUsuario_RowCommand">
+            <asp:GridView ID="gvBusqueda" AutoGenerateColumns="false" runat="server" OnRowCommand="BusquedaBajaUsuario_RowCommand" cellpadding="15">
                 <Columns>
                     <asp:ButtonField HeaderText="Opcion" ButtonType="Link" Text="Baja" CommandName="Select" />
                     <asp:BoundField HeaderText="Legajo" DataField="LegajoUsuario" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />

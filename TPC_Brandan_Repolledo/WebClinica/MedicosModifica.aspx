@@ -31,7 +31,7 @@
                     }
                 </style>
 
-                <asp:GridView ID="gvBusqueda" AutoGenerateColumns="false" runat="server" OnRowCommand="BusquedaMedico_RowCommand" >
+                <asp:GridView ID="gvBusqueda" AutoGenerateColumns="false" runat="server" OnRowCommand="BusquedaMedico_RowCommand" cellpadding="15" >
                     <Columns>
                         <asp:ButtonField HeaderText="Opcion" ButtonType="Link" Text="Seleccionar" CommandName="Select" />
                         <asp:BoundField HeaderText="Legajo" DataField="LegajoMedico" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
