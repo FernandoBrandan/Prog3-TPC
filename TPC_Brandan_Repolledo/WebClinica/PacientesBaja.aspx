@@ -26,7 +26,7 @@
                 <label>Buscar</label>   
                 <asp:TextBox class="form-control" placeholder="IdPaciente" ID="TextBuscarPaciente" runat="server" Width="500" />
                 <asp:Button Text="Buscar" class="btn btn-primary" runat="server" OnClick="Click_BuscarPacienteB" />
-                <asp:Button Text="Borrar" class="btn btn-primary" runat="server" OnClick="Click_BorrarListadoPacienteB" />
+                <asp:Button Text="Borrar" class="btn btn-primary" runat="server" OnClick="Click_BorrarPacienteB" />
 
                 <style>
                     .oculto {

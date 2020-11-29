@@ -94,7 +94,6 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             datos.SetearQuery("Delete Paciente where DNI = @DNI");
             datos.AgregarParametro("@DNI", nuevo.DNI);
-
             datos.EjecutarConsulta();
         }
 

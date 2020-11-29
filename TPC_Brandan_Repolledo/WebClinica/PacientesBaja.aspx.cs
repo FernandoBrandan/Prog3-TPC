@@ -62,7 +62,7 @@ namespace WebClinica
         }
 
 
-        protected void Click_BorrarListadoPacienteB(object sender, EventArgs e)
+        protected void Click_BorrarPacienteB(object sender, EventArgs e)
         {
             NegocioPaciente Eliminar = new NegocioPaciente();
             Paciente pacienteElim = new Paciente();
@@ -71,6 +71,8 @@ namespace WebClinica
 
                 pacienteElim.DNI = Convert.ToInt64(TextBuscarPaciente.Text);
                 Eliminar.EliminarPaciente(pacienteElim);
+                Response.Write("<script LANGUAGE='JavaScript' >alert('Se ha borrado al paciente')</script>");
+
             }
             catch (Exception ex)
             {
@@ -106,5 +108,11 @@ namespace WebClinica
 
 
         public virtual int CellSpacing { get; set; } // Le da espaciado a las celdas de grilla
+        public void limpiarTabla( )
+        {
+            TextBuscarPaciente.Text = "";
+            gvBusquedaPaciente.DataSource = ListaVacia;
+            gvBusquedaPaciente.DataBind();
+        }
     }
 }

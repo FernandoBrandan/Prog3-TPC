@@ -87,10 +87,11 @@ namespace WebClinica
                 PacienteMod.FechaNacimiento = DateTime.Parse(TextModFechaNacimiento.Text);
 
                 Modificar.ModificarPaciente(PacienteMod);
+                Response.Write("<script LANGUAGE='JavaScript' >alert('Se ha modificado al paciente correctamente')</script>");
             }
             catch (Exception ex)
             {
-
+                Response.Write("<script LANGUAGE='JavaScript' >alert('A ocurrido un error intente nuevamente')</script>");
                 throw ex;
             }
         }
