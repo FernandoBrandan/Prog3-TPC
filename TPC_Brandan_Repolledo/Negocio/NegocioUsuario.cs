@@ -75,5 +75,12 @@ namespace Negocio
             datos.AgregarParametro("@FechaNacimiento", nuevo.FechaNacimiento);
             datos.EjecutarConsulta();
         }
+        public void BajaUsuario(Usuario nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            datos.SetearQuery("update persona set estado = 0 where DNI = @DNI");
+            datos.AgregarParametro("@DNI", nuevo.DNI);
+            datos.EjecutarConsulta();
+        }
     }
 }

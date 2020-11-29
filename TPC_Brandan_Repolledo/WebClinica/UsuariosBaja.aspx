@@ -64,6 +64,12 @@
             </asp:GridView>
         </div>
 
+
+        <div>
+            <asp:TextBox id="TextBorrarUsuario" runat="server" />
+            <asp:Button Text="Borrar Usuario" runat="server" OnClick="Click_AceptarBorrarUsusario" />
+        </div>
+
     </div>
 
 </asp:Content>

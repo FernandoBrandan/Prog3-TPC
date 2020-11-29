@@ -55,12 +55,22 @@ namespace WebClinica
 
             int index = Convert.ToInt32(e.CommandArgument);
             string Legajo = gvBusqueda.Rows[index].Cells[1].Text;
-       
+            TextBorrarUsuario.Text = gvBusqueda.Rows[index].Cells[2].Text; 
         }
 
         public void GuardarBaja()
         {
              
+        }
+
+        protected void Click_AceptarBorrarUsusario(object sender, EventArgs e)
+        {
+            Usuario bajaUsuario = new Usuario();
+            bajaUsuario.DNI = long.Parse(TextBorrarUsuario.Text);
+            NegocioUsuario Borrar = new NegocioUsuario();
+            Borrar.BajaUsuario(bajaUsuario);
+            Response.Write("<script LANGUAGE='JavaScript' >alert('Se dio de baja el usuario" + bajaUsuario.DNI + "')</script>");
+
         }
     }
 }
