@@ -66,19 +66,17 @@ namespace WebClinica
             NegocioPaciente Borrar = new NegocioPaciente();
             Borrar.BajaPaciente(bajaPaciente);
             Response.Write("<script LANGUAGE='JavaScript' >alert('Se dio de baja al paciente: " + bajaPaciente.DNI + "')</script>");
-           /*/ TextBorrarPaciente.Text = "";
-            gvBusquedaPaciente.DataSource = ListaVacia;
-            gvBusquedaPaciente.DataBind(); */
+            LimpiarTabla(TextBorrarPaciente.Text,gvBusquedaPaciente);
         }
 
-
-        public virtual int CellSpacing { get; set; } // Le da espaciado a las celdas de grilla
-        public void limpiarTabla( )
+        private void LimpiarTabla(string text, GridView gvBusquedaPaciente)
         {
             TextBuscarPaciente.Text = "";
             gvBusquedaPaciente.DataSource = ListaVacia;
             gvBusquedaPaciente.DataBind();
         }
+
+        public virtual int CellSpacing { get; set; } // Le da espaciado a las celdas de grilla
 
     }
 }
