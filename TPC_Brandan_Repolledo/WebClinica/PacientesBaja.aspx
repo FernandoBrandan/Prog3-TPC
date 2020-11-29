@@ -57,8 +57,8 @@
                     </Columns>
                 </asp:GridView>
                   <div>
-            <asp:TextBox id="TextBorrarPaciente" runat="server" />
-            <asp:Button Text="Borrar Usuario"   runat="server" OnClick="Click_AceptarBorrarPaciente" Height="33px" Width="263px" />
+            <asp:TextBox id="TextBorrarPaciente" runat="server"  Width="210px"  />
+            <asp:Button Text="Borrar Usuario"   runat="server" OnClick="Click_AceptarBorrarPaciente" Height="40px" Width="115px" />
         </div>
         </div>
 

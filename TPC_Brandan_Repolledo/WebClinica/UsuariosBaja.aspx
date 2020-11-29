@@ -19,7 +19,7 @@
 
     </script>
 
-    <h1 style="margin-top: 20px;">Usuario</h1>
+      <h1  style="margin-top: 20px;color: cadetblue">Usuario</h1>
 
     <div style="margin-top: 30px;">
         <nav aria-label="...">
