@@ -29,9 +29,6 @@
             </ul>
         </nav>
     </div>
-     
-    
-    <h4>Ingresar DNI o Codigo de Paciente</h4>
    <div style="margin-top: 30px;">
         <div class="form-group">
             <div class="form-group col-md-3"> 
@@ -57,7 +54,7 @@
                     </Columns>
                 </asp:GridView>
                   <div>
-            <asp:TextBox id="TextBorrarPaciente" runat="server"  Width="210px"  />
+            <asp:TextBox id="TextBorrarPaciente" runat="server"  Width="210px" Enabled="False"  />
             <asp:Button Text="Borrar Usuario"   runat="server" OnClick="Click_AceptarBorrarPaciente" Height="40px" Width="115px" />
         </div>
         </div>

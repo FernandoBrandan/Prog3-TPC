@@ -17,13 +17,11 @@
             </ul>
         </nav>
     </div> 
-
-   <h4>Ingresar DNI o Codigo del Usuario</h4>
        <div style="margin-top: 30px;">
         <div class="form-group">
             <div class="form-group col-md-3">
                 <label>Buscar</label>
-                <asp:TextBox class="form-control" placeholder="IdUsuario" ID="TextMedicoBuscar" runat="server" Width="887px"/> 
+                <asp:TextBox class="form-control" placeholder="IdUsuario" ID="TextMedicoBuscar" runat="server" Width="883px"/> 
                 <asp:Button Text="Buscar" class="btn btn-primary" runat="server" OnClick="Click_BuscarMedico"/>
                 <asp:Button Text="Borrar" class="btn btn-primary" runat="server" OnClick="Click_BorrarListado"/>
 

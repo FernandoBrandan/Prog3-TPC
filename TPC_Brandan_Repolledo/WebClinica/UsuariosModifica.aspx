@@ -18,8 +18,6 @@
             </ul>
         </nav>
     </div>
-
-    <h4>Ingresar DNI o Codigo del Usuario</h4>
        <div style="margin-top: 30px;">
         <div class="form-group">
             <div class="form-group col-md-3">

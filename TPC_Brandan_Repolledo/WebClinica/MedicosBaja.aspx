@@ -33,7 +33,7 @@
         <div class="form-group">
             <div class="form-group col-md-3"> 
                 <label>Buscar</label>     
-                <asp:TextBox class="form-control" placeholder="IdPaciente" ID="TextBuscarMedico" runat="server" Width="500"  />
+                <asp:TextBox class="form-control" placeholder="IdMedico" ID="TextBuscarMedico" runat="server" Width="500"  />
 
                 <asp:Button Text="Buscar" class="btn btn-primary" runat="server"  OnClick="Click_BuscarBajaPaciente"/>
 
@@ -54,7 +54,7 @@
                     </Columns>
                 </asp:GridView>
                   <div>
-            <asp:TextBox id="TextBorrarMedico" runat="server" Width="152px" />
+            <asp:TextBox id="TextBorrarMedico" runat="server" Width="152px" Enabled="False" />
             <asp:Button Text="Borrar Usuario"   runat="server" OnClick="Click_AceptarBorrarMedico" Height="33px" Width="117px" />
         </div>
         </div>
