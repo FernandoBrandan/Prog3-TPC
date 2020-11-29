@@ -18,16 +18,17 @@
         </nav>
     </div>
 
-    <div style="margin-top: 30px;">
-         <h3>Desplegable desde DB</h3>
-                <div class="form-group">
-                    <asp:Label Text="Pokemons" runat="server" />
-                    <asp:DropDownList runat="server" ID="ddlPokemons" CssClass="form-control">
+    <div style="margin-top: 30px;">  
+                <div class="form-group ">
+                    <asp:Label Text="Especialidades" runat="server" />
+                    <asp:DropDownList runat="server" ID="ddlModEspecialidad" CssClass="form-control col-md-3">
+                      
                     </asp:DropDownList>
+                    <asp:Button Text="Elegir" class="btn btn-primary" runat="server" OnClick="Click_ElegirEspecialidad" />
                 </div>
-        </div>
-        <div style="margin-top: 20px;">
-        <asp:Button Text="Aceptar" class="btn btn-primary"  runat="server" />
-        <asp:Button Text="Cancelar" class="btn btn-primary" runat="server" />
+    </div>
+    <div style="margin-top: 20px;">
+        <asp:TextBox id="TextBorrarEspecialidad" runat="server" Width="152px" />
+            <asp:Button Text="Borrar Especialidad"   runat="server" OnClick="Click_AceptaBorrarEspecialidad" Height="33px" Width="175px" />
     </div>
 </asp:Content>

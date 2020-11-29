@@ -15,12 +15,21 @@ namespace WebClinica
     {
 
         /// <summary>
-        /// Control ddlPokemons.
+        /// Control ddlModEspecialidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlPokemons;
+        protected global::System.Web.UI.WebControls.DropDownList ddlModEspecialidad;
+
+        /// <summary>
+        /// Control TextBorrarEspecialidad.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBorrarEspecialidad;
     }
 }
