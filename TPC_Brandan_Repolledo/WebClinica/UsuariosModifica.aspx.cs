@@ -83,6 +83,7 @@ namespace WebClinica
                 UsuarioMod.FechaNacimiento = DateTime.Parse(TextModFechaNacimiento.Text);
 
                 Modificar.ModificarUsuario(UsuarioMod);
+                Response.Write("<script LANGUAGE='JavaScript' >alert('Se ha modificado al usuario correctamente')</script>");
             }
             catch (Exception ex)
             {

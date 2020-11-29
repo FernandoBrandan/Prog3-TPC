@@ -48,15 +48,19 @@ namespace WebClinica
                 }
             }
         }
-    
 
-            protected void Click_BorrarListadoPaciente(object sender, EventArgs e)
-            {
-                TextBuscarPaciente.Text = "";
-                gvBusquedaPaciente.DataSource = ListaVacia;
-                gvBusquedaPaciente.DataBind();
-            }
-        protected void BusquedaMedico_RowCommand(object sender, GridViewCommandEventArgs e)
+
+        protected void Click_BorrarListadoPaciente(object sender, EventArgs e)
+        {
+      
+
+             TextBuscarPaciente.Text = "";
+             gvBusquedaPaciente.DataSource = ListaVacia;
+             gvBusquedaPaciente.DataBind();
+        }
+
+
+        protected void BusquedaPaciente_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             int index = Convert.ToInt32(e.CommandArgument);
             string Legajo = gvBusquedaPaciente.Rows[index].Cells[1].Text;
@@ -65,6 +69,7 @@ namespace WebClinica
             TextModApellido.Text = gvBusquedaPaciente.Rows[index].Cells[4].Text;
             TextModDomicilio.Text = gvBusquedaPaciente.Rows[index].Cells[5].Text;
             TextModFechaNacimiento.Text = gvBusquedaPaciente.Rows[index].Cells[6].Text;
+
         }
 
         protected void Click_AceptarModiPaciente(object sender, EventArgs e)
@@ -82,13 +87,17 @@ namespace WebClinica
                 PacienteMod.FechaNacimiento = DateTime.Parse(TextModFechaNacimiento.Text);
 
                 Modificar.ModificarPaciente(PacienteMod);
+                Response.Write("<script LANGUAGE='JavaScript' >alert('Se ha modificado al paciente correctamente')</script>");
             }
             catch (Exception ex)
             {
-
+                Response.Write("<script LANGUAGE='JavaScript' >alert('A ocurrido un error intente nuevamente')</script>");
                 throw ex;
             }
         }
+
+        public virtual int CellSpacing { get; set; } // Le da espaciado a las celdas de grilla
+
     }
 
 }

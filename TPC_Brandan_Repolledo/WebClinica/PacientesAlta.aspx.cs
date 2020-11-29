@@ -59,7 +59,7 @@ namespace WebClinica
                 CargaPacientes.AgregarPersona(nuevaPersona);
                 CargaPacientes.AgregarPaciente(nuevoPaciente, nuevaPersona);
 
-                Response.Write("<script LANGUAGE='JavaScript' >alert('Se cargo correctamente el Usuario')</script>");
+                Response.Write("<script LANGUAGE='JavaScript' >alert('Se cargo correctamente al paciente ')</script>");
             }
             catch (Exception ex)
             {
