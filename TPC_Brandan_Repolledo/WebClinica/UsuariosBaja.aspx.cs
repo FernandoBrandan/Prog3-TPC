@@ -70,7 +70,15 @@ namespace WebClinica
             NegocioUsuario Borrar = new NegocioUsuario();
             Borrar.BajaUsuario(bajaUsuario);
             Response.Write("<script LANGUAGE='JavaScript' >alert('Se dio de baja el usuario: " + bajaUsuario.DNI + "')</script>");
+            LimpiarTabla(TextBorrarUsuario,gvBusqueda);
 
+
+        }
+        private void LimpiarTabla(TextBox text, GridView gvBusquedaPaciente)
+        {
+            TextBorrarUsuario.Text = "";
+            gvBusqueda.DataSource = ListaVacia;
+            gvBusqueda.DataBind();
         }
     }
 }
