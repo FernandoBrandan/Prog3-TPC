@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <h1 style="margin-top: 20px;">BAJA DEL PACIENTE</h1>
     <div style="margin-top: 50px;">
         <nav aria-label="...">
             <ul class="pagination pagination-lg">
@@ -17,16 +18,15 @@
         </nav>
     </div>
 
-    <h1 style="margin-top: 20px; margin-bottom: 20px">Baja Paciente</h1>
+    
     <h4>Ingresar DNI o Codigo de Paciente</h4>
    <div style="margin-top: 30px;">
         <div class="form-group">
             <div class="form-group col-md-3"> 
                 <label>Buscar</label>   
-                <asp:TextBox class="form-control" placeholder="IdPaciente" ID="TextBuscarPaciente" runat="server" Width="887px" />
+                <asp:TextBox class="form-control" placeholder="IdPaciente" ID="TextBuscarPaciente" runat="server" Width="500" />
                 <asp:Button Text="Buscar" class="btn btn-primary" runat="server" OnClick="Click_BuscarPacienteB" />
                 <asp:Button Text="Borrar" class="btn btn-primary" runat="server" OnClick="Click_BorrarListadoPacienteB" />
-
 
                 <style>
                     .oculto {
@@ -44,18 +44,19 @@
                         <asp:BoundField HeaderText="FechaNacimiento" DataField = "FechaNacimiento" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
                     </Columns>
                 </asp:GridView>
-
-                
+           
             <div class="form-group col-md-3">
                 <label>DNI</label>
-                <asp:TextBox class="form-control" ID="txtDNI" runat="server" />
+                <asp:TextBox class="form-control" ID="txtDNI" runat="server" Width="500px" />
             </div>
             <div class="form-group col-md-3">
                 <label>Legajo</label>
-                <asp:TextBox class="form-control" ID="txtLegajo" runat="server" />
+                <asp:TextBox class="form-control" ID="txtLegajo" runat="server" Width="500px"/>
             </div>
         </div>
     </div>
+   </div>
+
   
     <div style="margin-top: 20px;">
         <button type="submit" class="btn btn-primary">Aceptar</button>

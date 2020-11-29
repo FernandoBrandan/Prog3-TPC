@@ -4,6 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <h1 style="margin-top: 20px;"> ALTA DEL PACIENTE</h1>
 
     <div style="margin-top: 50px;">
         <nav aria-label="...">
@@ -18,8 +19,6 @@
             </ul>
         </nav>
     </div>
-
-    <h1 style="margin-top: 20px;">Alta Paciente</h1>
     <div style="margin-top: 30px;">
         <div class="form-row">
             <div class="form-group col-md-3">
