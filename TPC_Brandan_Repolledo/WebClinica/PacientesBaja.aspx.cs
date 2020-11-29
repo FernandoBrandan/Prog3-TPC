@@ -19,17 +19,14 @@ namespace WebClinica
 
         }
 
-       /* protected void BusquedaPaciente_RowCommand(object sender, GridViewCommandEventArgs e)
-         {
-             int index = Convert.ToInt32(e.CommandArgument);
-             string Legajo = gvBusquedaPaciente.Rows[index].Cells[1].Text;
-             TextElimDNI.Text = gvBusquedaPaciente.Rows[index].Cells[2].Text;
-             TextElimNombre.Text = gvBusquedaPaciente.Rows[index].Cells[3].Text;
-             TextElimApellido.Text = gvBusquedaPaciente.Rows[index].Cells[4].Text;
-             TextElimDomicilio.Text = gvBusquedaPaciente.Rows[index].Cells[5].Text;
-             TextElimFechaNacimiento.Text = gvBusquedaPaciente.Rows[index].Cells[6].Text;
+        protected void BusquedaBajaPaciente_RowCommand(object sender, GridViewCommandEventArgs e)
+          {
+            int index = Convert.ToInt32(e.CommandArgument);
+            string Legajo = gvBusquedaPaciente.Rows[index].Cells[1].Text;
+            TextBorrarUsuario.Text = gvBusquedaPaciente.Rows[index].Cells[2].Text;
 
-         }*/
+        }
+
 
         protected void Click_BuscarPacienteB(object sender, EventArgs e)
         {
@@ -105,6 +102,17 @@ namespace WebClinica
              gvBusquedaPaciente.DataSource = ListaVacia;
              gvBusquedaPaciente.DataBind();*/
         }
+        protected void Click_AceptarBorrarUsusario(object sender, EventArgs e)
+        {
+            Usuario bajaUsuario = new Usuario();
+            bajaUsuario.DNI = long.Parse(TextBorrarUsuario.Text);
+            NegocioUsuario Borrar = new NegocioUsuario();
+            Borrar.BajaUsuario(bajaUsuario);
+            Response.Write("<script LANGUAGE='JavaScript' >alert('Se dio de baja el usuario" + bajaUsuario.DNI + "')</script>");
+            TextBorrarUsuario.Text = "";
+            gvBusquedaPaciente.DataSource = ListaVacia;
+            gvBusquedaPaciente.DataBind(); 
+        }
 
 
         public virtual int CellSpacing { get; set; } // Le da espaciado a las celdas de grilla
@@ -114,5 +122,6 @@ namespace WebClinica
             gvBusquedaPaciente.DataSource = ListaVacia;
             gvBusquedaPaciente.DataBind();
         }
+
     }
 }

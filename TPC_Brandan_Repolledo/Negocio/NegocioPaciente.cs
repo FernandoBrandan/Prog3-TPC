@@ -21,16 +21,23 @@ namespace Negocio
                 while (datos.Lector.Read())
                 {
                     Paciente aux = new Paciente();
-                    aux.DNI = datos.Lector.GetInt64(0);
-                    aux.Nombre = datos.Lector.GetString(1);
-                    aux.Apellido = datos.Lector.GetString(2);
-                    aux.Domicilio = datos.Lector.GetString(3);
-                    aux.FechaNacimiento = datos.Lector.GetDateTime(4);
-                    aux.Genero = datos.Lector.GetString(5);
-                    aux.Estado = datos.Lector.GetBoolean(6);
-                    //aux.CodigoPaciente= datos.Lector.GetString(7);
+                    var estadoUsuario = false;
 
-                    ListaPaciente.Add(aux);
+                    estadoUsuario = aux.Estado = datos.Lector.GetBoolean(0);
+                    if (estadoUsuario != true) { 
+                        aux.DNI = datos.Lector.GetInt64(1);
+                        aux.Nombre = datos.Lector.GetString(2);
+                        aux.Apellido = datos.Lector.GetString(3);
+                        aux.Domicilio = datos.Lector.GetString(4);
+                        aux.FechaNacimiento = datos.Lector.GetDateTime(5);
+                        aux.Genero = datos.Lector.GetString(5);
+                        
+                        //aux.CodigoPaciente= datos.Lector.GetString(7);
+
+                        ListaPaciente.Add(aux);
+
+                    }
+           
                 }
             }
             catch (Exception ex)
@@ -92,7 +99,7 @@ namespace Negocio
         public void EliminarPaciente(Paciente nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
-            datos.SetearQuery("Delete Paciente where DNI = @DNI");
+            datos.SetearQuery("update persona set estado = 0 where DNI = @DNI");
             datos.AgregarParametro("@DNI", nuevo.DNI);
             datos.EjecutarConsulta();
         }

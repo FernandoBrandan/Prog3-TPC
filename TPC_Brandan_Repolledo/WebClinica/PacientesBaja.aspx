@@ -17,7 +17,20 @@
             </ul>
         </nav>
     </div>
+     <script>
+        function Validar() {
 
+            var result = confirm("Seguro que desea realizar los cambios?");
+
+            if (result) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+     </script>
     
     <h4>Ingresar DNI o Codigo de Paciente</h4>
    <div style="margin-top: 30px;">
@@ -33,9 +46,9 @@
                         display: none;
                     }
                 </style> 
-                <asp:GridView ID="gvBusquedaPaciente"  AutoGenerateColumns="false" runat="server" cellpadding="15" >
+                <asp:GridView ID="gvBusquedaPaciente"  AutoGenerateColumns="false" runat="server" OnRowCommand= "BusquedaBajaPaciente"  cellpadding="15" >
                     <Columns>
-
+                        <asp:ButtonField HeaderText="Opcion" ButtonType="Link" Text="Borrar" ControlStyle-ForeColor="SlateBlue"  CommandName ="Select" />
                         <asp:BoundField HeaderText="Legajo" DataField="CodigoPaciente" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
                         <asp:BoundField HeaderText="DNI       "  DataField  = "DNI" />
                         <asp:BoundField HeaderText="Nombre    " DataField = "Nombre" />
@@ -44,6 +57,10 @@
                         <asp:BoundField HeaderText="FechaNacimiento" DataField = "FechaNacimiento" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
                     </Columns>
                 </asp:GridView>
+                  <div>
+            <asp:TextBox id="TextBorrarUsuario" runat="server" />
+            <asp:Button Text="Borrar Usuario" runat="server" OnClick="Click_AceptarBorrarUsusario" />
+        </div>
         </div>
 
     </div>
