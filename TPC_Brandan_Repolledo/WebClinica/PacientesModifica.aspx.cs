@@ -48,14 +48,18 @@ namespace WebClinica
                 }
             }
         }
-    
 
-            protected void Click_BorrarListadoPaciente(object sender, EventArgs e)
-            {
-                TextBuscarPaciente.Text = "";
-                gvBusquedaPaciente.DataSource = ListaVacia;
-                gvBusquedaPaciente.DataBind();
-            }
+
+        protected void Click_BorrarListadoPaciente(object sender, EventArgs e)
+        {
+      
+
+             TextBuscarPaciente.Text = "";
+             gvBusquedaPaciente.DataSource = ListaVacia;
+             gvBusquedaPaciente.DataBind();
+        }
+
+
         protected void BusquedaPaciente_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             int index = Convert.ToInt32(e.CommandArgument);

@@ -88,5 +88,13 @@ namespace Negocio
             datos.AgregarParametro("@FechaNacimiento", nuevo.FechaNacimiento);
             datos.EjecutarConsulta();
         }
+
+        public void EliminarPaciente(Paciente nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            datos.SetearQuery("Delete Paciente where DNI = @DNI");
+            datos.EjecutarConsulta();
+        }
+
     }
 }
