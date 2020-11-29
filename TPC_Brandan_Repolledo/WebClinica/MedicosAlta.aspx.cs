@@ -70,6 +70,7 @@ namespace WebClinica
                 CargarMedico.AgregarPersona(nuevaPersona);
                 CargarMedico.AgregarMedico(nuevoMedico, nuevaPersona, seleccionaEsp);
 
+
                 Response.Write("<script LANGUAGE='JavaScript' >alert('Se cargo correctamente el Medico')</script>");
             }
             catch (Exception ex)

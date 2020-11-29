@@ -64,7 +64,7 @@ namespace Negocio
             datos.EjecutarConsulta();
         }
 
-        public void ModificarMedicoPersona(Medico nuevo)
+        public  bool ModificarMedicoPersona(Medico nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
             datos.SetearQuery("update persona set DNI=@DNI, Nombre=@Nombre, Apellido=@Apellido, Domicilio=@Domicilio where DNI = @DNI");
@@ -73,15 +73,17 @@ namespace Negocio
             datos.AgregarParametro("@Apellido", nuevo.Apellido);
             datos.AgregarParametro("@Domicilio", nuevo.Domicilio);
             datos.EjecutarConsulta();
+            return true;
         }
 
-        public void ModificarMedico(Medico nuevo)
+        public bool ModificarMedico(Medico nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
             datos.SetearQuery("update Medico set Especialidad=@Especialidad where DNI = @DNI");
             datos.AgregarParametro("@DNI", nuevo.DNI);
             datos.AgregarParametro("@Especialidad", nuevo.Especialidad.IdEspecialidad);
             datos.EjecutarConsulta();
+            return true;
         }
         public void BajaMedico(Medico nuevo)
         {

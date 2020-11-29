@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Validaciones.aspx" />
     <Content Include="css\Especialidades.css" />
     <Content Include="css\EstilosVarios.css" />
     <Content Include="css\Login.css" />
@@ -94,6 +95,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Validaciones.aspx.cs">
+      <DependentUpon>Validaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Validaciones.aspx.designer.cs">
+      <DependentUpon>Validaciones.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contactos.aspx.cs">
       <DependentUpon>Contactos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

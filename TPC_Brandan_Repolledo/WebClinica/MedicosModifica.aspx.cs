@@ -89,10 +89,17 @@ namespace WebClinica
                 MedicoMod.Especialidad = new Especialidad();
 
                 MedicoMod.Especialidad.IdEspecialidad = long.Parse(ddlModMedico.SelectedItem.Value);
-
                 Modificar.ModificarMedicoPersona(MedicoMod);
                 Modificar.ModificarMedico(MedicoMod);
-              
+                if (Modificar.ModificarMedico(MedicoMod) || Modificar.ModificarMedicoPersona(MedicoMod))
+                {
+                    Response.Write("<script LANGUAGE='JavaScript' >alert('Se ha actualizado correctamente los datos del médico')</script>");
+
+                }
+                else
+                {
+                    Response.Write("<script LANGUAGE='JavaScript' >alert('Error al modificar')</script>");
+                }
             }
             catch (Exception ex)
             {
