@@ -39,6 +39,37 @@ namespace Negocio
             return ListaMedicos;
         }
 
+        public List<Medico> BuscaMedicos(Especialidad filtrado)
+        {
+            List<Medico> BuscaMedicos = new List<Medico>();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+
+                datos.AgregarParametro("@IdEspecialidad", filtrado.IdEspecialidad);
+                datos.SetearQuery("select m.DNI, p.Nombre, Apellido, Domicilio, FechaNacimiento, Genero, Estado, LegajoMedico from persona as p inner join Medico as m on m.DNI = p.DNI where Especialidad = @IdEspecialidad");
+                datos.EjecutarConsulta();
+                while (datos.Lector.Read())
+                {
+                    Medico aux = new Medico();
+                    aux.DNI = datos.Lector.GetInt64(0);
+                    aux.Nombre = datos.Lector.GetString(1);
+                    aux.Apellido = datos.Lector.GetString(2);
+                    aux.Domicilio = datos.Lector.GetString(3);
+                    aux.FechaNacimiento = datos.Lector.GetDateTime(4);
+                    aux.Genero = datos.Lector.GetString(5);
+                    aux.Estado = datos.Lector.GetBoolean(6);
+                    aux.LegajoMedico = datos.Lector.GetString(7);
+                    BuscaMedicos.Add(aux);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return BuscaMedicos;
+        }
+
         public void AgregarPersona(Persona nuevo)
         {
             AccesoDatos datos = new AccesoDatos();

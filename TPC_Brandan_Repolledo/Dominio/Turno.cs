@@ -10,13 +10,13 @@ namespace Dominio
     {
         public int IdTurno { get; set; }
 
-        public int Disponibilidad { get; set; }
+        public Disponibilidad Disponibilidad { get; set; }
 
-        public int Medico { get; set; }
+        public Medico Medico { get; set; }
 
-        public int Paciente { get; set; }
+        public Paciente Paciente { get; set; }
 
-        public bool Estado { get; set; }
+        public string Estado { get; set; }
 
         public string Motivo { get; set; }
     }
