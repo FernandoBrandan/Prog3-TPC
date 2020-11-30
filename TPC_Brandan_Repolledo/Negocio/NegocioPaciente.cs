@@ -21,7 +21,8 @@ namespace Negocio
                 while (datos.Lector.Read())
                 {
                      Paciente aux = new Paciente();
-                 
+                    if (aux.Estado)
+                    {
                         aux.DNI = datos.Lector.GetInt64(0);
                         aux.Nombre = datos.Lector.GetString(1);
                         aux.Apellido = datos.Lector.GetString(2);
@@ -30,12 +31,14 @@ namespace Negocio
                         aux.Genero = datos.Lector.GetString(5);
                         aux.Estado = datos.Lector.GetBoolean(6);
 
-                    //aux.CodigoPaciente= datos.Lector.GetString(7);
+                        //aux.CodigoPaciente= datos.Lector.GetString(7);
 
-                    ListaPaciente.Add(aux);
+                        ListaPaciente.Add(aux);
+                    }
 
-              
-           
+
+
+
                 }
             }
             catch (Exception ex)
@@ -82,7 +85,7 @@ namespace Negocio
         }
 
 
-        public void ModificarPaciente(Paciente nuevo)
+        public bool  ModificarPaciente(Paciente nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
             datos.SetearQuery("update persona set DNI=@DNI, Nombre=@Nombre, Apellido=@Apellido, Domicilio=@Domicilio, FechaNacimiento=@FechaNacimiento where DNI = @DNI");
@@ -92,6 +95,7 @@ namespace Negocio
             datos.AgregarParametro("@Domicilio", nuevo.Domicilio);
             datos.AgregarParametro("@FechaNacimiento", nuevo.FechaNacimiento);
             datos.EjecutarConsulta();
+            return true;
         }
 
         public void BajaPaciente(Paciente nuevo)
