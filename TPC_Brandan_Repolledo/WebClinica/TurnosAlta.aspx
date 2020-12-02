@@ -67,13 +67,13 @@
         <div class="form-row">
             <asp:UpdatePanel runat="server">
                 <ContentTemplate>
-                    <div class="form-group col-md-3">
+                    <div class="form-group col-md-auto">
                         <asp:Label Text="Espacialidad" runat="server" />
                         <asp:DropDownList AutoPostBack="true" ID="ddlAltaTurnoEspecilidad" class="form-control" Style="margin-top: 7px" runat="server" OnSelectedIndexChanged="Click_SeleccionaEspecialidad">
                         </asp:DropDownList> 
                     </div>
 
-                    <div class="form-group col-md-3">
+                    <div class="form-group col-md-auto">
                         <asp:Label Text="Medico" runat="server" />
                         <asp:DropDownList AutoPostBack="true" ID="ddlAltaTurnoMedico" class="form-control" Style="margin-top: 7px" runat="server">
                         </asp:DropDownList>
@@ -86,8 +86,8 @@
             <div class="form-group">
                 <asp:Calendar ID="Calendar1" Style="width: 140%; margin-left: 5px;" runat="server" OnSelectionChanged="Click_SeleccionaFecha"></asp:Calendar>
             </div>
-            <div class="form-group col-md-3" style="margin-left: 95px;">
-                <asp:Label ID="label1" Text="text" runat="server" />
+            <div class="form-group col-md-3" style="margin-left: 95px;"> 
+                <asp:TextBox id="FechaElegida" runat="server" OnTextChanged="Click_CambiarFechaTurno" />  
                 <asp:Label Text="Horarios Disponibles" runat="server" />
                 <asp:DropDownList ID="ddlAltaTurnoHorario" class="form-control" Style="margin-top: 7px" runat="server">
                 </asp:DropDownList>

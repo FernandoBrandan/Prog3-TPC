@@ -75,7 +75,7 @@ namespace WebClinica
 
         protected void Click_SeleccionaFecha(object sender, EventArgs e)
         { 
-            label1.Text = "The selected date is " + Calendar1.SelectedDate.ToShortDateString();      
+            FechaElegida.Text =  Calendar1.SelectedDate.ToShortDateString();      
         }
 
         protected void Click_SeleccionaEspecialidad(object sender, EventArgs e)
@@ -91,6 +91,14 @@ namespace WebClinica
             ddlAltaTurnoMedico.DataValueField = "DNI";
             ddlAltaTurnoMedico.DataBind();
             ddlAltaTurnoMedico.Items.Insert(0, "Seleccione"); 
-        } 
+        }
+
+        protected void Click_CambiarFechaTurno(object sender, EventArgs e)
+        {
+            ListaFiltrada = ListadoOriginal.FindAll(Y => Convert.ToString(Y.DNI).Contains(FechaElegida.Text) 
+            || Y.Nombre.ToLower().Contains(FechaElegida.Text.ToLower()) 
+            || Y.Apellido.ToLower().Contains(FechaElegida.Text.ToLower()));
+
+        }
     }
 }
