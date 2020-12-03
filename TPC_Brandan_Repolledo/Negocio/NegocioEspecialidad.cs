@@ -32,7 +32,7 @@ namespace Negocio
                 throw ex;
             }
             return ListaEspecialidades;
-        }
+        } 
 
         public void AgregarEspecialidad(Especialidad nuevo)
         {

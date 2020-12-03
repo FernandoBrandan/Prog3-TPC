@@ -8,8 +8,13 @@ namespace Dominio
 {
     public class Horario
     {
-        public int IdHorario { get; set; }
+        public long IdHorario { get; set; }
 
-        public int Descripcion { get; set; }
+        public string Descripcion { get; set; }
+
+        public override string ToString()
+        {
+            return Descripcion;
+        }
     }
 }

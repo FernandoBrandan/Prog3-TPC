@@ -87,7 +87,10 @@
                 <asp:Calendar ID="Calendar1" Style="width: 140%; margin-left: 5px;" runat="server" OnSelectionChanged="Click_SeleccionaFecha"></asp:Calendar>
             </div>
             <div class="form-group col-md-3" style="margin-left: 95px;"> 
-                <asp:TextBox id="FechaElegida" runat="server" OnTextChanged="Click_CambiarFechaTurno" />  
+                <asp:TextBox AutoPostBack="true" id="TextFechaElegida" runat="server"/>  
+                <asp:Button Text=">>" runat="server" OnClick="Click_ValidadFechas" />
+                <br />
+                <br />
                 <asp:Label Text="Horarios Disponibles" runat="server" />
                 <asp:DropDownList ID="ddlAltaTurnoHorario" class="form-control" Style="margin-top: 7px" runat="server">
                 </asp:DropDownList>

@@ -14,8 +14,13 @@ namespace WebClinica
         public List<Paciente> ListadoOriginal { get; set; }
         public List<Paciente> ListaFiltrada { get; set; }
         public List<Paciente> ListaVacia { get; set; }
+         
+        public List<Disponibilidad> Comparacion { get; set; } 
 
-        public List<Especialidad> CargaListadoEsp { get; set; } 
+        public List<Especialidad> CargaListadoEsp { get; set; }
+
+        public List<Horario> FiltraHorarios { get; set; }
+        public List<Horario> ListaHorarios { get; set; } 
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -36,7 +41,7 @@ namespace WebClinica
             if (IsPostBack)
             {
                 NegocioPaciente Buscar = new NegocioPaciente();
-                ListadoOriginal = Buscar.ListaPaciente(); 
+                ListadoOriginal = Buscar.ListaPaciente();
                 try
                 {
                     if (TextBusquedaPacienteTurno.Text == "")
@@ -48,7 +53,7 @@ namespace WebClinica
                         ListaFiltrada = ListadoOriginal.FindAll(Y => Convert.ToString(Y.DNI).Contains(TextBusquedaPacienteTurno.Text) || Y.Nombre.ToLower().Contains(TextBusquedaPacienteTurno.Text.ToLower()) || Y.Apellido.ToLower().Contains(TextBusquedaPacienteTurno.Text.ToLower()));
                     }
                     gvBusquedaPaciente.DataSource = ListaFiltrada;
-                    gvBusquedaPaciente.DataBind(); 
+                    gvBusquedaPaciente.DataBind();
                 }
                 catch (Exception ex)
                 {
@@ -74,12 +79,12 @@ namespace WebClinica
         }
 
         protected void Click_SeleccionaFecha(object sender, EventArgs e)
-        { 
-            FechaElegida.Text =  Calendar1.SelectedDate.ToShortDateString();      
+        {
+            TextFechaElegida.Text = Calendar1.SelectedDate.ToShortDateString();
         }
 
         protected void Click_SeleccionaEspecialidad(object sender, EventArgs e)
-        { 
+        {
             Especialidad Filtrado = new Especialidad();
             Filtrado.IdEspecialidad = long.Parse(ddlAltaTurnoEspecilidad.SelectedItem.Value);
 
@@ -90,15 +95,37 @@ namespace WebClinica
             ddlAltaTurnoMedico.DataTextField = "Nombre";
             ddlAltaTurnoMedico.DataValueField = "DNI";
             ddlAltaTurnoMedico.DataBind();
-            ddlAltaTurnoMedico.Items.Insert(0, "Seleccione"); 
+            ddlAltaTurnoMedico.Items.Insert(0, "Seleccione");
+
         }
 
-        protected void Click_CambiarFechaTurno(object sender, EventArgs e)
-        {
-            ListaFiltrada = ListadoOriginal.FindAll(Y => Convert.ToString(Y.DNI).Contains(FechaElegida.Text) 
-            || Y.Nombre.ToLower().Contains(FechaElegida.Text.ToLower()) 
-            || Y.Apellido.ToLower().Contains(FechaElegida.Text.ToLower()));
+      
 
+        protected void Click_ValidadFechas(object sender, EventArgs e)
+        { 
+            DateTime FechaObtenida= DateTime.Parse(TextFechaElegida.Text);
+            NegocioDisponibilidad BuscarFecha = new NegocioDisponibilidad();
+            NegocioDisponibilidad BuscarHorario = new NegocioDisponibilidad();
+
+
+            string VerificarFecha = FechaObtenida.ToShortDateString();
+
+            Response.Write("<script LANGUAGE='JavaScript' >alert(' " + VerificarFecha + "')</script>");
+
+            List<Disponibilidad> FechasLibres = BuscarFecha.BuscaFechas(VerificarFecha);
+             
+
+            foreach (var item in FechasLibres)
+            {
+                // FiltraHorarios = ListaHorarios.FindAll(Y => Convert.ToString(Y.IdHorario).Contains(item.Horario.IdHorario));
+                FiltraHorarios = BuscarHorario.BuscaHorarios(item.Horario.IdHorario); 
+            } 
+
+            ddlAltaTurnoHorario.DataSource = FiltraHorarios;
+            ddlAltaTurnoHorario.DataTextField = "Descripcion";
+            ddlAltaTurnoHorario.DataValueField = "IdHorario";
+            ddlAltaTurnoHorario.DataBind();
+            ddlAltaTurnoHorario.Items.Insert(0, "Seleccione");
         }
     }
 }

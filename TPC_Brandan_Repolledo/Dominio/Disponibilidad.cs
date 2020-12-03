@@ -8,7 +8,7 @@ namespace Dominio
 {
     public class Disponibilidad
     {
-        public int IdDisponibilidad { get; set; }
+        public long IdDisponibilidad { get; set; }
 
         public Horario Horario { get; set; }
 
