@@ -21,7 +21,8 @@ namespace Negocio
                 while (datos.Lector.Read())
                 {
                      Paciente aux = new Paciente();
-                    if (aux.Estado)
+                    aux.Estado = (bool)datos.Lector["ESTADO"];
+                    if (aux.Estado == true)
                     {
                         aux.DNI = datos.Lector.GetInt64(0);
                         aux.Nombre = datos.Lector.GetString(1);
