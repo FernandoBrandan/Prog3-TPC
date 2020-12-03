@@ -19,17 +19,22 @@ namespace Negocio
                 datos.EjecutarConsulta();
                 while (datos.Lector.Read())
                 {
-                    Usuario aux = new Usuario();
-                    aux.DNI = datos.Lector.GetInt64(0);
-                    aux.Nombre = datos.Lector.GetString(1);
-                    aux.Apellido = datos.Lector.GetString(2);
-                    aux.Domicilio = datos.Lector.GetString(3);
-                    aux.FechaNacimiento = datos.Lector.GetDateTime(4);
-                    aux.Genero = datos.Lector.GetString(5);
-                    aux.Estado = datos.Lector.GetBoolean(6);
-                    aux.LegajoUsuario = datos.Lector.GetString(7);
 
-                    ListarUsuarios.Add(aux);
+                    Usuario aux = new Usuario();
+                    aux.Estado = (bool)datos.Lector["ESTADO"];
+                    if (aux.Estado == true)
+                    {
+                        aux.DNI = datos.Lector.GetInt64(0);
+                        aux.Nombre = datos.Lector.GetString(1);
+                        aux.Apellido = datos.Lector.GetString(2);
+                        aux.Domicilio = datos.Lector.GetString(3);
+                        aux.FechaNacimiento = datos.Lector.GetDateTime(4);
+                        aux.Genero = datos.Lector.GetString(5);
+                        aux.Estado = datos.Lector.GetBoolean(6);
+                        aux.LegajoUsuario = datos.Lector.GetString(7);
+                        ListarUsuarios.Add(aux);
+                    }
+                 
                 }
             }
             catch (Exception ex)
