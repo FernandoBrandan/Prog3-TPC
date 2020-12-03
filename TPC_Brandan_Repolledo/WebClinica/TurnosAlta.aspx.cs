@@ -106,19 +106,13 @@ namespace WebClinica
             DateTime FechaObtenida= DateTime.Parse(TextFechaElegida.Text);
             NegocioDisponibilidad BuscarFecha = new NegocioDisponibilidad();
             NegocioDisponibilidad BuscarHorario = new NegocioDisponibilidad();
-
-
-            string VerificarFecha = FechaObtenida.ToShortDateString();
-
-            Response.Write("<script LANGUAGE='JavaScript' >alert(' " + VerificarFecha + "')</script>");
-
-            List<Disponibilidad> FechasLibres = BuscarFecha.BuscaFechas(VerificarFecha);
              
+            string VerificarFecha = FechaObtenida.ToShortDateString(); 
+            List<Disponibilidad> FechasLibres = BuscarFecha.BuscaFechas(VerificarFecha); 
 
             foreach (var item in FechasLibres)
             {
-                // FiltraHorarios = ListaHorarios.FindAll(Y => Convert.ToString(Y.IdHorario).Contains(item.Horario.IdHorario));
-                FiltraHorarios = BuscarHorario.BuscaHorarios(item.Horario.IdHorario); 
+                 FiltraHorarios = BuscarHorario.BuscaHorarios(item.Horario.IdHorario); 
             } 
 
             ddlAltaTurnoHorario.DataSource = FiltraHorarios;
