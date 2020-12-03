@@ -21,17 +21,12 @@ namespace Negocio
                 while (datos.Lector.Read())
                 {
                     Disponibilidad aux = new Disponibilidad();
-                    aux.Estado = (bool)datos.Lector["ESTADO"];
-                    if (aux.Estado == true)
-                    {
-                        aux.IdDisponibilidad = datos.Lector.GetInt64(0);
-                        aux.Horario = new Horario();
-                        aux.Horario.IdHorario = datos.Lector.GetInt64(1);
-                        aux.Fecha = datos.Lector.GetDateTime(2);
-                        aux.Estado = datos.Lector.GetBoolean(3);
 
-                    }
-                     
+                    aux.IdDisponibilidad = datos.Lector.GetInt64(0);
+                    aux.Horario = new Horario();
+                    aux.Horario.IdHorario = datos.Lector.GetInt64(1);
+                    aux.Fecha = datos.Lector.GetDateTime(2);
+                    aux.Estado = datos.Lector.GetString(3);
 
                     ListarFechas.Add(aux);
                 }
