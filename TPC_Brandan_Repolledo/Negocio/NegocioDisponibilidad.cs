@@ -117,5 +117,16 @@ namespace Negocio
             }
             return ListarHorarios;
         }
+
+        public void AgregarDisponibilidad(Disponibilidad nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            datos.SetearQuery("insert into Disponibilidad(Horario, FechaTurno, Estado) values (@Horario, @FechaTurno, @Estado)");
+            datos.AgregarParametro("@Horario", nuevo.Horario.IdHorario);
+            datos.AgregarParametro("@FechaTurno", nuevo.Fecha);
+            datos.AgregarParametro("@Estado", nuevo.Estado);
+            datos.EjecutarConsulta();
+
+        }
     }
 }

@@ -3,8 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-    <div style="margin-top: 50px;">
+    
+    <h1 style="margin-top: 20px;">Listado</h1>
+    <div style="margin-top: 20px;">
         <nav aria-label="...">
             <ul class="pagination pagination-lg">
                 <li class="page-item active" aria-current="page">
@@ -13,27 +14,26 @@
                     </span>
                 </li>
                 <li class="page-item"><a class="page-link" href="TurnosAlta.aspx">Alta</a></li>
-                <li class="page-item"><a class="page-link" href="TurnosAlta.aspx">Gestion Medicos</a></li>
+                <li class="page-item"><a class="page-link" href="TurnosGestionMedicos.aspx">Gestion Medicos</a></li>
             </ul>
         </nav>
     </div>
 
-    <h1 style="margin-top: 20px;">Listado de Turnos</h1>
     <style>
         .oculto {
             display: none;
-        }
-    </style>
+        } 
+    </style> 
 
-    <asp:GridView ID="gvBusqueda" AutoGenerateColumns="false" runat="server" OnRowCommand="ListadoTurnos_RowCommand">
+    <asp:GridView ID="gvBusquedaTurnos" AutoGenerateColumns="false" runat="server" OnRowCommand="ListadoTurnos_RowCommand">
         <Columns>
-            <asp:ButtonField HeaderText="Opcion" ButtonType="Link" Text="Seleccionar" CommandName="Select" />
-            <asp:BoundField HeaderText="IdTurno" DataField="IdTurno" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
-            <asp:BoundField HeaderText="Disponibilidad" DataField="Disponibilidad" />
-            <asp:BoundField HeaderText="Medico" DataField="Medico" />
-            <asp:BoundField HeaderText="Paciente" DataField="Paciente" />
-            <asp:BoundField HeaderText="Estado" DataField="Estado" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
-            <asp:BoundField HeaderText="Motivo" DataField="Motivo" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
+            <asp:ButtonField HeaderText="Opcion" ButtonType="Link" Text="Gestionar" CommandName="Select" />
+            <asp:BoundField HeaderText="IdTurno" DataField="IdTurno"/>
+            <asp:BoundField HeaderText="Disponibilidad" DataField="Disponibilidad"/>
+            <asp:BoundField HeaderText="Medico" DataField="Medico"/>
+            <asp:BoundField HeaderText="Paciente" DataField="Paciente"/>
+            <asp:BoundField HeaderText="Estado" DataField="Estado"/>
+            <asp:BoundField HeaderText="Motivo" DataField="Motivo"/>
         </Columns>
     </asp:GridView>
 </asp:Content>

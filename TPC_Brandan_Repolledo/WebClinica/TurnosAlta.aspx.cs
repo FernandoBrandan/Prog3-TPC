@@ -66,7 +66,8 @@ namespace WebClinica
         {
             int index = Convert.ToInt32(e.CommandArgument);
             string Legajo = gvBusquedaPaciente.Rows[index].Cells[1].Text;
-            TextBusquedaPacienteTurno.Text = gvBusquedaPaciente.Rows[index].Cells[2].Text;
+            TextBusquedaPacienteTurno.Text = gvBusquedaPaciente.Rows[index].Cells[1].Text;
+
             SeleccionaPaciente(TextBusquedaPacienteTurno.Text);
         }
 
@@ -92,8 +93,8 @@ namespace WebClinica
             List<Medico> FiltroMedico = Busca.BuscaMedicos(Filtrado);
 
             ddlAltaTurnoMedico.DataSource = FiltroMedico;
-            ddlAltaTurnoMedico.DataTextField = "Nombre";
-            ddlAltaTurnoMedico.DataValueField = "DNI";
+            ddlAltaTurnoMedico.DataTextField = "Apellido";
+            ddlAltaTurnoMedico.DataValueField = "LegajoMedico";
             ddlAltaTurnoMedico.DataBind();
             ddlAltaTurnoMedico.Items.Insert(0, "Seleccione");
 
@@ -112,7 +113,7 @@ namespace WebClinica
 
             foreach (var item in FechasLibres)
             {
-                 FiltraHorarios = BuscarHorario.BuscaHorarios(item.Horario.IdHorario); 
+                 FiltraHorarios = BuscarHorario.BuscaHorarios(item.Horario.IdHorario);   
             } 
 
             ddlAltaTurnoHorario.DataSource = FiltraHorarios;
@@ -120,6 +121,34 @@ namespace WebClinica
             ddlAltaTurnoHorario.DataValueField = "IdHorario";
             ddlAltaTurnoHorario.DataBind();
             ddlAltaTurnoHorario.Items.Insert(0, "Seleccione");
+        }
+
+        protected void Click_AceptarAltaTurno(object sender, EventArgs e)
+        { 
+
+            Turno NuevoTurno = new Turno();
+            NuevoTurno.Paciente = new Paciente();
+            NuevoTurno.Paciente.CodigoPaciente = LabelPacienteElegido.Text; 
+            NuevoTurno.Medico = new Medico();
+            NuevoTurno.Medico.LegajoMedico = ddlAltaTurnoMedico.SelectedItem.Value;
+            NuevoTurno.Motivo = TextMotivoTurno.Text;
+            NuevoTurno.Estado = "Pendiente";
+
+            Disponibilidad NuevoDispobilidad = new Disponibilidad();
+
+            NuevoDispobilidad.Fecha = Convert.ToDateTime(TextFechaElegida.Text);
+
+            NuevoDispobilidad.Horario = new Horario();
+            NuevoDispobilidad.Horario.IdHorario = long.Parse(ddlAltaTurnoHorario.SelectedItem.Value);
+            NuevoDispobilidad.Estado = "Activo";
+
+            NegocioDisponibilidad CargarDisp = new NegocioDisponibilidad();
+            NegocioTurno CargarTurno = new NegocioTurno(); 
+
+            CargarDisp.AgregarDisponibilidad(NuevoDispobilidad);
+            CargarTurno.AgregarTurno(NuevoTurno);
+
+
         }
     }
 }

@@ -15,16 +15,16 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.SetearQuery("");
+                datos.SetearQuery("select IdTurno, Disponibilidad, Medico, Paciente, Motivo, Estado from Turno");
                 datos.EjecutarConsulta();
                 while (datos.Lector.Read())
                 {
                     Turno aux = new Turno();
 
-                    aux.IdTurno = datos.Lector.GetInt32(0);
+                    aux.IdTurno = datos.Lector.GetInt64(0);
 
                     aux.Disponibilidad = new Disponibilidad();
-                    aux.Disponibilidad.IdDisponibilidad = datos.Lector.GetInt32(1);
+                    aux.Disponibilidad.IdDisponibilidad = datos.Lector.GetInt64(1);
 
                     aux.Medico = new Medico();
                     aux.Medico.LegajoMedico = datos.Lector.GetString(2);
@@ -43,6 +43,19 @@ namespace Negocio
                 throw ex;
             }
             return ListarTurnos;
+        }
+
+        public void AgregarTurno(Turno nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            datos.SetearQuery("insert into Turno (Disponibilidad, Medico, Paciente, Motivo, Estado) values ((select MAX(IdDisponibilidad) from Disponibilidad), @Medico, @Paciente, @Motivo, @Estado )");
+
+            datos.AgregarParametro("@Medico", nuevo.Medico.LegajoMedico);
+            datos.AgregarParametro("@Paciente", nuevo.Paciente.CodigoPaciente);
+            datos.AgregarParametro("@Motivo", nuevo.Motivo);
+            datos.AgregarParametro("@Estado", nuevo.Estado);
+            datos.EjecutarConsulta();
+
         }
     }
 }

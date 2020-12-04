@@ -14,7 +14,7 @@
                     <span class="sr-only">(current)</span>
                     </span>
                 </li>
-                <li class="page-item"><a class="page-link" href="TurnosAlta.aspx">Gestion Medicos</a></li>
+                <li class="page-item"><a class="page-link" href="TurnosGestionMedicos.aspx">Gestion Medicos</a></li>
             </ul>
         </nav>
     </div>
@@ -45,7 +45,7 @@
                 <asp:GridView ID="gvBusquedaPaciente" AutoGenerateColumns="false" runat="server" CellPadding="15" OnRowCommand="BusquedaPaciente_RowCommand">
                     <Columns>
                         <asp:ButtonField HeaderText="Opcion" ButtonType="Link" Text="Seleccionar" ControlStyle-ForeColor="SlateBlue" CommandName="Select" />
-                        <asp:BoundField HeaderText="CodigoPaciente" DataField="CodigoPaciente" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
+                        <asp:BoundField HeaderText="CodigoPaciente" DataField="CodigoPaciente"/>
                         <asp:BoundField HeaderText="DNI       " DataField="DNI" />
                         <asp:BoundField HeaderText="Nombre    " DataField="Nombre" />
                         <asp:BoundField HeaderText="Apellido  " DataField="Apellido" />
@@ -60,7 +60,7 @@
         <div>
 
             <div>
-                <h5>Paciente seleccionado:<asp:Label ID="LabelPacienteElegido" runat="server" /></h5> 
+                <h5>Paciente seleccionado: <asp:Label ID="LabelPacienteElegido" runat="server" /></h5> 
             </div>
         </div>
 
@@ -96,11 +96,15 @@
                 </asp:DropDownList>
             </div>
         </div>
+           <div class="form-row">
+               <asp:Label Text="Motivo" runat="server" />
+               <asp:TextBox ID="TextMotivoTurno" runat="server" />   
+        </div>
 
     </div>
 
     <div style="margin-top: 20px;">
-        <asp:Button Text="Aceptar" class="btn btn-primary" runat="server" />
+        <asp:Button Text="Aceptar" class="btn btn-primary" runat="server" OnClick="Click_AceptarAltaTurno" />
         <asp:Button Text="Cancelar" class="btn btn-primary" runat="server" />
     </div>
 

@@ -8,7 +8,7 @@ namespace Dominio
 {
     public class Turno
     {
-        public int IdTurno { get; set; }
+        public long IdTurno { get; set; }
 
         public Disponibilidad Disponibilidad { get; set; }
 

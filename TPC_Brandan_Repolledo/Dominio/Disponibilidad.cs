@@ -15,6 +15,8 @@ namespace Dominio
         public DateTime Fecha { get; set; }
 
         public string Estado { get; set; }
-       // public bool Estado { get; set; }
+
+        // public bool Estado { get; set; }
+         
     }
 }
