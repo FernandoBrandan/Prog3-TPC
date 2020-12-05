@@ -26,7 +26,7 @@ namespace WebClinica
         {
             if (!IsPostBack)
             {
-                NegocioEspecialidad ListaEspecialidad = new NegocioEspecialidad();
+               NegocioEspecialidad ListaEspecialidad = new NegocioEspecialidad();
                 CargaListadoEsp = ListaEspecialidad.ListaEspecialidades();
                 ddlAltaTurnoEspecilidad.DataSource = CargaListadoEsp;
                 ddlAltaTurnoEspecilidad.DataTextField = "Nombre";
@@ -34,7 +34,7 @@ namespace WebClinica
                 ddlAltaTurnoEspecilidad.DataBind();
                 ddlAltaTurnoEspecilidad.Items.Insert(0, "Seleccione");
             }
-        }
+        } 
 
         protected void Click_AceptarBuscaPacienteTurno(object sender, EventArgs e)
         {

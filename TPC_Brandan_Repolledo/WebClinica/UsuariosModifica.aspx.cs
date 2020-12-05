@@ -90,8 +90,7 @@ namespace WebClinica
                
             }
             catch (Exception ex)
-            {
-
+            { 
                 throw ex;
             }
         }

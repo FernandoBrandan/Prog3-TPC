@@ -14,8 +14,7 @@
                     </span>
                 </li>
                 <li class="page-item"><a class="page-link" href="TurnosAlta.aspx">Alta</a></li>
-                <li class="page-item"><a class="page-link" href="TurnosGestionMedicos.aspx">Gestion Medicos</a></li>
-            </ul>
+             </ul>
         </nav>
     </div>
 
@@ -28,8 +27,8 @@
     <asp:GridView ID="gvBusquedaTurnos" AutoGenerateColumns="false" runat="server" OnRowCommand="ListadoTurnos_RowCommand">
         <Columns>
             <asp:ButtonField HeaderText="Opcion" ButtonType="Link" Text="Gestionar" CommandName="Select" />
-            <asp:BoundField HeaderText="IdTurno" DataField="IdTurno"/>
-            <asp:BoundField HeaderText="Disponibilidad" DataField="Disponibilidad"/>
+            <asp:BoundField HeaderText="IdTurno" DataField="IdTurno"/> 
+            <asp:BoundField HeaderText="Disponibilidad" DataField="Disponibilidad"/> 
             <asp:BoundField HeaderText="Medico" DataField="Medico"/>
             <asp:BoundField HeaderText="Paciente" DataField="Paciente"/>
             <asp:BoundField HeaderText="Estado" DataField="Estado"/>

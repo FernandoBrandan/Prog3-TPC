@@ -15,7 +15,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.SetearQuery("select IdTurno, Disponibilidad, Medico, Paciente, Motivo, Estado from Turno");
+                datos.SetearQuery("select IdTurno, d.FechaTurno, h.descripcion , Medico, Paciente, Motivo, t.Estado from Turno as t inner join Disponibilidad as d on d.IdDisponibilidad = t.Disponibilidad inner join Horario as h on h.IdHorario = d.Horario");
                 datos.EjecutarConsulta();
                 while (datos.Lector.Read())
                 {
@@ -24,16 +24,19 @@ namespace Negocio
                     aux.IdTurno = datos.Lector.GetInt64(0);
 
                     aux.Disponibilidad = new Disponibilidad();
-                    aux.Disponibilidad.IdDisponibilidad = datos.Lector.GetInt64(1);
+                    aux.Disponibilidad.Fecha = datos.Lector.GetDateTime(1);
+
+                    aux.Disponibilidad.Horario = new Horario();
+                    aux.Disponibilidad.Horario.Descripcion = datos.Lector.GetString(2);
 
                     aux.Medico = new Medico();
-                    aux.Medico.LegajoMedico = datos.Lector.GetString(2);
+                    aux.Medico.LegajoMedico = datos.Lector.GetString(3);
 
                     aux.Paciente = new Paciente();
-                    aux.Paciente.CodigoPaciente = datos.Lector.GetString(3);
+                    aux.Paciente.CodigoPaciente = datos.Lector.GetString(4);
 
-                    aux.Estado = datos.Lector.GetString(4);
-                    aux.Motivo = datos.Lector.GetString(5);
+                    aux.Estado = datos.Lector.GetString(5);
+                    aux.Motivo = datos.Lector.GetString(6);
 
                     ListarTurnos.Add(aux);
                 }

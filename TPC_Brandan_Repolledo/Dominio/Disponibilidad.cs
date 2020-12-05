@@ -16,7 +16,13 @@ namespace Dominio
 
         public string Estado { get; set; }
 
-        // public bool Estado { get; set; }
-         
+        // public bool Estado { get; set; } 
+
+        public override string ToString()
+        {
+            string valor = Fecha.ToShortDateString() + " " + Horario.Descripcion;
+            return valor;
+        }
+
     }
 }

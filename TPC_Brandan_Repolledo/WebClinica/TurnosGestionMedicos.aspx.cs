@@ -13,7 +13,8 @@ namespace WebClinica
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string var = Session["Turno"].ToString(); 
+            string var = Session["Turno"].ToString();
+            lblPaciente.Text = var;
         }
     }
 }

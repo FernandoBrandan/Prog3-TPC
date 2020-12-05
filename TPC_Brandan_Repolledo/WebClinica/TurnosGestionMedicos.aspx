@@ -22,9 +22,9 @@
 
 
     <div class="form-row">
-        <div class="form-group col-md-3">
-            <label>Paciente</label> 
-        </div>
+        <div class="form-group col-md-3">     
+            <asp:Label text="Paciente" runat="server" />        </div>
+            <asp:Label id="lblPaciente" runat="server" />        </div>
         <div class="form-group col-md-3">
             <label>Motivo</label> 
             <asp:TextBox runat="server" />
