@@ -67,7 +67,7 @@
 
         <div>
             <asp:TextBox id="TextBorrarUsuario" runat="server" Width="210px" Enabled="False"/>
-            <asp:Button Text="Borrar Usuario" OnClientClick="return Validar()"  OnClick="Click_AceptarBorrarUsusario" runat="server" />
+            <asp:Button Text="Borrar Usuario"  class="btn btn-primary" OnClientClick="return Validar()"  OnClick="Click_AceptarBorrarUsusario" runat="server" />
         </div>
 
     </div>

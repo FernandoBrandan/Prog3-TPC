@@ -24,7 +24,7 @@
         <nav aria-label="...">
             <ul class="pagination pagination-lg">
                 <li class="page-item"><a class="page-link" href="PacientesAlta.aspx">Alta</a></li>
-                <li class="page-item"><a class="page-link" href="PacientesModifica.aspx">Modificacion</a></li>
+                <li class="page-item"><a class="page-link" href="PacientesModifica.aspx">Modificación</a></li>
                 <li class="page-item active" aria-current="page">
                     <span class="page-link">Baja
                     <span class="sr-only">(current)</span>
@@ -59,7 +59,7 @@
                 </asp:GridView>
                   <div>
             <asp:TextBox id="TextBorrarPaciente" runat="server"  Width="210px" Enabled="False"  />
-            <asp:Button Text="Borrar Usuario"  OnClientClick="return Validar()"  OnClick="Click_AceptarBorrarPaciente" Height="40px" Width="115px" runat="server" />
+            <asp:Button Text="Borrar Usuario" class="btn btn-primary"  OnClientClick="return Validar()"  OnClick="Click_AceptarBorrarPaciente" Height="40px" Width="115px" runat="server" />
         </div>
         </div>
 

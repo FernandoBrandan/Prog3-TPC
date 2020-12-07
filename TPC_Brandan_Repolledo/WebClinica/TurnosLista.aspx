@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
-    <h1 style="margin-top: 20px;">Listado</h1>
+    <h1 style="margin-top: 20px;;color: cadetblue">Listado</h1>
     <div style="margin-top: 20px;">
         <nav aria-label="...">
             <ul class="pagination pagination-lg">

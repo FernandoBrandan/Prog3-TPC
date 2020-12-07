@@ -30,7 +30,7 @@
                     <span class="sr-only">(current)</span>
                     </span>
                 </li>
-                <li class="page-item"><a class="page-link" href="UsuariosModifica.aspx">Modificacion</a></li>
+                <li class="page-item"><a class="page-link" href="UsuariosModifica.aspx">Modificación</a></li>
                 <li class="page-item"><a class="page-link" href="UsuariosBaja.aspx">Baja</a></li>
             </ul>
         </nav>
