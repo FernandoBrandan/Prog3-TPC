@@ -8,7 +8,7 @@
         <nav aria-label="...">
             <ul class="pagination pagination-lg">
                 <li class="page-item"><a class="page-link" href="EspecialidadesAlta.aspx">Alta</a></li>
-                <li class="page-item"><a class="page-link" href="EspecialidadesModifica.aspx">Modificacion</a></li>
+                <li class="page-item"><a class="page-link" href="EspecialidadesModifica.aspx">Modificación</a></li>
                 <li class="page-item active" aria-current="page">
                     <span class="page-link">Baja
                     <span class="sr-only">(current)</span>

@@ -4,16 +4,20 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <script>
-        function  Validar() {
-            var result = confirm("Seguro que desea realizar los cambios?");
-            if (result){
-                return true;
+        <script>
+            function Validar() {
+
+                var result = confirm("¿Está seguro de Eliminar al Usuario?");
+
+                if (result) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
             }
-            else{
-                return false;
-            }
-    </script>
+
+        </script>
 
     <h1  style="margin-top: 20px;color: cadetblue">Paciente</h1>
     <div style="margin-top: 50px;">
@@ -55,7 +59,7 @@
                 </asp:GridView>
                   <div>
             <asp:TextBox id="TextBorrarPaciente" runat="server"  Width="210px" Enabled="False"  />
-            <asp:Button Text="Borrar Usuario"   runat="server" OnClick="Click_AceptarBorrarPaciente" Height="40px" Width="115px" />
+            <asp:Button Text="Borrar Usuario"  OnClientClick="return Validar()"  OnClick="Click_AceptarBorrarPaciente" Height="40px" Width="115px" runat="server" />
         </div>
         </div>
 

@@ -7,7 +7,7 @@
     <script>
         function Validar() {
 
-            var result = confirm("Seguro que desea realizar los cambios?");
+            var result = confirm("¿Está seguro de Eliminar al Usuario?");
 
             if (result) {
                 return true;

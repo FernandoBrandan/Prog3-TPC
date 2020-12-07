@@ -5,7 +5,7 @@
 
     <script>
         function  Validar() {
-            var result = confirm("Seguro que desea realizar los cambios?");
+            var result = confirm("¿Está seguro de eliminar al médico?");
             if (result){
                 return true;
             }
@@ -55,7 +55,7 @@
                 </asp:GridView>
                   <div>
             <asp:TextBox id="TextBorrarMedico" runat="server" Width="152px" Enabled="False" />
-            <asp:Button Text="Borrar Usuario"   runat="server" OnClick="Click_AceptarBorrarMedico" Height="33px" Width="117px" />
+            <asp:Button Text="Borrar Usuario" OnClientClick="return Validar()"   runat="server" OnClick="Click_AceptarBorrarMedico" Height="33px" Width="117px" />
         </div>
         </div>
 
