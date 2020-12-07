@@ -3,6 +3,24 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <script>
+        function Validar()
+        {
+            var DNI = document.getElementById("TextUsuarioDNI").value;
+            var nombre = document.getElementById("TextUsuarioNombre").value;
+            var apellido = document.getElementById("TextUsuarioApellido").value;
+            var domicilio = document.getElementById("TextUsuarioDomicilio").value;
+            var fechaNac = document.getElementById("TextUsuarioFechaNac").value;  
+      
+            if (DNI == "" || nombre == "" || apellido == "" || domicilio == "" || fechaNac == "")
+            {
+                alert("Debe completar todos los campos");
+                return false;
+            }
+            return true;
+        }
+    </script>
        <h1  style="margin-top: 20px;color: cadetblue">Usuario</h1>
     <div style="margin-top: 30px;">
         <nav aria-label="...">
@@ -17,31 +35,31 @@
             </ul>
         </nav>
     </div>
-
+ 
     <div style="margin-top: 30px;">
         <div class="form-row">
             <div class="form-group col-md-3">
                 <label>DNI</label>
-                <asp:TextBox class="form-control" ID="TextUsuarioDNI" runat="server" />
+                <asp:TextBox class="form-control" placeholder="DNI"  ID="TextUsuarioDNI"  ClientIDMode ="Static" runat="server" /> 
             </div>
             <div class="form-group col-md-3">
                 <label>Nombre</label>
-                <asp:TextBox class="form-control" ID="TextUsuarioNombre" runat="server" />
+                <asp:TextBox class="form-control" placeholder="Nombre" ID="TextUsuarioNombre"  ClientIDMode ="Static" runat="server" />
             </div>
             <div class="form-group col-md-3">
                 <label>Apellido</label>
-                <asp:TextBox class="form-control" ID="TextUsuarioApellido" runat="server" />
+                <asp:TextBox class="form-control" placeholder="Apellido" ID="TextUsuarioApellido"  ClientIDMode ="Static" runat="server" />
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-3">
                 <label>Domicilio</label>
-                <asp:TextBox class="form-control" ID="TextUsuarioDomicilio" runat="server" />
+                <asp:TextBox class="form-control" placeholder="Domicilio" ID="TextUsuarioDomicilio"  ClientIDMode ="Static" runat="server" />
             </div>
 
             <div class="form-group col-md-3">
                 <label>Fecha Nacimiento</label>
-                <asp:TextBox class="form-control" placeholder="yyyy-mm-dd" ID="TextUsuarioFechaNac" runat="server" />
+                <asp:TextBox class="form-control" placeholder="yyyy-mm-dd" ID="TextUsuarioFechaNac"   ClientIDMode ="Static" runat="server" />
             </div>
 
         </div>
@@ -54,7 +72,7 @@
         </div>
     </div>
     <div style="margin-top: 20px;">
-        <asp:Button Text="Aceptar" class="btn btn-primary" OnClick="Click_AceptarAltaUsuario" runat="server" />
+       <asp:Button Text="Aceptar"  OnClientClick="return Validar()"   OnClick="Click_AceptarAltaUsuario"  class="btn btn-primary" runat="server" />
         <asp:Button Text="Cancelar" class="btn btn-primary" runat="server" />
     </div>
 </asp:Content>

@@ -8,19 +8,13 @@
     <script>
         function Validar()
         {
-            var DNI = document.getElementById("TextAltaPacienteDNI").value;
-            console.log(DNI);
-            var nombre = document.getElementById("TextAltaPacienteNombre").value;
-            console.log(nombre);
-            var apellido = document.getElementById("TextAltaPacienteApellido").value;
-            console.log(apellido);
-            var domicilio = document.getElementById("TextAltaPacienteDomicilio").value;
-            console.log(domicilio);
-            var fechaNac = document.getElementById("TextAltaPacienteFechaNac").value;
-            console.log(fechaNac);
+            var DNI = document.getElementById("TextAltaPacienteDNI").value;           
+            var nombre = document.getElementById("TextAltaPacienteNombre").value;        
+            var apellido = document.getElementById("TextAltaPacienteApellido").value;          
+            var domicilio = document.getElementById("TextAltaPacienteDomicilio").value;      
+            var fechaNac = document.getElementById("TextAltaPacienteFechaNac").value;   
             var email = document.getElementById("TextAltaPacienteEmail").value;
-            console.log(email); //RadioButtonList
-
+        
             if (DNI == "" || nombre == "" || apellido == "" || domicilio == "" || fechaNac == "" || email == "")
             {
                 alert("Debe completar todos los campos");
@@ -51,22 +45,22 @@
         <div class="form-row">
             <div class="form-group col-md-3">
                 <label>DNI</label>
-                <asp:TextBox class="form-control"   ID="TextAltaPacienteDNI"  ClientIDMode ="Static" runat="server" /> 
+                <asp:TextBox class="form-control" placeholder="DNI"  ID="TextAltaPacienteDNI"  ClientIDMode ="Static" runat="server" /> 
             </div>
             <div class="form-group col-md-3">
                 <label>Nombre</label>
-                <asp:TextBox class="form-control" ID="TextAltaPacienteNombre" ClientIDMode ="Static"  runat="server" />
+                <asp:TextBox class="form-control" placeholder="Nombre"  ID="TextAltaPacienteNombre" ClientIDMode ="Static"  runat="server" />
             </div>
             <div class="form-group col-md-3">
                 <label>Apellido</label>
-                <asp:TextBox class="form-control"  ID="TextAltaPacienteApellido" ClientIDMode ="Static" runat="server" />
+                <asp:TextBox class="form-control" placeholder="Apellido" ID="TextAltaPacienteApellido" ClientIDMode ="Static" runat="server" />
             </div>
 
         </div>
         <div class="form-row">
             <div class="form-group col-md-3">
                 <label>Domicilio</label>
-                <asp:TextBox class="form-control"  ID="TextAltaPacienteDomicilio" ClientIDMode ="Static" runat="server" />
+                <asp:TextBox class="form-control" placeholder="Apellido" ID="TextAltaPacienteDomicilio" ClientIDMode ="Static" runat="server" />
             </div>
 
             <div class="form-group col-md-3">
@@ -74,11 +68,11 @@
                 <asp:TextBox class="form-control"  placeholder="yyyy-mm-dd" ID="TextAltaPacienteFechaNac" ClientIDMode ="Static" runat="server" />
             </div>
             <div class="form-group col-md-4">
-                <label>Correo Electronico</label>
-                <asp:TextBox class="form-control" ID="TextAltaPacienteEmail" ClientIDMode ="Static"  runat="server" />
+                <label>Correo Electrónico</label>
+                <asp:TextBox class="form-control"  placeholder="Correo electrónico" ID="TextAltaPacienteEmail" ClientIDMode ="Static"  runat="server" />
             </div>
         </div>
-            <h5>Genero</h5>
+            <h5>Género</h5>
         <div class="form-row">
             <asp:RadioButtonList ID="RbGenero" RepeatDirection="Horizontal" runat="server" Width="226px">
                 <asp:ListItem Text="Masculino" Value="Male"></asp:ListItem>
