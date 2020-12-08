@@ -57,8 +57,7 @@ namespace Negocio
             datos.AgregarParametro("@Paciente", nuevo.Paciente.CodigoPaciente);
             datos.AgregarParametro("@Motivo", nuevo.Motivo);
             datos.AgregarParametro("@Estado", nuevo.Estado);
-            datos.EjecutarConsulta();
-
+            datos.EjecutarConsulta(); 
         }
     }
 }

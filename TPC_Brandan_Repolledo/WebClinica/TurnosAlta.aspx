@@ -9,7 +9,7 @@
         .oculto {
             display: none;
         }
-    </style>
+    </style>  
 
     <h1 style="margin-top: 20px;">Turno</h1>
     <div style="margin-top: 20px;">
@@ -25,7 +25,7 @@
         </nav>
     </div>
 
-    <div class="container">
+    <div class="form-group container">
 
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
@@ -37,12 +37,12 @@
                 <br />
                 <div style="margin-left: 100px;">
                     <asp:Button Text="Buscar" class="btn btn-primary" runat="server" OnClick="Click_AceptarBuscaPacienteTurno" Width="150px" />
-                    <asp:Button Text="Borrar" class="btn btn-primary" runat="server" Width="150px" />
+                    <asp:Button Text="Borrar" class="btn btn-primary" runat="server" OnClick="Click_BorrarBuscaPacienteTurno" Width="150px" />
                 </div>
             </div>
 
             <div class="col">
-                <asp:GridView ID="gvBusquedaPaciente" AutoGenerateColumns="false" runat="server" CellPadding-top="15" OnRowCommand="BusquedaPaciente_RowCommand">
+                <asp:GridView ID="gvBusquedaPaciente" AutoGenerateColumns="false" runat="server" Style="text-align: center; width: 100%" OnRowCommand="BusquedaPaciente_RowCommand">
                     <Columns>
                         <asp:ButtonField HeaderText="Opcion" ButtonType="Link" Text="Seleccionar" ControlStyle-ForeColor="SlateBlue" CommandName="Select" />
                         <asp:BoundField HeaderText="CodigoPaciente" DataField="CodigoPaciente" />
@@ -57,16 +57,17 @@
         </div>
 
         <div class="row" style="margin-left: 100px; margin-top: 10px; margin-bottom: 20px">
-            <h4>Paciente seleccionado: <asp:Label ID="LabelPacienteElegido" runat="server" /></h4>
+            <h4>Paciente seleccionado:
+                <asp:Label ID="LabelPacienteElegido" runat="server" /></h4>
         </div>
 
         <div class="row" style="margin-bottom: 20px;">
-            <div class="col-md-auto"> 
+            <div class="col-md-auto">
                 <asp:UpdatePanel runat="server">
                     <ContentTemplate>
                         <asp:Label Text="Espacialidad" runat="server" />
                         <asp:DropDownList AutoPostBack="true" ID="ddlAltaTurnoEspecilidad" runat="server" OnSelectedIndexChanged="Click_SeleccionaEspecialidad">
-                        </asp:DropDownList>
+                        </asp:DropDownList> 
                     </ContentTemplate>
                 </asp:UpdatePanel>
             </div>
@@ -81,35 +82,30 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="form-row">
             <div class="col">
                 <asp:Calendar ID="Calendar1" Style="width: 100%; margin-left: 5px;" runat="server" OnSelectionChanged="Click_SeleccionaFecha"></asp:Calendar>
             </div>
             <div class="col">
                 <asp:TextBox AutoPostBack="true" ID="TextFechaElegida" runat="server" />
-                <asp:Button Text=">>" runat="server" OnClick="Click_ValidadFechas" />
+                <asp:Button Text=">>" runat="server" OnClick="Click_ValidadFechas"/>
                 <br />
                 <br />
-                <asp:Label Text="Horarios Disponibles" runat="server"/>
-                <asp:DropDownList ID="ddlAltaTurnoHorario" class="form-control" Style="margin-top: 7px;" runat="server">
+                <asp:Label Text="Horarios Disponibles" runat="server" />
+                <asp:DropDownList ID="ddlAltaTurnoHorario" class="form-control" ValidationGroup="g1" Style="margin-top: 7px;" runat="server">
                 </asp:DropDownList> 
-                
                 <br />
-                <asp:Label Text="Motivo" runat="server" /> 
+                <asp:Label Text="Motivo" runat="server" />
                 <br />
-                <asp:TextBox id="TextMotivoTurno" TextMode="MultiLine" Columns="70" Rows="2" runat="server" />
+                <asp:TextBox ID="TextMotivoTurno" ClientIDMode="Static" TextMode="MultiLine" Columns="70" Rows="2" runat="server" />
             </div>
         </div>
-
-        <div class="row" style="margin-top: 20px;"> 
+         
+        <div class="row" style="margin-top: 20px;">
+            <asp:Button Text="Aceptar" class="btn btn-primary" OnClientClick="Validar()" OnClick="Click_AceptarAltaTurno" runat="server" ValidationGroup="Aceptarbtn" />
+            <asp:Button Text="Cancelar" class="btn btn-primary" runat="server" />
         </div>
 
-        <div class="row">
-            <div style="margin-top: 20px;">
-                <asp:Button Text="Aceptar" class="btn btn-primary" runat="server" OnClick="Click_AceptarAltaTurno" />
-                <asp:Button Text="Cancelar" class="btn btn-primary" runat="server" />
-            </div>
-        </div>
     </div>
 
 </asp:Content>
