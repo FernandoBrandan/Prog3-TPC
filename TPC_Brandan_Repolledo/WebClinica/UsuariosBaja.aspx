@@ -7,7 +7,7 @@
     <script>
         function Validar() {
 
-            var result = confirm("Seguro que desea realizar los cambios?");
+            var result = confirm("¿Está seguro de Eliminar al Usuario?");
 
             if (result) {
                 return true;
@@ -25,7 +25,7 @@
         <nav aria-label="...">
             <ul class="pagination pagination-lg">
                 <li class="page-item"><a class="page-link" href="UsuariosAlta.aspx">Alta</a></li>
-                <li class="page-item"><a class="page-link" href="UsuariosModifica.aspx">Modificacion</a></li>
+                <li class="page-item"><a class="page-link" href="UsuariosModifica.aspx">Modificación</a></li>
                 <li class="page-item active" aria-current="page">
                     <span class="page-link">Baja
                 <span class="sr-only">(current)</span>
@@ -67,7 +67,7 @@
 
         <div>
             <asp:TextBox id="TextBorrarUsuario" runat="server" Width="210px" Enabled="False"/>
-            <asp:Button Text="Borrar Usuario" runat="server" OnClick="Click_AceptarBorrarUsusario" />
+            <asp:Button Text="Borrar Usuario"  class="btn btn-primary" OnClientClick="return Validar()"  OnClick="Click_AceptarBorrarUsusario" runat="server" />
         </div>
 
     </div>

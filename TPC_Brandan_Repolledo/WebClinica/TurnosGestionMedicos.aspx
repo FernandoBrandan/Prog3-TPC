@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <h1 style="margin-top: 20px;">Gestion Medico</h1>
+    <h1 style="margin-top: 20px;;color: cadetblue">Gestión Medico</h1>
     <div style="margin-top: 20px;">
         <nav aria-label="...">
             <ul class="pagination pagination-lg">
@@ -12,7 +12,7 @@
                 <li class="page-item"><a class="page-link" href="TurnosLista.aspx">Lista</a></li>
                 <li class="page-item"><a class="page-link" href="TurnosAlta.aspx">Alta</a></li>
                 <li class="page-item active" aria-current="page">
-                    <span class="page-link">Gestion Medico
+                    <span class="page-link">Gestión Médico
                     <span class="sr-only">(current)</span>
                     </span>
                 </li>

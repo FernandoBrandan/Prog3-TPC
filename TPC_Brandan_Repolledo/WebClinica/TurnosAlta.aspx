@@ -11,7 +11,7 @@
         }
     </style>  
 
-    <h1 style="margin-top: 20px;">Turno</h1>
+    <h1 style="margin-top: 20px;;color: cadetblue">Turno</h1>
     <div style="margin-top: 20px;">
         <nav aria-label="...">
             <ul class="pagination pagination-lg">

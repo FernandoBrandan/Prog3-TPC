@@ -5,6 +5,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     
-    <h1 style="margin-top: 20px;">Informacion</h1>
+    <h1 style="margin-top: 20px;">Información</h1>
 
 </asp:Content>

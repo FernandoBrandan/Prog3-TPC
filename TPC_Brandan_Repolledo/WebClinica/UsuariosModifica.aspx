@@ -10,7 +10,7 @@
             <ul class="pagination pagination-lg">
                 <li class="page-item"><a class="page-link" href="UsuariosAlta.aspx">Alta</a></li>
                 <li class="page-item active" aria-current="page">
-                    <span class="page-link">Modificacion
+                    <span class="page-link">Modificación
                 <span class="sr-only">(current)</span>
                     </span>
                 </li>

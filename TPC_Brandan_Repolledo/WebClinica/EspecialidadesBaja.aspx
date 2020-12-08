@@ -3,12 +3,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
-    <h1 style="margin-top: 20px;">Especialidades</h1>
+    <h1 style="margin-top: 20px;;color: cadetblue">Especialidades</h1>
      <div style="margin-top: 30px;">
         <nav aria-label="...">
             <ul class="pagination pagination-lg">
                 <li class="page-item"><a class="page-link" href="EspecialidadesAlta.aspx">Alta</a></li>
-                <li class="page-item"><a class="page-link" href="EspecialidadesModifica.aspx">Modificacion</a></li>
+                <li class="page-item"><a class="page-link" href="EspecialidadesModifica.aspx">Modificación</a></li>
                 <li class="page-item active" aria-current="page">
                     <span class="page-link">Baja
                     <span class="sr-only">(current)</span>

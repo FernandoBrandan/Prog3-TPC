@@ -4,23 +4,27 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <script>
-        function  Validar() {
-            var result = confirm("Seguro que desea realizar los cambios?");
-            if (result){
-                return true;
+        <script>
+            function Validar() {
+
+                var result = confirm("¿Está seguro de Eliminar al Usuario?");
+
+                if (result) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
             }
-            else{
-                return false;
-            }
-    </script>
+
+        </script>
 
     <h1  style="margin-top: 20px;color: cadetblue">Paciente</h1>
     <div style="margin-top: 50px;">
         <nav aria-label="...">
             <ul class="pagination pagination-lg">
                 <li class="page-item"><a class="page-link" href="PacientesAlta.aspx">Alta</a></li>
-                <li class="page-item"><a class="page-link" href="PacientesModifica.aspx">Modificacion</a></li>
+                <li class="page-item"><a class="page-link" href="PacientesModifica.aspx">Modificación</a></li>
                 <li class="page-item active" aria-current="page">
                     <span class="page-link">Baja
                     <span class="sr-only">(current)</span>
@@ -55,7 +59,7 @@
                 </asp:GridView>
                   <div>
             <asp:TextBox id="TextBorrarPaciente" runat="server"  Width="210px" Enabled="False"  />
-            <asp:Button Text="Borrar Usuario"   runat="server" OnClick="Click_AceptarBorrarPaciente" Height="40px" Width="115px" />
+            <asp:Button Text="Borrar Usuario" class="btn btn-primary"  OnClientClick="return Validar()"  OnClick="Click_AceptarBorrarPaciente" Height="40px" Width="115px" runat="server" />
         </div>
         </div>
 
