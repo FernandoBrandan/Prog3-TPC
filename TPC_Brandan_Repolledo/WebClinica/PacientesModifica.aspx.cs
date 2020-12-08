@@ -102,6 +102,10 @@ namespace WebClinica
 
         public virtual int CellSpacing { get; set; } // Le da espaciado a las celdas de grilla
 
+        protected void Click_CancelaModPaciente(object sender, EventArgs e)
+        {
+            Response.Redirect("PacientesModifica.aspx");
+        }
     }
 
 }

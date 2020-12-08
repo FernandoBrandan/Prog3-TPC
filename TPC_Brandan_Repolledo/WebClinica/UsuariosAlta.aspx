@@ -40,7 +40,7 @@
         <div class="form-row">
             <div class="form-group col-md-3">
                 <label>DNI</label>
-                <asp:TextBox class="form-control" placeholder="DNI"  ID="TextUsuarioDNI"  ClientIDMode ="Static" runat="server" /> 
+                <asp:TextBox class="form-control" placeholder="DNI" type="number" ID="TextUsuarioDNI"  ClientIDMode ="Static" runat="server" /> 
             </div>
             <div class="form-group col-md-3">
                 <label>Nombre</label>

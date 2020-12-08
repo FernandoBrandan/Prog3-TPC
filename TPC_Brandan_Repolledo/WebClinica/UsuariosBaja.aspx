@@ -4,6 +4,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    <style>
+        .oculto {
+            display: none;
+        }
+    </style>
+
     <script>
         function Validar() {
 
@@ -19,7 +25,7 @@
 
     </script>
 
-      <h1  style="margin-top: 20px;color: cadetblue">Usuario</h1>
+    <h1 style="margin-top: 20px; color: cadetblue">Usuario</h1>
 
     <div style="margin-top: 30px;">
         <nav aria-label="...">
@@ -35,41 +41,42 @@
         </nav>
     </div>
 
-    <div style="margin-top: 30px;">
+    <div class="container" style="margin-top: 30px;">
 
-        <div class="form-group col-md-3">
+        <div class="row form-group">
 
-            <label>Buscar</label>
-            <asp:TextBox class="form-control" placeholder="IdUsuario" ID="TextBuscar" runat="server" Width="882px" OnTextChanged="Click_BuscarBajaUsuario" />
+            <div class="form-group col-md-3">
 
-            <asp:Button Text="Buscar" class="btn btn-primary" runat="server" OnClick="Click_BuscarBajaUsuario" />
-            <asp:Button Text="Borrar" class="btn btn-primary" runat="server" />
+                <label>Buscar</label>
+                <asp:TextBox class="form-group col-md-10" placeholder="Busqueda" ID="TextBuscar" runat="server" Width="882px" OnTextChanged="Click_BuscarBajaUsuario" />
+                <br />
+                <br />
+                <asp:Button Text="Buscar" class="btn btn-primary" runat="server" OnClick="Click_BuscarBajaUsuario" />
+                <asp:Button Text="Borrar" class="btn btn-primary" runat="server" OnClick="Click_BorrarBusquedaUsuario" />
 
-            <style>
-                .oculto {
-                    display: none;
-                }
-            </style>
+            </div>
 
-            <asp:GridView ID="gvBusqueda" AutoGenerateColumns="false" runat="server" OnRowCommand="BusquedaBajaUsuario_RowCommand" cellpadding="15">
-                <Columns>
-                    <asp:ButtonField HeaderText="Opcion" ButtonType="Link" Text="Baja" CommandName="Select" />
-                    <asp:BoundField HeaderText="Legajo" DataField="LegajoUsuario" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
-                    <asp:BoundField HeaderText="DNI" DataField="DNI" />
-                    <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
-                    <asp:BoundField HeaderText="Apellido" DataField="Apellido" />
-                    <asp:BoundField HeaderText="Domicilio" DataField="Domicilio" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
-                    <asp:BoundField HeaderText="FechaNacimiento" DataField="FechaNacimiento" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
-                </Columns>
-            </asp:GridView>
+            <div class="col">
+                <asp:GridView ID="gvBusqueda" AutoGenerateColumns="false" runat="server" OnRowCommand="BusquedaBajaUsuario_RowCommand" Style="text-align: center; width: 100%">
+                    <Columns>
+                        <asp:ButtonField HeaderText="Opcion" ButtonType="Link" Text="Baja" CommandName="Select" />
+                        <asp:BoundField HeaderText="Legajo" DataField="LegajoUsuario" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
+                        <asp:BoundField HeaderText="DNI" DataField="DNI" />
+                        <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
+                        <asp:BoundField HeaderText="Apellido" DataField="Apellido" />
+                        <asp:BoundField HeaderText="Domicilio" DataField="Domicilio" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
+                        <asp:BoundField HeaderText="FechaNacimiento" DataField="FechaNacimiento" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
+                    </Columns>
+                </asp:GridView>
+            </div>
         </div>
-
-
-        <div>
-            <asp:TextBox id="TextBorrarUsuario" runat="server" Width="210px" Enabled="False"/>
-            <asp:Button Text="Borrar Usuario"  class="btn btn-primary" OnClientClick="return Validar()"  OnClick="Click_AceptarBorrarUsusario" runat="server" />
-        </div>
-
     </div>
+
+
+    <div>
+        <asp:TextBox ID="TextBorrarUsuario" runat="server" Width="210px" Enabled="False" />
+        <asp:Button Text="Borrar Usuario" class="btn btn-primary" OnClientClick="return Validar()" OnClick="Click_AceptarBorrarUsusario" runat="server" />
+    </div>
+
 
 </asp:Content>

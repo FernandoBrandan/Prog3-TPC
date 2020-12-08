@@ -26,6 +26,8 @@ namespace WebClinica
         {
             if (IsPostBack)
             {
+
+                TextBorrarMedico.Text = "";
                 NegocioMedico Buscar = new NegocioMedico();
                 ListadoOriginal = Buscar.ListaMedicos();
 
@@ -63,13 +65,13 @@ namespace WebClinica
             NegocioMedico Borrar = new NegocioMedico();
             Borrar.BajaMedico(bajaMedico);
             Response.Write("<script LANGUAGE='JavaScript' >alert('Se dio de baja al paciente: " + bajaMedico.DNI + "')</script>");
-            LimpiarTabla(TextBorrarMedico, gvBusquedaMedico);
+            LimpiarTabla();
         }
-        
+         
 
-
-       public  void LimpiarTabla(TextBox text, GridView gvBusquedaPaciente)
+       public  void LimpiarTabla()
         {
+            TextBorrarMedico.Text = "";
             TextBuscarMedico.Text = "";
             gvBusquedaMedico.DataSource = ListaVacia;
             gvBusquedaMedico.DataBind();
@@ -77,6 +79,9 @@ namespace WebClinica
 
         public virtual int CellSpacing { get; set; } // Le da espaciado a las celdas de grilla
 
-
+        protected void Click_BorrarBusquedaMedico(object sender, EventArgs e)
+        {
+            LimpiarTabla();
+        }
     }
 }

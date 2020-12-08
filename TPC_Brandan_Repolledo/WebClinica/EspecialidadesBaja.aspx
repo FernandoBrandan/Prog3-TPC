@@ -24,6 +24,7 @@
                     <asp:DropDownList runat="server" ID="ddlModEspecialidad" CssClass="form-control col-md-3">
                       
                     </asp:DropDownList>
+                    <br />
                     <asp:Button Text="Elegir" class="btn btn-primary" runat="server" OnClick="Click_ElegirEspecialidad" />
                 </div>
     </div>

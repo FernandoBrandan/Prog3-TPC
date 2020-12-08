@@ -1,10 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="MedicosModifica.aspx.cs" Inherits="WebClinica.MedicosModifica" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-       <h1  style="margin-top: 20px;color: cadetblue">Médico</h1>
+    <h1 style="margin-top: 20px; color: cadetblue">Médico</h1>
 
-      <div style="margin-top: 50px;">
+    <div style="margin-top: 50px;">
         <nav aria-label="...">
             <ul class="pagination pagination-lg">
                 <li class="page-item"><a class="page-link" href="MedicosAlta.aspx">Alta</a></li>
@@ -16,22 +17,24 @@
                 <li class="page-item"><a class="page-link" href="MedicosBaja.aspx">Baja</a></li>
             </ul>
         </nav>
-    </div> 
-       <div style="margin-top: 30px;">
-        <div class="form-group">
+    </div>
+    <div class="container" style="margin-top: 30px;">
+        <div class="row"> 
             <div class="form-group col-md-3">
                 <label>Buscar</label>
-                <asp:TextBox class="form-control" placeholder="IdUsuario" ID="TextMedicoBuscar" runat="server" Width="883px"/> 
-                <asp:Button Text="Buscar" class="btn btn-primary" runat="server" OnClick="Click_BuscarMedico"/>
-                <asp:Button Text="Borrar" class="btn btn-primary" runat="server" OnClick="Click_BorrarListado"/>
+                <asp:TextBox  class="form-control col-md-10" placeholder="IdUsuario" ID="TextMedicoBuscar" runat="server" Width="883px" />
+                <br />
+                <asp:Button Text="Buscar" class="btn btn-primary" runat="server" OnClick="Click_BuscarMedico" />
+                <asp:Button Text="Borrar" class="btn btn-primary" runat="server" OnClick="Click_BorrarListado" />
 
+            </div>
+            <div class="col">
                 <style>
                     .oculto {
                         display: none;
                     }
                 </style>
-
-                <asp:GridView ID="gvBusqueda" AutoGenerateColumns="false" runat="server" OnRowCommand="BusquedaMedico_RowCommand" cellpadding="15" >
+                <asp:GridView ID="gvBusqueda" AutoGenerateColumns="false" runat="server" OnRowCommand="BusquedaMedico_RowCommand" Style="text-align: center; width: 100%">
                     <Columns>
                         <asp:ButtonField HeaderText="Opcion" ButtonType="Link" Text="Seleccionar" CommandName="Select" />
                         <asp:BoundField HeaderText="Legajo" DataField="LegajoMedico" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
@@ -68,7 +71,7 @@
                 <label>Fecha Nacimiento</label>
                 <asp:TextBox class="form-control" ID="TextModMedicoFechaNacimiento" runat="server" />
             </div>
-               <div class="form-group col-md-3">
+            <div class="form-group col-md-3">
                 <asp:Label Text="Especialidad" runat="server" />
                 <asp:DropDownList ID="ddlModMedico" class="form-control" Style="margin-top: 7px" runat="server">
                 </asp:DropDownList>
@@ -76,8 +79,8 @@
         </div>
     </div>
     <div style="margin-top: 20px;">
-          <asp:Button Text="Aceptar" class="btn btn-primary" runat="server" OnClick="Click_AceptarModiMedico" />
-          <asp:Button Text="Cancelar" class="btn btn-primary" runat="server" />
+        <asp:Button Text="Aceptar" class="btn btn-primary" runat="server" OnClick="Click_AceptarModiMedico" />
+        <asp:Button Text="Cancelar" class="btn btn-primary" runat="server" />
     </div>
 
 </asp:Content>

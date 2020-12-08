@@ -3,7 +3,15 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-       <h1  style="margin-top: 20px;color: cadetblue">Usuario</h1>
+
+
+    <style>
+        .oculto {
+            display: none;
+        }
+    </style>
+
+    <h1 style="margin-top: 20px; color: cadetblue">Usuario</h1>
 
     <div style="margin-top: 30px;">
         <nav aria-label="...">
@@ -18,21 +26,26 @@
             </ul>
         </nav>
     </div>
-       <div style="margin-top: 30px;">
-        <div class="form-group">
+
+    <div class="container" style="margin-top: 30px;">
+
+
+        <div class="row">
+
             <div class="form-group col-md-3">
                 <label>Buscar</label>
-                <asp:TextBox class="form-control" placeholder="IdUsuario" ID="TextBuscar" runat="server" Width="887px" />
+                <br />
+                <asp:TextBox class="form-control col-md-10" placeholder="Busqueda" type="number"  ID="TextBuscar" runat="server" Width="887px" />
+           
+                <br />
+                <br />
                 <asp:Button Text="Buscar" class="btn btn-primary" runat="server" OnClick="Click_BuscarUsuario" />
                 <asp:Button Text="Borrar" class="btn btn-primary" runat="server" OnClick="Click_BorrarListado" />
 
-                <style>
-                    .oculto {
-                        display: none;
-                    }
-                </style>
+            </div>
 
-                <asp:GridView ID="gvBusqueda" AutoGenerateColumns="false" runat="server" OnRowCommand="BusquedaUsuario_RowCommand" cellpadding="15">
+            <div class="col">
+                <asp:GridView ID="gvBusqueda" AutoGenerateColumns="false" runat="server" OnRowCommand="BusquedaUsuario_RowCommand" Style="text-align: center; width: 100%">
                     <Columns>
                         <asp:ButtonField HeaderText="Opcion" ButtonType="Link" Text="Seleccionar" CommandName="Select" />
                         <asp:BoundField HeaderText="Legajo" DataField="LegajoUsuario" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
@@ -45,6 +58,8 @@
                 </asp:GridView>
             </div>
         </div>
+
+
         <div class="form-row">
             <div class="form-group col-md-3">
                 <label>DNI</label>
@@ -69,9 +84,14 @@
                 <asp:TextBox class="form-control" ID="TextModFechaNacimiento" runat="server" />
             </div>
         </div>
+
     </div>
+
+
     <div style="margin-top: 20px;">
-          <asp:Button Text="Aceptar" class="btn btn-primary" OnClick="Click_AceptarModiUsuario" runat="server" />
-          <asp:Button Text="Cancelar" class="btn btn-primary" runat="server" />
+        <asp:Button Text="Aceptar" class="btn btn-primary" OnClick="Click_AceptarModiUsuario" runat="server" />
+        <asp:Button Text="Cancelar" class="btn btn-primary" runat="server" />
     </div>
+
+
 </asp:Content>

@@ -27,6 +27,8 @@ namespace WebClinica
         {
             if (IsPostBack)
             {
+
+                TextBorrarUsuario.Text = "";
                 NegocioUsuario Buscar = new NegocioUsuario();
                 ListadoOriginal = Buscar.ListarUsuarios();
 
@@ -70,15 +72,20 @@ namespace WebClinica
             NegocioUsuario Borrar = new NegocioUsuario();
             Borrar.BajaUsuario(bajaUsuario);
             Response.Write("<script LANGUAGE='JavaScript' >alert('Se dio de baja el usuario: " + bajaUsuario.DNI + "')</script>");
-            LimpiarTabla(TextBorrarUsuario,gvBusqueda);
-
-
+            LimpiarTabla();
         }
-        private void LimpiarTabla(TextBox text, GridView gvBusquedaPaciente)
+         
+        public void LimpiarTabla()
         {
             TextBorrarUsuario.Text = "";
+            TextBuscar.Text = "" ;
             gvBusqueda.DataSource = ListaVacia;
             gvBusqueda.DataBind();
+        }
+
+        protected void Click_BorrarBusquedaUsuario(object sender, EventArgs e)
+        {
+            LimpiarTabla(); 
         }
     }
 }

@@ -27,6 +27,8 @@ namespace WebClinica
                 nuevaEsp.Descripcion = TextEspecDescripcion.Text;
 
                 CargarEsp.AgregarEspecialidad(nuevaEsp);
+
+                Response.Redirect("EspecialidadesAlta.aspx");
             }
             catch (Exception ex)
             {
