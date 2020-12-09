@@ -74,6 +74,17 @@ namespace Negocio
             return BuscaMedicos;
         }
 
+        public void AgregarSeguridad(Medico nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            datos.SetearQuery("insert into Seguridad (Contraseña, UltimaConexion) values (@Pass, @UltConexion)");
+            datos.AgregarParametro("@Pass", nuevo.Seguridad.Contraseña);
+            datos.AgregarParametro("@UltConexion", nuevo.Seguridad.UltimaConexion);
+            datos.EjecutarConsulta();
+        }
+
+    
+
         public void AgregarPersona(Persona nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -87,15 +98,16 @@ namespace Negocio
             datos.AgregarParametro("@Estado", nuevo.Estado);
             datos.EjecutarConsulta();
         }
-
+         
         public void AgregarMedico(Medico nuevo, Persona Persona, Especialidad idEsp)
         {
             AccesoDatos datos = new AccesoDatos();
-            datos.SetearQuery("insert into Medico (LegajoMedico,DNI,FechaIngreso,Especialidad) values (@LegajoMedico, @DNI, @FechaIngreso, @Especialidad);");
+            datos.SetearQuery("insert into Medico (LegajoMedico,DNI,FechaIngreso,Especialidad,Seguridad,Perfil) values (@LegajoMedico, @DNI, @FechaIngreso, @Especialidad, (select MAX(IdSeguridad) from Seguridad), @Perfil);");
             datos.AgregarParametro("@LegajoMedico", nuevo.LegajoMedico);
             datos.AgregarParametro("@DNI", Persona.DNI);
             datos.AgregarParametro("@FechaIngreso", nuevo.FechaIngreso);
             datos.AgregarParametro("@Especialidad", idEsp.IdEspecialidad);
+            datos.AgregarParametro("@Perfil", nuevo.Perfil.IdPerfil); 
             datos.EjecutarConsulta();
         }
 

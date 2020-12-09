@@ -14,6 +14,10 @@ namespace Dominio
 
         public Especialidad Especialidad { get; set; }
 
+        public Seguridad Seguridad { get; set; }
+
+        public Perfil Perfil { get; set; }
+
         public override string ToString()
         { 
             string var = Apellido + ", " + Nombre;

@@ -11,9 +11,10 @@
             var nombre = document.getElementById("TextMedicoNombre").value;
             var apellido = document.getElementById("TextMedicoApellido").value;
             var domicilio = document.getElementById("TextMedicoDomicilio").value;
-            var fechaNac = document.getElementById("TextMedicoFechaNac").value;  
-        
-            if (DNI == "" || nombre == "" || apellido == "" || domicilio == "" || fechaNac == "")
+            var fechaNac = document.getElementById("TextMedicoFechaNac").value;
+            var pass = document.getElementById("TxtPassMedico").value;   
+
+            if (pass == "" || DNI == "" || nombre == "" || apellido == "" || domicilio == "" || fechaNac == "")
             {
                 alert("Debe completar todos los campos");
                 return false;
@@ -82,6 +83,20 @@
             </asp:RadioButtonList>
         </div>
 
+           <div class="form-row">
+
+            <div class="form-group col-md-2">
+                <asp:Label Text="Rol" runat="server" />
+                <asp:DropDownList ID="ddlMedicoRol" class="form-control" Style="margin-top: 7px" runat="server">
+                </asp:DropDownList>
+            </div>
+
+            <div class="form-group col-md-3">
+                <label>Constraseña</label>
+                <asp:TextBox class="form-control" type="password" placeholder="Contraseña" ID="TxtPassMedico" ClientIDMode="Static" runat="server" />
+            </div>
+
+        </div>
 
     </div>
     <div style="margin-top: 20px;">

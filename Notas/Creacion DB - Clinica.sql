@@ -70,7 +70,9 @@ create table Medico
 	LegajoMedico varchar(10) not null primary key,
 	DNI bigint not null unique foreign key references Persona(DNI),
 	FechaIngreso date not null, 
-	Especialidad bigint not null foreign key references Especialidad(IdEspecialidad)
+	Especialidad bigint not null foreign key references Especialidad(IdEspecialidad),	
+	Seguridad bigint null foreign key references Seguridad(IdSeguridad),
+	Perfil bigint null foreign key references Perfil(IdPerfil)	
 )
 create table Paciente
 (

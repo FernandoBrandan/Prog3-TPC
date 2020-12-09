@@ -52,6 +52,7 @@
     <Compile Include="NegocioLogin.cs" />
     <Compile Include="NegocioMedico.cs" />
     <Compile Include="NegocioPaciente.cs" />
+    <Compile Include="NegocioPersona.cs" />
     <Compile Include="NegocioTurno.cs" />
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>

@@ -11,6 +11,7 @@ namespace WebClinica
 {
     public partial class MedicosAlta : System.Web.UI.Page
     {
+        public List<Perfil> ListaPerfiles { get; set; }
 
         public List<Especialidad> LisdadoEspecialidadess { get; set; }
 
@@ -25,6 +26,14 @@ namespace WebClinica
                 ddlAltaEspecialidad.DataValueField = "IdEspecialidad";
                 ddlAltaEspecialidad.DataBind();
                 ddlAltaEspecialidad.Items.Insert(0, "Seleccione");
+
+                NegocioLogin CargaRol = new NegocioLogin();
+                ListaPerfiles = CargaRol.ListarPerfil();
+                ddlMedicoRol.DataSource = ListaPerfiles;
+                ddlMedicoRol.DataTextField = "Rol";
+                ddlMedicoRol.DataValueField = "IdPerfil";
+                ddlMedicoRol.DataBind();
+                ddlMedicoRol.Items.Insert(0, "Seleccione");
             }            
         }
 
@@ -48,36 +57,73 @@ namespace WebClinica
 
             try
             {
-                nuevaPersona.DNI = Convert.ToInt32(TextMedicoDNI.Text);
-                nuevaPersona.Nombre = TextMedicoNombre.Text;
-                nuevaPersona.Apellido = TextMedicoApellido.Text;
-                nuevaPersona.Domicilio = TextMedicoDomicilio.Text;
-                nuevaPersona.FechaNacimiento = DateTime.Parse(TextMedicoFechaNac.Text);
-                if (RbGenero.SelectedItem.Value == "Male")
+                if(ValidarPersona(TextMedicoDNI.Text))
                 {
-                    nuevaPersona.Genero = RbGenero.SelectedItem.Text;
+                    nuevaPersona.DNI = Convert.ToInt32(TextMedicoDNI.Text);
+                    nuevaPersona.Nombre = TextMedicoNombre.Text;
+                    nuevaPersona.Apellido = TextMedicoApellido.Text;
+                    nuevaPersona.Domicilio = TextMedicoDomicilio.Text;
+                    nuevaPersona.FechaNacimiento = DateTime.Parse(TextMedicoFechaNac.Text);
+                    if (RbGenero.SelectedItem.Value == "Male")
+                    {
+                        nuevaPersona.Genero = RbGenero.SelectedItem.Text;
+                    }
+                    else if (RbGenero.SelectedItem.Value == "Female")
+                    {
+                        nuevaPersona.Genero = RbGenero.SelectedItem.Text;
+                    }
+                    nuevaPersona.Estado = true;
+
+                    nuevoMedico.LegajoMedico = crearLegajoMedico(nuevaPersona.DNI, nuevaPersona.Nombre, nuevaPersona.Apellido);
+                    nuevoMedico.FechaIngreso = DateTime.Today.Date;
+
+                    nuevoMedico.Seguridad = new Seguridad();
+                    nuevoMedico.Seguridad.Contraseña = TxtPassMedico.Text;
+                    nuevoMedico.Seguridad.UltimaConexion = DateTime.Today.Date;
+
+                    nuevoMedico.Perfil = new Perfil();
+                    nuevoMedico.Perfil.IdPerfil = long.Parse(ddlMedicoRol.SelectedItem.Value);
+
+                    seleccionaEsp.IdEspecialidad = long.Parse(ddlAltaEspecialidad.SelectedItem.Value);
+
+
+                    CargarMedico.AgregarSeguridad(nuevoMedico);
+                    CargarMedico.AgregarPersona(nuevaPersona);
+                    CargarMedico.AgregarMedico(nuevoMedico, nuevaPersona, seleccionaEsp);
+
+
+                    Response.Write("<script LANGUAGE='JavaScript' >alert('Se cargo correctamente el Medico')</script>");
                 }
-                else if (RbGenero.SelectedItem.Value == "Female")
+                else
                 {
-                    nuevaPersona.Genero = RbGenero.SelectedItem.Text;
+                    Response.Write("<script LANGUAGE='JavaScript' >alert('DNI medico ya existente')</script>");
                 }
-                nuevaPersona.Estado = true;
-
-                nuevoMedico.LegajoMedico = crearLegajoMedico(nuevaPersona.DNI, nuevaPersona.Nombre, nuevaPersona.Apellido);
-                nuevoMedico.FechaIngreso = DateTime.Today.Date; 
-
-                seleccionaEsp.IdEspecialidad = long.Parse(ddlAltaEspecialidad.SelectedItem.Value);
-                  
-                CargarMedico.AgregarPersona(nuevaPersona);
-                CargarMedico.AgregarMedico(nuevoMedico, nuevaPersona, seleccionaEsp);
 
 
-                Response.Write("<script LANGUAGE='JavaScript' >alert('Se cargo correctamente el Medico')</script>");
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+        }
+
+        public bool ValidarPersona(string DNI)
+        { 
+            bool valido = true;
+             
+            NegocioPersona valida = new NegocioPersona();
+
+            List<Persona> Listado = valida.ValidaDNI();
+
+            foreach (var item in Listado)
+            {
+                if (DNI == Convert.ToString(item.DNI))
+                {
+                   valido = false;
+                }
+            }
+
+            return valido; 
         }
     }
 }
