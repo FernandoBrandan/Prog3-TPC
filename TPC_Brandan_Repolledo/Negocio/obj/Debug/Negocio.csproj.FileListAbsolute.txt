@@ -76,3 +76,16 @@ C:\Users\ferna\Desktop\GitHub\Prog3-TPC\TPC_Brandan_Repolledo\Negocio\obj\Debug\
 C:\Users\ferna\Desktop\GitHub\Prog3-TPC\TPC_Brandan_Repolledo\Negocio\obj\Debug\Negocio.csproj.CopyComplete
 C:\Users\ferna\Desktop\GitHub\Prog3-TPC\TPC_Brandan_Repolledo\Negocio\obj\Debug\Negocio.exe
 C:\Users\ferna\Desktop\GitHub\Prog3-TPC\TPC_Brandan_Repolledo\Negocio\obj\Debug\Negocio.pdb
+C:\Users\wendy\Desktop\git 2\Prog3-TPC\TPC_Brandan_Repolledo\Negocio\bin\Debug\Negocio.exe.config
+C:\Users\wendy\Desktop\git 2\Prog3-TPC\TPC_Brandan_Repolledo\Negocio\bin\Debug\Negocio.exe
+C:\Users\wendy\Desktop\git 2\Prog3-TPC\TPC_Brandan_Repolledo\Negocio\bin\Debug\Negocio.pdb
+C:\Users\wendy\Desktop\git 2\Prog3-TPC\TPC_Brandan_Repolledo\Negocio\bin\Debug\Dominio.dll
+C:\Users\wendy\Desktop\git 2\Prog3-TPC\TPC_Brandan_Repolledo\Negocio\bin\Debug\Dominio.pdb
+C:\Users\wendy\Desktop\git 2\Prog3-TPC\TPC_Brandan_Repolledo\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+C:\Users\wendy\Desktop\git 2\Prog3-TPC\TPC_Brandan_Repolledo\Negocio\obj\Debug\Negocio.Principal.resources
+C:\Users\wendy\Desktop\git 2\Prog3-TPC\TPC_Brandan_Repolledo\Negocio\obj\Debug\Negocio.Properties.Resources.resources
+C:\Users\wendy\Desktop\git 2\Prog3-TPC\TPC_Brandan_Repolledo\Negocio\obj\Debug\Negocio.csproj.GenerateResource.cache
+C:\Users\wendy\Desktop\git 2\Prog3-TPC\TPC_Brandan_Repolledo\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\wendy\Desktop\git 2\Prog3-TPC\TPC_Brandan_Repolledo\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\wendy\Desktop\git 2\Prog3-TPC\TPC_Brandan_Repolledo\Negocio\obj\Debug\Negocio.exe
+C:\Users\wendy\Desktop\git 2\Prog3-TPC\TPC_Brandan_Repolledo\Negocio\obj\Debug\Negocio.pdb

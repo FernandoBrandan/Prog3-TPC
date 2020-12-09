@@ -3,9 +3,21 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+     <script>
+         function Validar() {
+             var nombre = document.getElementById("TextEspecNombre").value;
+             var descripcion = document.getElementById("TextEspecDescripcion").value;
 
+             if (nombre == "" || descripcion == "") {
+                 alert("Debe completar todos los campos");
+                 return false;
+             }
+             return true;
+         }
+
+     </script>
     
-    <h1 style="margin-top: 20px;;color: cadetblue">Especialidades</h1>
+    <h1 style="margin-top: 20px;color: cadetblue">Especialidades</h1>
 
     <div style="margin-top: 30px;">
         <nav aria-label="...">
@@ -34,7 +46,7 @@
         </div> 
     </div>
     <div style="margin-top: 20px;">
-        <asp:Button Text="Aceptar" class="btn btn-primary" runat="server" OnClick="Click_AceptarAltaEspec" />
+        <asp:Button Text="Aceptar" class="btn btn-primary" OnClientClick="return Validar()" OnClick="Click_AceptarAltaEspec" runat="server"  />
         <asp:Button Text="Cancelar" class="btn btn-primary" runat="server" />
     </div>
 

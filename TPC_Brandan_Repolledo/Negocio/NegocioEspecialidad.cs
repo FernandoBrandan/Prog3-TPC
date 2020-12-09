@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using Dominio;
 
+
 namespace Negocio
 {
     public class NegocioEspecialidad
@@ -32,12 +33,34 @@ namespace Negocio
                 throw ex;
             }
             return ListaEspecialidades;
-        } 
+        }
+
+        public List<Especialidad> ValidaEspecialidad()
+        {
+            List<Especialidad> ValidaEspecialidad = new List<Especialidad>();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.SetearQuery("select  UPPER(Nombre) from Especialidad");
+                datos.EjecutarConsulta();
+                while (datos.Lector.Read())
+                {
+                    Especialidad aux = new Especialidad();
+                    aux.Nombre = datos.Lector.GetString(0);
+                    ValidaEspecialidad.Add(aux);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return ValidaEspecialidad;
+        }
 
         public void AgregarEspecialidad(Especialidad nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
-            datos.SetearQuery("insert into Especialidad (Nombre, Descripcion) values (@Nombre, @Descripcion);");
+            datos.SetearQuery("insert into Especialidad (Nombre, Descripcion) values (@Nombre, @Descripcion)");
             datos.AgregarParametro("@Nombre", nuevo.Nombre);
             datos.AgregarParametro("@Descripcion", nuevo.Descripcion);
             datos.EjecutarConsulta();
