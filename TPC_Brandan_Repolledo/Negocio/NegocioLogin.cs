@@ -9,7 +9,9 @@ using Dominio;
 namespace Negocio
 {
     public class NegocioLogin
-    {          
+    {
+        int existe;
+
         public List<Perfil> ListarPerfil()
         {
             List<Perfil> ListarPerfil = new List<Perfil>();
@@ -31,6 +33,48 @@ namespace Negocio
                 throw ex;
             }
             return ListarPerfil;
-        }  
+        }
+
+        public int ValidarMedico(string user, string pass)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.SetearQuery("select COUNT(1) from Persona as p inner join Medico as m on m.DNI=p.DNI inner join Seguridad as s on s.IdSeguridad=m.Seguridad where s.Contraseña = '@PASS' and upper(m.LegajoMedico) = upper('@USER')");
+                datos.AgregarParametro("@USER", user);
+                datos.AgregarParametro("@PASS", pass);
+                datos.EjecutarConsulta();
+                while (datos.Lector.Read())
+                {
+                    existe = datos.Lector.GetInt32(0);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return existe;
+        }
+
+        public int ValidarUsuario(string user, string pass)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.SetearQuery("select COUNT(1) from Persona as p inner join Usuario as u on u.DNI=p.DNI inner join Seguridad as s on s.IdSeguridad=u.Seguridad where s.Contraseña = @PASS and upper(u.LegajoUsuario) = upper(@USER)");
+                datos.AgregarParametro("@USER", user);
+                datos.AgregarParametro("@PASS", pass);
+                datos.EjecutarConsulta();
+                while (datos.Lector.Read())
+                {
+                    existe = datos.Lector.GetInt32(0);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return existe;
+        } 
     }
 }

@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.Caching;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using Dominio;
+using Negocio;
 
 namespace WebClinica
 {
@@ -16,16 +19,47 @@ namespace WebClinica
         }
 
         public void Click_IniciaSesion(object sender, EventArgs e)
-        {
-            /*
-            string user = txtUsuario.Text;
-            string pass = txtPassword.Text; 
-            if (user.Equals(userName) && pass.Equals(userPass)
+        {                
+            try
             {
-                
-            }*/
+                Session["USUARIO"] = txtUsuario.Text.ToUpper();
+                Session["PASS"] = txtPassword.Text;
+                bool valida = ValidaSesion();
 
-            Response.Redirect("~/Menu.aspx");
+                if (txtUsuario.Text != "" || txtPassword.Text != "")
+                { 
+                    if (valida)
+                    { 
+                        Response.Redirect("~/Menu.aspx");
+                    }
+                    else
+                    {
+                        Response.Write("<script LANGUAGE='JavaScript' >alert('Usuario incorrecto')</script>");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        } 
+
+        private bool ValidaSesion()
+        {
+            bool valido = false;
+            string user = (string)(Session["USUARIO"]);
+            string pass = (string)(Session["PASS"]);
+            NegocioLogin Valida = new NegocioLogin();
+            if (Valida.ValidarMedico(user, pass) == 1  )
+            {
+                valido = true;
+            }
+
+            if (  Valida.ValidarUsuario(user, pass) == 1)
+            {
+                valido = true;
+            }
+            return valido;
         }
     }
 }

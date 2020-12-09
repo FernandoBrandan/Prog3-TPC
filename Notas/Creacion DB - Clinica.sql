@@ -20,7 +20,7 @@ go
 create table Seguridad
 (
 	IdSeguridad bigint not null primary key identity(1,1),
-	Contraseña nvarchar (100),
+	Contraseña varchar (100),
 	UltimaConexion date
 )
 go
