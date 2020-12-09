@@ -58,14 +58,24 @@ namespace Negocio
             datos.EjecutarConsulta();
 
         }
+         
+        public void AgregarSeguridad(Usuario nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            datos.SetearQuery("insert into Seguridad (Contraseña, UltimaConexion) values (@Pass, @UltConexion)");
+            datos.AgregarParametro("@Pass", nuevo.Seguridad.Contraseña);
+            datos.AgregarParametro("@UltConexion", nuevo.Seguridad.UltimaConexion); 
+            datos.EjecutarConsulta();
+        } 
 
         public void AgregarUsuario(Usuario nuevo, Persona persona)
         {
             AccesoDatos datos = new AccesoDatos();
-            datos.SetearQuery("insert into Usuario (LegajoUsuario, DNI, FechaIngreso) values (@LegajoUsuario, @DNI, @FechaIngreso);");
+            datos.SetearQuery("insert into Usuario (LegajoUsuario, DNI, FechaIngreso, Seguridad, Perfil) values (@LegajoUsuario, @DNI, @FechaIngreso, (select MAX(IdSeguridad) from Seguridad) , @Perfil);");
             datos.AgregarParametro("@LegajoUsuario", nuevo.LegajoUsuario);
             datos.AgregarParametro("@FechaIngreso", nuevo.FechaIngreso);
-            datos.AgregarParametro("@DNI", persona.DNI);
+            datos.AgregarParametro("@DNI", persona.DNI); 
+            datos.AgregarParametro("@Perfil", nuevo.Perfil.IdPerfil);
             datos.EjecutarConsulta();
         }
 

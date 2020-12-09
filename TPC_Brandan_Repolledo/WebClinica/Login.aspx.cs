@@ -19,12 +19,10 @@ namespace WebClinica
         {
             /*
             string user = txtUsuario.Text;
-            string pass = txtPassword.Text;
-            string userName = "Fer";
-            string userPass = "1234";
+            string pass = txtPassword.Text; 
             if (user.Equals(userName) && pass.Equals(userPass)
             {
-                //Response.Redirect.MasterPageFile("");
+                
             }*/
 
             Response.Redirect("~/Menu.aspx");

@@ -24,6 +24,7 @@ namespace WebClinica
                 ddlAltaEspecialidad.DataTextField = "Nombre";
                 ddlAltaEspecialidad.DataValueField = "IdEspecialidad";
                 ddlAltaEspecialidad.DataBind();
+                ddlAltaEspecialidad.Items.Insert(0, "Seleccione");
             }            
         }
 
@@ -66,7 +67,7 @@ namespace WebClinica
                 nuevoMedico.FechaIngreso = DateTime.Today.Date; 
 
                 seleccionaEsp.IdEspecialidad = long.Parse(ddlAltaEspecialidad.SelectedItem.Value);
-
+                  
                 CargarMedico.AgregarPersona(nuevaPersona);
                 CargarMedico.AgregarMedico(nuevoMedico, nuevaPersona, seleccionaEsp);
 

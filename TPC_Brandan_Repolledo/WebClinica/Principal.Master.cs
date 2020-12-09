@@ -13,5 +13,10 @@ namespace WebClinica
         {
 
         }
+
+        protected void Click_CerrarSesion(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
+        }
     }
 }

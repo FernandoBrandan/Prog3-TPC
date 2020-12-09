@@ -8,7 +8,7 @@ namespace Dominio
 {
     public class Perfil
     {
-        public int IdPerfil { get; set; }
+        public long IdPerfil { get; set; }
 
         public string Rol { get; set; }
     }

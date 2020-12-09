@@ -49,6 +49,7 @@
     <Compile Include="AccesoDatos.cs" />
     <Compile Include="NegocioDisponibilidad.cs" />
     <Compile Include="NegocioEspecialidad.cs" />
+    <Compile Include="NegocioLogin.cs" />
     <Compile Include="NegocioMedico.cs" />
     <Compile Include="NegocioPaciente.cs" />
     <Compile Include="NegocioTurno.cs" />

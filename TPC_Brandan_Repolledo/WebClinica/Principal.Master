@@ -16,7 +16,7 @@
         body {
             background-color: #d9ecf2;
             background-attachment: fixed;
-            background-position:center center;              
+            background-position: center center;
             background-size: 70% 100%;
         }
     </style>
@@ -36,8 +36,14 @@
                         <a class="navbar-brand" runat="server" href="MedicosAlta.aspx">Medicos</a>
                         <a class="navbar-brand" runat="server" href="EspecialidadesAlta.aspx">Especialidades</a>
                         <a class="navbar-brand" runat="server" href="UsuariosAlta.aspx">Usuarios</a>
+
                     </div>
                 </div>
+
+            </div>
+
+            <div class="navbar-text" style="position: absolute; left: 90%"> 
+                <asp:Button Text="Cerrar Session" runat="server" BackColor="#8BCDCD" BorderStyle="None" CausesValidation="False" ForeColor="Black" OnClick="Click_CerrarSesion" />
             </div>
         </nav>
         <div class="container body-content">

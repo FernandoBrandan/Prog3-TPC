@@ -8,7 +8,7 @@ namespace Dominio
 {
     public class Seguridad
     {
-        public int IdSeguridad { get; set; }
+        public long IdSeguridad { get; set; }
 
         public string Contraseña { get; set; }
 

@@ -20,7 +20,7 @@ go
 create table Seguridad
 (
 	IdSeguridad bigint not null primary key identity(1,1),
-	Contraseña varbinary(255), 
+	Contraseña nvarchar (100),
 	UltimaConexion date
 )
 go
@@ -97,7 +97,4 @@ create table FichaMedica
 	Turno bigint not null unique foreign key references Turno(IdTurno),
 	Diagnostico varchar(1000) not null
 )
-
-Select *from Paciente
-Select *from Usuario
-Select *from Persona
+ 
