@@ -59,12 +59,36 @@ namespace WebClinica
             if(Carga.ModificarEspecialidad(nuevaEspecilidad))
             {
                 Response.Write("<script LANGUAGE='JavaScript' >alert('Se modifico correctamente la especialidad')</script>");
+                LimpiarTabla();
 
             }
             else
             {
-                Response.Write("<script LANGUAGE='JavaScript' >alert('Error al modificar')</script>");
+                Response.Write("<script LANGUAGE='JavaScript' >alert('No se ha podido modificar, por favor intente nuevamente')</script>");
+                LimpiarTabla();
             }
+        }
+
+        public bool ValidarEspecialidad(string Nombre)
+        {
+            bool valido = false;
+            NegocioEspecialidad valida = new NegocioEspecialidad();
+            List<Especialidad> Listado = valida.ValidaEspecialidad();
+
+            foreach (var item in Listado)
+            {
+                if (Nombre == item.Nombre)
+                {
+                    valido = true;
+                }
+            }
+            return valido;
+        }
+        public void LimpiarTabla()
+        {
+            TextEspecNombre.Text = "";
+            TextEspecDescripcion.Text = "";
+
         }
     }
 }
