@@ -87,6 +87,15 @@ namespace WebClinica
         protected global::System.Web.UI.WebControls.TextBox TextFechaElegida;
 
         /// <summary>
+        /// Control selecionFecha.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button selecionFecha;
+
+        /// <summary>
         /// Control ddlAltaTurnoHorario.
         /// </summary>
         /// <remarks>

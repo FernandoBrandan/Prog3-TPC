@@ -15,7 +15,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.SetearQuery("select IdTurno, d.FechaTurno, h.descripcion , Medico, Paciente, Motivo, t.Estado from Turno as t inner join Disponibilidad as d on d.IdDisponibilidad = t.Disponibilidad inner join Horario as h on h.IdHorario = d.Horario");
+                datos.SetearQuery("select IdTurno, d.FechaTurno, h.descripcion , Medico, Paciente, Motivo, t.Estado from Turno as t inner join Disponibilidad as d on d.IdDisponibilidad = t.Disponibilidad inner join Horario as h on h.IdHorario = d.Horario where t.Estado != 'Cancelado' and t.Estado != 'Sin Atender' and t.Estado != 'Atendido' and t.Estado != 'Reprogramado'");
                 datos.EjecutarConsulta();
                 while (datos.Lector.Read())
                 {
@@ -58,6 +58,42 @@ namespace Negocio
             datos.AgregarParametro("@Motivo", nuevo.Motivo);
             datos.AgregarParametro("@Estado", nuevo.Estado);
             datos.EjecutarConsulta(); 
+        }
+
+        public List<DetalleTurno> DetalleTurno(long turno)
+        {
+            List<DetalleTurno> DetalleTurno = new List<DetalleTurno>();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            { 
+                datos.AgregarParametro("@Turno", turno);
+                datos.SetearQuery("select per.DNI, per.Apellido, per.Nombre, t.Motivo from Turno as t inner join Paciente as p on p.CodigoPaciente=t.Paciente inner join Persona as per on per.DNI=p.DNI where t.IdTurno = @Turno");
+                datos.EjecutarConsulta();
+                while (datos.Lector.Read())
+                {
+                    DetalleTurno aux = new DetalleTurno();
+                    aux.IdTurno = datos.Lector.GetInt64(0);
+                    aux.Apellido = datos.Lector.GetString(1);
+                    aux.Nombre = datos.Lector.GetString(2);
+                    aux.Motivo = datos.Lector.GetString(3);
+                    DetalleTurno.Add(aux);
+                }
+            }
+            catch (Exception ex)
+	        {
+		        throw ex;
+	        }
+            return DetalleTurno;
+        }
+
+        public void GestionarTurno(Turno nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            datos.SetearQuery("update turno set Motivo=@Motivo , Estado=@Estado  where idTurno=@IdTurno"); 
+            datos.AgregarParametro("@IdTurno", nuevo.IdTurno);
+            datos.AgregarParametro("@Motivo", nuevo.Motivo);
+            datos.AgregarParametro("@Estado", nuevo.Estado);
+            datos.EjecutarConsulta();
         }
     }
 }

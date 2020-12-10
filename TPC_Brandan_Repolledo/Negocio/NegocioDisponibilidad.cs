@@ -69,8 +69,8 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.AgregarParametro("@Horario", fecha);
-                datos.SetearQuery("select IdHorario, Descripcion from Horario where IdHorario not in (select Horario from Disponibilidad where FechaTurno =  @Fecha ) ");
+                datos.AgregarParametro("@fecha", fecha);
+                datos.SetearQuery("select IdHorario, Descripcion from Horario where IdHorario not in (select Horario from Disponibilidad where FechaTurno = @Fecha) ");
                 datos.EjecutarConsulta();
                 while (datos.Lector.Read())
                 {

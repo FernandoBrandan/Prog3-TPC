@@ -9,9 +9,9 @@
         .oculto {
             display: none;
         }
-    </style>  
+    </style>
 
-    <h1 style="margin-top: 20px;color: cadetblue">Turno</h1>
+    <h1 style="margin-top: 20px; color: cadetblue">Turno</h1>
     <div style="margin-top: 20px;">
         <nav aria-label="...">
             <ul class="pagination pagination-lg">
@@ -63,19 +63,15 @@
 
         <div class="row" style="margin-bottom: 20px;">
             <div class="col-md-auto">
-                <asp:UpdatePanel runat="server">
-                    <ContentTemplate>
-                        <asp:Label Text="Espacialidad" runat="server" />
-                        <asp:DropDownList AutoPostBack="true" ID="ddlAltaTurnoEspecilidad" runat="server" OnSelectedIndexChanged="Click_SeleccionaEspecialidad">
-                        </asp:DropDownList> 
-                    </ContentTemplate>
-                </asp:UpdatePanel>
+                <asp:Label Text="Espacialidad" runat="server" />
+                <asp:DropDownList AutoPostBack="true" class="form-control" ID="ddlAltaTurnoEspecilidad" runat="server" OnSelectedIndexChanged="Click_SeleccionaEspecialidad">
+                </asp:DropDownList>
             </div>
             <div class="col-md-auto">
                 <asp:UpdatePanel runat="server">
                     <ContentTemplate>
-                        <asp:Label Text="Medico" runat="server" />
-                        <asp:DropDownList AutoPostBack="true" ID="ddlAltaTurnoMedico" runat="server">
+                        <asp:Label Text="Medico"  runat="server" />
+                        <asp:DropDownList AutoPostBack="true" class="form-control" ID="ddlAltaTurnoMedico" runat="server">
                         </asp:DropDownList>
                     </ContentTemplate>
                 </asp:UpdatePanel>
@@ -88,22 +84,22 @@
             </div>
             <div class="col">
                 <asp:TextBox AutoPostBack="true" ID="TextFechaElegida" runat="server" />
-                <asp:Button Text=">>" runat="server" OnClick="Click_ValidadFechas"/>
+                <asp:Button Text=">>" ID="selecionFecha" runat="server" OnClick="Click_ValidadFechas" />
                 <br />
                 <br />
                 <asp:Label Text="Horarios Disponibles" runat="server" />
                 <asp:DropDownList ID="ddlAltaTurnoHorario" class="form-control" ValidationGroup="g1" Style="margin-top: 7px;" runat="server">
-                </asp:DropDownList> 
+                </asp:DropDownList>
                 <br />
                 <asp:Label Text="Motivo" runat="server" />
                 <br />
                 <asp:TextBox ID="TextMotivoTurno" ClientIDMode="Static" TextMode="MultiLine" Columns="70" Rows="2" runat="server" />
             </div>
         </div>
-         
+
         <div class="row" style="margin-top: 20px;">
-            <asp:Button Text="Aceptar" class="btn btn-primary" OnClientClick="Validar()" OnClick="Click_AceptarAltaTurno" runat="server" ValidationGroup="Aceptarbtn" />
-            <asp:Button Text="Cancelar" class="btn btn-primary" runat="server" />
+            <asp:Button Text="Aceptar" class="btn btn-primary" OnClick="Click_AceptarAltaTurno" runat="server"/>
+            <asp:Button Text="Cancelar" style="margin-left: 5px;" class="btn btn-primary" runat="server" />
         </div>
 
     </div>

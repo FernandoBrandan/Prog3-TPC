@@ -22,6 +22,7 @@ namespace WebClinica
                 
                 gvBusquedaTurnos.DataSource = Listado;
                 gvBusquedaTurnos.DataBind();
+
             }
         }
 

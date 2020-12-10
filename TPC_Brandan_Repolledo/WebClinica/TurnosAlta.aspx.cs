@@ -13,10 +13,10 @@ namespace WebClinica
     {
         public List<Paciente> ListadoOriginal { get; set; }
         public List<Paciente> ListaFiltrada { get; set; }
-        public List<Paciente> ListaVacia { get; set; } 
+        public List<Paciente> ListaVacia { get; set; }
 
         public List<Especialidad> CargaListadoEsp { get; set; }
-        public List<Medico> CargaListadoMed { get; set; } 
+        public List<Medico> CargaListadoMed { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -31,12 +31,12 @@ namespace WebClinica
                 ddlAltaTurnoEspecilidad.DataValueField = "IdEspecialidad";
                 ddlAltaTurnoEspecilidad.DataBind();
                 ddlAltaTurnoEspecilidad.Items.Insert(0, "Seleccione");
-                 
+
                 ddlAltaTurnoMedico.DataSource = CargaListadoMed;
                 ddlAltaTurnoMedico.DataTextField = "Apellido";
                 ddlAltaTurnoMedico.DataValueField = "LegajoMedico";
                 ddlAltaTurnoMedico.DataBind();
-                ddlAltaTurnoMedico.Items.Insert(0, "Seleccione"); 
+                ddlAltaTurnoMedico.Items.Insert(0, "Seleccione");
             }
         }
 
@@ -92,8 +92,8 @@ namespace WebClinica
         }
 
         protected void Click_SeleccionaFecha(object sender, EventArgs e)
-        { 
-             TextFechaElegida.Text = Calendar1.SelectedDate.ToShortDateString();
+        {
+            TextFechaElegida.Text = Calendar1.SelectedDate.ToShortDateString();
         }
 
         protected void Click_SeleccionaEspecialidad(object sender, EventArgs e)
@@ -112,47 +112,105 @@ namespace WebClinica
         }
 
         protected void Click_ValidadFechas(object sender, EventArgs e)
-        { 
+        {
             DateTime FechaObtenida = DateTime.Parse(TextFechaElegida.Text);
-            string VerificarFecha = FechaObtenida.ToShortDateString(); 
+            string VerificarFecha = FechaObtenida.ToShortDateString();
 
             NegocioDisponibilidad BuscarHorario = new NegocioDisponibilidad();
-            List<Horario> FechasLibres = BuscarHorario.BuscaHorarios(VerificarFecha); 
-             
+            List<Horario> FechasLibres = BuscarHorario.BuscaHorarios(VerificarFecha);
+
             ddlAltaTurnoHorario.DataSource = FechasLibres;
             ddlAltaTurnoHorario.DataTextField = "Descripcion";
             ddlAltaTurnoHorario.DataValueField = "IdHorario";
             ddlAltaTurnoHorario.DataBind();
-            ddlAltaTurnoHorario.Items.Insert(0, "Seleccione"); 
+            ddlAltaTurnoHorario.Items.Insert(0, "Seleccione");
         }
 
         protected void Click_AceptarAltaTurno(object sender, EventArgs e)
-        {  
-            Turno NuevoTurno = new Turno();
-            NuevoTurno.Paciente = new Paciente();
-            NuevoTurno.Paciente.CodigoPaciente = LabelPacienteElegido.Text;
-            NuevoTurno.Medico = new Medico();
-            if(Convert.ToInt32(ddlAltaTurnoMedico.SelectedIndex) != 0)
-            { 
-                NuevoTurno.Medico.LegajoMedico = ddlAltaTurnoMedico.SelectedItem.Value;
+        {
+
+            try
+            {
+                bool var = Validacion();
+                if(var)
+                {
+                    Turno NuevoTurno = new Turno();
+                    NuevoTurno.Paciente = new Paciente();
+                    NuevoTurno.Paciente.CodigoPaciente = LabelPacienteElegido.Text;
+                    NuevoTurno.Medico = new Medico();
+                    NuevoTurno.Medico.LegajoMedico = ddlAltaTurnoMedico.SelectedItem.Value;
+
+                    NuevoTurno.Motivo = TextMotivoTurno.Text;
+                    NuevoTurno.Estado = "Pendiente";
+
+                    Disponibilidad NuevoDispobilidad = new Disponibilidad();
+
+                    NuevoDispobilidad.Fecha = Convert.ToDateTime(TextFechaElegida.Text);
+                    NuevoDispobilidad.Horario = new Horario();
+                    NuevoDispobilidad.Horario.IdHorario = long.Parse(ddlAltaTurnoHorario.SelectedItem.Value);
+
+                    NuevoDispobilidad.Estado = "Activo";
+
+                    NegocioDisponibilidad CargarDisp = new NegocioDisponibilidad();
+                    NegocioTurno CargarTurno = new NegocioTurno();
+
+                    CargarDisp.AgregarDisponibilidad(NuevoDispobilidad);
+                    CargarTurno.AgregarTurno(NuevoTurno); 
+                }  
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+           
+        }
+
+        public bool Validacion()
+        {
+            bool valido = true;
+
+            if(LabelPacienteElegido.Text == "" || LabelPacienteElegido.Text == "REQUERIDO")
+            {
+                LabelPacienteElegido.ForeColor = System.Drawing.Color.Red;
+                LabelPacienteElegido.Text = "REQUERIDO";
+                valido = false;
             }
 
-            NuevoTurno.Motivo = TextMotivoTurno.Text;
-            NuevoTurno.Estado = "Pendiente";
+            if(TextFechaElegida.Text == "" || TextFechaElegida.Text == "REQUERIDO")
+            {
+                TextFechaElegida.ForeColor = System.Drawing.Color.Red;
+                TextFechaElegida.Text = "REQUERIDO";
+                valido = false;
+            }
 
-            Disponibilidad NuevoDispobilidad = new Disponibilidad();
+            if (Convert.ToInt32(ddlAltaTurnoMedico.SelectedIndex) == 0)
+            {
+                ddlAltaTurnoMedico.ForeColor = System.Drawing.Color.Red; 
+                valido = false;
+            }
+            else
+            {
+                ddlAltaTurnoMedico.ForeColor = System.Drawing.Color.Black;
+            }
 
-            NuevoDispobilidad.Fecha = Convert.ToDateTime(TextFechaElegida.Text);
-            NuevoDispobilidad.Horario = new Horario();
-            NuevoDispobilidad.Horario.IdHorario = long.Parse(ddlAltaTurnoHorario.SelectedItem.Value);
+            if (Convert.ToInt32(ddlAltaTurnoEspecilidad.SelectedIndex) == 0)
+            {
+                ddlAltaTurnoEspecilidad.ForeColor = System.Drawing.Color.Red; 
+                valido = false;
+            }
+            else
+            {
+                ddlAltaTurnoEspecilidad.ForeColor = System.Drawing.Color.Black;
+            }
 
-            NuevoDispobilidad.Estado = "Activo";
-
-            NegocioDisponibilidad CargarDisp = new NegocioDisponibilidad();
-            NegocioTurno CargarTurno = new NegocioTurno();
-
-            CargarDisp.AgregarDisponibilidad(NuevoDispobilidad);
-            CargarTurno.AgregarTurno(NuevoTurno);  
-        } 
+            if (Convert.ToInt32(ddlAltaTurnoHorario.SelectedIndex) != 0)
+            {
+                selecionFecha.ForeColor = System.Drawing.Color.Red;
+                ddlAltaTurnoHorario.ForeColor = System.Drawing.Color.Red;
+                ddlAltaTurnoHorario.Items.Insert(0, "REQUERIDO");
+                valido = false;
+            }  
+            return valido;
+        }
     }
 }
