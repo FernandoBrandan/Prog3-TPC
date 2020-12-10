@@ -13,15 +13,10 @@ namespace WebClinica
     {
         public List<Paciente> ListadoOriginal { get; set; }
         public List<Paciente> ListaFiltrada { get; set; }
-        public List<Paciente> ListaVacia { get; set; }
-
-        public List<Disponibilidad> Comparacion { get; set; }
+        public List<Paciente> ListaVacia { get; set; } 
 
         public List<Especialidad> CargaListadoEsp { get; set; }
-        public List<Medico> CargaListadoMed { get; set; }
-
-        public List<Horario> FiltraHorarios { get; set; }
-        public List<Horario> ListaHorarios { get; set; }
+        public List<Medico> CargaListadoMed { get; set; } 
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -36,8 +31,7 @@ namespace WebClinica
                 ddlAltaTurnoEspecilidad.DataValueField = "IdEspecialidad";
                 ddlAltaTurnoEspecilidad.DataBind();
                 ddlAltaTurnoEspecilidad.Items.Insert(0, "Seleccione");
-
-
+                 
                 ddlAltaTurnoMedico.DataSource = CargaListadoMed;
                 ddlAltaTurnoMedico.DataTextField = "Apellido";
                 ddlAltaTurnoMedico.DataValueField = "LegajoMedico";
@@ -120,110 +114,45 @@ namespace WebClinica
         protected void Click_ValidadFechas(object sender, EventArgs e)
         { 
             DateTime FechaObtenida = DateTime.Parse(TextFechaElegida.Text);
-            string VerificarFecha = FechaObtenida.ToShortDateString();
+            string VerificarFecha = FechaObtenida.ToShortDateString(); 
 
-            NegocioDisponibilidad BuscarFecha = new NegocioDisponibilidad();
             NegocioDisponibilidad BuscarHorario = new NegocioDisponibilidad();
-
-            List<Disponibilidad> FechasLibres = BuscarFecha.BuscaFechas(VerificarFecha);
-
-            foreach (var item in FechasLibres)
-            {
-                FiltraHorarios = BuscarHorario.BuscaHorarios(item.Horario.IdHorario);
-            }
-
-            ddlAltaTurnoHorario.DataSource = FiltraHorarios;
+            List<Horario> FechasLibres = BuscarHorario.BuscaHorarios(VerificarFecha); 
+             
+            ddlAltaTurnoHorario.DataSource = FechasLibres;
             ddlAltaTurnoHorario.DataTextField = "Descripcion";
             ddlAltaTurnoHorario.DataValueField = "IdHorario";
             ddlAltaTurnoHorario.DataBind();
-            ddlAltaTurnoHorario.Items.Insert(0, "Seleccione");  
+            ddlAltaTurnoHorario.Items.Insert(0, "Seleccione"); 
         }
 
         protected void Click_AceptarAltaTurno(object sender, EventArgs e)
-        { 
-            try
-            {
-                bool val = Validar();
-
-                if(val)
-                {
-                    Turno NuevoTurno = new Turno();
-                    NuevoTurno.Paciente = new Paciente();
-                    NuevoTurno.Paciente.CodigoPaciente = LabelPacienteElegido.Text;
-                    NuevoTurno.Medico = new Medico();
-                    NuevoTurno.Medico.LegajoMedico = ddlAltaTurnoMedico.SelectedItem.Value;
-                    NuevoTurno.Motivo = TextMotivoTurno.Text;
-                    NuevoTurno.Estado = "Pendiente";
-
-                    Disponibilidad NuevoDispobilidad = new Disponibilidad();
-
-                    NuevoDispobilidad.Fecha = Convert.ToDateTime(TextFechaElegida.Text);
-                    NuevoDispobilidad.Horario = new Horario();
-                    NuevoDispobilidad.Horario.IdHorario = long.Parse(ddlAltaTurnoHorario.SelectedItem.Value);
-
-                    NuevoDispobilidad.Estado = "Activo";
-
-                    NegocioDisponibilidad CargarDisp = new NegocioDisponibilidad();
-                    NegocioTurno CargarTurno = new NegocioTurno();
-
-                    CargarDisp.AgregarDisponibilidad(NuevoDispobilidad);
-                    CargarTurno.AgregarTurno(NuevoTurno);
-                }       
-                else
-                {
-                    Response.Write("<script LANGUAGE='JavaScript' >alert('Faltan Cargar los datos')</script>");
-                } 
-
-                Response.Write("<script LANGUAGE='JavaScript' >alert('Se realizo el alta del turno')</script>");
-                Response.Redirect("TurnosAlta.aspx");
-
-            }
-            catch (Exception)
-            {
-
-                throw;
-            } 
-        }
-
-        public bool Validar()
-        {
-
-            bool valido = true; 
-
-            string fecha = TextFechaElegida.Text;
-            string motivo = TextMotivoTurno.Text;
-
-            if (fecha == "")
-            {
-                valido = false;
-            }
-
-            if (motivo == "")
-            {
-                valido = false;
-            }
-
-            string somestring = string.Empty;
-            if (string.IsNullOrEmpty(ddlAltaTurnoHorario.SelectedValue))
-            {
-                if (somestring == "")
-                {
-                    Response.Write("<script LANGUAGE='JavaScript' >alert('1')</script>");
-                    valido = false;
-                }
-            }
-   
-            if (string.IsNullOrEmpty(ddlAltaTurnoMedico.SelectedValue))
+        {  
+            Turno NuevoTurno = new Turno();
+            NuevoTurno.Paciente = new Paciente();
+            NuevoTurno.Paciente.CodigoPaciente = LabelPacienteElegido.Text;
+            NuevoTurno.Medico = new Medico();
+            if(Convert.ToInt32(ddlAltaTurnoMedico.SelectedIndex) != 0)
             { 
-                if (somestring == "")
-                {
-                    Response.Write("<script LANGUAGE='JavaScript' >alert('2')</script>");
-                    valido = false;
-                }
-            } 
+                NuevoTurno.Medico.LegajoMedico = ddlAltaTurnoMedico.SelectedItem.Value;
+            }
 
-            return valido;
-        }
-         
+            NuevoTurno.Motivo = TextMotivoTurno.Text;
+            NuevoTurno.Estado = "Pendiente";
+
+            Disponibilidad NuevoDispobilidad = new Disponibilidad();
+
+            NuevoDispobilidad.Fecha = Convert.ToDateTime(TextFechaElegida.Text);
+            NuevoDispobilidad.Horario = new Horario();
+            NuevoDispobilidad.Horario.IdHorario = long.Parse(ddlAltaTurnoHorario.SelectedItem.Value);
+
+            NuevoDispobilidad.Estado = "Activo";
+
+            NegocioDisponibilidad CargarDisp = new NegocioDisponibilidad();
+            NegocioTurno CargarTurno = new NegocioTurno();
+
+            CargarDisp.AgregarDisponibilidad(NuevoDispobilidad);
+            CargarTurno.AgregarTurno(NuevoTurno);  
+        } 
     }
 }
