@@ -23,9 +23,10 @@ namespace WebClinica
             NegocioEspecialidad CargarEsp = new NegocioEspecialidad();
             try
             {
-                if (!ValidarEspecialidad(TextEspecNombre.Text))
+                bool valido = ValidarEspecialidad(TextEspecNombre.Text.ToUpper());
+                if(!valido)
                 {
-                    nuevaEsp.Nombre = TextEspecNombre.Text.ToUpper();
+                    nuevaEsp.Nombre = TextEspecNombre.Text;
                     nuevaEsp.Descripcion = TextEspecDescripcion.Text;
                     nuevaEsp.Estado = true;
                     CargarEsp.AgregarEspecialidad(nuevaEsp);
@@ -38,8 +39,7 @@ namespace WebClinica
                 }
             }
             catch (Exception ex)
-            {
-
+            { 
                 throw ex;
             }
         }
@@ -57,8 +57,6 @@ namespace WebClinica
                 }
             }
             return valido;
-        }
-
-
+        } 
     }
 }
