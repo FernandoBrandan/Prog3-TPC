@@ -8,14 +8,7 @@
         .oculto {
             display: none;
         }
-    </style> public void BajaUsuario(Usuario nuevo)
-        {
-            AccesoDatos datos = new AccesoDatos();
-            datos.SetearQuery("update persona set estado = 0 where DNI = @DNI");
-            datos.AgregarParametro("@DNI", nuevo.DNI);
-            datos.EjecutarConsulta();
-        }
-
+    </style> 
     <script>
         function Validar() {
 
@@ -28,7 +21,6 @@
                 return false;
             }
         }
-
     </script>
 
     <h1 style="margin-top: 20px; color: cadetblue">Usuario</h1>
