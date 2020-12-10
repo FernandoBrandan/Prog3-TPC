@@ -22,13 +22,15 @@ namespace Negocio
                 while (datos.Lector.Read())
                 {
                     Especialidad aux = new Especialidad();
-                  
+                    aux.Estado = (bool)datos.Lector["ESTADO"];
+                    if (aux.Estado == true)
+                    {
                         aux.IdEspecialidad = datos.Lector.GetInt64(0);
                         aux.Nombre = datos.Lector.GetString(1);
                         aux.Descripcion = datos.Lector.GetString(2);
                         aux.Estado = datos.Lector.GetBoolean(3);
                         ListaEspecialidades.Add(aux);
-                    
+                    }
                 }
             }
             catch (Exception ex)
@@ -82,12 +84,13 @@ namespace Negocio
             datos.EjecutarConsulta();
             return true;
         }
-        public void BajaEspecialidad(Especialidad nuevo)
+        public bool BajaEspecialidad(Especialidad nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
             datos.SetearQuery("update Especialidad set estado = 0 where IdEspecialidad = @IdEspecialidad");
             datos.AgregarParametro("@IdEspecialidad", nuevo.IdEspecialidad);
-            datos.EjecutarConsulta(); 
+            datos.EjecutarConsulta();
+            return true;
         }
     }
 }

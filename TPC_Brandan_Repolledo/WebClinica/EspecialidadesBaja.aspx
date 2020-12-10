@@ -30,6 +30,6 @@
     </div>
     <div style="margin-top: 20px;">
         <asp:TextBox id="TextBorrarEspecialidad" runat="server" Width="152px" />
-            <asp:Button Text="Borrar Especialidad"   runat="server" OnClick="Click_AceptaBorrarEspecialidad" Height="33px" Width="175px" />
+            <asp:Button Text="Borrar Especialidad"    OnClick="Click_AceptaBorrarEspecialidad" Height="33px" Width="175px" runat="server" />
     </div>
 </asp:Content>

@@ -20,7 +20,7 @@ namespace WebClinica
             if(!IsPostBack)
             { 
                 NegocioEspecialidad Carga1 = new NegocioEspecialidad();
-                LisdadoEspecialidadess = Carga1.ListaEspecialidades();
+                LisdadoEspecialidadess = Carga1.ValidaEspecialidad(); // se cambia para que solo muestre las que no están borradas
                 ddlAltaEspecialidad.DataSource = LisdadoEspecialidadess;
                 ddlAltaEspecialidad.DataTextField = "Nombre";
                 ddlAltaEspecialidad.DataValueField = "IdEspecialidad";

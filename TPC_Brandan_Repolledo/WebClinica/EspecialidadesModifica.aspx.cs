@@ -68,6 +68,22 @@ namespace WebClinica
                 LimpiarTabla();
             }
         }
+
+        public bool ValidarEspecialidad(string Nombre)
+        {
+            bool valido = false;
+            NegocioEspecialidad valida = new NegocioEspecialidad();
+            List<Especialidad> Listado = valida.ValidaEspecialidad();
+
+            foreach (var item in Listado)
+            {
+                if (Nombre == item.Nombre)
+                {
+                    valido = true;
+                }
+            }
+            return valido;
+        }
         public void LimpiarTabla()
         {
             TextEspecNombre.Text = "";
