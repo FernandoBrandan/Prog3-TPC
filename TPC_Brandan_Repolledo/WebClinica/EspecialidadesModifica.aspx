@@ -35,11 +35,11 @@
         <div class="form-row" style="margin-top: 30px;">
             <div class="form-group col-md-4">
                 <label>Nombre</label>
-                <asp:TextBox class="form-control" ID="TextEspecNombre" runat="server" />
+                <asp:TextBox class="form-control" ID="TextEspecNombre"  placeholder="Nombre" runat="server" />
             </div>
             <div class="form-group col-md-4">
                 <label>Descripcion</label>
-                <asp:TextBox class="form-control" ID="TextEspecDescripcion" runat="server" />
+                <asp:TextBox class="form-control" ID="TextEspecDescripcion" placeholder="Descripción" runat="server" />
             </div>
         </div>
 

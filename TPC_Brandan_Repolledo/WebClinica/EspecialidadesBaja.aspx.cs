@@ -58,7 +58,7 @@ namespace WebClinica
             }
             catch (Exception ex)
             { 
-                Response.Write("<script LANGUAGE='JavaScript' >alert('Error al modificar')</script>");
+                Response.Write("<script LANGUAGE='JavaScript' >alert('No se ha podido borrar la especialidad, por favor intente nuevamente')</script>");
                 throw ex;
             }       
         }

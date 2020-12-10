@@ -31,11 +31,13 @@ namespace WebClinica
                     nuevaEsp.Estado = true;
                     CargarEsp.AgregarEspecialidad(nuevaEsp);
                     Response.Write("<script LANGUAGE='JavaScript' >alert('Se cargo correctamente la especialidad')</script>");
+                    LimpiarTabla();
                     // Response.Redirect("EspecialidadesAlta.aspx");
                 }
                 else
                 {
                     Response.Write("<script LANGUAGE='JavaScript' >alert('La especialidad ya existe, por favor intente nuevamente')</script>");
+                    LimpiarTabla();
                 }
             }
             catch (Exception ex)
@@ -57,6 +59,13 @@ namespace WebClinica
                 }
             }
             return valido;
-        } 
+        }
+        public void LimpiarTabla()
+        {
+            TextEspecNombre.Text = "";
+            TextEspecDescripcion.Text = "";
+            
+        }
+
     }
 }

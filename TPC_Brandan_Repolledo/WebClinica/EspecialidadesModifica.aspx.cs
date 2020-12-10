@@ -59,12 +59,20 @@ namespace WebClinica
             if(Carga.ModificarEspecialidad(nuevaEspecilidad))
             {
                 Response.Write("<script LANGUAGE='JavaScript' >alert('Se modifico correctamente la especialidad')</script>");
+                LimpiarTabla();
 
             }
             else
             {
-                Response.Write("<script LANGUAGE='JavaScript' >alert('Error al modificar')</script>");
+                Response.Write("<script LANGUAGE='JavaScript' >alert('No se ha podido modificar, por favor intente nuevamente')</script>");
+                LimpiarTabla();
             }
+        }
+        public void LimpiarTabla()
+        {
+            TextEspecNombre.Text = "";
+            TextEspecDescripcion.Text = "";
+
         }
     }
 }

@@ -37,11 +37,11 @@
         <div class="form-row">
             <div class="form-group col-md-4">
                 <label>Nombre</label>
-                 <asp:TextBox class="form-control" ID="TextEspecNombre" runat="server" />
+                 <asp:TextBox class="form-control" ID="TextEspecNombre"  placeholder="Nombre" runat="server" />
             </div>
             <div class="form-group col-md-6">
                  <label>Descripción</label>
-                 <asp:TextBox class="form-control" ID="TextEspecDescripcion" runat="server" />
+                 <asp:TextBox class="form-control" ID="TextEspecDescripcion" placeholder="Descripcición" runat="server" />
             </div>
         </div> 
     </div>
