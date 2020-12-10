@@ -46,7 +46,7 @@
         </div> 
     </div>
     <div style="margin-top: 20px;">
-        <asp:Button Text="Aceptar" class="btn btn-primary" OnClientClick="return Validar()" OnClick="Click_AceptarAltaEspec" runat="server"  />
+        <asp:Button Text="Aceptar" OnClientClick="return Validar()" OnClick="Click_AceptarAltaEspec" class="btn btn-primary"  runat="server"  />
         <asp:Button Text="Cancelar" class="btn btn-primary" runat="server" />
     </div>
 
