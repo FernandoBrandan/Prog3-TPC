@@ -8,7 +8,8 @@ create table Especialidad
 (
 	IdEspecialidad bigint not null primary key identity(1,1),
 	Nombre varchar(50) not null, 
-	Descripcion varchar(100) not null
+	Descripcion varchar(100) not null,
+	Estado bit not null
 )
 go
 create table Horario

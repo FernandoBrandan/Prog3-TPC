@@ -47,20 +47,20 @@ namespace WebClinica
             }
         }
         protected void Click_AceptaBorrarEspecialidad(object sender, EventArgs e)
-        {
-            Especialidad nuevaEspecilidad = new Especialidad();
-            NegocioEspecialidad Carga = new NegocioEspecialidad();
-            nuevaEspecilidad.IdEspecialidad = long.Parse(ddlModEspecialidad.SelectedItem.Value);
-            nuevaEspecilidad.Nombre = TextBorrarEspecialidad.Text;
-            if (Carga.BajaEspecialidad(nuevaEspecilidad))
+        { 
+            try
             {
+                Especialidad nuevaEspecilidad = new Especialidad();
+                NegocioEspecialidad Carga = new NegocioEspecialidad();
+                nuevaEspecilidad.IdEspecialidad = long.Parse(ddlModEspecialidad.SelectedItem.Value);
+                nuevaEspecilidad.Nombre = TextBorrarEspecialidad.Text;
                 Response.Write("<script LANGUAGE='JavaScript' >alert('La especialidad se ha borrado correctamente')</script>");
-
             }
-            else
-            {
+            catch (Exception ex)
+            { 
                 Response.Write("<script LANGUAGE='JavaScript' >alert('Error al modificar')</script>");
-            }
+                throw ex;
+            }       
         }
 
        /* public void LimpiarTabla()
@@ -69,9 +69,6 @@ namespace WebClinica
             TextBuscar.Text = "";
             gvBusqueda.DataSource = ListaVacia;
             gvBusqueda.DataBind();
-        }*/
-        
-
-
+        }*/ 
     }
 }

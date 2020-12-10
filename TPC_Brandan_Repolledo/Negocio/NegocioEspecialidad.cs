@@ -82,13 +82,12 @@ namespace Negocio
             datos.EjecutarConsulta();
             return true;
         }
-        public bool BajaEspecialidad(Especialidad nuevo)
+        public void BajaEspecialidad(Especialidad nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
             datos.SetearQuery("update Especialidad set estado = 0 where IdEspecialidad = @IdEspecialidad");
             datos.AgregarParametro("@IdEspecialidad", nuevo.IdEspecialidad);
-            datos.EjecutarConsulta();
-            return true;
+            datos.EjecutarConsulta(); 
         }
     }
 }
