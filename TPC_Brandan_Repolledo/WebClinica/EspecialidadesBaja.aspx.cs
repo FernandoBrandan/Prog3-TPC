@@ -52,9 +52,9 @@ namespace WebClinica
             NegocioEspecialidad Carga = new NegocioEspecialidad();
             nuevaEspecilidad.IdEspecialidad = long.Parse(ddlModEspecialidad.SelectedItem.Value);
             nuevaEspecilidad.Nombre = TextBorrarEspecialidad.Text;
-            if (Carga.ModificarEspecialidad(nuevaEspecilidad))
+            if (Carga.BajaEspecialidad(nuevaEspecilidad))
             {
-                Response.Write("<script LANGUAGE='JavaScript' >alert('Se modifico correctamente la especialidad')</script>");
+                Response.Write("<script LANGUAGE='JavaScript' >alert('La especialidad se ha borrado correctamente')</script>");
 
             }
             else
@@ -62,6 +62,16 @@ namespace WebClinica
                 Response.Write("<script LANGUAGE='JavaScript' >alert('Error al modificar')</script>");
             }
         }
+
+       /* public void LimpiarTabla()
+        {
+            TextBorrarUsuario.Text = "";
+            TextBuscar.Text = "";
+            gvBusqueda.DataSource = ListaVacia;
+            gvBusqueda.DataBind();
+        }*/
+        
+
 
     }
 }

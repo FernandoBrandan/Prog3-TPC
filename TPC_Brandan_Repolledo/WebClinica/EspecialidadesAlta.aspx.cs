@@ -19,22 +19,22 @@ namespace WebClinica
 
         protected void Click_AceptarAltaEspec(object sender, EventArgs e)
         {
+            Especialidad nuevaEsp = new Especialidad();
+            NegocioEspecialidad CargarEsp = new NegocioEspecialidad();
             try
             {
-                if (ValidarEspecialidad(TextEspecNombre.Text))
+                if (!ValidarEspecialidad(TextEspecNombre.Text))
                 {
-                    Especialidad nuevaEsp = new Especialidad();
-                    NegocioEspecialidad CargarEsp = new NegocioEspecialidad();
-
                     nuevaEsp.Nombre = TextEspecNombre.Text.ToUpper();
                     nuevaEsp.Descripcion = TextEspecDescripcion.Text;
+                    nuevaEsp.Estado = true;
                     CargarEsp.AgregarEspecialidad(nuevaEsp);
                     Response.Write("<script LANGUAGE='JavaScript' >alert('Se cargo correctamente la especialidad')</script>");
-                    Response.Redirect("EspecialidadesAlta.aspx");
+                    // Response.Redirect("EspecialidadesAlta.aspx");
                 }
                 else
                 {
-                    Response.Write("<script LANGUAGE='JavaScript' >alert('El nombre de la especialidad ya existe')</script>");
+                    Response.Write("<script LANGUAGE='JavaScript' >alert('La especialidad ya existe, por favor intente nuevamente')</script>");
                 }
             }
             catch (Exception ex)
@@ -45,7 +45,7 @@ namespace WebClinica
         }
         public bool ValidarEspecialidad(string Nombre)
         {
-            bool valido = true;
+            bool valido = false;
             NegocioEspecialidad valida = new NegocioEspecialidad();
             List<Especialidad> Listado = valida.ValidaEspecialidad();
 
@@ -53,7 +53,7 @@ namespace WebClinica
             {
                 if (Nombre == item.Nombre)
                 {
-                    valido = false;
+                    valido = true;
                 }
             }
             return valido;

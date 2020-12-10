@@ -25,6 +25,7 @@ namespace WebClinica
                 Session["USUARIO"] = txtUsuario.Text.ToUpper();
                 Session["PASS"] = txtPassword.Text;
                 bool valida = ValidaSesion();
+                Response.Redirect("~/Menu.aspx");
 
                 if (txtUsuario.Text != "" || txtPassword.Text != "")
                 { 
@@ -36,6 +37,9 @@ namespace WebClinica
                     {
                         Response.Write("<script LANGUAGE='JavaScript' >alert('Usuario incorrecto')</script>");
                     }
+
+
+
                 }
             }
             catch (Exception ex)
