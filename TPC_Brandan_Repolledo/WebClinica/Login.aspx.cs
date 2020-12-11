@@ -31,6 +31,7 @@ namespace WebClinica
                 { 
                     if (valida)
                     { 
+                        //buscar perfil
                         Response.Redirect("~/Menu.aspx");
                     }
                     else

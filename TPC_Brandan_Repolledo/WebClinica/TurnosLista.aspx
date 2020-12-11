@@ -24,7 +24,7 @@
         } 
     </style> 
 
-    <asp:GridView ID="gvBusquedaTurnos" AutoGenerateColumns="false" runat="server" OnRowCommand="ListadoTurnos_RowCommand">
+    <asp:GridView ID="gvBusquedaTurnos" AutoGenerateColumns="false" runat="server"  Style="text-align: center; width: 100%" OnRowCommand="ListadoTurnos_RowCommand">
         <Columns>
             <asp:ButtonField HeaderText="Opcion" ButtonType="Link" Text="Gestionar" CommandName="Select" />
             <asp:BoundField HeaderText="IdTurno" DataField="IdTurno"/> 

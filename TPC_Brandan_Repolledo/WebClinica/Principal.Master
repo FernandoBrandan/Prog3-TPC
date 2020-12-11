@@ -30,12 +30,12 @@
             <div class="navbar navbar-inverse navbar-fixed-top ">
                 <div class="container">
                     <div class="navbar-header">
-                        <a class="navbar-brand" runat="server" href="~/Menu.aspx">Menú</a>
-                        <a class="navbar-brand" runat="server" href="TurnosLista.aspx">Turnos</a>
-                        <a class="navbar-brand" runat="server" href="PacientesAlta.aspx">Pacientes</a>
-                        <a class="navbar-brand" runat="server" href="MedicosAlta.aspx">Medicos</a>
-                        <a class="navbar-brand" runat="server" href="EspecialidadesAlta.aspx">Especialidades</a>
-                        <a class="navbar-brand" runat="server" href="UsuariosAlta.aspx">Usuarios</a>
+                        <a id="Session" class="navbar-brand" runat="server" href="~/Menu.aspx" enableviewstate="True">Menú</a>
+                        <a id="SessionTurno" class="navbar-brand" runat="server" href="TurnosLista.aspx">Turnos</a>
+                        <a id="SessionPaciente" class="navbar-brand" runat="server" href="PacientesAlta.aspx">Pacientes</a>
+                        <a id="SessionMedico" class="navbar-brand" runat="server" href="MedicosAlta.aspx">Medicos</a>
+                        <a id="SessionEspecialidad" class="navbar-brand" runat="server" href="EspecialidadesAlta.aspx">Especialidades</a>
+                        <a id="SessionUsuario" class="navbar-brand" runat="server" href="UsuariosAlta.aspx" aria-disabled="False" aria-invalid="false" enableviewstate="True">Usuarios</a>
 
                     </div>
                 </div>
