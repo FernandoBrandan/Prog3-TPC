@@ -47,6 +47,6 @@
 
     <div style="margin-top: 20px;">
         <asp:Button Text="Aceptar" class="btn btn-primary" runat="server" OnClick="Click_AceptaModifEspecialidad" />
-        <asp:Button Text="Cancelar" class="btn btn-primary" runat="server" />
+        <asp:Button Text="Cancelar" class="btn btn-primary"  OnClick="Click_CancelaModifEspecialidad" runat="server" />
     </div>
 </asp:Content>

@@ -74,5 +74,10 @@ namespace WebClinica
             } 
             return valido;
         }
+
+        protected void Click_CancelarGestionMedico(object sender, EventArgs e)
+        {
+            Response.Redirect("TurnosGestionMedicos.aspx"); 
+        }
     }
 }

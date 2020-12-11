@@ -221,5 +221,11 @@ namespace WebClinica
             }  
             return valido;
         }
+
+        protected void Click_CancelarAltaTurno(object sender, EventArgs e)
+        {
+            Response.Redirect("TurnosAlta.aspx");
+
+        }
     }
 }

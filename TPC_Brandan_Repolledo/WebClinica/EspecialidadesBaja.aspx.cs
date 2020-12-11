@@ -56,14 +56,18 @@ namespace WebClinica
         { 
             try
             {
-                Especialidad nuevaEspecilidad = new Especialidad();
-                NegocioEspecialidad Carga = new NegocioEspecialidad();
-                nuevaEspecilidad.IdEspecialidad = long.Parse(ddlModEspecialidad.SelectedItem.Value);
-                nuevaEspecilidad.Nombre = TextBorrarEspecialidad.Text;
-                if (Carga.BajaEspecialidad(nuevaEspecilidad))
+                bool var = Valida();
+                if(var)
                 {
-                    Response.Write("<script LANGUAGE='JavaScript' >alert('La especialidad se ha borrado correctamente')</script>");
-                    LimpiarTabla();
+                    Especialidad nuevaEspecilidad = new Especialidad();
+                    NegocioEspecialidad Carga = new NegocioEspecialidad();
+                    nuevaEspecilidad.IdEspecialidad = long.Parse(ddlModEspecialidad.SelectedItem.Value);
+                    nuevaEspecilidad.Nombre = TextBorrarEspecialidad.Text;
+                    if (Carga.BajaEspecialidad(nuevaEspecilidad))
+                    {
+                        Response.Write("<script LANGUAGE='JavaScript' >alert('La especialidad se ha borrado correctamente')</script>");
+                        LimpiarTabla();
+                    } 
                 }
             }
             catch (Exception ex)
@@ -76,6 +80,20 @@ namespace WebClinica
         public void LimpiarTabla()
         {
             TextBorrarEspecialidad.Text = "";
+        }
+
+        public bool Valida()
+        {
+            bool valido = true;
+
+            if (Convert.ToInt32(ddlModEspecialidad.SelectedIndex) == 0)
+            {
+                ddlModEspecialidad.ForeColor = System.Drawing.Color.Red;
+                ddlModEspecialidad.Items.Insert(0, "REQUERIDO");
+                valido = false;
+            }
+             
+            return valido;
         }
     }
 }

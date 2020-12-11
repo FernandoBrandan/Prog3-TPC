@@ -57,22 +57,26 @@ namespace WebClinica
         
         protected void Click_AceptaModifEspecialidad(object sender, EventArgs e)
         {
-            Especialidad nuevaEspecilidad = new Especialidad();
-            NegocioEspecialidad Carga = new NegocioEspecialidad();
-            nuevaEspecilidad.IdEspecialidad = long.Parse(ddlModEspecialidad.SelectedItem.Value);
-            nuevaEspecilidad.Nombre = TextEspecNombre.Text;
-            nuevaEspecilidad.Descripcion = TextEspecDescripcion.Text;
-            if(Carga.ModificarEspecialidad(nuevaEspecilidad))
+            bool var = Valida();
+            if(var)
             {
-                Response.Write("<script LANGUAGE='JavaScript' >alert('Se modifico correctamente la especialidad')</script>");
-                LimpiarTabla();
+                Especialidad nuevaEspecilidad = new Especialidad();
+                NegocioEspecialidad Carga = new NegocioEspecialidad();
+                nuevaEspecilidad.IdEspecialidad = long.Parse(ddlModEspecialidad.SelectedItem.Value);
+                nuevaEspecilidad.Nombre = TextEspecNombre.Text;
+                nuevaEspecilidad.Descripcion = TextEspecDescripcion.Text;
+                if (Carga.ModificarEspecialidad(nuevaEspecilidad))
+                {
+                    Response.Write("<script LANGUAGE='JavaScript' >alert('Se modifico correctamente la especialidad')</script>");
+                    LimpiarTabla();
 
-            }
-            else
-            {
-                Response.Write("<script LANGUAGE='JavaScript' >alert('No se ha podido modificar, por favor intente nuevamente')</script>");
-                LimpiarTabla();
-            }
+                }
+                else
+                {
+                    Response.Write("<script LANGUAGE='JavaScript' >alert('No se ha podido modificar, por favor intente nuevamente')</script>");
+                    LimpiarTabla();
+                }
+            } 
         }
 
         public bool ValidarEspecialidad(string Nombre)
@@ -94,6 +98,39 @@ namespace WebClinica
         {
             TextEspecNombre.Text = "";
             TextEspecDescripcion.Text = "";
+
+        }
+
+        public bool Valida()
+        {
+            bool valido = true;
+
+            if (Convert.ToInt32(ddlModEspecialidad.SelectedIndex) == 0)
+            { 
+                ddlModEspecialidad.ForeColor = System.Drawing.Color.Red;
+                ddlModEspecialidad.Items.Insert(0, "REQUERIDO");
+                valido = false;
+            }
+
+            if (TextEspecNombre.Text == "" || TextEspecNombre.Text == "REQUERIDO")
+            {
+                TextEspecNombre.ForeColor = System.Drawing.Color.Red;
+                TextEspecNombre.Text = "REQUERIDO";
+                valido = false;
+            }
+            if (TextEspecDescripcion.Text == "" || TextEspecDescripcion.Text == "REQUERIDO")
+            {
+                TextEspecDescripcion.ForeColor = System.Drawing.Color.Red;
+                TextEspecDescripcion.Text = "REQUERIDO";
+                valido = false;
+            }
+
+            return valido;
+        }
+
+        protected void Click_CancelaModifEspecialidad(object sender, EventArgs e)
+        {
+            Response.Redirect("EspecialidadesModifica.aspx");
 
         }
     }

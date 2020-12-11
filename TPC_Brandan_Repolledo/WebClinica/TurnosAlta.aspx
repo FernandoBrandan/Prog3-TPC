@@ -99,7 +99,7 @@
 
         <div class="row" style="margin-top: 20px;">
             <asp:Button Text="Aceptar" class="btn btn-primary" OnClick="Click_AceptarAltaTurno" runat="server"/>
-            <asp:Button Text="Cancelar" style="margin-left: 5px;" class="btn btn-primary" runat="server" />
+            <asp:Button Text="Cancelar" style="margin-left: 5px;" class="btn btn-primary"  OnClick="Click_CancelarAltaTurno" runat="server" />
         </div>
 
     </div>

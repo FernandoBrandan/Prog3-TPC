@@ -90,7 +90,7 @@
 
     <div style="margin-top: 20px;">
         <asp:Button Text="Aceptar" class="btn btn-primary" OnClick="Click_AceptarModiUsuario" runat="server" />
-        <asp:Button Text="Cancelar" class="btn btn-primary" runat="server" />
+        <asp:Button Text="Cancelar" class="btn btn-primary" OnClick="Click_CancelarModiUsuario" runat="server" />
     </div>
 
 

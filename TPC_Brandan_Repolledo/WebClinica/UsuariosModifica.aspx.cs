@@ -98,5 +98,10 @@ namespace WebClinica
                 throw ex;
             }
         }
+
+        protected void Click_CancelarModiUsuario(object sender, EventArgs e)
+        {
+            Response.Redirect("UsuariosModifica.aspx"); 
+        }
     }
 }

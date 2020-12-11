@@ -71,5 +71,9 @@ namespace WebClinica
             
         }
 
+        protected void Click_CancelaAltaEspec(object sender, EventArgs e)
+        {
+            Response.Redirect("EspecialidadesAlta.aspx");
+        }
     }
 }

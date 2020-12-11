@@ -70,5 +70,10 @@ namespace WebClinica
                 throw ex;
             } 
         }
+
+        protected void Click_CancelarAltaPaciente(object sender, EventArgs e)
+        {
+            Response.Redirect("PacientesAlta.aspx"); 
+        }
     }
 }

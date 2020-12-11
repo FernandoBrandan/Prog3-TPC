@@ -52,41 +52,64 @@ namespace WebClinica
 
             try
             {
-                nuevaPersona.DNI = Convert.ToInt32(TextUsuarioDNI.Text);
-                nuevaPersona.Nombre = TextUsuarioNombre.Text;
-                nuevaPersona.Apellido = TextUsuarioApellido.Text;
-                nuevaPersona.Domicilio = TextUsuarioDomicilio.Text;
-                nuevaPersona.FechaNacimiento = DateTime.Parse(TextUsuarioFechaNac.Text);
-                if (RbGenero.SelectedItem.Value == "Male")
+                bool var = Valida();
+                if (var)
                 {
-                    nuevaPersona.Genero = RbGenero.SelectedItem.Text;
-                }
-                else if (RbGenero.SelectedItem.Value == "Female")
-                {
-                    nuevaPersona.Genero = RbGenero.SelectedItem.Text;
-                }
-                nuevaPersona.Estado = true;
+                    nuevaPersona.DNI = Convert.ToInt32(TextUsuarioDNI.Text);
+                    nuevaPersona.Nombre = TextUsuarioNombre.Text;
+                    nuevaPersona.Apellido = TextUsuarioApellido.Text;
+                    nuevaPersona.Domicilio = TextUsuarioDomicilio.Text;
+                    nuevaPersona.FechaNacimiento = DateTime.Parse(TextUsuarioFechaNac.Text);
+                    if (RbGenero.SelectedItem.Value == "Male")
+                    {
+                        nuevaPersona.Genero = RbGenero.SelectedItem.Text;
+                    }
+                    else if (RbGenero.SelectedItem.Value == "Female")
+                    {
+                        nuevaPersona.Genero = RbGenero.SelectedItem.Text;
+                    }
+                    nuevaPersona.Estado = true;
 
-                nuevoUsuario.FechaIngreso = DateTime.Today.Date;
-                nuevoUsuario.LegajoUsuario = crearLegajoUsuario(nuevaPersona.DNI, nuevaPersona.Nombre, nuevaPersona.Apellido);
+                    nuevoUsuario.FechaIngreso = DateTime.Today.Date;
+                    nuevoUsuario.LegajoUsuario = crearLegajoUsuario(nuevaPersona.DNI, nuevaPersona.Nombre, nuevaPersona.Apellido);
 
-                nuevoUsuario.Seguridad = new Seguridad();
-                nuevoUsuario.Seguridad.Contraseña = TxtPassUsuario.Text;
-                nuevoUsuario.Seguridad.UltimaConexion = DateTime.Today.Date;
+                    nuevoUsuario.Seguridad = new Seguridad();
+                    nuevoUsuario.Seguridad.Contraseña = TxtPassUsuario.Text;
+                    nuevoUsuario.Seguridad.UltimaConexion = DateTime.Today.Date;
 
-                nuevoUsuario.Perfil = new Perfil(); 
-                nuevoUsuario.Perfil.IdPerfil = long.Parse(ddlUsuarioRol.SelectedItem.Value);
+                    nuevoUsuario.Perfil = new Perfil();
+                    nuevoUsuario.Perfil.IdPerfil = long.Parse(ddlUsuarioRol.SelectedItem.Value);
 
-                CargaUsuarios.AgregarSeguridad(nuevoUsuario); 
-                CargaUsuarios.AgregarPersona(nuevaPersona);
-                CargaUsuarios.AgregarUsuario(nuevoUsuario, nuevaPersona);
+                    CargaUsuarios.AgregarSeguridad(nuevoUsuario);
+                    CargaUsuarios.AgregarPersona(nuevaPersona);
+                    CargaUsuarios.AgregarUsuario(nuevoUsuario, nuevaPersona);
 
-                Response.Write("<script LANGUAGE='JavaScript' >alert('Se cargo correctamente el Usuario')</script>");
+                    Response.Write("<script LANGUAGE='JavaScript' >alert('Se cargo correctamente el Usuario')</script>");
+                }             
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+        }
+
+        public bool Valida()
+        {
+            bool valido = true;
+
+            if (Convert.ToInt32(ddlUsuarioRol.SelectedIndex) == 0)
+            {
+                ddlUsuarioRol.ForeColor = System.Drawing.Color.Red;
+                ddlUsuarioRol.Items.Insert(0, "REQUERIDO");
+                valido = false;
+            } 
+            return valido;
+        }
+
+        protected void Click_CancelarAltaUsuario(object sender, EventArgs e)
+        {
+            Response.Redirect("UsuariosAlta.aspx");
+
         }
     }
 }
