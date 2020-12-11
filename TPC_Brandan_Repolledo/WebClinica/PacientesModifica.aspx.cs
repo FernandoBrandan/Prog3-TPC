@@ -16,7 +16,11 @@ namespace WebClinica
         public List<Paciente> ListaVacia { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            string var = Session["Rol"].ToString();
+            if (var == "Medico")
+            {
+                Response.Redirect("Menu.aspx");
+            }
         }
 
         protected void Click_BuscarPaciente(object sender, EventArgs e)

@@ -40,7 +40,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.SetearQuery("select COUNT(1) from Persona as p inner join Medico as m on m.DNI=p.DNI inner join Seguridad as s on s.IdSeguridad=m.Seguridad where s.Contraseña = '@PASS' and upper(m.LegajoMedico) = upper('@USER')");
+                datos.SetearQuery("select COUNT(1) from Persona as p inner join Medico as m on m.DNI=p.DNI inner join Seguridad as s on s.IdSeguridad=m.Seguridad where s.Contraseña = @PASS and upper(m.LegajoMedico) = upper(@USER)");
                 datos.AgregarParametro("@USER", user);
                 datos.AgregarParametro("@PASS", pass);
                 datos.EjecutarConsulta();
@@ -75,6 +75,27 @@ namespace Negocio
                 throw ex;
             }
             return existe;
-        } 
+        }
+
+        public int ValidaAdmin(string user)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.SetearQuery("select p.IdPerfil from  Usuario as u , Perfil as p where u.LegajoUsuario = @USER and u.Perfil=p.IdPerfil");
+                datos.AgregarParametro("@USER", user); 
+                datos.EjecutarConsulta();
+                while (datos.Lector.Read())
+                {
+                    long var = datos.Lector.GetInt64(0);
+                    existe = Convert.ToInt32(var);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return existe;
+        }
     }
 }

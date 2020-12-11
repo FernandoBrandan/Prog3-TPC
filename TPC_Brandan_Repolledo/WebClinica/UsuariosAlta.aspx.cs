@@ -15,7 +15,13 @@ namespace WebClinica
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            string var = Session["Rol"].ToString();
+            if (var == "Medico" || var == "Usuario")
+            {
+                Response.Redirect("Menu.aspx");
+            }
+
+            if (!IsPostBack)
             {
                 NegocioLogin Carga = new NegocioLogin();
                 ListaPerfiles = Carga.ListarPerfil();

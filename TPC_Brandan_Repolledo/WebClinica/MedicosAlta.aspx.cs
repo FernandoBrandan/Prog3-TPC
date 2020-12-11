@@ -17,7 +17,13 @@ namespace WebClinica
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            string var = Session["Rol"].ToString();
+            if (var == "Medico")
+            {
+                Response.Redirect("Menu.aspx");
+            }
+
+            if (!IsPostBack)
             { 
                 NegocioEspecialidad Carga1 = new NegocioEspecialidad();
                 LisdadoEspecialidadess = Carga1.ValidaEspecialidad(); // se cambia para que solo muestre las que no están borradas

@@ -16,6 +16,12 @@ namespace WebClinica
         long IdSeleccionado;
         protected void Page_Load(object sender, EventArgs e)
         {
+            string var = Session["Rol"].ToString();
+            if (var == "Medico" || var == "Usuario")
+            {
+                Response.Redirect("Menu.aspx");
+            }
+
             if (!IsPostBack)
             {
                 NegocioEspecialidad Carga = new NegocioEspecialidad();

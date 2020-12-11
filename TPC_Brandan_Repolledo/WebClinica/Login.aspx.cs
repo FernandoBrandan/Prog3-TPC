@@ -19,28 +19,23 @@ namespace WebClinica
         }
 
         public void Click_IniciaSesion(object sender, EventArgs e)
-        {                
+        {     
             try
             {
                 Session["USUARIO"] = txtUsuario.Text.ToUpper();
                 Session["PASS"] = txtPassword.Text;
-                bool valida = ValidaSesion();
-                Response.Redirect("~/Menu.aspx");
+                bool valida = ValidaSesion(); 
 
                 if (txtUsuario.Text != "" || txtPassword.Text != "")
                 { 
                     if (valida)
                     { 
-                        //buscar perfil
                         Response.Redirect("~/Menu.aspx");
                     }
                     else
                     {
-                        Response.Write("<script LANGUAGE='JavaScript' >alert('Usuario incorrecto')</script>");
+                        Response.Write("<script LANGUAGE='JavaScript' >alert('Usuario o contraseña incorrecto')</script>"); 
                     }
-
-
-
                 }
             }
             catch (Exception ex)
@@ -57,12 +52,22 @@ namespace WebClinica
             NegocioLogin Valida = new NegocioLogin();
             if (Valida.ValidarMedico(user, pass) == 1  )
             {
+                Session["Rol"] = "Medico";
                 valido = true;
             }
 
             if (  Valida.ValidarUsuario(user, pass) == 1)
-            {
-                valido = true;
+            { 
+                if (Valida.ValidaAdmin(user) == 1)
+                {
+                    Session["Rol"] = "Admin"; 
+                    valido = true; 
+                }
+                else
+                { 
+                    Session["Rol"] = "Usuario";
+                    valido = true;
+                }
             }
             return valido;
         }

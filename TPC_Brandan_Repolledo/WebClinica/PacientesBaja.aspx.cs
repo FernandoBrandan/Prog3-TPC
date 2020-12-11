@@ -16,11 +16,18 @@ namespace WebClinica
         public List<Paciente> ListaVacia { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            NegocioPaciente CargarBuscar = new NegocioPaciente();
-            ListadoOriginal = CargarBuscar.ListaPaciente();
-            gvBusquedaPaciente.DataSource = ListadoOriginal;
-            gvBusquedaPaciente.DataBind();
-
+            string var = Session["Rol"].ToString();
+            if (var == "Medico" || var == "Usuario")
+            {
+                Response.Redirect("Menu.aspx");
+            }
+            else
+            {
+                NegocioPaciente CargarBuscar = new NegocioPaciente();
+                ListadoOriginal = CargarBuscar.ListaPaciente();
+                gvBusquedaPaciente.DataSource = ListadoOriginal;
+                gvBusquedaPaciente.DataBind();
+            }
         }
 
 

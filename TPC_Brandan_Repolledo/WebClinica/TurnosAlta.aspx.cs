@@ -22,6 +22,12 @@ namespace WebClinica
         {
             ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
 
+            string var = Session["Rol"].ToString();
+            if (var == "Medico")
+            {
+                Response.Redirect("Menu.aspx");
+            }
+
             if (!IsPostBack)
             {
                 NegocioEspecialidad ListaEspecialidad = new NegocioEspecialidad();
@@ -113,17 +119,20 @@ namespace WebClinica
 
         protected void Click_ValidadFechas(object sender, EventArgs e)
         {
-            DateTime FechaObtenida = DateTime.Parse(TextFechaElegida.Text);
-            string VerificarFecha = FechaObtenida.ToShortDateString();
+            if(!(TextFechaElegida.Text == "" || TextFechaElegida.Text == "REQUERIDO"))
+            {
+                DateTime FechaObtenida = DateTime.Parse(TextFechaElegida.Text);
+                string VerificarFecha = FechaObtenida.ToShortDateString();
 
-            NegocioDisponibilidad BuscarHorario = new NegocioDisponibilidad();
-            List<Horario> FechasLibres = BuscarHorario.BuscaHorarios(VerificarFecha);
+                NegocioDisponibilidad BuscarHorario = new NegocioDisponibilidad();
+                List<Horario> FechasLibres = BuscarHorario.BuscaHorarios(VerificarFecha);
 
-            ddlAltaTurnoHorario.DataSource = FechasLibres;
-            ddlAltaTurnoHorario.DataTextField = "Descripcion";
-            ddlAltaTurnoHorario.DataValueField = "IdHorario";
-            ddlAltaTurnoHorario.DataBind();
-            ddlAltaTurnoHorario.Items.Insert(0, "Seleccione");
+                ddlAltaTurnoHorario.DataSource = FechasLibres;
+                ddlAltaTurnoHorario.DataTextField = "Descripcion";
+                ddlAltaTurnoHorario.DataValueField = "IdHorario";
+                ddlAltaTurnoHorario.DataBind();
+                ddlAltaTurnoHorario.Items.Insert(0, "Seleccione");
+            } 
         }
 
         protected void Click_AceptarAltaTurno(object sender, EventArgs e)

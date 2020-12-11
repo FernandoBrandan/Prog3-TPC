@@ -14,8 +14,12 @@ namespace WebClinica
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
+            string var = Session["Rol"].ToString();
+            if(var == "Medico")
+            {    
+                Response.Redirect("Menu.aspx");
+            }
+        }   
 
         protected void Click_AceptarAltaEspec(object sender, EventArgs e)
         {

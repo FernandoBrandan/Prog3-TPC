@@ -13,6 +13,13 @@ namespace WebClinica
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string rol = Session["Rol"].ToString();
+
+            if (rol == "Usuario")
+            {
+                Response.Redirect("Menu.aspx");
+            }
+
             string var = Session["Turno"].ToString();
             idTextTurno.Text = var;
 
