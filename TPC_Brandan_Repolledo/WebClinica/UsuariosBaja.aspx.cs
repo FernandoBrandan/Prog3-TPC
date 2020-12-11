@@ -82,6 +82,13 @@ namespace WebClinica
             gvBusqueda.DataSource = ListaVacia;
             gvBusqueda.DataBind();
         }
+        public void BajaUsuario(Usuario nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            datos.SetearQuery("update persona set estado = 0 where DNI = @DNI");
+            datos.AgregarParametro("@DNI", nuevo.DNI);
+            datos.EjecutarConsulta();
+        }
 
         protected void Click_BorrarBusquedaUsuario(object sender, EventArgs e)
         {
