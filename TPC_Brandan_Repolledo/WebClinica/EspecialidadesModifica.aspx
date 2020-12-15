@@ -16,6 +16,8 @@
                     </span>
                 </li>
                 <li class="page-item"><a class="page-link" href="EspecialidadesBaja.aspx">Baja</a></li>
+                 <li class="page-item"><a class="page-link" href="EspecialidadesListar.aspx">Lista de Especialidades</a></li>
+
             </ul>
         </nav>
     </div>

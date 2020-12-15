@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ReporteMedico.cs" />
+    <Compile Include="ReportePacientes.cs" />
+    <Compile Include="ReporteUsuario.cs" />
     <Compile Include="DetalleTurno.cs" />
     <Compile Include="Disponibilidad.cs" />
     <Compile Include="Especialidad.cs" />
