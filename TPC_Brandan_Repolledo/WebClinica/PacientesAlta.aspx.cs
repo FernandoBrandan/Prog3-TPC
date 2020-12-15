@@ -60,6 +60,10 @@ namespace WebClinica
                 nuevoPaciente.Email = TextAltaPacienteEmail.Text;
                 nuevoPaciente.CodigoPaciente = crearLegajoPaciente( nuevaPersona.DNI, nuevaPersona.Nombre, nuevaPersona.Apellido);
 
+                nuevoPaciente.Seguridad = new Seguridad();
+                nuevoPaciente.Seguridad.Contraseña = TxtPassPaciente.Text;
+                nuevoPaciente.Seguridad.UltimaConexion = DateTime.Today.Date;
+                CargaPacientes.AgregarSeguridad(nuevoPaciente);
                 CargaPacientes.AgregarPersona(nuevaPersona);
                 CargaPacientes.AgregarPaciente(nuevoPaciente, nuevaPersona);
 

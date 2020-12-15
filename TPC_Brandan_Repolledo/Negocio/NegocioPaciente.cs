@@ -107,5 +107,14 @@ namespace Negocio
             datos.EjecutarConsulta();
         }
 
+        public void AgregarSeguridad(Paciente nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            datos.SetearQuery("insert into Seguridad (Contraseña, UltimaConexion) values (@Pass, @UltConexion)");
+            datos.AgregarParametro("@Pass", nuevo.Seguridad.Contraseña);
+            datos.AgregarParametro("@UltConexion", nuevo.Seguridad.UltimaConexion);
+            datos.EjecutarConsulta();
+        }
+
     }
 }

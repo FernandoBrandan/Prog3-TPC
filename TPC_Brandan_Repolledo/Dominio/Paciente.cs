@@ -11,6 +11,7 @@ namespace Dominio
         public string CodigoPaciente { get; set; }
 
         public DateTime FechaInscripcion { get; set; }
+        public Seguridad Seguridad { get; set; }
 
         public string Email { get; set; }
     }

@@ -75,7 +75,9 @@
     <Content Include="css\Medico.css" />
     <Content Include="css\Menu.css" />
     <Content Include="css\Turnos.css" />
-    <Content Include="Contactos.aspx" />
+    <Content Include="Reportes.aspx">
+      <BrowseToURL>~/Reportes.aspx</BrowseToURL>
+    </Content>
     <Content Include="Informacion.aspx" />
     <Content Include="EspecialidadesAlta.aspx" />
     <Content Include="EspecialidadesBaja.aspx" />
@@ -110,12 +112,12 @@
     <Compile Include="Validaciones.aspx.designer.cs">
       <DependentUpon>Validaciones.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Contactos.aspx.cs">
-      <DependentUpon>Contactos.aspx</DependentUpon>
+    <Compile Include="Reportes.aspx.cs">
+      <DependentUpon>Reportes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Contactos.aspx.designer.cs">
-      <DependentUpon>Contactos.aspx</DependentUpon>
+    <Compile Include="Reportes.aspx.designer.cs">
+      <DependentUpon>Reportes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Informacion.aspx.cs">
       <DependentUpon>Informacion.aspx</DependentUpon>

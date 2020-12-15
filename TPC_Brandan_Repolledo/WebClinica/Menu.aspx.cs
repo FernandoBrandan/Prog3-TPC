@@ -40,10 +40,10 @@ namespace WebClinica
         }
         protected void Click_btnContactos(object sender, EventArgs e)
         {
-            Response.Redirect("Contactos.aspx");
+            Response.Redirect("Reportes.aspx");
         }
 
-        protected void Click_btnInformacion(object sender, EventArgs e)
+        protected void Click_btnInfo(object sender, EventArgs e)
         {
             Response.Redirect("Informacion.aspx");
         }

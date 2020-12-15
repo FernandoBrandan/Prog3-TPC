@@ -79,6 +79,10 @@
                 <asp:ListItem Text="Femenino" Value="Female"></asp:ListItem>
             </asp:RadioButtonList>
         </div>
+            <div class="form-group col-md-3">
+                <label>Password</label>
+                <asp:TextBox class="form-control" type="password" placeholder="Contraseña" ID="TxtPassPaciente" ClientIDMode="Static" runat="server" />
+            </div>
     </div>
     <div style="margin-top: 20px;">
         <asp:Button Text="Aceptar"  OnClientClick="return Validar()" OnClick="Click_AceptarAltaPaciente" class="btn btn-primary" runat="server"/>

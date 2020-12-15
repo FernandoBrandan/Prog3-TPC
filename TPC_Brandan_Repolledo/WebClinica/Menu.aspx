@@ -22,8 +22,8 @@
         <asp:Button Text="Especialidades" class="btnMenu btnMenu-Especialidades" OnClick="Click_btnEspecialidadesAlta" runat="server"/>
         <asp:Button Text="Pacientes" class="btnMenu btnMenu-Pacientes" OnClick="Click_btnPacientesAlta" runat="server"/>
         <asp:Button Text="Usuarios" class="btnMenu btnMenu-Usuarios" OnClick="Click_btnUsuariosAlta" runat="server"/>
-        <asp:Button Text="Contactos" class="btnMenu btnMenu-Contactos"  OnClick="Click_btnContactos"  runat="server"/>
-        <asp:Button Text="Info" class="btnMenu btnMenu-Info" OnClick="Click_btnInformacion" runat="server"/>    
+        <asp:Button Text="Reportes" class="btnMenu btnMenu-Contactos" OnClick="Click_btnContactos" runat="server"/>    
+        <asp:Button Text="Información" class="btnMenu btnMenu-Info" OnClick="Click_btnInfo" runat="server"/>    
         <img class="btnMenu-Blanco1" runat="server"/> 
         <img class="btnMenu-Blanco2" runat="server"/> 
         <img class="btnMenu-Blanco3" runat="server"/> 
