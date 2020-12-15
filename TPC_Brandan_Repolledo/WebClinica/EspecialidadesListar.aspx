@@ -5,7 +5,7 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     
-    <h1 style="margin-top: 20px;">Lista de Pacientes</h1>
+    <h1 style="margin-top: 20px;">Información</h1>
 
 </asp:Content>
 
