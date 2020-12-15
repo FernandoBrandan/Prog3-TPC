@@ -84,7 +84,11 @@ namespace WebClinica
                     CargaUsuarios.AgregarPersona(nuevaPersona);
                     CargaUsuarios.AgregarUsuario(nuevoUsuario, nuevaPersona);
 
-                    Response.Write("<script LANGUAGE='JavaScript' >alert('Se cargo correctamente el Usuario')</script>");
+                    Response.Write("<script LANGUAGE='JavaScript' >alert('Se ha cargado correctamente el Usuario, Su Codigo de Legajo para  poder loguearse es: " +  nuevoUsuario.LegajoUsuario  +"')</script>");
+                    LimpiarTabla();
+
+
+
                 }             
             }
             catch (Exception ex)
@@ -111,5 +115,18 @@ namespace WebClinica
             Response.Redirect("UsuariosAlta.aspx");
 
         }
+
+        public void LimpiarTabla()
+        {
+                TextUsuarioDNI.Text = "";
+                TextUsuarioNombre.Text = "";
+                TextUsuarioApellido.Text = "";
+                TextUsuarioDomicilio.Text = "";
+                TextUsuarioFechaNac.Text = "";
+
+            
+        }
+
+
     }
 }

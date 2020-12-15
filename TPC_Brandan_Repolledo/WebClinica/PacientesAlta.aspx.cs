@@ -67,7 +67,10 @@ namespace WebClinica
                 CargaPacientes.AgregarPersona(nuevaPersona);
                 CargaPacientes.AgregarPaciente(nuevoPaciente, nuevaPersona);
 
-                Response.Write("<script LANGUAGE='JavaScript' >alert('Se cargo correctamente al paciente ')</script>");
+                Response.Write("<script LANGUAGE='JavaScript' >alert('Se ha cargado correctamente el Usuario, Su Codigo de Legajo para  poder loguearse es: " + nuevoPaciente.CodigoPaciente + "')</script>");
+
+                // LimpiarTabla();
+
             }
             catch (Exception ex)
             {
@@ -75,9 +78,12 @@ namespace WebClinica
             } 
         }
 
+
+
         protected void Click_CancelarAltaPaciente(object sender, EventArgs e)
         {
             Response.Redirect("PacientesAlta.aspx"); 
         }
+
     }
 }
