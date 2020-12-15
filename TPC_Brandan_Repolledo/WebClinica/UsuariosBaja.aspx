@@ -30,6 +30,7 @@
             <ul class="pagination pagination-lg">
                 <li class="page-item"><a class="page-link" href="UsuariosAlta.aspx">Alta</a></li>
                 <li class="page-item"><a class="page-link" href="UsuariosModifica.aspx">Modificación</a></li>
+                  <li class="page-item"><a class="page-link" href="UsuariosListar.aspx">Lista de Usuarios</a></li>
                 <li class="page-item active" aria-current="page">
                     <span class="page-link">Baja
                 <span class="sr-only">(current)</span>

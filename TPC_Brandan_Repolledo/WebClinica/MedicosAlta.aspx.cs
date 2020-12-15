@@ -101,8 +101,8 @@ namespace WebClinica
                         CargarMedico.AgregarPersona(nuevaPersona);
                         CargarMedico.AgregarMedico(nuevoMedico, nuevaPersona, seleccionaEsp);
 
-
-                        Response.Write("<script LANGUAGE='JavaScript' >alert('Se cargo correctamente el Medico')</script>");
+                        Response.Write("<script LANGUAGE='JavaScript' >alert('Se ha cargado correctamente el Medico, Su Codigo de Legajo para  poder loguearse es: " + nuevoMedico.LegajoMedico + "')</script>");
+                        LimpiarTabla();
                     } 
                 }
                 else
@@ -158,6 +158,16 @@ namespace WebClinica
         protected void Click_CancelarAltaPaciente(object sender, EventArgs e)
         {
             Response.Redirect("MedicosAlta.aspx"); 
+        }
+
+        public void LimpiarTabla()
+        {
+            TextMedicoDNI.Text = "";
+            TextMedicoNombre.Text = "";
+            TextMedicoApellido.Text = "";
+            TextMedicoDomicilio.Text = "";
+            TextMedicoFechaNac.Text = "";
+
         }
     }
 }

@@ -38,6 +38,7 @@
                 </li>
                 <li class="page-item"><a class="page-link" href="MedicosModifica.aspx">Modificación</a></li>
                 <li class="page-item"><a class="page-link" href="MedicosBaja.aspx">Baja</a></li>
+                <li class="page-item"><a class="page-link" href="MedicosListar.aspx">Lista de Médicos</a></li>
             </ul>
         </nav>
     </div>

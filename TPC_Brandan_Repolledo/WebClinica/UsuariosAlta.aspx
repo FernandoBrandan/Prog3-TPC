@@ -31,6 +31,7 @@
                 </li>
                 <li class="page-item"><a class="page-link" href="UsuariosModifica.aspx">Modificación</a></li>
                 <li class="page-item"><a class="page-link" href="UsuariosBaja.aspx">Baja</a></li>
+                <li class="page-item"><a class="page-link" href="UsuariosListar.aspx">Lista de Usuarios</a></li>
             </ul>
         </nav>
     </div>

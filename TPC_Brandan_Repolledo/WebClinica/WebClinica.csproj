@@ -67,6 +67,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="PacientesListar.aspx" />
+    <Content Include="Especialidades.Listar.aspx" />
+    <Content Include="UsuariosListar.aspx" />
+    <Content Include="MedicosListar.aspx" />
     <Content Include="TurnosGestionMedicos.aspx" />
     <Content Include="Validaciones.aspx" />
     <Content Include="css\Especialidades.css" />
@@ -98,6 +102,34 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PacientesListar.aspx.cs">
+      <DependentUpon>PacientesListar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PacientesListar.aspx.designer.cs">
+      <DependentUpon>PacientesListar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Especialidades.Listar.aspx.cs">
+      <DependentUpon>Especialidades.Listar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Especialidades.Listar.aspx.designer.cs">
+      <DependentUpon>Especialidades.Listar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UsuariosListar.aspx.cs">
+      <DependentUpon>UsuariosListar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UsuariosListar.aspx.designer.cs">
+      <DependentUpon>UsuariosListar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MedicosListar.aspx.cs">
+      <DependentUpon>MedicosListar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MedicosListar.aspx.designer.cs">
+      <DependentUpon>MedicosListar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="TurnosGestionMedicos.aspx.cs">
       <DependentUpon>TurnosGestionMedicos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

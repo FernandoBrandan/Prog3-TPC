@@ -21,6 +21,7 @@
             <ul class="pagination pagination-lg">
                 <li class="page-item"><a class="page-link" href="MedicosAlta.aspx">Alta</a></li>
                 <li class="page-item"><a class="page-link" href="MedicosModifica.aspx">Modificación</a></li>
+                 <li class="page-item"><a class="page-link" href="MedicosListar.aspx">Lista de Médicos</a></li>
                 <li class="page-item active" aria-current="page">
                     <span class="page-link">Baja
                     <span class="sr-only">(current)</span>
