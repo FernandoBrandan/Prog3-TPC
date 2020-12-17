@@ -31,8 +31,9 @@
             <asp:BoundField HeaderText="Disponibilidad" DataField="Disponibilidad"/> 
             <asp:BoundField HeaderText="Medico" DataField="Medico"/>
             <asp:BoundField HeaderText="Paciente" DataField="Paciente"/>
-            <asp:BoundField HeaderText="Estado" DataField="Estado"/>
             <asp:BoundField HeaderText="Motivo" DataField="Motivo"/>
+            <asp:BoundField HeaderText="Estado" DataField="Estado"/>
+           
         </Columns>
     </asp:GridView>
 </asp:Content>

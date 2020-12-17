@@ -63,7 +63,7 @@
 
         <div class="row" style="margin-bottom: 20px;">
             <div class="col-md-auto">
-                <asp:Label Text="Espacialidad" runat="server" />
+                <asp:Label Text="Especialidad" runat="server" />
                 <asp:DropDownList AutoPostBack="true" class="form-control" ID="ddlAltaTurnoEspecilidad" runat="server" OnSelectedIndexChanged="Click_SeleccionaEspecialidad">
                 </asp:DropDownList>
             </div>

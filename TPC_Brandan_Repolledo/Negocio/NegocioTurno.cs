@@ -15,12 +15,13 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.SetearQuery("select IdTurno, d.FechaTurno, h.descripcion , Medico, Paciente, Motivo, t.Estado from Turno as t inner join Disponibilidad as d on d.IdDisponibilidad = t.Disponibilidad inner join Horario as h on h.IdHorario = d.Horario where t.Estado != 'Cancelado' and t.Estado != 'Sin Atender' and t.Estado != 'Atendido' and t.Estado != 'Reprogramado'");
+                datos.SetearQuery(" Select T.IdTurno, d.FechaTurno, h.Descripcion,P.Nombre, (Select Pa.Nombre from Paciente as P inner join Persona as Pa on  Pa.DNi = P.DNI where T.Paciente = P.CodigoPaciente ) as NombrePaciente,T.Motivo, T.Estado  From Turno as T inner join Disponibilidad as d on d.IdDisponibilidad = t.Disponibilidad inner join Medico as M on M.LegajoMedico = T.Medico inner join Persona as P on P.DNI = M.DNI  inner join Horario as h on h.IdHorario = d.Horario  where t.Estado != 'Cancelado' and t.Estado != 'Sin Atender' and t.Estado != 'Atendido' and t.Estado != 'Reprogramado'");
                 datos.EjecutarConsulta();
                 while (datos.Lector.Read())
                 {
+                    Persona aux2 = new Persona();
                     Turno aux = new Turno();
-
+                    
                     aux.IdTurno = datos.Lector.GetInt64(0);
 
                     aux.Disponibilidad = new Disponibilidad();
@@ -30,10 +31,11 @@ namespace Negocio
                     aux.Disponibilidad.Horario.Descripcion = datos.Lector.GetString(2);
 
                     aux.Medico = new Medico();
-                    aux.Medico.LegajoMedico = datos.Lector.GetString(3);
-
+                    aux.Medico.Nombre = datos.Lector.GetString(3);
+              
                     aux.Paciente = new Paciente();
-                    aux.Paciente.CodigoPaciente = datos.Lector.GetString(4);
+                    aux.Paciente.Nombre = datos.Lector.GetString(4);
+                    Console.WriteLine("Codigo de paciente:" + aux.Paciente.Nombre);
 
                     aux.Estado = datos.Lector.GetString(5);
                     aux.Motivo = datos.Lector.GetString(6);

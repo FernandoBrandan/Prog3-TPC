@@ -20,7 +20,7 @@ namespace Dominio
 
         public override string ToString()
         { 
-            string var = Apellido + ", " + Nombre;
+            string var = Apellido  + Nombre;
             // string var = this.Apellido + ", " + this.Nombre; no funciona
             // string var = LegajoMedico; Funciona bien
             return var;

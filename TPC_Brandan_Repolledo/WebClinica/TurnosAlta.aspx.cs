@@ -100,6 +100,7 @@ namespace WebClinica
         protected void Click_SeleccionaFecha(object sender, EventArgs e)
         {
             TextFechaElegida.Text = Calendar1.SelectedDate.ToShortDateString();
+            Click_ValidadFechas(sender, e);
         }
 
         protected void Click_SeleccionaEspecialidad(object sender, EventArgs e)
@@ -125,7 +126,7 @@ namespace WebClinica
                 string VerificarFecha = FechaObtenida.ToShortDateString();
 
                 NegocioDisponibilidad BuscarHorario = new NegocioDisponibilidad();
-                List<Horario> FechasLibres = BuscarHorario.BuscaHorarios(VerificarFecha);
+                List<Horario> FechasLibres = BuscarHorario.BuscaHorarios(FechaObtenida);
 
                 ddlAltaTurnoHorario.DataSource = FechasLibres;
                 ddlAltaTurnoHorario.DataTextField = "Descripcion";
@@ -137,7 +138,6 @@ namespace WebClinica
 
         protected void Click_AceptarAltaTurno(object sender, EventArgs e)
         {
-
             try
             {
                 bool var = Validacion();
@@ -157,14 +157,14 @@ namespace WebClinica
                     NuevoDispobilidad.Fecha = Convert.ToDateTime(TextFechaElegida.Text);
                     NuevoDispobilidad.Horario = new Horario();
                     NuevoDispobilidad.Horario.IdHorario = long.Parse(ddlAltaTurnoHorario.SelectedItem.Value);
-
                     NuevoDispobilidad.Estado = "Activo";
 
                     NegocioDisponibilidad CargarDisp = new NegocioDisponibilidad();
                     NegocioTurno CargarTurno = new NegocioTurno();
 
                     CargarDisp.AgregarDisponibilidad(NuevoDispobilidad);
-                    CargarTurno.AgregarTurno(NuevoTurno); 
+                    CargarTurno.AgregarTurno(NuevoTurno);
+                    Response.Redirect("TurnosLista.aspx");
                 }  
             }
             catch (Exception ex)
@@ -178,7 +178,7 @@ namespace WebClinica
         {
             bool valido = true;
 
-            if(LabelPacienteElegido.Text == "" || LabelPacienteElegido.Text == "REQUERIDO")
+           /* if(LabelPacienteElegido.Text == "" || LabelPacienteElegido.Text == "REQUERIDO")
             {
                 LabelPacienteElegido.ForeColor = System.Drawing.Color.Red;
                 LabelPacienteElegido.Text = "REQUERIDO";
@@ -218,7 +218,7 @@ namespace WebClinica
                 ddlAltaTurnoHorario.ForeColor = System.Drawing.Color.Red;
                 ddlAltaTurnoHorario.Items.Insert(0, "REQUERIDO");
                 valido = false;
-            }  
+            }  */
             return valido;
         }
 

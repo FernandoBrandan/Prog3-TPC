@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using Dominio;
 
+
 namespace Negocio
 {
     public class NegocioDisponibilidad
@@ -63,14 +64,15 @@ namespace Negocio
             return ListarHorarios;
         } 
 
-        public List<Horario> BuscaHorarios(string fecha)
+        public List<Horario> BuscaHorarios( DateTime fecha)
         {
             List<Horario> ListarHorarios = new List<Horario>();
             AccesoDatos datos = new AccesoDatos();
             try
             {
+               
                 datos.AgregarParametro("@fecha", fecha);
-                datos.SetearQuery("select IdHorario, Descripcion from Horario where IdHorario not in (select Horario from Disponibilidad where FechaTurno = @Fecha) ");
+                datos.SetearQuery(" select IdHorario, Descripcion from Horario  where IdHorario not in (select Disponibilidad.Horario from Disponibilidad where Disponibilidad.Estado = 'Activo'  and Disponibilidad.FechaTurno = @fecha)");
                 datos.EjecutarConsulta();
                 while (datos.Lector.Read())
                 {
