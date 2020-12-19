@@ -25,12 +25,13 @@
             <ul class="pagination pagination-lg">
                 <li class="page-item"><a class="page-link" href="PacientesAlta.aspx">Alta</a></li>
                 <li class="page-item"><a class="page-link" href="PacientesModifica.aspx">Modificación</a></li>
-                <li class="page-item"><a class="page-link" href="PacientesListar.aspx">Lista de Pacientes</a></li>
-                <li class="page-item active" aria-current="page">
+                                <li class="page-item active" aria-current="page">
                     <span class="page-link">Baja
                     <span class="sr-only">(current)</span>
                     </span>
                 </li>
+                <li class="page-item"><a class="page-link" href="PacientesListar.aspx">Lista de Pacientes</a></li>
+
             </ul>
         </nav>
     </div>
@@ -41,9 +42,8 @@
             <div class="form-group col-md-3">
                 <label>Buscar</label>
                 <asp:TextBox class="form-group col-md-10" placeholder="IdPaciente" ID="TextBuscarPaciente" runat="server" Width="500" />
-                
                 <asp:Button Text="Buscar" class="btn btn-primary" runat="server" OnClick="Click_BuscarBajaPaciente" />
-                <asp:Button Text="Borrar" class="btn btn-primary" runat="server" OnClick="Click_BorrarPacienteBaja"   />
+                <asp:Button Text="Limpiar Búsqueda" class="btn btn-primary" runat="server" OnClick="Click_BorrarPacienteBaja"   />
             </div>
             <div class="col">
                 <style>
