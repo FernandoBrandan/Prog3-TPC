@@ -130,5 +130,13 @@ namespace Negocio
             datos.AgregarParametro("@DNI", nuevo.DNI);
             datos.EjecutarConsulta();
         }
+
+        public void RecuperarUsuario(Usuario nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            datos.SetearQuery("update persona set estado = 1 where DNI = @DNI");
+            datos.AgregarParametro("@DNI", nuevo.DNI);
+            datos.EjecutarConsulta();
+        }
     }
 }

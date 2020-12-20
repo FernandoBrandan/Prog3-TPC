@@ -64,20 +64,18 @@ namespace WebClinica
         protected void ListaUsuario_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             int index = Convert.ToInt32(e.CommandArgument);
-            string Legajo = gvBusquedaUsuario.Rows[index].Cells[1].Text;
-            TextRecuperarUsuario.Text = gvBusquedaUsuario.Rows[index].Cells[1].Text;
+            string Legajo = gvBusquedaUsuario.Rows[index].Cells[2].Text;
+            TextRecuperarUsuario.Text = gvBusquedaUsuario.Rows[index].Cells[2].Text;
         }
-        protected void Click_AceptarRecuperarPaciente(object sender, EventArgs e)
+        protected void Click_AceptarRecuperarUsuario(object sender, EventArgs e)
         {
-            Paciente recuperarPaciente = new Paciente();
-            recuperarPaciente.DNI = long.Parse(TextRecuperarUsuario.Text);
-            NegocioPaciente Borrar = new NegocioPaciente();
-            Borrar.RecuperarPaciente(recuperarPaciente);
-            Response.Write("<script LANGUAGE='JavaScript' >alert('Se Recuperó al Usuario: " + recuperarPaciente.DNI + "')</script>");
+            Usuario recuperarUsuario = new Usuario();
+            recuperarUsuario.DNI = long.Parse(TextRecuperarUsuario.Text);
+            NegocioUsuario Borrar = new NegocioUsuario();
+            Borrar.RecuperarUsuario(recuperarUsuario);
+            Response.Write("<script LANGUAGE='JavaScript' >alert('Se Recuperó al Usuario: " + recuperarUsuario.DNI + "')</script>");
             LimpiarTabla();
         }
-
-
 
         private void LimpiarTabla()
         {

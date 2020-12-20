@@ -75,7 +75,7 @@
     </div>
     <div>
         <asp:TextBox ID="TextRecuperarUsuario" runat="server" Width="210px" Enabled="False" />
-        <asp:Button Text="Recuperar Usuario" class="btn btn-primary" OnClientClick="return Validar()" OnClick="Click_AceptarRecuperarPaciente" runat="server" />
+        <asp:Button Text="Recuperar Usuario" class="btn btn-primary" OnClientClick="return Validar()" OnClick="Click_AceptarRecuperarUsuario" runat="server" />
     </div>
 
 
