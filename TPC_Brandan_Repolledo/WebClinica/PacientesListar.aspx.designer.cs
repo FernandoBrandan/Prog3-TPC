@@ -11,7 +11,7 @@ namespace WebClinica
 {
 
 
-    public partial class EspecialidadesAlta
+    public partial class PacientesListar
     {
 
         /// <summary>
@@ -22,5 +22,23 @@ namespace WebClinica
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBuscarPaciente;
+
+        /// <summary>
+        /// Control gvBusquedaPaciente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvBusquedaPaciente;
+
+        /// <summary>
+        /// Control RecuperarPaciente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox RecuperarPaciente;
     }
 }

@@ -53,7 +53,7 @@
                 </style>
                 <asp:GridView ID="gvBusquedaPaciente" AutoGenerateColumns="false" runat="server" OnRowCommand="BusquedaBajaPaciente_RowCommand" Style="text-align: center; width: 100%">
                     <Columns>
-                        <asp:ButtonField HeaderText="Opcion" ButtonType="Link" Text="Borrar" ControlStyle-ForeColor="SlateBlue" CommandName="Select" />
+                        <asp:ButtonField HeaderText="Opción" ButtonType="Link" Text="Borrar" ControlStyle-ForeColor="SlateBlue" CommandName="Select" />
                         <asp:BoundField HeaderText="Legajo" DataField="CodigoPaciente" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
                         <asp:BoundField HeaderText="DNI       " DataField="DNI" />
                         <asp:BoundField HeaderText="Nombre    " DataField="Nombre" />

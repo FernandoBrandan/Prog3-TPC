@@ -62,6 +62,17 @@ namespace WebClinica
              gvBusquedaPaciente.DataSource = ListaVacia;
              gvBusquedaPaciente.DataBind();
         }
+        protected void Click_BorrarListadoPaciente2(object sender, EventArgs e)
+        {
+
+
+            TextBuscarPaciente.Text = "";
+            gvBusquedaPaciente.DataSource = ListaVacia;
+            gvBusquedaPaciente.DataBind();
+        }
+
+
+
 
 
         protected void BusquedaPaciente_RowCommand(object sender, GridViewCommandEventArgs e)

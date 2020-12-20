@@ -49,6 +49,39 @@ namespace Negocio
             return ListaPaciente;
         }
 
+
+        public List<Paciente> ListaPaciente2()  // Tiene la lista de todos los pacientes
+        {
+            List<Paciente> ListaPaciente2 = new List<Paciente>();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.SetearQuery("select u.DNI, Nombre, Apellido, Domicilio, FechaNacimiento, Genero, Estado, CodigoPaciente from persona as p inner join Paciente as u on u.DNI=p.DNI");
+                datos.EjecutarConsulta();
+                while (datos.Lector.Read())
+                {
+                    Paciente aux = new Paciente();
+  
+                        aux.DNI = datos.Lector.GetInt64(0);
+                        aux.Nombre = datos.Lector.GetString(1);
+                        aux.Apellido = datos.Lector.GetString(2);
+                        aux.Domicilio = datos.Lector.GetString(3);
+                        aux.FechaNacimiento = datos.Lector.GetDateTime(4);
+                        aux.Genero = datos.Lector.GetString(5);
+                        aux.Estado = datos.Lector.GetBoolean(6);
+
+                        aux.CodigoPaciente = datos.Lector.GetString(7);
+
+                    ListaPaciente2.Add(aux);
+                 }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return ListaPaciente2;
+        }
+
         public void AgregarPersona(Persona nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -103,6 +136,14 @@ namespace Negocio
         {
             AccesoDatos datos = new AccesoDatos();
             datos.SetearQuery("update persona set estado = 0 where DNI = @DNI");
+            datos.AgregarParametro("@DNI", nuevo.DNI);
+            datos.EjecutarConsulta();
+        }
+
+        public void RecuperarPaciente(Paciente nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            datos.SetearQuery("update persona set estado = 1 where DNI = @DNI");
             datos.AgregarParametro("@DNI", nuevo.DNI);
             datos.EjecutarConsulta();
         }
