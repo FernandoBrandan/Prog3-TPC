@@ -30,7 +30,7 @@ namespace WebClinica
                 gvBusquedaMedico.DataBind();
             }
         }
-        protected void Click_BuscarBajaPaciente(object sender, EventArgs e)
+        protected void Click_BuscarBajaMedico(object sender, EventArgs e)
         {
             if (IsPostBack)
             {

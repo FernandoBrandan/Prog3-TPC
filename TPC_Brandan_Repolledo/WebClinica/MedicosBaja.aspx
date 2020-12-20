@@ -21,12 +21,14 @@
             <ul class="pagination pagination-lg">
                 <li class="page-item"><a class="page-link" href="MedicosAlta.aspx">Alta</a></li>
                 <li class="page-item"><a class="page-link" href="MedicosModifica.aspx">Modificación</a></li>
-                 <li class="page-item"><a class="page-link" href="MedicosListar.aspx">Lista de Médicos</a></li>
                 <li class="page-item active" aria-current="page">
                     <span class="page-link">Baja
                     <span class="sr-only">(current)</span>
                     </span>
                 </li>
+
+                 <li class="page-item"><a class="page-link" href="MedicosListar.aspx">Lista de Médicos</a></li>
+            
             </ul>
         </nav>
     </div>
@@ -39,9 +41,9 @@
                 <label>Buscar</label>
                 <asp:TextBox class="form-group col-md-10" placeholder="IdMedico" ID="TextBuscarMedico" runat="server" Width="500" />
 
-                <asp:Button Text="Buscar" class="btn btn-primary" runat="server" OnClick="Click_BuscarBajaPaciente" />
+                <asp:Button Text="Buscar" class="btn btn-primary" runat="server" OnClick="Click_BuscarBajaMedico" />
                 
-                <asp:Button Text="Borrar" class="btn btn-primary" runat="server" OnClick="Click_BorrarBusquedaMedico" />
+                <asp:Button Text="Limpiar búsqueda" class="btn btn-primary" runat="server" OnClick="Click_BorrarBusquedaMedico" />
 
                 
             </div> 
@@ -69,7 +71,7 @@
 
     <div>
         <asp:TextBox ID="TextBorrarMedico" runat="server" Width="152px" Enabled="False" />
-        <asp:Button Text="Borrar Usuario" class="btn btn-primary" OnClientClick="return Validar()" runat="server" OnClick="Click_AceptarBorrarMedico" />
+        <asp:Button Text="Borrar Médico" class="btn btn-primary" OnClientClick="return Validar()" runat="server" OnClick="Click_AceptarBorrarMedico" />
     </div>
 
 </asp:Content>

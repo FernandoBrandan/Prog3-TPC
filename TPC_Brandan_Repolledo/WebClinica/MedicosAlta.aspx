@@ -1,27 +1,24 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="MedicosAlta.aspx.cs" Inherits="WebClinica.MedicosAlta" %>
+﻿
+<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="MedicosAlta.aspx.cs" Inherits="WebClinica.MedicosAlta" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
      <script>
-        function Validar()
-        {
-            var DNI = document.getElementById("TextMedicoDNI").value;
-            var nombre = document.getElementById("TextMedicoNombre").value;
-            var apellido = document.getElementById("TextMedicoApellido").value;
-            var domicilio = document.getElementById("TextMedicoDomicilio").value;
-            var fechaNac = document.getElementById("TextMedicoFechaNac").value;
-            var pass = document.getElementById("TxtPassMedico").value;   
-
-            if (pass == "" || DNI == "" || nombre == "" || apellido == "" || domicilio == "" || fechaNac == "")
-            {
-                alert("Debe completar todos los campos");
-                return false;
-            }
-            return true;
-        }
-
+         function Validar() {
+             var DNI = document.getElementById("TextMedicoDNI").value;
+             var nombre = document.getElementById("TextMedicoNombre").value;
+             var apellido = document.getElementById("TextMedicoApellido").value;
+             var domicilio = document.getElementById("TextMedicoDomicilio").value;
+             var fechaNac = document.getElementById("TextMedicoFechaNac").value;
+             var pass = document.getElementById("TxtPassMedico").value;
+             if (pass == "" || DNI == "" || nombre == "" || apellido == "" || domicilio == "" || fechaNac == "") {
+                 alert("Debe completar todos los campos");
+                 return false;
+             }
+             return true;
+         }
      </script>
 
 
@@ -106,3 +103,4 @@
     </div>
 
 </asp:Content>
+

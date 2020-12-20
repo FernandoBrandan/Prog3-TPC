@@ -24,7 +24,7 @@ namespace WebClinica
             }
 
             if (!IsPostBack)
-            { 
+            {
                 NegocioEspecialidad Carga1 = new NegocioEspecialidad();
                 LisdadoEspecialidadess = Carga1.ValidaEspecialidad(); // se cambia para que solo muestre las que no están borradas
                 ddlAltaEspecialidad.DataSource = LisdadoEspecialidadess;
@@ -40,7 +40,7 @@ namespace WebClinica
                 ddlMedicoRol.DataValueField = "IdPerfil";
                 ddlMedicoRol.DataBind();
                 ddlMedicoRol.Items.Insert(0, "Seleccione");
-            }            
+            }
         }
 
         public string crearLegajoMedico(long DNI, string Nombre, string Apellido)
@@ -63,7 +63,7 @@ namespace WebClinica
 
             try
             {
-                if(ValidarPersona(TextMedicoDNI.Text))
+                if (!ValidarPersona(TextMedicoDNI.Text))
                 {
 
                     bool var = Valida();
@@ -103,12 +103,12 @@ namespace WebClinica
 
                         Response.Write("<script LANGUAGE='JavaScript' >alert('Se ha cargado correctamente el Medico, Su Codigo de Legajo para  poder loguearse es: " + nuevoMedico.LegajoMedico + "')</script>");
                         LimpiarTabla();
-                    } 
+                    }
                 }
                 else
                 {
                     Response.Write("<script LANGUAGE='JavaScript' >alert('DNI medico ya existente')</script>");
-                } 
+                }
             }
             catch (Exception ex)
             {
@@ -117,9 +117,9 @@ namespace WebClinica
         }
 
         public bool ValidarPersona(string DNI)
-        { 
+        {
             bool valido = true;
-             
+
             NegocioPersona valida = new NegocioPersona();
 
             List<Persona> Listado = valida.ValidaDNI();
@@ -128,11 +128,11 @@ namespace WebClinica
             {
                 if (DNI == Convert.ToString(item.DNI))
                 {
-                   valido = false;
+                    valido = false;
                 }
             }
 
-            return valido; 
+            return valido;
         }
 
         public bool Valida()
@@ -151,13 +151,13 @@ namespace WebClinica
                 ddlMedicoRol.ForeColor = System.Drawing.Color.Red;
                 ddlMedicoRol.Items.Insert(0, "REQUERIDO");
                 valido = false;
-            } 
+            }
             return valido;
         }
 
         protected void Click_CancelarAltaPaciente(object sender, EventArgs e)
         {
-            Response.Redirect("MedicosAlta.aspx"); 
+            Response.Redirect("MedicosAlta.aspx");
         }
 
         public void LimpiarTabla()
