@@ -68,7 +68,7 @@
         </div>
     </div>
     <div>
-        <asp:TextBox ID="RecuperarPaciente" runat="server" Width="210px" Enabled="False" />
+        <asp:TextBox ID="TextRecuperarPaciente" runat="server" Width="210px" Enabled="False" />
         <asp:Button Text="Recuperar Paciente" class="btn btn-primary" OnClientClick="return Validar()" OnClick="Click_AceptarRecuperarPaciente" runat="server" />
     </div>
 

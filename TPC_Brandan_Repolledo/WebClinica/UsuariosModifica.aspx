@@ -41,7 +41,7 @@
                 <br />
                 <br />
                 <asp:Button Text="Buscar" class="btn btn-primary" runat="server" OnClick="Click_BuscarUsuario" />
-                <asp:Button Text="Borrar" class="btn btn-primary" runat="server" OnClick="Click_BorrarListado" />
+                <asp:Button Text="Limpiar búsqueda" class="btn btn-primary" runat="server" OnClick="Click_BorrarListado" />
 
             </div>
 

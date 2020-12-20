@@ -63,14 +63,13 @@ namespace WebClinica
                 nuevoPaciente.Seguridad = new Seguridad();
                 nuevoPaciente.Seguridad.Contraseña = TxtPassPaciente.Text;
                 nuevoPaciente.Seguridad.UltimaConexion = DateTime.Today.Date;
+
                 CargaPacientes.AgregarSeguridad(nuevoPaciente);
                 CargaPacientes.AgregarPersona(nuevaPersona);
                 CargaPacientes.AgregarPaciente(nuevoPaciente, nuevaPersona);
-
                 Response.Write("<script LANGUAGE='JavaScript' >alert('Se ha cargado correctamente el Usuario, Su Codigo de Legajo para  poder loguearse es: " + nuevoPaciente.CodigoPaciente + "')</script>");
 
                 // LimpiarTabla();
-
             }
             catch (Exception ex)
             {

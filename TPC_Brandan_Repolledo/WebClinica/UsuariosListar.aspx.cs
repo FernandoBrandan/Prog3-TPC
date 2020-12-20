@@ -12,11 +12,87 @@ namespace WebClinica
     public partial class UsuariosListar : System.Web.UI.Page
     {
 
+        public List<Usuario> ListadoOriginal { get; set; }
+        public List<Usuario> ListaFiltrada { get; set; }
+        public List<Usuario> ListaVacia { get; set; }
+
+        //public List <Paciente> ListaTotal { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            string var = Session["Rol"].ToString();
+            if (var == "Medico" || var == "Usuario")
+            {
+                Response.Redirect("Menu.aspx");
+            }
+            else
+            {
+                NegocioUsuario CargarBuscar = new NegocioUsuario();
+                ListadoOriginal = CargarBuscar.ListaUsuarios2();
+                gvBusquedaUsuario.DataSource = ListadoOriginal;
+                gvBusquedaUsuario.DataBind();
+            }
+
         }
+        protected void Click_BusquedaUsuario(object sender, EventArgs e)
+        {
+            if (IsPostBack)
+            {
+
+                TextBuscarUsuario.Text = "";
+                NegocioUsuario Buscar = new NegocioUsuario();
+                ListadoOriginal = Buscar.ListaUsuarios2();
+
+                try
+                {
+                    if (TextBuscarUsuario.Text == "")
+                    {
+                        ListaFiltrada = ListadoOriginal;
+                    }
+                    else
+                    {
+                        ListaFiltrada = ListadoOriginal.FindAll(Y => Convert.ToString(Y.DNI).Contains(TextBuscarUsuario.Text) || Y.Nombre.ToLower().Contains(TextBuscarUsuario.Text.ToLower()) || Y.Apellido.ToLower().Contains(TextBuscarUsuario.Text.ToLower()));
+                    }
+                    gvBusquedaUsuario.DataSource = ListaFiltrada;
+                    gvBusquedaUsuario.DataBind();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+        }
+        protected void ListaUsuario_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            int index = Convert.ToInt32(e.CommandArgument);
+            string Legajo = gvBusquedaUsuario.Rows[index].Cells[1].Text;
+            TextRecuperarUsuario.Text = gvBusquedaUsuario.Rows[index].Cells[1].Text;
+        }
+        protected void Click_AceptarRecuperarPaciente(object sender, EventArgs e)
+        {
+            Paciente recuperarPaciente = new Paciente();
+            recuperarPaciente.DNI = long.Parse(TextRecuperarUsuario.Text);
+            NegocioPaciente Borrar = new NegocioPaciente();
+            Borrar.RecuperarPaciente(recuperarPaciente);
+            Response.Write("<script LANGUAGE='JavaScript' >alert('Se Recuperó al Usuario: " + recuperarPaciente.DNI + "')</script>");
+            LimpiarTabla();
+        }
+
+
+
+        private void LimpiarTabla()
+        {
+            TextBuscarUsuario.Text = "";
+            TextRecuperarUsuario.Text = "";
+            gvBusquedaUsuario.DataSource = ListaVacia;
+            gvBusquedaUsuario.DataBind();
+        }
+        protected void Click_LimpiarBusqueda(object sender, EventArgs e)
+        {
+            LimpiarTabla();
+        }
+
 
 
     }
 }
+    

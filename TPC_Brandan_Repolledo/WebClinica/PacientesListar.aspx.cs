@@ -64,12 +64,12 @@ namespace WebClinica
         {
             int index = Convert.ToInt32(e.CommandArgument);
             string Legajo = gvBusquedaPaciente.Rows[index].Cells[1].Text;
-            RecuperarPaciente.Text = gvBusquedaPaciente.Rows[index].Cells[1].Text;
+            TextRecuperarPaciente.Text = gvBusquedaPaciente.Rows[index].Cells[1].Text;
         }
         protected void Click_AceptarRecuperarPaciente(object sender, EventArgs e)
         {
             Paciente recuperarPaciente = new Paciente();
-            recuperarPaciente.DNI = long.Parse(RecuperarPaciente.Text);
+            recuperarPaciente.DNI = long.Parse(TextRecuperarPaciente.Text);
             NegocioPaciente Borrar = new NegocioPaciente();
             Borrar.RecuperarPaciente(recuperarPaciente);
             Response.Write("<script LANGUAGE='JavaScript' >alert('Se Recuperó al paciente: " + recuperarPaciente.DNI + "')</script>");
@@ -81,10 +81,10 @@ namespace WebClinica
         private void LimpiarTabla()
         {
             TextBuscarPaciente.Text = "";
+            TextRecuperarPaciente.Text = "";
             gvBusquedaPaciente.DataSource = ListaVacia;
             gvBusquedaPaciente.DataBind();
         }
-
         protected void Click_LimpiarBusqueda(object sender, EventArgs e)
         {
             LimpiarTabla();

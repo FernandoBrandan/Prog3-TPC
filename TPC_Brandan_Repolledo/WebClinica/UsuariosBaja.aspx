@@ -30,12 +30,13 @@
             <ul class="pagination pagination-lg">
                 <li class="page-item"><a class="page-link" href="UsuariosAlta.aspx">Alta</a></li>
                 <li class="page-item"><a class="page-link" href="UsuariosModifica.aspx">Modificación</a></li>
-                  <li class="page-item"><a class="page-link" href="UsuariosListar.aspx">Lista de Usuarios</a></li>
                 <li class="page-item active" aria-current="page">
                     <span class="page-link">Baja
                 <span class="sr-only">(current)</span>
                     </span>
                 </li>
+                  <li class="page-item"><a class="page-link" href="UsuariosListar.aspx">Lista de Usuarios</a></li>
+                
             </ul>
         </nav>
     </div>
@@ -51,7 +52,7 @@
                 <br />
                 <br />
                 <asp:Button Text="Buscar" class="btn btn-primary" runat="server" OnClick="Click_BuscarBajaUsuario" />
-                <asp:Button Text="Borrar" class="btn btn-primary" runat="server" OnClick="Click_BorrarBusquedaUsuario" />
+                <asp:Button Text="Limpiar búsqueda" class="btn btn-primary" runat="server" OnClick="Click_BorrarBusquedaUsuario" />
 
             </div>
 
