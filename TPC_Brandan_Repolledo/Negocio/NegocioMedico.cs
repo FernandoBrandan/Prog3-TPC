@@ -107,8 +107,27 @@ namespace Negocio
             return ListaMedicos2;
         }
 
-
-        public void AgregarSeguridad(Medico nuevo)
+        public void AgregarMedico(Medico nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            datos.setearSP("sp_Agregar_Medico2");
+            datos.Comando.Parameters.Clear();
+            datos.Comando.Parameters.AddWithValue("@LegajoMedico", nuevo.LegajoMedico);
+            datos.Comando.Parameters.AddWithValue("@DNI", nuevo.DNI);
+            datos.Comando.Parameters.AddWithValue("@Nombre", nuevo.Nombre);
+            datos.Comando.Parameters.AddWithValue("@Apellido", nuevo.Apellido);
+            datos.Comando.Parameters.AddWithValue("@Domicilio", nuevo.Domicilio);
+            datos.Comando.Parameters.AddWithValue("@FechaNacimiento", nuevo.FechaNacimiento);
+            datos.Comando.Parameters.AddWithValue("@Genero", nuevo.Genero);
+            datos.Comando.Parameters.AddWithValue("@Estado", nuevo.Estado);
+            datos.Comando.Parameters.AddWithValue("@FechaIngreso", nuevo.FechaIngreso);
+            datos.Comando.Parameters.AddWithValue("@IDEspecialidad", nuevo.Especialidad.IdEspecialidad);
+            datos.Comando.Parameters.AddWithValue("@Pass", nuevo.Seguridad.Contraseña);
+            datos.Comando.Parameters.AddWithValue("@UltConexion", nuevo.Seguridad.UltimaConexion);
+            datos.Comando.Parameters.AddWithValue("@Perfil", nuevo.Perfil.IdPerfil);
+            datos.ejecutarAccion(); // por los procedure
+        } 
+            public void AgregarSeguridad(Medico nuevo)
             {
                 AccesoDatos datos = new AccesoDatos();
                 datos.SetearQuery("insert into Seguridad (Contraseña, UltimaConexion) values (@Pass, @UltConexion)");
@@ -122,6 +141,7 @@ namespace Negocio
             public void AgregarPersona(Persona nuevo)
             {
                 AccesoDatos datos = new AccesoDatos();
+                //datos.SetearQuery("insert into Persona (DNI,Nombre,Apellido,Domicilio,FechaNacimiento,Genero,Estado,Seguridad) values (@DNI,@Nombre,@Apellido,@Domicilio,@FechaNacimiento,@Genero,@Estado, @seguridad);");
                 datos.SetearQuery("insert into Persona (DNI,Nombre,Apellido,Domicilio,FechaNacimiento,Genero,Estado) values (@DNI,@Nombre,@Apellido,@Domicilio,@FechaNacimiento,@Genero,@Estado);");
                 datos.AgregarParametro("@DNI", nuevo.DNI);
                 datos.AgregarParametro("@Nombre", nuevo.Nombre);

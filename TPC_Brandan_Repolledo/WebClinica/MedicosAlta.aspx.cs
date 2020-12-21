@@ -56,69 +56,74 @@ namespace WebClinica
 
         protected void Click_AceptarAltaPaciente(object sender, EventArgs e)
         {
-            Persona nuevaPersona = new Persona();
-            Medico nuevoMedico = new Medico();
-            Especialidad seleccionaEsp = new Especialidad();
-            NegocioMedico CargarMedico = new NegocioMedico();
+             Persona nuevaPersona = new Persona();
+             Especialidad seleccionaEsp = new Especialidad();
+             Medico nuevoMedico = new Medico();
+             NegocioMedico negocio = new NegocioMedico();
 
             try
             {
-                if (!ValidarPersona(TextMedicoDNI.Text))
-                {
+                //nuevaPersona.DNI = Convert.ToInt32(TextMedicoDNI.Text);
 
-                    bool var = Valida();
-                    if (var)
-                    {
-                        nuevaPersona.DNI = Convert.ToInt32(TextMedicoDNI.Text);
-                        nuevaPersona.Nombre = TextMedicoNombre.Text;
-                        nuevaPersona.Apellido = TextMedicoApellido.Text;
-                        nuevaPersona.Domicilio = TextMedicoDomicilio.Text;
-                        nuevaPersona.FechaNacimiento = DateTime.Parse(TextMedicoFechaNac.Text);
+                // if (!ValidarPersona(nuevaPersona.DNI))
+                //{
+
+                //bool var = Valida();
+                //if (var)
+                //{
+                    nuevoMedico.DNI =Convert.ToInt32(TextMedicoDNI.Text);
+                //nuevoMedico.DNI = Convert.ToInt32(TextMedicoDNI.Text);
+                    nuevoMedico.Nombre = TextMedicoNombre.Text;
+                    nuevoMedico.Apellido = TextMedicoApellido.Text;
+
+                    nuevoMedico.Domicilio = TextMedicoDomicilio.Text;
+                    nuevoMedico.FechaNacimiento = DateTime.Parse(TextMedicoFechaNac.Text);
                         if (RbGenero.SelectedItem.Value == "Male")
                         {
-                            nuevaPersona.Genero = RbGenero.SelectedItem.Text;
+                        nuevoMedico.Genero = RbGenero.SelectedItem.Text;
                         }
                         else if (RbGenero.SelectedItem.Value == "Female")
                         {
-                            nuevaPersona.Genero = RbGenero.SelectedItem.Text;
+                        nuevoMedico.Genero = RbGenero.SelectedItem.Text;
                         }
-                        nuevaPersona.Estado = true;
+                        nuevoMedico.Estado = true;
+                       //nuevoMedico.Medico = new Medico();
 
-                        nuevoMedico.LegajoMedico = crearLegajoMedico(nuevaPersona.DNI, nuevaPersona.Nombre, nuevaPersona.Apellido);
+                        nuevoMedico.LegajoMedico = crearLegajoMedico(nuevoMedico.DNI, nuevoMedico.Nombre, nuevoMedico.Apellido);
                         nuevoMedico.FechaIngreso = DateTime.Today.Date;
-
                         nuevoMedico.Seguridad = new Seguridad();
                         nuevoMedico.Seguridad.Contraseña = TxtPassMedico.Text;
                         nuevoMedico.Seguridad.UltimaConexion = DateTime.Today.Date;
-
+                        nuevoMedico.Especialidad = new Especialidad();
+                        nuevoMedico.Especialidad.IdEspecialidad = long.Parse(ddlAltaEspecialidad.SelectedItem.Value);
                         nuevoMedico.Perfil = new Perfil();
                         nuevoMedico.Perfil.IdPerfil = long.Parse(ddlMedicoRol.SelectedItem.Value);
-
-                        seleccionaEsp.IdEspecialidad = long.Parse(ddlAltaEspecialidad.SelectedItem.Value);
-
-
-                        CargarMedico.AgregarSeguridad(nuevoMedico);
+                        negocio.AgregarMedico(nuevoMedico);
+                        
+                        /*CargarMedico.AgregarSeguridad(nuevoMedico);
                         CargarMedico.AgregarPersona(nuevaPersona);
-                        CargarMedico.AgregarMedico(nuevoMedico, nuevaPersona, seleccionaEsp);
+                        CargarMedico.AgregarMedico(nuevoMedico, nuevaPersona, seleccionaEsp);*/
+                       
 
-                        Response.Write("<script LANGUAGE='JavaScript' >alert('Se ha cargado correctamente el Medico, Su Codigo de Legajo para  poder loguearse es: " + nuevoMedico.LegajoMedico + "')</script>");
-                        LimpiarTabla();
-                    }
-                }
-                else
+
+                    Response.Write("<script LANGUAGE='JavaScript' >alert('Se ha cargado correctamente el Medico, Su Codigo de Legajo para  poder loguearse es: " + nuevoMedico.LegajoMedico + "')</script>");
+                       // LimpiarTabla();
+                   // }
+                }//
+               /* else
                 {
                     Response.Write("<script LANGUAGE='JavaScript' >alert('DNI medico ya existente')</script>");
-                }
-            }
+                }*/
+            
             catch (Exception ex)
             {
                 throw ex;
             }
         }
 
-        public bool ValidarPersona(string DNI)
+        public bool ValidarPersona(long DNI)
         {
-            bool valido = true;
+            bool valido = false;
 
             NegocioPersona valida = new NegocioPersona();
 
@@ -126,12 +131,12 @@ namespace WebClinica
 
             foreach (var item in Listado)
             {
-                if (DNI == Convert.ToString(item.DNI))
+                if (DNI == item.DNI)
                 {
-                    valido = false;
+                    valido = true;
+                    return valido;
                 }
             }
-
             return valido;
         }
 

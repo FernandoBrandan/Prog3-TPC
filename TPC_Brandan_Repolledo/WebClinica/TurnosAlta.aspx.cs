@@ -140,6 +140,7 @@ namespace WebClinica
         {
             try
             {
+        
                 bool var = Validacion();
                 if(var)
                 {

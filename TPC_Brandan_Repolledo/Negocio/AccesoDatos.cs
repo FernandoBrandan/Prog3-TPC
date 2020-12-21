@@ -17,8 +17,8 @@ namespace Negocio
         {
           //Conexion = new SqlConnection("data source= DESKTOP-PRA4SKB\\SQLEXPRESS; initial catalog= TPCClinica; integrated security=sspi");
           Conexion = new SqlConnection("data source= LAPTOP-PUO76A7L\\MSSQLSERVERR; initial catalog= TPCClinica; integrated security=sspi"); //Maite
-            Comando = new SqlCommand();
-            Comando.Connection = Conexion;
+          Comando = new SqlCommand();
+          Comando.Connection = Conexion;
         }
 
         public void SetearQuery(string Consulta)
@@ -44,6 +44,36 @@ namespace Negocio
                 throw ex;
             }
         }
+
+       
+        public void setearConsulta(string consulta)
+        {
+            Comando = new SqlCommand();
+            Comando.CommandType = System.Data.CommandType.Text;
+            Comando.CommandText = consulta;
+        }
+
+        public void setearSP(string sp)
+        {
+            Comando = new SqlCommand();
+            Comando.CommandType = System.Data.CommandType.StoredProcedure;
+            Comando.CommandText = sp;
+        }
+
+        public void ejecutarAccion()
+        {
+            try
+            {
+                Conexion.Open();
+                Comando.Connection = Conexion;
+                Comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public void CerraConexion()
         {
             Conexion.Close();
