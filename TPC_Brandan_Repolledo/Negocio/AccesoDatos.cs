@@ -60,7 +60,7 @@ namespace Negocio
             Comando.CommandText = sp;
         }
 
-        public void ejecutarAccion()
+        public void ejecutarAccion()  /// Es para procedimientos almacenados
         {
             try
             {

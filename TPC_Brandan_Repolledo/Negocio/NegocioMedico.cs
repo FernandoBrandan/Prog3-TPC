@@ -136,8 +136,6 @@ namespace Negocio
                 datos.EjecutarConsulta();
             }
 
-
-
             public void AgregarPersona(Persona nuevo)
             {
                 AccesoDatos datos = new AccesoDatos();
